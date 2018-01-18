@@ -14,6 +14,8 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
     magensinus_quality
     magensinus_courses
     magensinus_articles
+    magensinus_contact
+    magensinus_newsletter
   )
 end
 

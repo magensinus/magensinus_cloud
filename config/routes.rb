@@ -12,5 +12,6 @@ Rails.application.routes.draw do
     resource :quality, controller: :quality
     resource :courses, controller: :courses
     resource :articles, controller: :articles
+    resource :contact, controller: :contact
   end
 end
