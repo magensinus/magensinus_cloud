@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# Create Magensinus Settings
+Magensinus::Settings.create(
+  meta_title: "",
+  meta_description: "",
+  meta_url: ""
+)
+
+# Create Magensinus Home
+Magensinus::Home.create(
+  meta_title: "",
+  meta_description: "",
+  meta_url: ""
+)

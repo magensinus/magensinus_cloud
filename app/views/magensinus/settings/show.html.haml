@@ -1,0 +1,25 @@
+%p#notice= notice
+
+%p
+  %b Meta title:
+  = @magensinus_settings.meta_title
+%p
+  %b Meta description:
+  = @magensinus_settings.meta_description
+%p
+  %b Meta image box:
+  = @magensinus_settings.meta_image_box
+%p
+  %b Meta url:
+  = @magensinus_settings.meta_url
+%p
+  %b Title:
+  = @magensinus_settings.title
+%p
+  %b Description:
+  = @magensinus_settings.description
+%p
+  %b Url:
+  = @magensinus_settings.url
+
+= link_to 'Edit', edit_magensinus_settings_path
