@@ -10,6 +10,7 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
   inflect.uncountable %w(
     magensinus_settings
     magensinus_home
+    magensinus_about
   )
 end
 

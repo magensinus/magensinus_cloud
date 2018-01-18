@@ -6,7 +6,8 @@ Rails.application.routes.draw do
 
   namespace :magensinus do
     root to: "settings#show"
-    resource :home, controller: :home
     resource :settings, controller: :settings
+    resource :home, controller: :home
+    resource :about, controller: :about
   end
 end

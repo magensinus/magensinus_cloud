@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Magensinus
   class SettingsController < ApplicationController
     before_action :set_magensinus_setting, only: [:show, :edit, :update]
