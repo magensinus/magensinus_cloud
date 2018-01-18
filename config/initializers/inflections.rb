@@ -11,6 +11,7 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
     magensinus_settings
     magensinus_home
     magensinus_about
+    magensinus_quality
   )
 end
 

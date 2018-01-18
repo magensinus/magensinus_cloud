@@ -20,10 +20,17 @@ Magensinus::Home.create(
   meta_description: "",
   meta_url: ""
 )
-=end
 
 # Create Magensinus About
 Magensinus::About.create(
+  meta_title: "",
+  meta_description: "",
+  meta_url: ""
+)
+=end
+
+# Create Magensinus Quality
+Magensinus::Quality.create(
   meta_title: "",
   meta_description: "",
   meta_url: ""
