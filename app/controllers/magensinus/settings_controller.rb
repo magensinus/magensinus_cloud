@@ -31,7 +31,6 @@ module Magensinus
     # Never trust parameters from the scary internet, only allow the white list through.
     def magensinus_settings_params
       params.require(:magensinus_settings).permit(
-        :slug,
         :meta_title,
         :meta_description,
         :meta_image_box,

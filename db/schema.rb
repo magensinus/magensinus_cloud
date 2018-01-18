@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180118154107) do
+ActiveRecord::Schema.define(version: 20180118155546) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,14 @@ ActiveRecord::Schema.define(version: 20180118154107) do
     t.string "title"
     t.text "description"
     t.text "body"
+    t.string "fax"
+    t.string "email"
+    t.string "phone"
+    t.string "address_one"
+    t.string "address_two"
+    t.string "postcode"
+    t.string "city"
+    t.string "country"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_magensinus_contact_on_slug"
@@ -83,6 +91,22 @@ ActiveRecord::Schema.define(version: 20180118154107) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_magensinus_home_on_slug"
+  end
+
+  create_table "magensinus_newsletter", force: :cascade do |t|
+    t.string "slug"
+    t.string "meta_title"
+    t.text "meta_description"
+    t.string "meta_image_box"
+    t.string "meta_url"
+    t.string "title"
+    t.text "description"
+    t.text "body"
+    t.text "success"
+    t.text "failure"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_magensinus_newsletter_on_slug"
   end
 
   create_table "magensinus_quality", force: :cascade do |t|

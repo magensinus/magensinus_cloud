@@ -1,0 +1,33 @@
+%p#notice= notice
+
+%p
+  %b Meta title:
+  = @magensinus_newsletter.meta_title
+%p
+  %b Meta description:
+  = @magensinus_newsletter.meta_description
+%p
+  %b Meta image box:
+  = @magensinus_newsletter.meta_image_box
+%p
+  %b Meta url:
+  = @magensinus_newsletter.meta_url
+%p
+  %b Title:
+  = @magensinus_newsletter.title
+%p
+  %b Description:
+  = @magensinus_newsletter.description
+%p
+  %b Body:
+  = @magensinus_newsletter.body
+%p
+  %b Success:
+  = @magensinus_newsletter.success
+%p
+  %b Failure:
+  = @magensinus_newsletter.failure
+
+= link_to 'Edit', edit_magensinus_newsletter_path
+\|
+= link_to 'Magensinus Dashboard', magensinus_root_path

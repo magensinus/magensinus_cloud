@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root to: "home#show"
-  resource :home, controller: :home
+  root to: "dashboard#show"
+  resource :dashboard, controller: :dashboard
 
   namespace :magensinus do
-    root to: "settings#show"
+    root to: "dashboard#show"
+    resource :dashboard, controller: :dashboard
     resource :settings, controller: :settings
     resource :home, controller: :home
     resource :about, controller: :about
@@ -13,5 +14,6 @@ Rails.application.routes.draw do
     resource :courses, controller: :courses
     resource :articles, controller: :articles
     resource :contact, controller: :contact
+    resource :newsletter, controller: :newsletter
   end
 end

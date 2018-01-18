@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-class CreateMagensinusContact < ActiveRecord::Migration[5.1]
+class CreateMagensinusNewsletter < ActiveRecord::Migration[5.1]
   def change
-    create_table :magensinus_contact do |t|
+    create_table :magensinus_newsletter do |t|
       t.string  :slug, unique: true, index: true
 
       t.string  :meta_title
@@ -13,6 +13,9 @@ class CreateMagensinusContact < ActiveRecord::Migration[5.1]
       t.string  :title
       t.text    :description
       t.text    :body
+
+      t.text    :success
+      t.text    :failure
 
       t.timestamps
     end

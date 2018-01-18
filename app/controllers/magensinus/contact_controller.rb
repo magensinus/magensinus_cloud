@@ -31,14 +31,21 @@ module Magensinus
     # Never trust parameters from the scary internet, only allow the white list through.
     def magensinus_contact_params
       params.require(:magensinus_contact).permit(
-        :slug,
         :meta_title,
         :meta_description,
         :meta_image_box,
         :meta_url,
         :title,
         :description,
-        :body
+        :body,
+        :fax,
+        :email,
+        :phone,
+        :address_one,
+        :address_two,
+        :postcode,
+        :city,
+        :country
       )
     end
   end

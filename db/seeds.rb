@@ -1,4 +1,6 @@
 =begin
+=end
+
 # Create Magensinus Settings
 Magensinus::Settings.create(
   meta_title: "",
@@ -40,10 +42,16 @@ Magensinus::Articles.create(
   meta_description: "",
   meta_url: ""
 )
-=end
 
 # Create Magensinus Contact
 Magensinus::Contact.create(
+  meta_title: "",
+  meta_description: "",
+  meta_url: ""
+)
+
+# Create Magensinus Newsletter
+Magensinus::Newsletter.create(
   meta_title: "",
   meta_description: "",
   meta_url: ""
