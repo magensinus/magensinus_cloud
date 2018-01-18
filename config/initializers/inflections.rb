@@ -12,6 +12,7 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
     magensinus_home
     magensinus_about
     magensinus_quality
+    magensinus_courses
   )
 end
 

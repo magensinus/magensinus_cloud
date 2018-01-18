@@ -10,5 +10,6 @@ Rails.application.routes.draw do
     resource :home, controller: :home
     resource :about, controller: :about
     resource :quality, controller: :quality
+    resource :courses, controller: :courses
   end
 end

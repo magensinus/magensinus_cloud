@@ -27,10 +27,17 @@ Magensinus::About.create(
   meta_description: "",
   meta_url: ""
 )
-=end
 
 # Create Magensinus Quality
 Magensinus::Quality.create(
+  meta_title: "",
+  meta_description: "",
+  meta_url: ""
+)
+=end
+
+# Create Magensinus Courses
+Magensinus::Courses.create(
   meta_title: "",
   meta_description: "",
   meta_url: ""
