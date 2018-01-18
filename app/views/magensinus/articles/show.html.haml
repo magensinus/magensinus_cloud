@@ -1,0 +1,25 @@
+%p#notice= notice
+
+%p
+  %b Meta title:
+  = @magensinus_articles.meta_title
+%p
+  %b Meta description:
+  = @magensinus_articles.meta_description
+%p
+  %b Meta image box:
+  = @magensinus_articles.meta_image_box
+%p
+  %b Meta url:
+  = @magensinus_articles.meta_url
+%p
+  %b Title:
+  = @magensinus_articles.title
+%p
+  %b Description:
+  = @magensinus_articles.description
+%p
+  %b Body:
+  = @magensinus_articles.body
+
+= link_to 'Edit', edit_magensinus_articles_path
