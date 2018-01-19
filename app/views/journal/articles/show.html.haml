@@ -1,0 +1,59 @@
+%p#notice= notice
+
+%p
+  %b Meta title:
+  = @journal_article.meta_title
+%p
+  %b Meta description:
+  = @journal_article.meta_description
+%p
+  %b Meta image box:
+  = @journal_article.meta_image_box
+%p
+  %b Meta url:
+  = @journal_article.meta_url
+%p
+  %b Title:
+  = @journal_article.title
+%p
+  %b Description:
+  = @journal_article.description
+%p
+  %b Thumb:
+  = @journal_article.thumb
+%p
+  %b Thumb box:
+  = @journal_article.thumb_box
+%p
+  %b Thumb caption:
+  = @journal_article.thumb_caption
+%p
+  %b Cover:
+  = @journal_article.cover
+%p
+  %b Cover box:
+  = @journal_article.cover_box
+%p
+  %b Cover caption:
+  = @journal_article.cover_caption
+%p
+  %b Published:
+  = @journal_article.published
+%p
+  %b Publish at:
+  = @journal_article.publish_at
+%p
+  %b Eml:
+  = @journal_article.eml
+%p
+  %b Magestil:
+  = @journal_article.magestil
+%p
+  %b Magensinus:
+  = @journal_article.magensinus
+
+= link_to 'Edit', edit_journal_article_path(@journal_article)
+\|
+= link_to 'Back', journal_articles_path
+\|
+= link_to 'Article Assets', journal_article_assets_path(@journal_article)

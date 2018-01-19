@@ -1,0 +1,16 @@
+= form_with model: @journal_asset, url: asset_form_url(@journal_article, @journal_asset), local: true do |f|
+  = render 'form_errors'
+  = f.hidden_field :video, value: true
+  .field
+    %legend Video
+  .field
+    = f.label :video_box
+    = f.text_field :video_box
+  .field
+    = f.label :video_caption
+    = f.text_field :video_caption
+  .field
+    = f.label :video_service
+    = f.select :video_service, %w[vimeo youtube], selected: 'youtube'
+  .actions
+    = f.submit 'Save'

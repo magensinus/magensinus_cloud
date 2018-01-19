@@ -1,0 +1,42 @@
+%p#notice= notice
+
+%p
+  %b Journal article:
+  = @journal_asset.article
+%p
+  %b Text:
+  = @journal_asset.text
+%p
+  %b Text box:
+  = @journal_asset.text_box
+%p
+  %b Image:
+  = @journal_asset.image
+%p
+  %b Image box:
+  = @journal_asset.image_box
+%p
+  %b Image caption:
+  = @journal_asset.image_caption
+%p
+  %b Video:
+  = @journal_asset.video
+%p
+  %b Video box:
+  = @journal_asset.video_box
+%p
+  %b Video caption:
+  = @journal_asset.video_caption
+%p
+  %b Video service:
+  = @journal_asset.video_service
+%p
+  %b Alignment:
+  = @journal_asset.alignment
+%p
+  %b Position:
+  = @journal_asset.position
+
+= link_to 'Edit', edit_journal_article_asset_path(@journal_article, @journal_asset)
+\|
+= link_to 'Back', journal_article_assets_path(@journal_article)

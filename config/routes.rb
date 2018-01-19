@@ -16,4 +16,12 @@ Rails.application.routes.draw do
     resource :contact, controller: :contact
     resource :newsletter, controller: :newsletter
   end
+
+  namespace :journal do
+    root to: "dashboard#show"
+    resource :dashboard, controller: :dashboard
+    resources :articles, controller: :articles do
+      resources :assets, controller: :assets
+    end
+  end
 end

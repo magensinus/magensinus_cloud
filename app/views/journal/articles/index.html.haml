@@ -1,0 +1,33 @@
+%h1 Listing journal_articles
+
+%table
+  %thead
+    %tr
+      %th Title
+      %th Published
+      %th Publish at
+      %th Eml
+      %th Magestil
+      %th Magensinus
+      %th
+      %th
+      %th
+
+  %tbody
+    - @journal_articles.each do |journal_article|
+      %tr
+        %td= journal_article.title
+        %td= journal_article.published
+        %td= journal_article.publish_at
+        %td= journal_article.eml
+        %td= journal_article.magestil
+        %td= journal_article.magensinus
+        %td= link_to 'Show', journal_article
+        %td= link_to 'Edit', edit_journal_article_path(journal_article)
+        %td= link_to 'Destroy', journal_article, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Journal article', new_journal_article_path
+\|
+= link_to 'Journal Dashboard', journal_root_path

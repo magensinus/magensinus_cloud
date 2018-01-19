@@ -10,10 +10,54 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180118155546) do
+ActiveRecord::Schema.define(version: 20180118170648) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "journal_articles", force: :cascade do |t|
+    t.string "slug"
+    t.string "meta_title"
+    t.text "meta_description"
+    t.string "meta_image_box"
+    t.string "meta_url"
+    t.string "title"
+    t.text "description"
+    t.boolean "thumb", default: false
+    t.string "thumb_box"
+    t.string "thumb_caption"
+    t.boolean "cover", default: false
+    t.string "cover_box"
+    t.string "cover_caption"
+    t.boolean "published", default: false
+    t.datetime "publish_at"
+    t.boolean "eml", default: false
+    t.boolean "magestil", default: false
+    t.boolean "magensinus", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_journal_articles_on_slug"
+  end
+
+  create_table "journal_assets", force: :cascade do |t|
+    t.bigint "journal_article_id"
+    t.string "slug"
+    t.boolean "text", default: false
+    t.text "text_box"
+    t.boolean "image", default: false
+    t.string "image_box"
+    t.text "image_caption"
+    t.boolean "video", default: false
+    t.string "video_box"
+    t.string "video_caption"
+    t.string "video_service"
+    t.string "alignment"
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["journal_article_id"], name: "index_journal_assets_on_journal_article_id"
+    t.index ["slug"], name: "index_journal_assets_on_slug"
+  end
 
   create_table "magensinus_about", force: :cascade do |t|
     t.string "slug"
@@ -137,4 +181,5 @@ ActiveRecord::Schema.define(version: 20180118155546) do
     t.index ["slug"], name: "index_magensinus_settings_on_slug"
   end
 
+  add_foreign_key "journal_assets", "journal_articles"
 end
