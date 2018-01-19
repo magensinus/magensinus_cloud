@@ -1,0 +1,8 @@
+%h1 Editing wallet_asset
+
+- if params[:document] == "true"
+  = render 'form_document'
+
+= link_to 'Show', wallet_category_asset_path(@wallet_category, @wallet_asset)
+\|
+= link_to 'Back', wallet_assets_path

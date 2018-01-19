@@ -1,0 +1,13 @@
+= form_with model: @wallet_asset, url: wallet_asset_form_url(@wallet_category, @wallet_asset), local: true do |f|
+  = render 'form_errors'
+  = f.hidden_field :document, value: true
+  .field
+    %legend Document
+  .field
+    = f.label :document_box
+    = f.text_field :document_box
+  .field
+    = f.label :document_caption
+    = f.text_field :document_caption
+  .actions
+    = f.submit 'Save'

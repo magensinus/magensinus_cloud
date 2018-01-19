@@ -1,4 +1,4 @@
-= form_with model: @journal_asset, url: asset_form_url(@journal_article, @journal_asset), local: true do |f|
+= form_with model: @journal_asset, url: journal_asset_form_url(@journal_article, @journal_asset), local: true do |f|
   = render 'form_errors'
   = f.hidden_field :image, value: true
   .field
@@ -8,6 +8,6 @@
     = f.text_field :image_box
   .field
     = f.label :image_caption
-    = f.text_area :image_caption
+    = f.text_field :image_caption
   .actions
     = f.submit 'Save'

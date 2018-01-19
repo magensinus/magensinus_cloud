@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180119104537) do
+ActiveRecord::Schema.define(version: 20180119121938) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -181,6 +181,19 @@ ActiveRecord::Schema.define(version: 20180119104537) do
     t.index ["slug"], name: "index_magensinus_settings_on_slug"
   end
 
+  create_table "wallet_assets", force: :cascade do |t|
+    t.bigint "wallet_category_id"
+    t.string "slug"
+    t.boolean "document", default: false
+    t.string "document_box"
+    t.string "document_caption"
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_wallet_assets_on_slug"
+    t.index ["wallet_category_id"], name: "index_wallet_assets_on_wallet_category_id"
+  end
+
   create_table "wallet_categories", force: :cascade do |t|
     t.string "slug"
     t.string "meta_title"
@@ -206,4 +219,5 @@ ActiveRecord::Schema.define(version: 20180119104537) do
   end
 
   add_foreign_key "journal_assets", "journal_articles"
+  add_foreign_key "wallet_assets", "wallet_categories"
 end

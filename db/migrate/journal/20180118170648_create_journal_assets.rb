@@ -11,7 +11,7 @@ class CreateJournalAssets < ActiveRecord::Migration[5.1]
 
       t.boolean     :image, default: false
       t.string      :image_box
-      t.text        :image_caption
+      t.string      :image_caption
 
       t.boolean     :video, default: false
       t.string      :video_box

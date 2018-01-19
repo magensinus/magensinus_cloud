@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module Journal
+module Wallet
   module AssetHelper
-    def journal_asset_form_url(parent, child)
+    def wallet_asset_form_url(parent, child)
       if params[:action] == "new" || params[:action] == "create"
-        journal_article_assets_path
+        wallet_category_assets_path
       else
-        journal_article_asset_path(parent, child)
+        wallet_category_asset_path(parent, child)
       end
     end
   end

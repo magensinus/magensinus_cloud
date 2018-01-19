@@ -28,6 +28,8 @@ Rails.application.routes.draw do
   namespace :wallet do
     root to: "dashboard#show"
     resource :dashboard, controller: :dashboard
-    resources :categories, controller: :categories
+    resources :categories, controller: :categories do
+      resources :assets, controller: :assets
+    end
   end
 end
