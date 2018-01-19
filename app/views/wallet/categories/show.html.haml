@@ -1,0 +1,57 @@
+%p#notice= notice
+
+%p
+  %b Slug:
+  = @wallet_category.slug
+%p
+  %b Meta title:
+  = @wallet_category.meta_title
+%p
+  %b Meta description:
+  = @wallet_category.meta_description
+%p
+  %b Meta image box:
+  = @wallet_category.meta_image_box
+%p
+  %b Meta url:
+  = @wallet_category.meta_url
+%p
+  %b Title:
+  = @wallet_category.title
+%p
+  %b Description:
+  = @wallet_category.description
+%p
+  %b Thumb:
+  = @wallet_category.thumb
+%p
+  %b Thumb box:
+  = @wallet_category.thumb_box
+%p
+  %b Thumb caption:
+  = @wallet_category.thumb_caption
+%p
+  %b Cover:
+  = @wallet_category.cover
+%p
+  %b Cover box:
+  = @wallet_category.cover_box
+%p
+  %b Cover caption:
+  = @wallet_category.cover_caption
+%p
+  %b Published:
+  = @wallet_category.published
+%p
+  %b Eml:
+  = @wallet_category.eml
+%p
+  %b Magestil:
+  = @wallet_category.magestil
+%p
+  %b Magensinus:
+  = @wallet_category.magensinus
+
+= link_to 'Edit', edit_wallet_category_path(@wallet_category)
+\|
+= link_to 'Back', wallet_categories_path
