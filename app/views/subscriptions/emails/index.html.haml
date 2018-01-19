@@ -1,0 +1,23 @@
+%h1 Listing subscriptions_emails
+
+%table
+  %thead
+    %tr
+      %th Slug
+      %th Email
+      %th
+      %th
+      %th
+
+  %tbody
+    - @subscriptions_emails.each do |subscriptions_email|
+      %tr
+        %td= subscriptions_email.slug
+        %td= subscriptions_email.email
+        %td= link_to 'Show', subscriptions_email
+        %td= link_to 'Edit', edit_subscriptions_email_path(subscriptions_email)
+        %td= link_to 'Destroy', subscriptions_email, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Subscription email', new_subscriptions_email_path

@@ -32,4 +32,9 @@ Rails.application.routes.draw do
       resources :assets, controller: :assets
     end
   end
+
+  namespace :subscriptions do
+    root to: "dashboard#show"
+    resources :emails, controller: :emails
+  end
 end

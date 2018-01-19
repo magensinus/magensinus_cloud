@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180119121938) do
+ActiveRecord::Schema.define(version: 20180119153901) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20180119121938) do
     t.text "text_box"
     t.boolean "image", default: false
     t.string "image_box"
-    t.text "image_caption"
+    t.string "image_caption"
     t.boolean "video", default: false
     t.string "video_box"
     t.string "video_caption"
@@ -181,6 +181,14 @@ ActiveRecord::Schema.define(version: 20180119121938) do
     t.index ["slug"], name: "index_magensinus_settings_on_slug"
   end
 
+  create_table "subscriptions_emails", force: :cascade do |t|
+    t.string "slug"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_subscriptions_emails_on_slug"
+  end
+
   create_table "wallet_assets", force: :cascade do |t|
     t.bigint "wallet_category_id"
     t.string "slug"
@@ -209,7 +217,6 @@ ActiveRecord::Schema.define(version: 20180119121938) do
     t.string "cover_box"
     t.string "cover_caption"
     t.boolean "published", default: false
-    t.datetime "publish_at"
     t.boolean "eml", default: false
     t.boolean "magestil", default: false
     t.boolean "magensinus", default: false
