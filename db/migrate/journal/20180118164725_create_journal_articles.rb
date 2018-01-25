@@ -22,7 +22,7 @@ class CreateJournalArticles < ActiveRecord::Migration[5.1]
       t.string    :cover_caption
 
       t.boolean   :published, default: false
-      t.datetime  :publish_at
+      t.datetime  :published_at
 
       t.boolean   :eml, default: false
       t.boolean   :magestil, default: false

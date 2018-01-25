@@ -15,7 +15,7 @@ module Magensinus
     # PATCH/PUT /magensinus_newsletter/1
     def update
       if @magensinus_newsletter.update(magensinus_newsletter_params)
-        redirect_to @magensinus_newsletter, notice: 'Magensinus newsletter was successfully updated.'
+        redirect_to magensinus_newsletter_path, notice: 'Magensinus newsletter was successfully updated.'
       else
         render :edit
       end

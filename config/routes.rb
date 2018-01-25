@@ -33,8 +33,5 @@ Rails.application.routes.draw do
     end
   end
 
-  namespace :subscriptions do
-    root to: "dashboard#show"
-    resources :emails, controller: :emails
-  end
+  resources :subscriptions, controller: :subscriptions
 end
