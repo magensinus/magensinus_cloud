@@ -186,6 +186,7 @@ ActiveRecord::Schema.define(version: 20180119153901) do
     t.string "name"
     t.string "surname"
     t.string "email"
+    t.boolean "active", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_subscriptions_on_slug"

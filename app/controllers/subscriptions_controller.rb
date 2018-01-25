@@ -32,7 +32,7 @@ class SubscriptionsController < ApplicationController
 
   # PATCH/PUT /subscriptions/1
   def update
-    if @subscription.update(subscriptions_params)
+    if @subscription.update(subscription_params)
       redirect_to subscription_path(@subscription), notice: 'Subscription email was successfully updated.'
     else
       render :edit
@@ -55,7 +55,8 @@ class SubscriptionsController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def subscription_params
     params.require(:subscription).permit(
-      :email
+      :email,
+      :active
     )
   end
 end

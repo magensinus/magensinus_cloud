@@ -3,7 +3,7 @@
 %table
   %thead
     %tr
-      %th Slug
+      %th Active
       %th Email
       %th
       %th
@@ -12,7 +12,7 @@
   %tbody
     - @subscriptions.each do |item|
       %tr
-        %td= item.slug
+        %td= item.active
         %td= item.email
         %td= link_to 'Show', item
         %td= link_to 'Edit', edit_subscription_path(item)
