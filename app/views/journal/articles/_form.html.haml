@@ -24,24 +24,39 @@
   .field
     = f.label :description
     = f.text_area :description
-  .field
-    = f.label :thumb
-    = f.check_box :thumb
+
   .field
     = f.label :thumb_box
-    = f.text_field :thumb_box
+    = f.hidden_field :thumb_box_cache
+    - if @journal_article.thumb_box.presence
+      = f.hidden_field :thumb, value: true
+    - else
+      = f.hidden_field :thumb, value: false
+    = f.file_field :thumb_box unless @journal_article.thumb_box.presence
+  - if @journal_article.thumb_box.presence
+    .field
+      = f.label :remove_thumb_box
+      = f.check_box :remove_thumb_box
   .field
     = f.label :thumb_caption
     = f.text_field :thumb_caption
-  .field
-    = f.label :cover
-    = f.check_box :cover
+
   .field
     = f.label :cover_box
-    = f.text_field :cover_box
+    = f.hidden_field :cover_box_cache
+    - if @journal_article.cover_box.presence
+      = f.hidden_field :cover, value: true
+    - else
+      = f.hidden_field :cover, value: false
+    = f.file_field :cover_box unless @journal_article.cover_box.presence
+  - if @journal_article.cover_box.presence
+    .field
+      = f.label :remove_cover_box
+      = f.check_box :remove_cover_box
   .field
     = f.label :cover_caption
     = f.text_field :cover_caption
+
   .field
     = f.label :published
     = f.check_box :published
