@@ -6,7 +6,9 @@ module Journal
 
     # GET /journal_articles
     def index
-      @journal_articles = Journal::Article.all
+      @draft_journal_articles     = Journal::Article.draft
+      @scheduled_journal_articles = Journal::Article.scheduled
+      @published_journal_articles = Journal::Article.published
     end
 
     # GET /journal_articles/1
@@ -72,8 +74,8 @@ module Journal
         :cover_box,
         :cover_caption,
         :remove_cover_box,
-        :published,
-        :publish_at,
+        :draft,
+        :published_at,
         :eml,
         :magestil,
         :magensinus

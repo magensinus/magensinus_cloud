@@ -4,20 +4,20 @@
   %thead
     %tr
       %th Title
-      %th Published
-      %th Publish at
+      %th Draft
+      %th Published at
       %th Eml
       %th Magestil
       %th Magensinus
       %th
       %th
       %th
-
   %tbody
-    - @journal_articles.each do |journal_article|
+    %h3 Draft
+    - @draft_journal_articles.each do |journal_article|
       %tr
         %td= journal_article.title
-        %td= journal_article.published
+        %td= journal_article.draft
         %td= journal_article.published_at
         %td= journal_article.eml
         %td= journal_article.magestil
@@ -25,7 +25,46 @@
         %td= link_to 'Show', journal_article
         %td= link_to 'Edit', edit_journal_article_path(journal_article)
         %td= link_to 'Destroy', journal_article, method: :delete, data: { confirm: 'Are you sure?' }
-
+%br
+  %tbody
+    %h3 Scheduled
+    - @scheduled_journal_articles.each do |journal_article|
+      %tr
+        %td= journal_article.title
+        %td= journal_article.draft
+        %td= journal_article.published_at
+        %td= journal_article.eml
+        %td= journal_article.magestil
+        %td= journal_article.magensinus
+        %td= link_to 'Show', journal_article
+        %td= link_to 'Edit', edit_journal_article_path(journal_article)
+        %td= link_to 'Destroy', journal_article, method: :delete, data: { confirm: 'Are you sure?' }
+%br
+%table
+  %thead
+    %tr
+      %th Title
+      %th Published
+      %th Published at
+      %th Eml
+      %th Magestil
+      %th Magensinus
+      %th
+      %th
+      %th
+  %tbody
+    %h3 Published
+    - @published_journal_articles.each do |journal_article|
+      %tr
+        %td= journal_article.title
+        %td= journal_article.draft
+        %td= journal_article.published_at
+        %td= journal_article.eml
+        %td= journal_article.magestil
+        %td= journal_article.magensinus
+        %td= link_to 'Show', journal_article
+        %td= link_to 'Edit', edit_journal_article_path(journal_article)
+        %td= link_to 'Destroy', journal_article, method: :delete, data: { confirm: 'Are you sure?' }
 %br
 
 = link_to 'New Journal article', new_journal_article_path

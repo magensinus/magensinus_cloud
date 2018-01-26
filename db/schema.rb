@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20180119153901) do
     t.boolean "cover", default: false
     t.string "cover_box"
     t.string "cover_caption"
-    t.boolean "published", default: false
+    t.boolean "draft", default: true
     t.datetime "published_at"
     t.boolean "eml", default: false
     t.boolean "magestil", default: false
