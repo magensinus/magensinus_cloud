@@ -26,7 +26,7 @@ module Wallet
     def create
       @wallet_category = Wallet::Category.new(wallet_category_params)
       if @wallet_category.save
-        redirect_to @wallet_category, notice: 'Wallet category was successfully created.'
+        redirect_to @wallet_category, notice: "Wallet category was successfully created."
       else
         render :new
       end
@@ -35,7 +35,7 @@ module Wallet
     # PATCH/PUT /wallet_categories/1
     def update
       if @wallet_category.update(wallet_category_params)
-        redirect_to @wallet_category, notice: 'Wallet category was successfully updated.'
+        redirect_to @wallet_category, notice: "Wallet category was successfully updated."
       else
         render :edit
       end
@@ -44,7 +44,7 @@ module Wallet
     # DELETE /wallet_categories/1
     def destroy
       @wallet_category.destroy
-      redirect_to wallet_categories_url, notice: 'Wallet category was successfully destroyed.'
+      redirect_to wallet_categories_url, notice: "Wallet category was successfully destroyed."
     end
 
     private

@@ -29,7 +29,7 @@ module Journal
       @journal_article = Journal::Article.new(journal_article_params)
 
       if @journal_article.save
-        redirect_to @journal_article, notice: 'Journal article was successfully created.'
+        redirect_to @journal_article, notice: "Journal article was successfully created."
       else
         render :new
       end
@@ -38,7 +38,7 @@ module Journal
     # PATCH/PUT /journal_articles/1
     def update
       if @journal_article.update(journal_article_params)
-        redirect_to @journal_article, notice: 'Journal article was successfully updated.'
+        redirect_to @journal_article, notice: "Journal article was successfully updated."
       else
         render :edit
       end
@@ -47,7 +47,7 @@ module Journal
     # DELETE /journal_articles/1
     def destroy
       @journal_article.destroy
-      redirect_to journal_articles_path, notice: 'Journal article was successfully destroyed.'
+      redirect_to journal_articles_path, notice: "Journal article was successfully destroyed."
     end
 
     private

@@ -1,0 +1,67 @@
+%p#notice= notice
+
+%p
+  %b Meta title:
+  = @academy_course.meta_title
+%p
+  %b Meta description:
+  = @academy_course.meta_description
+%p
+  %b Meta image box:
+  = @academy_course.meta_image_box
+%p
+  %b Meta url:
+  = @academy_course.meta_url
+%p
+  %b Title:
+  = @academy_course.title
+%p
+  %b Description:
+  = @academy_course.description
+%p
+  %b Thumb:
+  = @academy_course.thumb
+%p
+  %b Thumb box:
+  = image_tag @academy_course.thumb_box_url.to_s
+  = image_tag @academy_course.thumb_box_url(:nano).to_s
+  = image_tag @academy_course.thumb_box_url(:tiny).to_s
+  = image_tag @academy_course.thumb_box_url(:small).to_s
+  = image_tag @academy_course.thumb_box_url(:medium).to_s
+  = image_tag @academy_course.thumb_box_url(:large).to_s
+%p
+  %b Thumb caption:
+  = @academy_course.thumb_caption
+%p
+  %b Cover:
+  = @academy_course.cover
+%p
+  %b Cover box:
+  = image_tag @academy_course.cover_box_url.to_s
+  = image_tag @academy_course.cover_box_url(:nano).to_s
+  = image_tag @academy_course.cover_box_url(:tiny).to_s
+  = image_tag @academy_course.cover_box_url(:small).to_s
+  = image_tag @academy_course.cover_box_url(:medium).to_s
+  = image_tag @academy_course.cover_box_url(:large).to_s
+%p
+  %b Cover caption:
+  = @academy_course.cover_caption
+%p
+  %b Draft:
+  = @academy_course.draft
+%p
+  %b Published at:
+  = @academy_course.published_at
+%p
+  %b Eml:
+  = @academy_course.eml
+%p
+  %b Magestil:
+  = @academy_course.magestil
+%p
+  %b Magensinus:
+  = @academy_course.magensinus
+
+= link_to 'Edit', edit_academy_course_path(@academy_course)
+\|
+= link_to 'Back', academy_courses_path

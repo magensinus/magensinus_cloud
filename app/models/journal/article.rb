@@ -10,7 +10,7 @@ module Journal
     include CleanCaption
 
     # Relationships
-    has_many :assets, dependent: :destroy, foreign_key: "journal_article_id"
+    has_many :assets, dependent: :destroy, foreign_key: "journal_article_id", inverse_of: :article
     accepts_nested_attributes_for :assets, allow_destroy: true
 
     # Uploaders
@@ -22,8 +22,8 @@ module Journal
     after_save(-> { clean_caption(cover_box, :cover_caption) })
 
     # Scoping
-    scope :draft, ->{ where(draft: true) }
-    scope :scheduled, ->{ where.not(draft: true).where("published_at > ?", Time.zone.now) }
-    scope :published, ->{ where.not(draft: true).where("published_at <= ?", Time.zone.now) }
+    scope :draft, -> { where(draft: true) }
+    scope :scheduled, -> { where.not(draft: true).where("published_at > ?", Time.zone.now) }
+    scope :published, -> { where.not(draft: true).where("published_at <= ?", Time.zone.now) }
   end
 end

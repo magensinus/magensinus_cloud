@@ -3,7 +3,7 @@
 module Magensinus
   class Settings < ApplicationRecord
     # Table name
-    self.table_name = 'magensinus_settings'
+    self.table_name = "magensinus_settings"
 
     # Concerns
     include Slug

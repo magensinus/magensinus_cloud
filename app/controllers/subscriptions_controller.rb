@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SubscriptionsController < ApplicationController
   before_action :set_subscription, only: [:show, :edit, :update, :destroy]
 
@@ -24,7 +26,7 @@ class SubscriptionsController < ApplicationController
     @subscription = Subscription.new(subscription_params)
 
     if @subscription.save
-      redirect_to subscription_path(@subscription), notice: 'Subscription email was successfully created.'
+      redirect_to subscription_path(@subscription), notice: "Subscription email was successfully created."
     else
       render :new
     end
@@ -33,7 +35,7 @@ class SubscriptionsController < ApplicationController
   # PATCH/PUT /subscriptions/1
   def update
     if @subscription.update(subscription_params)
-      redirect_to subscription_path(@subscription), notice: 'Subscription email was successfully updated.'
+      redirect_to subscription_path(@subscription), notice: "Subscription email was successfully updated."
     else
       render :edit
     end
@@ -42,7 +44,7 @@ class SubscriptionsController < ApplicationController
   # DELETE /subscriptions/1
   def destroy
     @subscription.destroy
-    redirect_to subscriptions_path, notice: 'Subscription email was successfully destroyed.'
+    redirect_to subscriptions_path, notice: "Subscription email was successfully destroyed."
   end
 
   private

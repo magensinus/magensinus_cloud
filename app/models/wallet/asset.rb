@@ -10,6 +10,6 @@ module Wallet
     include SortablePosition
 
     # Relationships
-    belongs_to :category, foreign_key: "wallet_category_id"
+    belongs_to :category, foreign_key: "wallet_category_id", inverse_of: :asset
   end
 end

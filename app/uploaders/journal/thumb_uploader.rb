@@ -3,8 +3,8 @@
 module Journal
   class ThumbUploader < ApplicationUploader
     # Provide a default URL as a default if there hasn't been a file uploaded:
-    def default_url(*args)
-      "/images/fallback/" + [version_name, "article-thumb-default.png"].compact.join('_')
+    def default_url
+      "/images/fallback/" + [version_name, "article-thumb-default.png"].compact.join("_")
     end
 
     # Prefix variable
@@ -30,7 +30,7 @@ module Journal
     end
 
     version :large do
-      process resize_to_fill: [128, 128]
+      process resize_to_fill: [256, 256]
     end
   end
 end

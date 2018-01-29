@@ -2,7 +2,7 @@
 
 module Magensinus
   class AboutController < ApplicationController
-    before_action :set_magensinus_about, only: [:show, :edit, :update, :destroy]
+    before_action :set_magensinus_about, only: [:show, :edit, :update]
 
     # GET /magensinus_about/1
     def show
@@ -15,7 +15,7 @@ module Magensinus
     # PATCH/PUT /magensinus_about/1
     def update
       if @magensinus_about.update(magensinus_about_params)
-        redirect_to magensinus_about_path, notice: 'Magensinus about was successfully updated.'
+        redirect_to magensinus_about_path, notice: "Magensinus about was successfully updated."
       else
         render :edit
       end

@@ -11,6 +11,6 @@ module Journal
     include SortablePosition
 
     # Relationships
-    belongs_to :article, foreign_key: "journal_article_id"
+    belongs_to :article, foreign_key: "journal_article_id", inverse_of: :asset
   end
 end

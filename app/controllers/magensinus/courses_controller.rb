@@ -2,7 +2,7 @@
 
 module Magensinus
   class CoursesController < ApplicationController
-    before_action :set_magensinus_courses, only: [:show, :edit, :update, :destroy]
+    before_action :set_magensinus_courses, only: [:show, :edit, :update]
 
     # GET /magensinus_courses/1
     def show
@@ -15,7 +15,7 @@ module Magensinus
     # PATCH/PUT /magensinus_courses/1
     def update
       if @magensinus_courses.update(magensinus_courses_params)
-        redirect_to magensinus_courses_path, notice: 'Magensinus course was successfully updated.'
+        redirect_to magensinus_courses_path, notice: "Magensinus course was successfully updated."
       else
         render :edit
       end

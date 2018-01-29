@@ -3,7 +3,7 @@
 module Magensinus
   class Newsletter < ApplicationRecord
     # Table name
-    self.table_name = 'magensinus_newsletter'
+    self.table_name = "magensinus_newsletter"
 
     # Concerns
     include Slug

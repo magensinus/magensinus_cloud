@@ -3,7 +3,7 @@
 module Magensinus
   class Quality < ApplicationRecord
     # Table name
-    self.table_name = 'magensinus_quality'
+    self.table_name = "magensinus_quality"
 
     # Concerns
     include Slug

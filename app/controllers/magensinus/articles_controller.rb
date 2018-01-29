@@ -2,7 +2,7 @@
 
 module Magensinus
   class ArticlesController < ApplicationController
-    before_action :set_magensinus_articles, only: [:show, :edit, :update, :destroy]
+    before_action :set_magensinus_articles, only: [:show, :edit, :update]
 
     # GET /magensinus_articles/1
     def show
@@ -15,7 +15,7 @@ module Magensinus
     # PATCH/PUT /magensinus_articles/1
     def update
       if @magensinus_articles.update(magensinus_articles_params)
-        redirect_to magensinus_articles_path, notice: 'Magensinus article was successfully updated.'
+        redirect_to magensinus_articles_path, notice: "Magensinus article was successfully updated."
       else
         render :edit
       end

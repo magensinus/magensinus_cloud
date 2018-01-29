@@ -9,7 +9,7 @@ module Wallet
     include Slug
 
     # Relationships
-    has_many :assets, dependent: :destroy, foreign_key: "wallet_category_id"
+    has_many :assets, dependent: :destroy, foreign_key: "wallet_category_id", inverse_of: :category
     accepts_nested_attributes_for :assets, allow_destroy: true
   end
 end

@@ -3,7 +3,7 @@
 module Magensinus
   class Courses < ApplicationRecord
     # Table name
-    self.table_name = 'magensinus_courses'
+    self.table_name = "magensinus_courses"
 
     # Concerns
     include Slug

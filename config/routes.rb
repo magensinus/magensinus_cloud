@@ -25,6 +25,16 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :academy do
+    root to: "dashboard#show"
+    resource :dashboard, controller: :dashboard
+    resources :courses, controller: :courses do
+      collection do
+        patch :sortable
+      end
+    end
+  end
+
   namespace :wallet do
     root to: "dashboard#show"
     resource :dashboard, controller: :dashboard

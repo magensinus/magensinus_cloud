@@ -2,7 +2,7 @@
 
 module Magensinus
   class ContactController < ApplicationController
-    before_action :set_magensinus_contact, only: [:show, :edit, :update, :destroy]
+    before_action :set_magensinus_contact, only: [:show, :edit, :update]
 
     # GET /magensinus_contact/1
     def show
@@ -15,7 +15,7 @@ module Magensinus
     # PATCH/PUT /magensinus_contact/1
     def update
       if @magensinus_contact.update(magensinus_contact_params)
-        redirect_to magensinus_contact_path, notice: 'Magensinus contact was successfully updated.'
+        redirect_to magensinus_contact_path, notice: "Magensinus contact was successfully updated."
       else
         render :edit
       end

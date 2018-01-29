@@ -2,8 +2,8 @@
 
 module Wallet
   class AssetsController < ApplicationController
-    before_action :set_wallet_category
-    before_action :set_wallet_asset, only: [:show, :edit, :update, :destroy]
+    before_action :wallet_category
+    before_action :wallet_asset, only: [:show, :edit, :update, :destroy]
 
     # GET /wallet_assets
     def index
@@ -25,13 +25,14 @@ module Wallet
 
     # POST /wallet_assets
     def create
-      order = @wallet_category.assets.pluck(:position).compact
-      @wallet_asset = @wallet_category.assets.new(wallet_asset_params)
+      assets = wallet_category.assets
+      order = assets.pluck(:position).compact
+      @wallet_asset = assets.new(wallet_asset_params)
       order << 0
       @wallet_asset.position = (order.min - 1)
 
       if @wallet_asset.save
-        redirect_to wallet_category_asset_path(@wallet_category, @wallet_asset), notice: 'Wallet asset was successfully created.'
+        redirect_to wallet_category_asset_path(@wallet_category, @wallet_asset), notice: "Wallet asset was successfully created."
       else
         render :new
       end
@@ -40,7 +41,7 @@ module Wallet
     # PATCH/PUT /wallet_assets/1
     def update
       if @wallet_asset.update(wallet_asset_params)
-        redirect_to wallet_category_asset_path(@wallet_category, @wallet_asset), notice: 'Wallet asset was successfully updated.'
+        redirect_to wallet_category_asset_path(@wallet_category, @wallet_asset), notice: "Wallet asset was successfully updated."
       else
         render :edit
       end
@@ -49,17 +50,17 @@ module Wallet
     # DELETE /wallet_assets/1
     def destroy
       @wallet_asset.destroy
-      redirect_to wallet_category_assets_path(@wallet_category), notice: 'Wallet asset was successfully destroyed.'
+      redirect_to wallet_category_assets_path(@wallet_category), notice: "Wallet asset was successfully destroyed."
     end
 
     private
 
     # Use callbacks to share common setup or constraints between actions.
-    def set_wallet_category
+    def wallet_category
       @wallet_category = Wallet::Category.find_by(slug: params[:category_id])
     end
 
-    def set_wallet_asset
+    def wallet_asset
       @wallet_asset = @wallet_category.assets.find_by(slug: params[:id])
     end
 

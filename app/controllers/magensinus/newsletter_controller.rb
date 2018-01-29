@@ -2,7 +2,7 @@
 
 module Magensinus
   class NewsletterController < ApplicationController
-    before_action :set_magensinus_newsletter, only: [:show, :edit, :update, :destroy]
+    before_action :set_magensinus_newsletter, only: [:show, :edit, :update]
 
     # GET /magensinus_newsletter/1
     def show
@@ -15,7 +15,7 @@ module Magensinus
     # PATCH/PUT /magensinus_newsletter/1
     def update
       if @magensinus_newsletter.update(magensinus_newsletter_params)
-        redirect_to magensinus_newsletter_path, notice: 'Magensinus newsletter was successfully updated.'
+        redirect_to magensinus_newsletter_path, notice: "Magensinus newsletter was successfully updated."
       else
         render :edit
       end
