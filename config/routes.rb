@@ -28,6 +28,11 @@ Rails.application.routes.draw do
   namespace :academy do
     root to: "dashboard#show"
     resource :dashboard, controller: :dashboard
+    resources :categories, controller: :categories do
+      collection do
+        patch :sortable
+      end
+    end
     resources :courses, controller: :courses do
       collection do
         patch :sortable

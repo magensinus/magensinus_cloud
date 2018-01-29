@@ -1,0 +1,45 @@
+%h1 Listing academy_categories
+
+%table
+  %thead
+    %tr
+      %th Title
+      %th Description
+      %th Thumb
+      %th Thumb box
+      %th Thumb caption
+      %th Cover
+      %th Cover box
+      %th Cover caption
+      %th Published
+      %th Eml
+      %th Magestil
+      %th Magensinus
+      %th Position
+      %th
+      %th
+      %th
+
+  %tbody
+    - @academy_categories.each do |academy_category|
+      %tr
+        %td= academy_category.title
+        %td= academy_category.description
+        %td= academy_category.thumb
+        %td= academy_category.thumb_box
+        %td= academy_category.thumb_caption
+        %td= academy_category.cover
+        %td= academy_category.cover_box
+        %td= academy_category.cover_caption
+        %td= academy_category.published
+        %td= academy_category.eml
+        %td= academy_category.magestil
+        %td= academy_category.magensinus
+        %td= academy_category.position
+        %td= link_to 'Show', academy_category
+        %td= link_to 'Edit', edit_academy_category_path(academy_category)
+        %td= link_to 'Destroy', academy_category, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Academy category', new_academy_category_path
