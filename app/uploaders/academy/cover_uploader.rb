@@ -32,5 +32,9 @@ module Academy
     version :large do
       process resize_to_fill: [256, 256]
     end
+
+    def extension_whitelist
+      %w[gif png jpg jpeg]
+    end
   end
 end

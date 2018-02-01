@@ -14,13 +14,28 @@ module Journal
     def show
     end
 
+    # GET /journal_assets/1/edit
+    def edit
+    end
+
+    # PATCH/PUT /journal_assets/1
+    def update
+      if @journal_asset.update(journal_asset_params)
+        redirect_to journal_article_assets_path(@journal_article), notice: "Journal asset was successfully updated."
+      else
+        render :edit
+      end
+    end
+
+    # DELETE /journal_assets/1
+    def destroy
+      @journal_asset.destroy
+      redirect_to journal_article_assets_path(@journal_article), notice: "Journal asset was successfully destroyed."
+    end
+
     # GET /journal_assets/new
     def new
       @journal_asset = @journal_article.assets.new
-    end
-
-    # GET /journal_assets/1/edit
-    def edit
     end
 
     # POST /journal_assets
@@ -32,25 +47,10 @@ module Journal
       @journal_asset.position = (order.min - 1)
 
       if @journal_asset.save
-        redirect_to journal_article_asset_path(@journal_article, @journal_asset), notice: "Journal asset was successfully created."
+        redirect_to journal_article_assets_path(@journal_article), notice: "Journal asset was successfully created."
       else
         render :new
       end
-    end
-
-    # PATCH/PUT /journal_assets/1
-    def update
-      if @journal_asset.update(journal_asset_params)
-        redirect_to journal_article_asset_path(@journal_article, @journal_asset), notice: "Journal asset was successfully updated."
-      else
-        render :edit
-      end
-    end
-
-    # DELETE /journal_assets/1
-    def destroy
-      @journal_asset.destroy
-      redirect_to journal_article_assets_path(@journal_article), notice: "Journal asset was successfully destroyed."
     end
 
     private
@@ -68,12 +68,12 @@ module Journal
     def journal_asset_params
       params.require(:journal_asset).permit(
         :journal_article_id,
-        :slug,
         :text,
         :text_box,
         :image,
         :image_box,
         :image_caption,
+        :remove_image_box,
         :video,
         :video_box,
         :video_caption,

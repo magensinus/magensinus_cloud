@@ -20,12 +20,10 @@
         %td= wallet_asset.document_box
         %td= wallet_asset.document_caption
         %td= wallet_asset.position
-        %td= link_to 'Show', wallet_category_asset_path(@wallet_category, wallet_asset)
-        %td= link_to 'Edit', edit_wallet_category_asset_path(@wallet_category, wallet_asset)
-        %td= link_to 'Destroy', wallet_category_asset_path(@wallet_category, wallet_asset), method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to "Show", wallet_category_asset_path(@wallet_category, wallet_asset)
+        %td= link_to "Edit", edit_wallet_category_asset_path(@wallet_category, wallet_asset, document: true)
+        %td= link_to "Destroy", wallet_category_asset_path(@wallet_category, wallet_asset), method: :delete, data: { confirm: "Are you sure?" }
 
 %br
 
-= link_to 'New Wallet asset', new_wallet_category_asset_path(@wallet_category)
-\|
-= link_to 'New Wallet Document', new_wallet_category_asset_path(@wallet_category, document: "true")
+= link_to "New Wallet Document", new_wallet_category_asset_path(@wallet_category, document: "true")

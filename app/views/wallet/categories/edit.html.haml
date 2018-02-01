@@ -1,7 +1,19 @@
 %h1 Editing wallet_category
 
-= render 'form'
+- if params_thumb
+  = render "thumb"
+- elsif params_cover
+  = render "cover"
+- else
+  = render "form"
 
-= link_to 'Show', @wallet_category
+= link_to "Thumb", edit_wallet_category_path(@wallet_category, thumb: "true")
 \|
-= link_to 'Back', wallet_categories_path
+= link_to "Cover", edit_wallet_category_path(@wallet_category, cover: "true")
+\|
+= link_to "Show", @wallet_category
+\|
+- if params_thumb || params_cover
+  = link_to "Back", edit_wallet_category_path(@wallet_category)
+- else
+  = link_to "Back", wallet_categories_path

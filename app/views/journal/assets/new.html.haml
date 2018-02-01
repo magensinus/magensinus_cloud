@@ -1,10 +1,10 @@
 %h1 New journal_asset
 
-- if params[:text] == "true"
-  = render 'form_text'
-- if params[:image] == "true"
-  = render 'form_image'
-- if params[:video] == "true"
-  = render 'form_video'
+- if params_text
+  = render "text"
+- if params_image
+  = render "image"
+- if params_video
+  = render "video"
 
-= link_to 'Back', journal_article_assets_path(@journal_article)
+= link_to "Back", journal_article_assets_path(@journal_article)

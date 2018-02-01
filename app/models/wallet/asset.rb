@@ -7,9 +7,16 @@ module Wallet
 
     # Concerns
     include Slug
+    include CleanCaption
     include SortablePosition
 
+    # Uploaders
+    mount_uploader :document_box, Wallet::DocumentUploader
+
+    # Clean Capitions
+    after_save(-> { clean_caption(document_box, :document_caption) })
+
     # Relationships
-    belongs_to :category, foreign_key: "wallet_category_id", inverse_of: :asset
+    belongs_to :category, foreign_key: "wallet_category_id", inverse_of: false
   end
 end

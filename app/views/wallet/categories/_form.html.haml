@@ -1,11 +1,5 @@
-= form_for @wallet_category do |f|
-  - if @wallet_category.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@wallet_category.errors.count, "error")} prohibited this wallet_category from being saved:"
-      %ul
-        - @wallet_category.errors.full_messages.each do |message|
-          %li= message
-
+= form_with model: @wallet_category, local: true do |f|
+  = render "lib/components/errors", object: @wallet_category
   .field
     = f.label :meta_title
     = f.text_field :meta_title
@@ -25,24 +19,6 @@
     = f.label :description
     = f.text_area :description
   .field
-    = f.label :thumb
-    = f.check_box :thumb
-  .field
-    = f.label :thumb_box
-    = f.text_field :thumb_box
-  .field
-    = f.label :thumb_caption
-    = f.text_field :thumb_caption
-  .field
-    = f.label :cover
-    = f.check_box :cover
-  .field
-    = f.label :cover_box
-    = f.text_field :cover_box
-  .field
-    = f.label :cover_caption
-    = f.text_field :cover_caption
-  .field
     = f.label :published
     = f.check_box :published
   .field
@@ -55,4 +31,4 @@
     = f.label :magensinus
     = f.check_box :magensinus
   .actions
-    = f.submit 'Save'
+    = f.submit "Save"

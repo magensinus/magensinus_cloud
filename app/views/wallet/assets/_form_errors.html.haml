@@ -1,6 +1,0 @@
-- if @wallet_asset.errors.any?
-  #error_explanation
-    %h2= "#{pluralize(@wallet_asset.errors.count, "error")} prohibited this wallet_asset from being saved:"
-    %ul
-      - @wallet_asset.errors.full_messages.each do |message|
-        %li= message

@@ -71,6 +71,7 @@ module Wallet
         :document,
         :document_box,
         :document_caption,
+        :remove_document_box,
         :position
       )
     end

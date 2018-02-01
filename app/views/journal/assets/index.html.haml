@@ -7,21 +7,24 @@
         - if journal_asset.text == true
           %td= journal_asset.text_box
         - if journal_asset.image == true
-          %td= journal_asset.image_box
+          %td= image_tag journal_asset.image_box_url.to_s
           %td= journal_asset.image_caption
         - if journal_asset.video == true
           %td= journal_asset.video_box
           %td= journal_asset.video_caption
-        %td= link_to 'Show', journal_article_asset_path(@journal_article, journal_asset)
-        %td= link_to 'Edit', edit_journal_article_asset_path(@journal_article, journal_asset)
-        %td= link_to 'Destroy', journal_article_asset_path(@journal_article, journal_asset), method: :delete, data: { confirm: 'Are you sure?' }
-
+        %td
+          - if journal_asset.text == true
+            = link_to "Edit", edit_journal_article_asset_path(@journal_article, journal_asset, text: true)
+          - if journal_asset.image == true
+            = link_to "Edit", edit_journal_article_asset_path(@journal_article, journal_asset, image: true)
+          - if journal_asset.video == true
+            = link_to "Edit", edit_journal_article_asset_path(@journal_article, journal_asset, video: true)
+        %td= link_to "Destroy", journal_article_asset_path(@journal_article, journal_asset), method: :delete, data: { confirm: "Are you sure?" }
 %br
-
-= link_to 'Back', journal_article_path(@journal_article)
+= link_to "Back", journal_article_path(@journal_article)
 \|
-= link_to 'New Journal Text', new_journal_article_asset_path(@journal_article, text: "true")
+= link_to "Text", new_journal_article_asset_path(@journal_article, text: "true")
 \|
-= link_to 'New Journal Image', new_journal_article_asset_path(@journal_article, image: "true")
+= link_to "Image", new_journal_article_asset_path(@journal_article, image: "true")
 \|
-= link_to 'New Journal Video', new_journal_article_asset_path(@journal_article, video: "true")
+= link_to "Video", new_journal_article_asset_path(@journal_article, video: "true")

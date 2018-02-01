@@ -25,4 +25,34 @@ module ApplicationHelper
   def params_update
     params[:action] == "update"
   end
+
+  # Params text
+  def params_text
+    params[:text] == "true"
+  end
+
+  # Params image
+  def params_image
+    params[:image] == "true"
+  end
+
+  # Params thumb
+  def params_thumb
+    params[:thumb] == "true"
+  end
+
+  # Params cover
+  def params_cover
+    params[:cover] == "true"
+  end
+
+  # Params video
+  def params_video
+    params[:video] == "true"
+  end
+
+  # Params document
+  def params_document
+    params[:document] == "true"
+  end
 end

@@ -27,8 +27,8 @@
         %td= academy_course.eml
         %td= academy_course.magestil
         %td= academy_course.magensinus
-        %td= link_to 'Show', academy_course
-        %td= link_to 'Edit', edit_academy_course_path(academy_course)
-        %td= link_to 'Destroy', academy_course, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to "Show", academy_course
+        %td= link_to "Edit", edit_academy_course_path(academy_course)
+        %td= link_to "Destroy", academy_course, method: :delete, data: { confirm: "Are you sure?" }
 %br
-= link_to 'New Academy course', new_academy_course_path
+= link_to "New Academy course", new_academy_course_path

@@ -1,6 +1,0 @@
-- if @journal_asset.errors.any?
-  #error_explanation
-    %h2= "#{pluralize(@journal_asset.errors.count, "error")} prohibited this journal_asset from being saved:"
-    %ul
-      - @journal_asset.errors.full_messages.each do |message|
-        %li= message

@@ -1,7 +1,19 @@
 %h1 Editing journal_article
 
-= render 'form'
+- if params_thumb
+  = render "thumb"
+- elsif params_cover
+  = render "cover"
+- else
+  = render "form"
 
-= link_to 'Show', @journal_article
+= link_to "Thumb", edit_journal_article_path(@journal_article, thumb: "true")
 \|
-= link_to 'Back', journal_articles_path
+= link_to "Cover", edit_journal_article_path(@journal_article, cover: "true")
+\|
+= link_to "Show", @journal_article
+\|
+- if params_thumb || params_cover
+  = link_to "Back", edit_journal_article_path(@journal_article)
+- else
+  = link_to "Back", journal_articles_path
