@@ -13,6 +13,9 @@
     = f.label :meta_url
     = f.text_field :meta_url
   .field
+    = f.label :academy_categories
+    = f.collection_radio_buttons :academy_category_id, @academy_categories, :id, :title, include_hidden: false
+  .field
     = f.label :title
     = f.text_field :title
   .field

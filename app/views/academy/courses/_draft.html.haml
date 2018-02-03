@@ -4,6 +4,7 @@
   %thead
     %tr
       %th
+      %th Category
       %th Title
       %th Draft
       %th Published at
@@ -19,6 +20,7 @@
     - items.each do |item|
       %tr{ id: "academy_course_#{item.id}" }
         %td= link_to "Sort Me", "#", class: "handle"
+        %td= item.category.title
         %td= item.title
         %td= item.draft
         %td= item.published_at

@@ -18,5 +18,8 @@ module Academy
     # Clean Capitions
     after_save(-> { clean_caption(thumb_box, :thumb_caption) })
     after_save(-> { clean_caption(cover_box, :cover_caption) })
+
+    # Relationships
+    belongs_to :category, optional: true, foreign_key: "academy_category_id"
   end
 end

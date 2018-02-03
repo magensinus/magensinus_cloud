@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20180129181602) do
   end
 
   create_table "academy_courses", force: :cascade do |t|
+    t.bigint "academy_category_id"
     t.string "slug"
     t.string "meta_title"
     t.text "meta_description"
@@ -61,6 +62,7 @@ ActiveRecord::Schema.define(version: 20180129181602) do
     t.integer "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["academy_category_id"], name: "index_academy_courses_on_academy_category_id"
     t.index ["slug"], name: "index_academy_courses_on_slug"
   end
 
@@ -278,6 +280,7 @@ ActiveRecord::Schema.define(version: 20180129181602) do
     t.index ["slug"], name: "index_wallet_categories_on_slug"
   end
 
+  add_foreign_key "academy_courses", "academy_categories"
   add_foreign_key "journal_assets", "journal_articles"
   add_foreign_key "wallet_assets", "wallet_categories"
 end

@@ -2,13 +2,14 @@
 
 module Academy
   class CoursesController < ApplicationController
-    before_action :set_academy_course, only: [:show, :edit, :update, :destroy]
+    before_action :set_academy_categories,  only: [:new, :create, :edit, :update]
+    before_action :set_academy_course,      only: [:show, :edit, :update, :destroy]
 
     # GET /academy/courses
     def index
-      @draft_academy_courses      ||= Academy::Course.draft
-      @scheduled_academy_courses  ||= Academy::Course.scheduled
-      @published_academy_courses  ||= Academy::Course.published
+      @draft_academy_courses      ||= Academy::Course.draft.order(academy_category_id: :asc)
+      @scheduled_academy_courses  ||= Academy::Course.scheduled.order(academy_category_id: :asc)
+      @published_academy_courses  ||= Academy::Course.published.order(academy_category_id: :asc)
     end
 
     # GET /academy/courses/BCjsHY4R
@@ -65,13 +66,18 @@ module Academy
     private
 
     # Use callbacks to share common setup or constraints between actions.
+    def set_academy_categories
+      @academy_categories ||= Academy::Category.all
+    end
+
     def set_academy_course
-      @academy_course = Academy::Course.find_by(slug: params[:id])
+      @academy_course ||= Academy::Course.find_by(slug: params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def academy_course_params
       params.require(:academy_course).permit(
+        :academy_category_id,
         :meta_title,
         :meta_description,
         :meta_image_box,
