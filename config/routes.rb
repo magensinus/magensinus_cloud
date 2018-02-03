@@ -44,7 +44,14 @@ Rails.application.routes.draw do
     root to: "dashboard#show"
     resource :dashboard, controller: :dashboard
     resources :categories, controller: :categories do
-      resources :assets, controller: :assets
+      collection do
+        patch :sortable
+      end
+      resources :assets, controller: :assets do
+        collection do
+          patch :sortable
+        end
+      end
     end
   end
 

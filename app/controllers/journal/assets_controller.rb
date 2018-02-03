@@ -5,40 +5,42 @@ module Journal
     before_action :journal_article
     before_action :journal_asset, only: [:show, :edit, :update, :destroy]
 
-    # GET /journal_assets
+    # GET /journal/articles/KItfGH7E/assets
     def index
       @journal_assets = @journal_article.assets.order(position: :asc)
     end
 
-    # GET /journal_assets/1
+    # GET /journal/articles/KItfGH7E/assets/BHdGTS6D
     def show
     end
 
-    # GET /journal_assets/1/edit
+    # GET /journal/articles/KItfGH7E/assets/BHdGTS6D/edit
     def edit
     end
 
-    # PATCH/PUT /journal_assets/1
+    # PATCH/PUT /journal/articles/KItfGH7E/assets/BHdGTS6D
     def update
       if @journal_asset.update(journal_asset_params)
-        redirect_to journal_article_assets_path(@journal_article), notice: "Journal asset was successfully updated."
+        flash[:notice] = "Successfully updated..."
+        redirect_to journal_article_assets_path(@journal_article)
       else
         render :edit
       end
     end
 
-    # DELETE /journal_assets/1
+    # DELETE /journal/articles/KItfGH7E/assets/BHdGTS6D
     def destroy
       @journal_asset.destroy
-      redirect_to journal_article_assets_path(@journal_article), notice: "Journal asset was successfully destroyed."
+      flash[:notice] = "Successfully destroyed..."
+      redirect_to journal_article_assets_path(@journal_article)
     end
 
-    # GET /journal_assets/new
+    # GET /journal/articles/KItfGH7E/assets/new
     def new
       @journal_asset = @journal_article.assets.new
     end
 
-    # POST /journal_assets
+    # POST /journal/articles/KItfGH7E/assets
     def create
       assets = journal_article.assets
       order = assets.pluck(:position).compact
@@ -47,7 +49,8 @@ module Journal
       @journal_asset.position = (order.min - 1)
 
       if @journal_asset.save
-        redirect_to journal_article_assets_path(@journal_article), notice: "Journal asset was successfully created."
+        flash[:notice] = "Successfully created..."
+        redirect_to journal_article_assets_path(@journal_article)
       else
         render :new
       end

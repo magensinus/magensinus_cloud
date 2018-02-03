@@ -4,50 +4,53 @@ module Journal
   class ArticlesController < ApplicationController
     before_action :set_journal_article, only: [:show, :edit, :update, :destroy]
 
-    # GET /journal_articles
+    # GET /journal/articles
     def index
-      @draft_journal_articles     = Journal::Article.draft
-      @scheduled_journal_articles = Journal::Article.scheduled
-      @published_journal_articles = Journal::Article.published
+      @draft_journal_articles     ||= Journal::Article.draft
+      @scheduled_journal_articles ||= Journal::Article.scheduled
+      @published_journal_articles ||= Journal::Article.published
     end
 
-    # GET /journal_articles/1
+    # GET /journal/articles/KItfGH7E
     def show
     end
 
-    # GET /journal_articles/1/edit
+    # GET /journal/articles/KItfGH7E/edit
     def edit
     end
 
-    # GET /journal_articles/new
-    def new
-      @journal_article = Journal::Article.new
-    end
-
-    # POST /journal_articles
-    def create
-      @journal_article = Journal::Article.new(journal_article_params)
-
-      if @journal_article.save
-        redirect_to @journal_article, notice: "Journal article was successfully created."
-      else
-        render :new
-      end
-    end
-
-    # PATCH/PUT /journal_articles/1
+    # PATCH/PUT /journal/articles/KItfGH7E
     def update
       if @journal_article.update(journal_article_params)
-        redirect_to @journal_article, notice: "Journal article was successfully updated."
+        flash[:notice] = "Successfully updated..."
+        redirect_to journal_article_path(@journal_article)
       else
         render :edit
       end
     end
 
-    # DELETE /journal_articles/1
+    # DELETE /journal/articles/KItfGH7E
     def destroy
       @journal_article.destroy
-      redirect_to journal_articles_path, notice: "Journal article was successfully destroyed."
+      flash[:notice] = "Successfully destroyed..."
+      redirect_to journal_articles_path
+    end
+
+    # GET /journal/articles/new
+    def new
+      @journal_article = Journal::Article.new
+    end
+
+    # POST /journal/articles
+    def create
+      @journal_article = Journal::Article.new(journal_article_params)
+
+      if @journal_article.save
+        flash[:notice] = "Successfully created..."
+        redirect_to journal_article_path(@journal_article)
+      else
+        render :new
+      end
     end
 
     private

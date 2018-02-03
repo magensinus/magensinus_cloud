@@ -4,47 +4,60 @@ module Wallet
   class CategoriesController < ApplicationController
     before_action :set_wallet_category, only: [:show, :edit, :update, :destroy]
 
-    # GET /wallet_categories
+    # GET /wallet/categories
     def index
       @wallet_categories = Wallet::Category.all
     end
 
-    # GET /wallet_categories/1
+    # GET /wallet/categories/N78jPa89
     def show
     end
 
-    # GET /wallet_categories/new
-    def new
-      @wallet_category = Wallet::Category.new
-    end
-
-    # GET /wallet_categories/1/edit
+    # GET /wallet/categories/N78jPa89/edit
     def edit
     end
 
-    # POST /wallet_categories
-    def create
-      @wallet_category = Wallet::Category.new(wallet_category_params)
-      if @wallet_category.save
-        redirect_to @wallet_category, notice: "Wallet category was successfully created."
-      else
-        render :new
-      end
-    end
-
-    # PATCH/PUT /wallet_categories/1
+    # PATCH/PUT /wallet/categories/N78jPa89
     def update
       if @wallet_category.update(wallet_category_params)
-        redirect_to @wallet_category, notice: "Wallet category was successfully updated."
+        flash[:notice] = "Successfully updated..."
+        redirect_to @wallet_category
       else
         render :edit
       end
     end
 
-    # DELETE /wallet_categories/1
+    # DELETE /wallet/categories/N78jPa89
     def destroy
       @wallet_category.destroy
-      redirect_to wallet_categories_url, notice: "Wallet category was successfully destroyed."
+      flash[:notice] = "Successfully destroyed..."
+      redirect_to wallet_categories_url
+    end
+
+    # GET /wallet/categories/new
+    def new
+      @wallet_category = Wallet::Category.new
+    end
+
+    # POST /wallet/categories
+    def create
+      order = Wallet::Category.pluck(:position).compact
+      @wallet_category = Wallet::Category.new(wallet_category_params)
+      order << 0
+      @wallet_category.position = (order.min - 1)
+
+      if @wallet_category.save
+        flash[:notice] = "Successfully created..."
+        redirect_to @wallet_category
+      else
+        render :new
+      end
+    end
+
+    # PATCH /academy/categories
+    def sortable
+      Wallet::Category.sort_position(params[:wallet_category])
+      head :ok
     end
 
     private
@@ -73,7 +86,8 @@ module Wallet
         :publish_at,
         :eml,
         :magestil,
-        :magensinus
+        :magensinus,
+        :position
       )
     end
   end

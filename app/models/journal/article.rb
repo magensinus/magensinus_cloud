@@ -7,6 +7,7 @@ module Journal
 
     # Concerns
     include Slug
+    include ScopeLists
     include CleanCaption
 
     # Relationships
@@ -20,10 +21,5 @@ module Journal
     # Clean Capitions
     after_save(-> { clean_caption(thumb_box, :thumb_caption) })
     after_save(-> { clean_caption(cover_box, :cover_caption) })
-
-    # Scoping
-    scope :draft, -> { where(draft: true) }
-    scope :scheduled, -> { where.not(draft: true).where("published_at > ?", Time.zone.now) }
-    scope :published, -> { where.not(draft: true).where("published_at <= ?", Time.zone.now) }
   end
 end

@@ -8,8 +8,29 @@ class SubscriptionsController < ApplicationController
     @subscriptions = Subscription.all
   end
 
-  # GET /subscriptions/1
+  # GET /subscriptions/836JkSt8U
   def show
+  end
+
+  # GET /subscriptions/836JkSt8U/edit
+  def edit
+  end
+
+  # PATCH/PUT /subscriptions/836JkSt8U
+  def update
+    if @subscription.update(subscription_params)
+      flash[:notice] = "Successfully updated..."
+      redirect_to subscription_path(@subscription)
+    else
+      render :edit
+    end
+  end
+
+  # DELETE /subscriptions/836JkSt8U
+  def destroy
+    @subscription.destroy
+    flash[:notice] = "Successfully destroyed..."
+    redirect_to subscriptions_path
   end
 
   # GET /subscriptions/new
@@ -17,34 +38,16 @@ class SubscriptionsController < ApplicationController
     @subscription = Subscription.new
   end
 
-  # GET /subscriptions/1/edit
-  def edit
-  end
-
   # POST /subscriptions
   def create
     @subscription = Subscription.new(subscription_params)
 
     if @subscription.save
-      redirect_to subscription_path(@subscription), notice: "Subscription email was successfully created."
+      flash[:notice] = "Successfully created..."
+      redirect_to subscription_path(@subscription)
     else
       render :new
     end
-  end
-
-  # PATCH/PUT /subscriptions/1
-  def update
-    if @subscription.update(subscription_params)
-      redirect_to subscription_path(@subscription), notice: "Subscription email was successfully updated."
-    else
-      render :edit
-    end
-  end
-
-  # DELETE /subscriptions/1
-  def destroy
-    @subscription.destroy
-    redirect_to subscriptions_path, notice: "Subscription email was successfully destroyed."
   end
 
   private

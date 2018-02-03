@@ -272,6 +272,7 @@ ActiveRecord::Schema.define(version: 20180129181602) do
     t.boolean "eml", default: false
     t.boolean "magestil", default: false
     t.boolean "magensinus", default: false
+    t.integer "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_wallet_categories_on_slug"

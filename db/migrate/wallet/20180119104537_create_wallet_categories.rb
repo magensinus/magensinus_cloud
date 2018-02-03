@@ -27,6 +27,8 @@ class CreateWalletCategories < ActiveRecord::Migration[5.1]
       t.boolean   :magestil, default: false
       t.boolean   :magensinus, default: false
 
+      t.integer     :position
+
       t.timestamps
     end
   end

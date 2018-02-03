@@ -1,0 +1,30 @@
+// Draft
+
+%table
+  %thead
+    %tr
+      %th
+      %th Title
+      %th Draft
+      %th Published at
+      %th Eml
+      %th Magestil
+      %th Magensinus
+      %th
+      %th
+      %th
+  %tbody.sortable{ "data-url" => sortable_academy_courses_path }
+    %tr
+      %h3.left Draft
+    - items.each do |item|
+      %tr{ id: "academy_course_#{item.id}" }
+        %td= link_to "Sort Me", "#", class: "handle"
+        %td= item.title
+        %td= item.draft
+        %td= item.published_at
+        %td= item.eml
+        %td= item.magestil
+        %td= item.magensinus
+        %td= link_to "Show", academy_course_path(item)
+        %td= link_to "Edit", edit_academy_course_path(item)
+        %td= link_to "Destroy", academy_course_path(item), method: :delete, data: { confirm: "Are you sure?" }

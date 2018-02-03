@@ -1,0 +1,16 @@
+= form_with model: @academy_category, local: true do |f|
+  = render "lib/components/errors", object: @academy_category
+  = f.hidden_field :cover, value: true
+  = f.hidden_field :cover_box_cache
+  .field
+    = f.label :cover_box
+    = f.file_field :cover_box unless @academy_category.cover_box.presence
+  - if @academy_category.cover_box.presence
+    .field
+      = f.label :remove_cover_box
+      = f.check_box :remove_cover_box
+  .field
+    = f.label :cover_caption
+    = f.text_field :cover_caption
+  .actions
+    = f.submit "Save"

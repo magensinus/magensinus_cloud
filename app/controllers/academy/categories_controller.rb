@@ -4,25 +4,42 @@ module Academy
   class CategoriesController < ApplicationController
     before_action :set_academy_category, only: [:show, :edit, :update, :destroy]
 
-    # GET /academy_categories
+    # GET /academy/categories
     def index
-      @academy_categories = Academy::Category.all
+      @academy_categories ||= Academy::Category.all
     end
 
-    # GET /academy_categories/1
+    # GET /academy/categories/AXuyFD1I
     def show
     end
 
-    # GET /academy_categories/new
+    # GET /academy/categories/AXuyFD1I/edit
+    def edit
+    end
+
+    # PATCH/PUT /academy/categories/AXuyFD1I
+    def update
+      if @academy_category.update(academy_category_params)
+        flash[:notice] = "Successfully updated..."
+        redirect_to academy_category_path(@academy_category)
+      else
+        render :edit
+      end
+    end
+
+    # DELETE /academy/categories/AXuyFD1I
+    def destroy
+      @academy_category.destroy
+      flash[:notice] = "Successfully destroyed..."
+      redirect_to academy_categories_path
+    end
+
+    # GET /academy/categories/new
     def new
       @academy_category = Academy::Category.new
     end
 
-    # GET /academy_categories/1/edit
-    def edit
-    end
-
-    # POST /academy_categories
+    # POST /academy/categories
     def create
       order = Academy::Category.pluck(:position).compact
       @academy_category = Academy::Category.new(academy_category_params)
@@ -30,25 +47,17 @@ module Academy
       @academy_category.position = (order.min - 1)
 
       if @academy_category.save
-        redirect_to @academy_category, notice: 'Academy category was successfully created.'
+        flash[:notice] = "Successfully created..."
+        redirect_to academy_category_path(@academy_category)
       else
         render :new
       end
     end
 
-    # PATCH/PUT /academy_categories/1
-    def update
-      if @academy_category.update(academy_category_params)
-        redirect_to @academy_category, notice: 'Academy category was successfully updated.'
-      else
-        render :edit
-      end
-    end
-
-    # DELETE /academy_categories/1
-    def destroy
-      @academy_category.destroy
-      redirect_to academy_categories_url, notice: 'Academy category was successfully destroyed.'
+    # PATCH /academy/categories
+    def sortable
+      Academy::Category.sort_position(params[:academy_category])
+      head :ok
     end
 
     private

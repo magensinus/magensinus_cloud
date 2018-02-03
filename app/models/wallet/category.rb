@@ -7,6 +7,7 @@ module Wallet
 
     # Concerns
     include Slug
+    include SortablePosition
 
     # Relationships
     has_many :assets, dependent: :destroy, foreign_key: "wallet_category_id", inverse_of: false

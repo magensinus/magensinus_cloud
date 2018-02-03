@@ -1,7 +1,19 @@
 %h1 Editing academy_category
 
-= render 'form'
+- if params_thumb
+  = render "thumb"
+- elsif params_cover
+  = render "cover"
+- else
+  = render "form"
 
-= link_to 'Show', @academy_category
+= link_to "Thumb", edit_academy_category_path(@academy_category, thumb: "true")
 \|
-= link_to 'Back', academy_categories_path
+= link_to "Cover", edit_academy_category_path(@academy_category, cover: "true")
+\|
+= link_to "Show", @academy_category
+\|
+- if params_thumb || params_cover
+  = link_to "Back", edit_academy_category_path(@academy_category)
+- else
+  = link_to "Back", academy_categories_path

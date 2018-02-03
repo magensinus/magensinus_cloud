@@ -4,25 +4,44 @@ module Academy
   class CoursesController < ApplicationController
     before_action :set_academy_course, only: [:show, :edit, :update, :destroy]
 
-    # GET /academy_courses
+    # GET /academy/courses
     def index
-      @academy_courses = Academy::Course.all
+      @draft_academy_courses      ||= Academy::Course.draft
+      @scheduled_academy_courses  ||= Academy::Course.scheduled
+      @published_academy_courses  ||= Academy::Course.published
     end
 
-    # GET /academy_courses/1
+    # GET /academy/courses/BCjsHY4R
     def show
     end
 
-    # GET /academy_courses/new
+    # GET /academy/courses/BCjsHY4R/edit
+    def edit
+    end
+
+    # PATCH/PUT /academy/courses/BCjsHY4R
+    def update
+      if @academy_course.update(academy_course_params)
+        flash[:notice] = "Successfully updated..."
+        redirect_to academy_course_path(@academy_course)
+      else
+        render :edit
+      end
+    end
+
+    # DELETE /academy/courses/BCjsHY4R
+    def destroy
+      @academy_course.destroy
+      flash[:notice] = "Successfully destroyed..."
+      redirect_to academy_courses_path
+    end
+
+    # GET /academy/courses/new
     def new
       @academy_course = Academy::Course.new
     end
 
-    # GET /academy_courses/1/edit
-    def edit
-    end
-
-    # POST /academy_courses
+    # POST /academy/courses
     def create
       order = Academy::Course.pluck(:position).compact
       @academy_course = Academy::Course.new(academy_course_params)
@@ -30,28 +49,14 @@ module Academy
       @academy_course.position = (order.min - 1)
 
       if @academy_course.save
-        redirect_to @academy_course, notice: "Academy course was successfully created."
+        flash[:notice] = "Successfully created..."
+        redirect_to academy_course_path(@academy_course)
       else
         render :new
       end
     end
 
-    # PATCH/PUT /academy_courses/1
-    def update
-      if @academy_course.update(academy_course_params)
-        redirect_to @academy_course, notice: "Academy course was successfully updated."
-      else
-        render :edit
-      end
-    end
-
-    # DELETE /academy_courses/1
-    # DELETE /academy_courses/1.json
-    def destroy
-      @academy_course.destroy
-      redirect_to academy_courses_url, notice: "Academy course was successfully destroyed."
-    end
-
+    # PATCH /academy/courses
     def sortable
       Academy::Course.sort_position(params[:academy_course])
       head :ok

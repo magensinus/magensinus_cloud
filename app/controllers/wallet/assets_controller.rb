@@ -3,27 +3,44 @@
 module Wallet
   class AssetsController < ApplicationController
     before_action :wallet_category
-    before_action :wallet_asset, only: [:show, :edit, :update, :destroy]
+    before_action :wallet_asset, only: [:show, :edit, :update, :destroy, :sortable]
 
-    # GET /wallet_assets
+    # GET /wallet/categories/N78jPa89/assets
     def index
       @wallet_assets = @wallet_category.assets.all
     end
 
-    # GET /wallet_assets/1
+    # GET /wallet/categories/N78jPa89/assets/yUj16K389
     def show
     end
 
-    # GET /wallet_assets/new
+    # GET /wallet/categories/N78jPa89/assets/yUj16K389/edit
+    def edit
+    end
+
+    # PATCH/PUT /wallet/categories/N78jPa89/assets/yUj16K389
+    def update
+      if @wallet_asset.update(wallet_asset_params)
+        flash[:notice] = "Successfully updated..."
+        redirect_to wallet_category_asset_path(@wallet_category, @wallet_asset)
+      else
+        render :edit
+      end
+    end
+
+    # DELETE /wallet/categories/N78jPa89/assets/yUj16K389
+    def destroy
+      @wallet_asset.destroy
+      flash[:notice] = "Successfully destroyed..."
+      redirect_to wallet_category_assets_path(@wallet_category)
+    end
+
+    # GET /wallet/categories/N78jPa89/assets/new
     def new
       @wallet_asset = @wallet_category.assets.new
     end
 
-    # GET /wallet_assets/1/edit
-    def edit
-    end
-
-    # POST /wallet_assets
+    # POST /wallet/categories/N78jPa89/assets
     def create
       assets = wallet_category.assets
       order = assets.pluck(:position).compact
@@ -32,25 +49,17 @@ module Wallet
       @wallet_asset.position = (order.min - 1)
 
       if @wallet_asset.save
-        redirect_to wallet_category_asset_path(@wallet_category, @wallet_asset), notice: "Wallet asset was successfully created."
+        flash[:notice] = "Successfully created..."
+        redirect_to wallet_category_asset_path(@wallet_category, @wallet_asset)
       else
         render :new
       end
     end
 
-    # PATCH/PUT /wallet_assets/1
-    def update
-      if @wallet_asset.update(wallet_asset_params)
-        redirect_to wallet_category_asset_path(@wallet_category, @wallet_asset), notice: "Wallet asset was successfully updated."
-      else
-        render :edit
-      end
-    end
-
-    # DELETE /wallet_assets/1
-    def destroy
-      @wallet_asset.destroy
-      redirect_to wallet_category_assets_path(@wallet_category), notice: "Wallet asset was successfully destroyed."
+    # PATCH /academy/categories
+    def sortable
+      @wallet_category.assets.sort_position(params[:wallet_asset])
+      head :ok
     end
 
     private

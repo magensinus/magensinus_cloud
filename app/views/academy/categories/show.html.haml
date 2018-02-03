@@ -1,9 +1,6 @@
 %p#notice= notice
 
 %p
-  %b Slug:
-  = @academy_category.slug
-%p
   %b Meta title:
   = @academy_category.meta_title
 %p
@@ -65,6 +62,6 @@
   %b Position:
   = @academy_category.position
 
-= link_to 'Edit', edit_academy_category_path(@academy_category)
+= link_to "Edit", edit_academy_category_path(@academy_category)
 \|
-= link_to 'Back', academy_categories_path
+= link_to "Back", academy_categories_path
