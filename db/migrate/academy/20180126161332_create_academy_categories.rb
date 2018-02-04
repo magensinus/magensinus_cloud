@@ -29,6 +29,9 @@ class CreateAcademyCategories < ActiveRecord::Migration[5.1]
 
       t.integer   :position
 
+      t.string    :type, default: "basic" # "extended"
+      t.string    :email
+
       t.timestamps
     end
   end

@@ -21,5 +21,8 @@ module Academy
     # Relationships
     has_many :courses, dependent: :destroy, foreign_key: "academy_category_id"
     accepts_nested_attributes_for :courses
+
+    has_many :enrollments, dependent: :destroy, foreign_key: "academy_category_id"
+    accepts_nested_attributes_for :enrollments
   end
 end
