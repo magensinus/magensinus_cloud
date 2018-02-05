@@ -2,24 +2,32 @@
 
 module Academy
   class CoursesController < ApplicationController
-    before_action :set_academy_categories,  only: [:new, :create, :edit, :update]
-    before_action :set_academy_course,      only: [:show, :edit, :update, :destroy]
+    before_action :academy_categories,  only: [:new, :create, :edit, :update]
+    before_action :set_academy_course,  only: [:show, :edit, :update, :destroy]
 
+    # Index
+    # -----
     # GET /academy/courses
     def index
-      @draft_academy_courses      ||= Academy::Course.draft.order(academy_category_id: :asc)
-      @scheduled_academy_courses  ||= Academy::Course.scheduled.order(academy_category_id: :asc)
-      @published_academy_courses  ||= Academy::Course.published.order(academy_category_id: :asc)
+      @draft_academy_courses      ||= Academy::Course.draft.includes(:category).order(academy_category_id: :asc)
+      @scheduled_academy_courses  ||= Academy::Course.scheduled.includes(:category).order(academy_category_id: :asc)
+      @published_academy_courses  ||= Academy::Course.published.includes(:category).order(academy_category_id: :asc)
     end
 
+    # Show
+    # ----
     # GET /academy/courses/BCjsHY4R
     def show
     end
 
+    # Edit
+    # ----
     # GET /academy/courses/BCjsHY4R/edit
     def edit
     end
 
+    # Update
+    # ------
     # PATCH/PUT /academy/courses/BCjsHY4R
     def update
       if @academy_course.update(academy_course_params)
@@ -30,6 +38,8 @@ module Academy
       end
     end
 
+    # Destroy
+    # -------
     # DELETE /academy/courses/BCjsHY4R
     def destroy
       @academy_course.destroy
@@ -37,11 +47,15 @@ module Academy
       redirect_to academy_courses_path
     end
 
+    # New
+    # ---
     # GET /academy/courses/new
     def new
       @academy_course = Academy::Course.new
     end
 
+    # Create
+    # ------
     # POST /academy/courses
     def create
       order = Academy::Course.pluck(:position).compact
@@ -57,6 +71,8 @@ module Academy
       end
     end
 
+    # Sortable
+    # --------
     # PATCH /academy/courses
     def sortable
       Academy::Course.sort_position(params[:academy_course])
@@ -65,16 +81,17 @@ module Academy
 
     private
 
-    # Use callbacks to share common setup or constraints between actions.
-    def set_academy_categories
+    # Academy categories
+    def academy_categories
       @academy_categories ||= Academy::Category.all
     end
 
+    # Academy course
     def set_academy_course
       @academy_course ||= Academy::Course.find_by(slug: params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    # Whitelist parameters
     def academy_course_params
       params.require(:academy_course).permit(
         :academy_category_id,

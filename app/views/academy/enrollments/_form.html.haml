@@ -1,5 +1,9 @@
-= form_for [@academy_category, @academy_enrollment], url: academy_enrollment_form_url do |f|
-  = hidden_field :academy_category_id, value: @academy_category.id
+= form_with model: [@academy_category, @academy_enrollment], url: academy_enrollment_form_url, local: true do |f|
+  = render "lib/components/errors", object: @academy_enrollment
+  = f.hidden_field :academy_category_id, value: @academy_category.id
+  .field
+    = f.label :courses
+    = f.collection_check_boxes :course_ids, @academy_courses, :id, :title
   .field
     = f.label :email
     = f.text_field :email

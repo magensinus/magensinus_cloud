@@ -5,19 +5,27 @@ module Wallet
     before_action :wallet_category
     before_action :wallet_asset, only: [:show, :edit, :update, :destroy, :sortable]
 
+    # Index
+    # -----
     # GET /wallet/categories/N78jPa89/assets
     def index
       @wallet_assets = @wallet_category.assets.all
     end
 
+    # Show
+    # ----
     # GET /wallet/categories/N78jPa89/assets/yUj16K389
     def show
     end
 
+    # Edit
+    # ----
     # GET /wallet/categories/N78jPa89/assets/yUj16K389/edit
     def edit
     end
 
+    # Update
+    # ------
     # PATCH/PUT /wallet/categories/N78jPa89/assets/yUj16K389
     def update
       if @wallet_asset.update(wallet_asset_params)
@@ -28,6 +36,8 @@ module Wallet
       end
     end
 
+    # Destroy
+    # -------
     # DELETE /wallet/categories/N78jPa89/assets/yUj16K389
     def destroy
       @wallet_asset.destroy
@@ -35,11 +45,15 @@ module Wallet
       redirect_to wallet_category_assets_path(@wallet_category)
     end
 
+    # New
+    # ---
     # GET /wallet/categories/N78jPa89/assets/new
     def new
       @wallet_asset = @wallet_category.assets.new
     end
 
+    # Create
+    # ------
     # POST /wallet/categories/N78jPa89/assets
     def create
       assets = wallet_category.assets
@@ -56,6 +70,8 @@ module Wallet
       end
     end
 
+    # Sortable
+    # --------
     # PATCH /academy/categories
     def sortable
       @wallet_category.assets.sort_position(params[:wallet_asset])
@@ -64,16 +80,17 @@ module Wallet
 
     private
 
-    # Use callbacks to share common setup or constraints between actions.
+    # Wallet category
     def wallet_category
       @wallet_category = Wallet::Category.find_by(slug: params[:category_id])
     end
 
+    # Wallet asset
     def wallet_asset
       @wallet_asset = @wallet_category.assets.find_by(slug: params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    # Whitelist parameters
     def wallet_asset_params
       params.require(:wallet_asset).permit(
         :wallet_category_id,

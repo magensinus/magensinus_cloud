@@ -2,21 +2,29 @@
 
 module Academy
   class CategoriesController < ApplicationController
-    before_action :set_academy_category, only: [:show, :edit, :update, :destroy]
+    before_action :academy_category, only: [:show, :edit, :update, :destroy]
 
+    # Index
+    # -----
     # GET /academy/categories
     def index
       @academy_categories ||= Academy::Category.all
     end
 
+    # Show
+    # ----
     # GET /academy/categories/AXuyFD1I
     def show
     end
 
+    # Edit
+    # ----
     # GET /academy/categories/AXuyFD1I/edit
     def edit
     end
 
+    # Update
+    # ------
     # PATCH/PUT /academy/categories/AXuyFD1I
     def update
       if @academy_category.update(academy_category_params)
@@ -27,6 +35,8 @@ module Academy
       end
     end
 
+    # Destroy
+    # -------
     # DELETE /academy/categories/AXuyFD1I
     def destroy
       @academy_category.destroy
@@ -34,11 +44,15 @@ module Academy
       redirect_to academy_categories_path
     end
 
+    # New
+    # ---
     # GET /academy/categories/new
     def new
       @academy_category = Academy::Category.new
     end
 
+    # Create
+    # ------
     # POST /academy/categories
     def create
       order = Academy::Category.pluck(:position).compact
@@ -54,6 +68,8 @@ module Academy
       end
     end
 
+    # Sortable
+    # --------
     # PATCH /academy/categories
     def sortable
       Academy::Category.sort_position(params[:academy_category])
@@ -62,12 +78,12 @@ module Academy
 
     private
 
-    # Use callbacks to share common setup or constraints between actions.
-    def set_academy_category
+    # Academy category
+    def academy_category
       @academy_category = Academy::Category.find_by(slug: params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    # Whitelist parameters
     def academy_category_params
       params.require(:academy_category).permit(
         :meta_title,

@@ -61,6 +61,14 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
+  # Quiet Assets turns off Rails asset pipeline log
+  # gem "quiet_assets", "~> 1.1"
+  # Provides a better error page for Rails and other Rack apps
+  gem "better_errors", "~> 2.4"
+  # Retrieve the binding of a method's caller
+  gem "binding_of_caller", "~> 0.8.0"
+  # Kill N+1 queries and unused eager loading
+  gem "bullet", "~> 5.7"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

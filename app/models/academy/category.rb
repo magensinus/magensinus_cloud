@@ -3,26 +3,40 @@
 module Academy
   class Category < ApplicationRecord
     # Table name
+    # ----------
+    # Academy Categories
     self.table_name = "academy_categories"
 
     # Concerns
+    # --------
+    # Slug
     include Slug
+    # Clean caption
     include CleanCaption
+    # Sortable position
     include SortablePosition
 
     # Uploaders
+    # ---------
+    # Thumb
     mount_uploader :thumb_box, Academy::ThumbUploader
+    # Cover
     mount_uploader :cover_box, Academy::CoverUploader
 
     # Clean Capitions
+    # ---------------
+    # Thumb
     after_save(-> { clean_caption(thumb_box, :thumb_caption) })
+    # Cover
     after_save(-> { clean_caption(cover_box, :cover_caption) })
 
     # Relationships
-    has_many :courses, dependent: :destroy, foreign_key: "academy_category_id"
+    # -------------
+    # Courses
+    has_many :courses, dependent: :destroy, foreign_key: "academy_category_id", inverse_of: false
     accepts_nested_attributes_for :courses
-
-    has_many :enrollments, dependent: :destroy, foreign_key: "academy_category_id"
+    # Enrollments
+    has_many :enrollments, dependent: :destroy, foreign_key: "academy_category_id", inverse_of: false
     accepts_nested_attributes_for :enrollments
   end
 end

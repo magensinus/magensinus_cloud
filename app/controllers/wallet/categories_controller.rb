@@ -2,21 +2,29 @@
 
 module Wallet
   class CategoriesController < ApplicationController
-    before_action :set_wallet_category, only: [:show, :edit, :update, :destroy]
+    before_action :wallet_category, only: [:show, :edit, :update, :destroy]
 
+    # Index
+    # -----
     # GET /wallet/categories
     def index
       @wallet_categories = Wallet::Category.all
     end
 
+    # Show
+    # ----
     # GET /wallet/categories/N78jPa89
     def show
     end
 
+    # Edit
+    # ----
     # GET /wallet/categories/N78jPa89/edit
     def edit
     end
 
+    # Update
+    # ------
     # PATCH/PUT /wallet/categories/N78jPa89
     def update
       if @wallet_category.update(wallet_category_params)
@@ -27,6 +35,8 @@ module Wallet
       end
     end
 
+    # Destroy
+    # -------
     # DELETE /wallet/categories/N78jPa89
     def destroy
       @wallet_category.destroy
@@ -34,11 +44,15 @@ module Wallet
       redirect_to wallet_categories_url
     end
 
+    # New
+    # ---
     # GET /wallet/categories/new
     def new
       @wallet_category = Wallet::Category.new
     end
 
+    # Create
+    # ------
     # POST /wallet/categories
     def create
       order = Wallet::Category.pluck(:position).compact
@@ -54,6 +68,8 @@ module Wallet
       end
     end
 
+    # Sortable
+    # --------
     # PATCH /academy/categories
     def sortable
       Wallet::Category.sort_position(params[:wallet_category])
@@ -62,12 +78,12 @@ module Wallet
 
     private
 
-    # Use callbacks to share common setup or constraints between actions.
-    def set_wallet_category
+    # Wallet category
+    def wallet_category
       @wallet_category = Wallet::Category.find_by(slug: params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    # Whitelist parameters
     def wallet_category_params
       params.require(:wallet_category).permit(
         :meta_title,

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180203225856) do
+ActiveRecord::Schema.define(version: 20180204103429) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 20180203225856) do
     t.boolean "magestil", default: false
     t.boolean "magensinus", default: false
     t.integer "position"
+    t.string "form_type", default: "basic"
+    t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_academy_categories_on_slug"
@@ -64,6 +66,17 @@ ActiveRecord::Schema.define(version: 20180203225856) do
     t.datetime "updated_at", null: false
     t.index ["academy_category_id"], name: "index_academy_courses_on_academy_category_id"
     t.index ["slug"], name: "index_academy_courses_on_slug"
+  end
+
+  create_table "academy_enrollment_courses", force: :cascade do |t|
+    t.string "slug"
+    t.integer "academy_enrollment_id"
+    t.integer "academy_course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["academy_course_id"], name: "index_academy_enrollment_courses_on_academy_course_id"
+    t.index ["academy_enrollment_id"], name: "index_academy_enrollment_courses_on_academy_enrollment_id"
+    t.index ["slug"], name: "index_academy_enrollment_courses_on_slug"
   end
 
   create_table "academy_enrollments", force: :cascade do |t|

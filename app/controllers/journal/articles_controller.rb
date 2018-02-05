@@ -2,8 +2,10 @@
 
 module Journal
   class ArticlesController < ApplicationController
-    before_action :set_journal_article, only: [:show, :edit, :update, :destroy]
+    before_action :journal_article, only: [:show, :edit, :update, :destroy]
 
+    # Index
+    # -----
     # GET /journal/articles
     def index
       @draft_journal_articles     ||= Journal::Article.draft
@@ -11,14 +13,20 @@ module Journal
       @published_journal_articles ||= Journal::Article.published
     end
 
+    # Show
+    # ----
     # GET /journal/articles/KItfGH7E
     def show
     end
 
+    # Edit
+    # ----
     # GET /journal/articles/KItfGH7E/edit
     def edit
     end
 
+    # Update
+    # ------
     # PATCH/PUT /journal/articles/KItfGH7E
     def update
       if @journal_article.update(journal_article_params)
@@ -29,6 +37,8 @@ module Journal
       end
     end
 
+    # Destroy
+    # -------
     # DELETE /journal/articles/KItfGH7E
     def destroy
       @journal_article.destroy
@@ -36,11 +46,15 @@ module Journal
       redirect_to journal_articles_path
     end
 
+    # New
+    # ---
     # GET /journal/articles/new
     def new
       @journal_article = Journal::Article.new
     end
 
+    # Create
+    # ------
     # POST /journal/articles
     def create
       @journal_article = Journal::Article.new(journal_article_params)
@@ -55,12 +69,12 @@ module Journal
 
     private
 
-    # Use callbacks to share common setup or constraints between actions.
-    def set_journal_article
+    # Journal article
+    def journal_article
       @journal_article = Journal::Article.find_by(slug: params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    # Whitelist parameters
     def journal_article_params
       params.require(:journal_article).permit(
         :meta_title,

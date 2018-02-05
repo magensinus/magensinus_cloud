@@ -17,6 +17,7 @@ module CleanVideo
       video_box.to_s.gsub(%r{.*[\/]|.*[.*\=]}, "")
     end
 
+    # Check if video
     def check_if_video?
       video == true if has_attribute? :video
     end

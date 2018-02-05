@@ -11,6 +11,6 @@ module Wallet
 
     # Relationships
     has_many :assets, dependent: :destroy, foreign_key: "wallet_category_id", inverse_of: false
-    accepts_nested_attributes_for :assets, allow_destroy: true
+    accepts_nested_attributes_for :assets
   end
 end

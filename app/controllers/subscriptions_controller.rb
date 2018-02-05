@@ -1,21 +1,29 @@
 # frozen_string_literal: true
 
 class SubscriptionsController < ApplicationController
-  before_action :set_subscription, only: [:show, :edit, :update, :destroy]
+  before_action :subscription, only: [:show, :edit, :update, :destroy]
 
+  # Index
+  # -----
   # GET /subscriptions
   def index
     @subscriptions = Subscription.all
   end
 
+  # Show
+  # ----
   # GET /subscriptions/836JkSt8U
   def show
   end
 
+  # Edit
+  # ----
   # GET /subscriptions/836JkSt8U/edit
   def edit
   end
 
+  # Update
+  # ------
   # PATCH/PUT /subscriptions/836JkSt8U
   def update
     if @subscription.update(subscription_params)
@@ -26,6 +34,8 @@ class SubscriptionsController < ApplicationController
     end
   end
 
+  # Destroy
+  # -------
   # DELETE /subscriptions/836JkSt8U
   def destroy
     @subscription.destroy
@@ -33,11 +43,15 @@ class SubscriptionsController < ApplicationController
     redirect_to subscriptions_path
   end
 
+  # New
+  # ---
   # GET /subscriptions/new
   def new
     @subscription = Subscription.new
   end
 
+  # Create
+  # ------
   # POST /subscriptions
   def create
     @subscription = Subscription.new(subscription_params)
@@ -52,12 +66,12 @@ class SubscriptionsController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
-  def set_subscription
+  # Subscription
+  def subscription
     @subscription = Subscription.find_by(slug: params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
+  # Whitelist parameters
   def subscription_params
     params.require(:subscription).permit(
       :email,

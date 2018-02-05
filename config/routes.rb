@@ -39,6 +39,7 @@ Rails.application.routes.draw do
         patch :sortable
       end
     end
+    resources :enrollments, controller: :enrollments
   end
 
   namespace :wallet do

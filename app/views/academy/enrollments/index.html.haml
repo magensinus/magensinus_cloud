@@ -5,19 +5,22 @@
     %tr
       %th Academy category
       %th Email
-      %th
-      %th
-      %th
+      - if params[:category_id]
+        %th
+        %th
+        %th
 
   %tbody
     - @academy_enrollments.each do |academy_enrollment|
       %tr
         %td= academy_enrollment.category.id
         %td= academy_enrollment.email
-        %td= link_to "Show", academy_category_enrollment_path(@academy_category, academy_enrollment)
-        %td= link_to "Edit", edit_academy_category_enrollment_path(@academy_category, academy_enrollment)
-        %td= link_to "Destroy", academy_category_enrollment_path(@academy_category, academy_enrollment), method: :delete, data: { confirm: "Are you sure?" }
+        - if params[:category_id]
+          %td= link_to "Show", academy_category_enrollment_path(@academy_category, academy_enrollment)
+          %td= link_to "Edit", edit_academy_category_enrollment_path(@academy_category, academy_enrollment)
+          %td= link_to "Destroy", academy_category_enrollment_path(@academy_category, academy_enrollment), method: :delete, data: { confirm: "Are you sure?" }
 
-%br
-
-= link_to "New Academy enrollment", new_academy_category_enrollment_path(@academy_category)
+- if params[:category_id]
+  = link_to "New Academy enrollment", new_academy_category_enrollment_path(@academy_category)
+- unless params[:category_id]
+  = link_to "Academy Dashboard", academy_root_path

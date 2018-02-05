@@ -2,10 +2,13 @@
 
 %p
   %b Academy category:
-  = @academy_enrollment.academy_category
+  = @academy_enrollment.category.title
 %p
   %b Email:
   = @academy_enrollment.email
+
+- @academy_courses.each do |item|
+  = item.course.title
 
 = link_to "Edit", edit_academy_category_enrollment_path(@academy_category, @academy_enrollment)
 \|

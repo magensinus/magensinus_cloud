@@ -2,22 +2,36 @@
 
 module Academy
   class EnrollmentsController < ApplicationController
-    before_action :set_academy_category
-    before_action :set_academy_enrollment, only: [:show, :edit, :update, :destroy]
+    before_action :academy_category
+    before_action :academy_enrollment, only: [:show, :edit, :update, :destroy]
 
+    # Index
+    # -----
     # GET /academy/enrollments
     def index
-      @academy_enrollments = @academy_category.enrollments.all
+      @academy_enrollments ||=
+        if params[:category_id]
+          @academy_category.enrollments.includes(:category).all
+        else
+          Academy::Enrollment.all
+        end
     end
 
+    # Show
+    # ----
     # GET /academy/enrollments/wrTyhg67Ty
     def show
+      @academy_courses ||= @academy_enrollment.enrollment_courses.includes(:course).all
     end
 
+    # Edit
+    # ----
     # GET /academy/enrollments/wrTyhg67Ty/edit
     def edit
     end
 
+    # Update
+    # ------
     # PATCH/PUT /academy/enrollments/wrTyhg67Ty
     def update
       if @academy_enrollment.update(academy_enrollment_params)
@@ -28,6 +42,8 @@ module Academy
       end
     end
 
+    # Destroy
+    # -------
     # DELETE /academy/enrollments/wrTyhg67Ty
     def destroy
       @academy_enrollment.destroy
@@ -35,13 +51,19 @@ module Academy
       redirect_to academy_category_enrollments_path(@academy_category)
     end
 
+    # New
+    # ---
     # GET /academy/enrollments/new
     def new
+      @academy_courses = @academy_category.courses.all
       @academy_enrollment = @academy_category.enrollments.new
     end
 
+    # Create
+    # ------
     # POST /academy/enrollments
     def create
+      @academy_courses = @academy_category.courses.all
       @academy_enrollment = @academy_category.enrollments.new(academy_enrollment_params)
 
       if @academy_enrollment.save
@@ -54,20 +76,22 @@ module Academy
 
     private
 
-    # Use callbacks to share common setup or constraints between actions.
-    def set_academy_category
+    # Academy category
+    def academy_category
       @academy_category = Academy::Category.find_by(slug: params[:category_id])
     end
 
-    def set_academy_enrollment
+    # Academy enrollment
+    def academy_enrollment
       @academy_enrollment = @academy_category.enrollments.find_by(slug: params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    # Whitelist parameters
     def academy_enrollment_params
       params.require(:academy_enrollment).permit(
         :academy_category_id,
-        :email
+        :email,
+        course_ids: []
       )
     end
   end

@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 class DashboardController < ApplicationController
-  # Root
+  # Show
+  # ----
+  # GET /
   def show
   end
 end

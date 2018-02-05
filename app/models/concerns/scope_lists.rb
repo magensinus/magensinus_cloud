@@ -3,7 +3,7 @@
 module ScopeLists
   extend ActiveSupport::Concern
   included do
-    # Scoping
+    # Scope lists
     scope :draft, -> { where(draft: true) }
     scope :scheduled, -> { where(draft: false).where("published_at > ?", Time.zone.now) }
     scope :published, -> { where(draft: false).where("published_at <= ?", Time.zone.now) }
