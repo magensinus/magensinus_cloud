@@ -1,8 +1,10 @@
+// Index
+
 %h1 Listing journal_articles
 
-= render "draft", items: @draft_journal_articles
-= render "scheduled", items: @scheduled_journal_articles
-= render "published", items: @published_journal_articles
+= render "unpublished", items: @unpublished_journal_articles
+= render "scheduled",   items: @scheduled_journal_articles
+= render "published",   items: @published_journal_articles
 
 = link_to "New Journal article", new_journal_article_path
 \|

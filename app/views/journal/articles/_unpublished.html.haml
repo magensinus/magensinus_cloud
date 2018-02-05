@@ -1,10 +1,10 @@
-// Draft
+// Unpublished
 
 %table
   %thead
     %tr
       %th Title
-      %th Draft
+      %th Published
       %th Published at
       %th Eml
       %th Magestil
@@ -13,11 +13,11 @@
       %th
       %th
   %tbody
-    %h3 Draft
-    - @draft_journal_articles.each do |journal_article|
+    %h3 Unpublished
+    - @unpublished_journal_articles.each do |journal_article|
       %tr
         %td= journal_article.title
-        %td= journal_article.draft
+        %td= journal_article.published
         %td= journal_article.published_at
         %td= journal_article.eml
         %td= journal_article.magestil

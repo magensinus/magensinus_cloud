@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 20180204103429) do
     t.boolean "cover", default: false
     t.string "cover_box"
     t.string "cover_caption"
-    t.boolean "draft", default: true
+    t.boolean "published", default: true
     t.datetime "published_at"
     t.boolean "eml", default: false
     t.boolean "magestil", default: false
@@ -69,9 +69,9 @@ ActiveRecord::Schema.define(version: 20180204103429) do
   end
 
   create_table "academy_enrollment_courses", force: :cascade do |t|
-    t.string "slug"
     t.integer "academy_enrollment_id"
     t.integer "academy_course_id"
+    t.string "slug"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["academy_course_id"], name: "index_academy_enrollment_courses_on_academy_course_id"
@@ -103,7 +103,7 @@ ActiveRecord::Schema.define(version: 20180204103429) do
     t.boolean "cover", default: false
     t.string "cover_box"
     t.string "cover_caption"
-    t.boolean "draft", default: true
+    t.boolean "published", default: true
     t.datetime "published_at"
     t.boolean "eml", default: false
     t.boolean "magestil", default: false

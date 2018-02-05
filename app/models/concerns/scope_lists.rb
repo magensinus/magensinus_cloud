@@ -4,8 +4,8 @@ module ScopeLists
   extend ActiveSupport::Concern
   included do
     # Scope lists
-    scope :draft, -> { where(draft: true) }
-    scope :scheduled, -> { where(draft: false).where("published_at > ?", Time.zone.now) }
-    scope :published, -> { where(draft: false).where("published_at <= ?", Time.zone.now) }
+    scope :scheduled,   -> { where(published: true).where("published_at > ?", Time.zone.now) }
+    scope :published,   -> { where(published: true).where("published_at <= ?", Time.zone.now) }
+    scope :unpublished, -> { where(published: false) }
   end
 end

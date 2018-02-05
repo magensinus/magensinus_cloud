@@ -9,9 +9,9 @@ module Academy
     # -----
     # GET /academy/courses
     def index
-      @draft_academy_courses      ||= Academy::Course.draft.includes(:category).order(academy_category_id: :asc)
-      @scheduled_academy_courses  ||= Academy::Course.scheduled.includes(:category).order(academy_category_id: :asc)
-      @published_academy_courses  ||= Academy::Course.published.includes(:category).order(academy_category_id: :asc)
+      @scheduled_academy_courses    ||= Academy::Course.scheduled.includes(:category).order(academy_category_id: :asc)
+      @published_academy_courses    ||= Academy::Course.published.includes(:category).order(academy_category_id: :asc)
+      @unpublished_academy_courses  ||= Academy::Course.unpublished.includes(:category).order(academy_category_id: :asc)
     end
 
     # Show
@@ -109,7 +109,7 @@ module Academy
         :cover_box,
         :cover_caption,
         :remove_cover_box,
-        :draft,
+        :published,
         :published_at,
         :eml,
         :magestil,

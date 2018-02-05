@@ -1,8 +1,10 @@
+// Index
+
 %h1 Listing academy_courses
 
-= render "draft", items: @draft_academy_courses
-= render "scheduled", items: @scheduled_academy_courses
-= render "published", items: @published_academy_courses
+= render "unpublished", items: @unpublished_academy_courses
+= render "scheduled",   items: @scheduled_academy_courses
+= render "published",   items: @published_academy_courses
 
 = link_to "New Academy course", new_academy_course_path
 \|

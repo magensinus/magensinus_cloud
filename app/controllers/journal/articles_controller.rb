@@ -8,9 +8,9 @@ module Journal
     # -----
     # GET /journal/articles
     def index
-      @draft_journal_articles     ||= Journal::Article.draft
-      @scheduled_journal_articles ||= Journal::Article.scheduled
-      @published_journal_articles ||= Journal::Article.published
+      @scheduled_journal_articles   ||= Journal::Article.scheduled
+      @published_journal_articles   ||= Journal::Article.published
+      @unpublished_journal_articles ||= Journal::Article.unpublished
     end
 
     # Show
@@ -91,7 +91,7 @@ module Journal
         :cover_box,
         :cover_caption,
         :remove_cover_box,
-        :draft,
+        :published,
         :published_at,
         :eml,
         :magestil,

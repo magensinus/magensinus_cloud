@@ -1,4 +1,4 @@
-// Draft
+// Unpublished
 
 %table
   %thead
@@ -6,7 +6,7 @@
       %th
       %th Category
       %th Title
-      %th Draft
+      %th Published
       %th Published at
       %th Eml
       %th Magestil
@@ -16,13 +16,13 @@
       %th
   %tbody.sortable{ "data-url" => sortable_academy_courses_path }
     %tr
-      %h3.left Draft
+      %h3.left Unpublished
     - items.each do |item|
       %tr{ id: "academy_course_#{item.id}" }
         %td= link_to "Sort Me", "#", class: "handle"
         %td= item.category.title
         %td= item.title
-        %td= item.draft
+        %td= item.published
         %td= item.published_at
         %td= item.eml
         %td= item.magestil
