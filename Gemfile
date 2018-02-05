@@ -28,11 +28,9 @@ gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.5"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 3.0"
+
 # Use ActiveModel has_secure_password
 # gem "bcrypt", "~> 3.1.7"
-
-# Use Capistrano for deployment
-# gem "capistrano-rails", group: :development
 
 # Enables Haml as the templating engine for you
 gem "haml-rails", "~> 1.0"
@@ -42,6 +40,12 @@ gem "carrierwave", "~> 1.2"
 
 # Manipulate images with minimal use of memory via ImageMagick / GraphicsMagick
 gem "mini_magick", "~> 4.8"
+
+# Simple, Heroku-friendly Rails app configuration using ENV and a single YAML file
+gem "figaro", "~> 1.1"
+
+# The Ruby cloud services library
+gem "fog", "~> 1.42"
 
 # Use webpack to manage app-like JavaScript modules in Rails
 # gem "webpacker", "~> 3.2", ">= 3.2.1"
