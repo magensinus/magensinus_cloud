@@ -20,6 +20,7 @@
 //= require jquery-ui/ui/data
 //= require jquery-ui/ui/scroll-parent
 //= require jquery-ui/ui/widgets/sortable
+//= require trix/dist/trix
 //= require plugins/set_off
 //= require plugins/set_sortable
 //= require initializer

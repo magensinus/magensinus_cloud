@@ -1,0 +1,9 @@
+// Misc
+
+= form_for @academy_course do |f|
+  = render "lib/components/errors", object: @academy_course
+  .field
+    %trix-editor{ input: "misc" }
+    = f.hidden_field :misc, id: "misc"
+  .actions
+    = f.submit "Save"

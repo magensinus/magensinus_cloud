@@ -17,6 +17,9 @@ class CreateAcademyCourses < ActiveRecord::Migration[5.1]
       t.string      :title
       t.text        :description
 
+      t.text        :body
+      t.text        :misc
+
       t.boolean     :thumb, default: false
       t.string      :thumb_box
       t.string      :thumb_caption
@@ -24,6 +27,10 @@ class CreateAcademyCourses < ActiveRecord::Migration[5.1]
       t.boolean     :cover, default: false
       t.string      :cover_box
       t.string      :cover_caption
+
+      t.boolean     :document, default: false
+      t.string      :document_box
+      t.string      :document_caption
 
       t.boolean     :published, default: false
       t.datetime    :published_at

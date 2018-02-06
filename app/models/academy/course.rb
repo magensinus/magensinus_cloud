@@ -24,6 +24,8 @@ module Academy
     mount_uploader :thumb_box, Academy::ThumbUploader
     # Cover
     mount_uploader :cover_box, Academy::CoverUploader
+    # Document
+    mount_uploader :document_box, Academy::DocumentUploader
 
     # Clean Capitions
     # ---------------
@@ -31,6 +33,8 @@ module Academy
     after_save(-> { clean_caption(thumb_box, :thumb_caption) })
     # Cover
     after_save(-> { clean_caption(cover_box, :cover_caption) })
+    # Document
+    after_save(-> { clean_caption(document_box, :document_caption) })
 
     # Relationships
     # -------------

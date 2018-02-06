@@ -1,0 +1,9 @@
+// Body
+
+= form_for @academy_course do |f|
+  = render "lib/components/errors", object: @academy_course
+  .field
+    %trix-editor{ input: "body" }
+    = f.hidden_field :body, id: "body"
+  .actions
+    = f.submit "Save"

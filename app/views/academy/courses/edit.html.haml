@@ -6,16 +6,26 @@
   = render "thumb"
 - elsif params_cover
   = render "cover"
+- elsif params_document
+  = render "document"
+- elsif params_body
+  = render "body"
+- elsif params_misc
+  = render "misc"
 - else
   = render "form"
 
+= link_to "Misc", edit_academy_course_path(@academy_course, misc: "true")
+\|
 = link_to "Thumb", edit_academy_course_path(@academy_course, thumb: "true")
 \|
 = link_to "Cover", edit_academy_course_path(@academy_course, cover: "true")
 \|
+= link_to "Document", edit_academy_course_path(@academy_course, document: "true")
+\|
 = link_to "Show", @academy_course
 \|
-- if params_thumb || params_cover
+- if params_thumb || params_cover || params_body || params_misc
   = link_to "Back", edit_academy_course_path(@academy_course)
 - else
   = link_to "Back", academy_courses_path

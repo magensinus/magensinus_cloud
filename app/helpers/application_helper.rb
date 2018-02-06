@@ -26,6 +26,16 @@ module ApplicationHelper
     params[:action] == "update"
   end
 
+  # Params body
+  def params_body
+    params[:body] == "true"
+  end
+
+  # Params misc
+  def params_misc
+    params[:misc] == "true"
+  end
+
   # Params text
   def params_text
     params[:text] == "true"

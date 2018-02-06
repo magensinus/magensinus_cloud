@@ -50,13 +50,18 @@ ActiveRecord::Schema.define(version: 20180204103429) do
     t.string "meta_url"
     t.string "title"
     t.text "description"
+    t.text "body"
+    t.text "misc"
     t.boolean "thumb", default: false
     t.string "thumb_box"
     t.string "thumb_caption"
     t.boolean "cover", default: false
     t.string "cover_box"
     t.string "cover_caption"
-    t.boolean "published", default: true
+    t.boolean "document", default: false
+    t.string "document_box"
+    t.string "document_caption"
+    t.boolean "published", default: false
     t.datetime "published_at"
     t.boolean "eml", default: false
     t.boolean "magestil", default: false
@@ -103,7 +108,7 @@ ActiveRecord::Schema.define(version: 20180204103429) do
     t.boolean "cover", default: false
     t.string "cover_box"
     t.string "cover_caption"
-    t.boolean "published", default: true
+    t.boolean "published", default: false
     t.datetime "published_at"
     t.boolean "eml", default: false
     t.boolean "magestil", default: false

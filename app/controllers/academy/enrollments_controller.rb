@@ -3,6 +3,7 @@
 module Academy
   class EnrollmentsController < ApplicationController
     before_action :academy_category
+    before_action :academy_courses, only: [:new, :create, :edit, :update]
     before_action :academy_enrollment, only: [:show, :edit, :update, :destroy]
 
     # Index
@@ -55,7 +56,6 @@ module Academy
     # ---
     # GET /academy/enrollments/new
     def new
-      @academy_courses = @academy_category.courses.all
       @academy_enrollment = @academy_category.enrollments.new
     end
 
@@ -63,10 +63,10 @@ module Academy
     # ------
     # POST /academy/enrollments
     def create
-      @academy_courses = @academy_category.courses.all
       @academy_enrollment = @academy_category.enrollments.new(academy_enrollment_params)
 
       if @academy_enrollment.save
+        send_enrollment_email
         flash[:notice] = "Successfully created..."
         redirect_to academy_category_enrollments_path(@academy_category)
       else
@@ -81,9 +81,30 @@ module Academy
       @academy_category = Academy::Category.find_by(slug: params[:category_id])
     end
 
+    # Academy courses
+    def academy_courses
+      @academy_courses = @academy_category.courses.all
+    end
+
     # Academy enrollment
     def academy_enrollment
       @academy_enrollment = @academy_category.enrollments.find_by(slug: params[:id])
+    end
+
+    # Send enrollment email
+    def send_enrollment_email
+      client = Postmark::ApiClient.new(ENV["POSTMARK_TOKEN"])
+      client.deliver_with_template(
+        from: ENV["POSTMARK_NOTIFICATIONS_EMAIL"],
+        to: @academy_category.email,
+        template_id: "4858883",
+        template_model: {
+          courses: [{
+            title: "The Title"
+          }]
+        },
+        tag: "enrollment"
+      )
     end
 
     # Whitelist parameters

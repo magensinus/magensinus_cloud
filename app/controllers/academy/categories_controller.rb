@@ -92,6 +92,8 @@ module Academy
         :meta_url,
         :title,
         :description,
+        :email,
+        :form_type,
         :thumb,
         :thumb_box,
         :thumb_caption,
