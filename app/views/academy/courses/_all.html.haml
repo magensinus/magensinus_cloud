@@ -1,4 +1,4 @@
-// Unpublished
+// Published
 
 %table
   %thead
@@ -16,7 +16,7 @@
       %th
   %tbody.sortable{ "data-url" => sortable_academy_courses_path }
     %tr
-      %h3.left Unpublished
+      %h3.left All
     - objects.each do |object|
       %tr{ id: "academy_course_#{object.id}" }
         %td= link_to "Sort Me", "#", class: "handle"

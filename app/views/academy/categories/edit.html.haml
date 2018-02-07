@@ -1,21 +1,19 @@
 // Edit
 
-%h1 Editing academy_category
-
-- if params_thumb
-  = render "thumb"
-- elsif params_cover
-  = render "cover"
-- else
-  = render "form"
-
-= link_to "Thumb", edit_academy_category_path(@academy_category, thumb: "true")
-\|
-= link_to "Cover", edit_academy_category_path(@academy_category, cover: "true")
-\|
-= link_to "Show", @academy_category
-\|
 - if params_thumb || params_cover
   = link_to "Back", edit_academy_category_path(@academy_category)
 - else
   = link_to "Back", academy_categories_path
+
+%h1 Editing academy_category
+
+- if params_thumb
+  = render "thumb", object: @academy_category
+- elsif params_cover
+  = render "cover", object: @academy_category
+- else
+  = render "form", object: @academy_category
+
+= link_to "Thumb", edit_academy_category_path(@academy_category, thumb: "true")
+= link_to "Cover", edit_academy_category_path(@academy_category, cover: "true")
+= link_to "Show", @academy_category

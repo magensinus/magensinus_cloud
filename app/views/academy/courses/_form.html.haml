@@ -1,7 +1,7 @@
 // Form
 
-= form_for @academy_course do |f|
-  = render "lib/components/errors", object: @academy_course
+= form_for object do |f|
+  = render "lib/components/errors", object: object
   .field
     = f.label :meta_title
     = f.text_field :meta_title
@@ -16,7 +16,7 @@
     = f.text_field :meta_url
   .field
     = f.label :academy_categories
-    = f.collection_radio_buttons :academy_category_id, @academy_categories, :id, :title, include_hidden: false
+    = f.collection_radio_buttons :academy_category_id, categories, :id, :title, include_hidden: false
   .field
     = f.label :title
     = f.text_field :title

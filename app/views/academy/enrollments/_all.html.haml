@@ -1,0 +1,21 @@
+// Table
+
+%table
+  %thead
+    %tr
+      %th Academy category
+      %th Email
+      - if params[:category_id]
+        %th
+        %th
+        %th
+
+  %tbody
+    - objects.each do |object|
+      %tr
+        %td= object.category.id
+        %td= object.email
+        - if params[:category_id]
+          %td= link_to "Show", academy_category_enrollment_path(parent, object)
+          %td= link_to "Edit", edit_academy_category_enrollment_path(parent, object)
+          %td= link_to "Destroy", academy_category_enrollment_path(parent, object), method: :delete, data: { confirm: "Are you sure?" }

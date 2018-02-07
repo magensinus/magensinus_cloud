@@ -1,11 +1,11 @@
 // Form
 
-= form_with model: [@academy_category, @academy_enrollment], url: academy_enrollment_form_url, local: true do |f|
-  = render "lib/components/errors", object: @academy_enrollment
-  = f.hidden_field :academy_category_id, value: @academy_category.id
+= form_with model: [parent, object], url: academy_enrollment_form_url, local: true do |f|
+  = render "lib/components/errors", object: object
+  = f.hidden_field :academy_category_id, value: parent.id
   .field
     = f.label :courses
-    = f.collection_check_boxes :course_ids, @academy_courses, :id, :title, include_hidden: false
+    = f.collection_check_boxes :course_ids, courses, :id, :title, include_hidden: false
   .field
     = f.label :email
     = f.text_field :email

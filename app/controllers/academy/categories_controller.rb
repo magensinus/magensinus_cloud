@@ -2,6 +2,9 @@
 
 module Academy
   class CategoriesController < ApplicationController
+    # Callbacks
+    # ---------
+    # Academy category
     before_action :academy_category, only: [:show, :edit, :update, :destroy]
 
     # Index

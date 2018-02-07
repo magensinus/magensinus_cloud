@@ -1,6 +1,9 @@
 // Show
 
-%p#notice= notice
+- if notice
+  %p#notice= notice
+
+= link_to "Back", academy_categories_path
 
 %p
   %b Meta title:
@@ -23,34 +26,35 @@
 %p
   %b Email:
   = @academy_category.email
-%p
-  %b Thumb:
-  = @academy_category.thumb
-%p
-  %b Thumb box:
-  = image_tag @academy_category.thumb_box_url.to_s
-  = image_tag @academy_category.thumb_box_url(:nano).to_s
-  = image_tag @academy_category.thumb_box_url(:tiny).to_s
-  = image_tag @academy_category.thumb_box_url(:small).to_s
-  = image_tag @academy_category.thumb_box_url(:medium).to_s
-  = image_tag @academy_category.thumb_box_url(:large).to_s
-%p
-  %b Thumb caption:
-  = @academy_category.thumb_caption
-%p
-  %b Cover:
-  = @academy_category.cover
-%p
-  %b Cover box:
-  = image_tag @academy_category.cover_box_url.to_s
-  = image_tag @academy_category.cover_box_url(:nano).to_s
-  = image_tag @academy_category.cover_box_url(:tiny).to_s
-  = image_tag @academy_category.cover_box_url(:small).to_s
-  = image_tag @academy_category.cover_box_url(:medium).to_s
-  = image_tag @academy_category.cover_box_url(:large).to_s
-%p
-  %b Cover caption:
-  = @academy_category.cover_caption
+-#
+  %p
+    %b Thumb:
+    = @academy_category.thumb
+  %p
+    %b Thumb box:
+    = image_tag @academy_category.thumb_box_url.to_s
+    = image_tag @academy_category.thumb_box_url(:nano).to_s
+    = image_tag @academy_category.thumb_box_url(:tiny).to_s
+    = image_tag @academy_category.thumb_box_url(:small).to_s
+    = image_tag @academy_category.thumb_box_url(:medium).to_s
+    = image_tag @academy_category.thumb_box_url(:large).to_s
+  %p
+    %b Thumb caption:
+    = @academy_category.thumb_caption
+  %p
+    %b Cover:
+    = @academy_category.cover
+  %p
+    %b Cover box:
+    = image_tag @academy_category.cover_box_url.to_s
+    = image_tag @academy_category.cover_box_url(:nano).to_s
+    = image_tag @academy_category.cover_box_url(:tiny).to_s
+    = image_tag @academy_category.cover_box_url(:small).to_s
+    = image_tag @academy_category.cover_box_url(:medium).to_s
+    = image_tag @academy_category.cover_box_url(:large).to_s
+  %p
+    %b Cover caption:
+    = @academy_category.cover_caption
 %p
   %b Published:
   = @academy_category.published
@@ -68,7 +72,4 @@
   = @academy_category.position
 
 = link_to "Edit", edit_academy_category_path(@academy_category)
-\|
 = link_to "Enrollments", academy_category_enrollments_path(@academy_category)
-\|
-= link_to "Back", academy_categories_path

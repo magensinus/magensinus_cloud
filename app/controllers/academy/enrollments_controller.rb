@@ -2,6 +2,9 @@
 
 module Academy
   class EnrollmentsController < ApplicationController
+    # Callbacks
+    # ---------
+    # Academy categories
     before_action :academy_category
     before_action :academy_courses, only: [:new, :create, :edit, :update]
     before_action :academy_enrollment, only: [:show, :edit, :update, :destroy]
@@ -66,7 +69,7 @@ module Academy
       @academy_enrollment = @academy_category.enrollments.new(academy_enrollment_params)
 
       if @academy_enrollment.save
-        send_enrollment_email
+        # send_enrollment_email
         flash[:notice] = "Successfully created..."
         redirect_to academy_category_enrollments_path(@academy_category)
       else

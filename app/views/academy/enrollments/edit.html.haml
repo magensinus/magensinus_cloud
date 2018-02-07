@@ -1,9 +1,9 @@
 // Edit
 
+= link_to "Back", academy_category_enrollments_path(@academy_category)
+
 %h1 Editing academy_enrollment
 
-= render "form"
+= render "form", parent: @academy_category, object: @academy_enrollment, courses: @academy_courses
 
 = link_to "Show", academy_category_enrollment_path(@academy_category, @academy_enrollment)
-\|
-= link_to "Back", academy_category_enrollments_path(@academy_category)

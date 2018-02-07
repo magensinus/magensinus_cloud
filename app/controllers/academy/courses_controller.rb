@@ -2,13 +2,18 @@
 
 module Academy
   class CoursesController < ApplicationController
+    # Callbacks
+    # ---------
+    # Academy categories
     before_action :academy_categories,  only: [:new, :create, :edit, :update]
-    before_action :set_academy_course,  only: [:show, :edit, :update, :destroy]
+    # Academy course
+    before_action :academy_course,  only: [:show, :edit, :update, :destroy]
 
     # Index
     # -----
     # GET /academy/courses
     def index
+      @academy_courses              ||= Academy::Course.all.includes(:category).order(academy_category_id: :asc)
       @scheduled_academy_courses    ||= Academy::Course.scheduled.includes(:category).order(academy_category_id: :asc)
       @published_academy_courses    ||= Academy::Course.published.includes(:category).order(academy_category_id: :asc)
       @unpublished_academy_courses  ||= Academy::Course.unpublished.includes(:category).order(academy_category_id: :asc)
@@ -87,7 +92,7 @@ module Academy
     end
 
     # Academy course
-    def set_academy_course
+    def academy_course
       @academy_course ||= Academy::Course.find_by(slug: params[:id])
     end
 

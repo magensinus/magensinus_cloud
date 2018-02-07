@@ -17,16 +17,16 @@
   %tbody.sortable{ "data-url" => sortable_academy_courses_path }
     %tr
       %h3.left Scheduled
-    - items.each do |item|
-      %tr{ id: "academy_course_#{item.id}" }
+    - objects.each do |object|
+      %tr{ id: "academy_course_#{object.id}" }
         %td= link_to "Sort Me", "#", class: "handle"
-        %td= item.category.title
-        %td= item.title
-        %td= item.published
-        %td= item.published_at
-        %td= item.eml
-        %td= item.magestil
-        %td= item.magensinus
-        %td= link_to "Show", academy_course_path(item)
-        %td= link_to "Edit", edit_academy_course_path(item)
-        %td= link_to "Destroy", academy_course_path(item), method: :delete, data: { confirm: "Are you sure?" }
+        %td= object.category.title
+        %td= object.title
+        %td= object.published
+        %td= object.published_at
+        %td= object.eml
+        %td= object.magestil
+        %td= object.magensinus
+        %td= link_to "Show", academy_course_path(object)
+        %td= link_to "Edit", edit_academy_course_path(object)
+        %td= link_to "Destroy", academy_course_path(object), method: :delete, data: { confirm: "Are you sure?" }

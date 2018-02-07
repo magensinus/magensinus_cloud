@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 
 module ApplicationHelper
+  # Params all
+  def params_all
+    params[:all] == "true" || !params.has_key?(:all)
+  end
+
   # Params show
   def params_show
     params[:action] == "show"
@@ -64,5 +69,20 @@ module ApplicationHelper
   # Params document
   def params_document
     params[:document] == "true"
+  end
+
+  # Params scheduled
+  def params_scheduled
+    params[:scheduled] == "true"
+  end
+
+  # Params published
+  def params_published
+    params[:published] == "true"
+  end
+
+  # Params unpublished
+  def params_unpublished
+    params[:unpublished] == "true"
   end
 end

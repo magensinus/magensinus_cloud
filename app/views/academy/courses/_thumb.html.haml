@@ -1,13 +1,13 @@
 // Thumb
 
-= form_with model: @academy_course, local: true do |f|
-  = render "lib/components/errors", object: @academy_course
+= form_with model: object, local: true do |f|
+  = render "lib/components/errors", object: object
   = f.hidden_field :thumb, value: true
   = f.hidden_field :thumb_box_cache
   .field
     = f.label :thumb_box
-    = f.file_field :thumb_box unless @academy_course.thumb_box.presence
-  - if @academy_course.thumb_box.presence
+    = f.file_field :thumb_box unless object.thumb_box.presence
+  - if object.thumb_box.presence
     .field
       = f.label :remove_thumb_box
       = f.check_box :remove_thumb_box

@@ -1,11 +1,20 @@
 // Index
 
+= link_to "Back", academy_root_path
+
 %h1 Listing academy_courses
 
-= render "unpublished", items: @unpublished_academy_courses
-= render "scheduled",   items: @scheduled_academy_courses
-= render "published",   items: @published_academy_courses
+- if params_all
+  = render "all",objects: @academy_courses
+- if params_scheduled
+  = render "scheduled", objects: @scheduled_academy_courses
+- if params_published
+  = render "published", objects: @published_academy_courses
+- if params_unpublished
+  = render "unpublished", objects: @unpublished_academy_courses
 
+= link_to "All", academy_courses_path(all: true)
+= link_to "Scheduled", academy_courses_path(scheduled: true)
+= link_to "Published", academy_courses_path(published: true)
+= link_to "Unpublished", academy_courses_path(unpublished: true)
 = link_to "New Academy course", new_academy_course_path
-\|
-= link_to "Academy Dashboard", academy_root_path
