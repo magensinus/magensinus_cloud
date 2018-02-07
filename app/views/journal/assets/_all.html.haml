@@ -1,0 +1,20 @@
+%table
+  %tbody
+    - @journal_assets.each do |journal_asset|
+      %tr
+        - if journal_asset.text == true
+          %td= journal_asset.text_box
+        - if journal_asset.image == true
+          %td= image_tag journal_asset.image_box_url.to_s
+          %td= journal_asset.image_caption
+        - if journal_asset.video == true
+          %td= journal_asset.video_box
+          %td= journal_asset.video_caption
+        %td
+          - if journal_asset.text == true
+            = link_to "Edit", edit_journal_article_asset_path(@journal_article, journal_asset, text: true)
+          - if journal_asset.image == true
+            = link_to "Edit", edit_journal_article_asset_path(@journal_article, journal_asset, image: true)
+          - if journal_asset.video == true
+            = link_to "Edit", edit_journal_article_asset_path(@journal_article, journal_asset, video: true)
+        %td= link_to "Destroy", journal_article_asset_path(@journal_article, journal_asset), method: :delete, data: { confirm: "Are you sure?" }

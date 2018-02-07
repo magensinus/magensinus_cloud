@@ -1,0 +1,45 @@
+%table
+  %thead
+    %tr
+      %th
+      %th Academy section
+      %th Text
+      %th Text box
+      %th Image
+      %th Image box
+      %th Image caption
+      %th Document
+      %th Document box
+      %th Document caption
+      %th Video
+      %th Video box
+      %th Video caption
+      %th Video service
+      %th Alignment
+      %th Position
+      %th
+      %th
+      %th
+
+  %tbody.sortable{ "data-url" => sortable_academy_course_section_section_assets_path(@academy_course, @academy_section) }
+    - @academy_section_assets.each do |academy_section_asset|
+      %tr{ id: "academy_section_asset_#{academy_section_asset.id}" }
+        %td= link_to "Sort Me", "#", class: "handle"
+        %td= academy_section_asset.section.title
+        %td= academy_section_asset.text
+        %td= academy_section_asset.text_box
+        %td= academy_section_asset.image
+        %td= academy_section_asset.image_box
+        %td= academy_section_asset.image_caption
+        %td= academy_section_asset.document
+        %td= academy_section_asset.document_box
+        %td= academy_section_asset.document_caption
+        %td= academy_section_asset.video
+        %td= academy_section_asset.video_box
+        %td= academy_section_asset.video_caption
+        %td= academy_section_asset.video_service
+        %td= academy_section_asset.alignment
+        %td= academy_section_asset.position
+        %td= link_to "Show", academy_course_section_section_asset_path(@academy_course, @academy_section, academy_section_asset)
+        %td= link_to "Edit", edit_academy_course_section_section_asset_path(@academy_course, @academy_section, academy_section_asset)
+        %td= link_to "Destroy", academy_course_section_section_asset_path(@academy_course, @academy_section, academy_section_asset), method: :delete, data: { confirm: "Are you sure?" }

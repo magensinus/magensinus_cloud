@@ -1,0 +1,8 @@
+%h1 Listing academy_section_assets
+
+= render "all"
+
+= link_to "Text", new_academy_course_section_section_asset_path(@academy_course, @academy_section, text: "true")
+= link_to "Image", new_academy_course_section_section_asset_path(@academy_course, @academy_section, image: "true")
+= link_to "Document", new_academy_course_section_section_asset_path(@academy_course, @academy_section, document: "true")
+= link_to "Video", new_academy_course_section_section_asset_path(@academy_course, @academy_section, video: "true")

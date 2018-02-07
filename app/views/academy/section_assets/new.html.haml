@@ -1,0 +1,12 @@
+= link_to "Back", academy_course_section_section_assets_path(@academy_course, @academy_section)
+
+%h1 New academy_section_asset
+
+- if params_text
+  = render "text", grand_parent: @academy_course, parent: @academy_section, object: @academy_section_asset
+- if params_image
+  = render "image", grand_parent: @academy_course, parent: @academy_section, object: @academy_section_asset
+- if params_document
+  = render "document", grand_parent: @academy_course, parent: @academy_section, object: @academy_section_asset
+- if params_video
+  = render "video", grand_parent: @academy_course, parent: @academy_section, object: @academy_section_asset

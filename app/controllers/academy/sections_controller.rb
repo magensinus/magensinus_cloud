@@ -71,12 +71,12 @@ module Academy
 
     private
 
-    # Academy Course
+    # Academy course
     def academy_course
       @academy_course = Academy::Course.find_by(slug: params[:course_id])
     end
 
-    # Academy Section
+    # Academy section
     def academy_section
       @academy_section = @academy_course.sections.find_by(slug: params[:id])
     end

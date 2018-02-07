@@ -38,7 +38,13 @@ Rails.application.routes.draw do
       collection do
         patch :sortable
       end
-      resources :sections, controller: :sections
+      resources :sections, controller: :sections do
+        resources :section_assets, controller: :section_assets do
+          collection do
+            patch :sortable
+          end
+        end
+      end
     end
     resources :enrollments, controller: :enrollments
   end

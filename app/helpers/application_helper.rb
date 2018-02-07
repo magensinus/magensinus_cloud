@@ -3,7 +3,7 @@
 module ApplicationHelper
   # Params all
   def params_all
-    params[:all] == "true" || !params.has_key?(:all)
+    params[:all] == "true" || !params.key?(:all)
   end
 
   # Params show

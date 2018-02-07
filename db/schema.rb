@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180207095030) do
+ActiveRecord::Schema.define(version: 20180207105356) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -92,6 +92,29 @@ ActiveRecord::Schema.define(version: 20180207095030) do
     t.datetime "updated_at", null: false
     t.index ["academy_category_id"], name: "index_academy_enrollments_on_academy_category_id"
     t.index ["slug"], name: "index_academy_enrollments_on_slug"
+  end
+
+  create_table "academy_section_assets", force: :cascade do |t|
+    t.bigint "academy_section_id"
+    t.string "slug"
+    t.boolean "text"
+    t.text "text_box"
+    t.boolean "image", default: false
+    t.string "image_box"
+    t.string "image_caption"
+    t.boolean "document", default: false
+    t.string "document_box"
+    t.string "document_caption"
+    t.boolean "video", default: false
+    t.string "video_box"
+    t.string "video_caption"
+    t.string "video_service"
+    t.string "alignment"
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["academy_section_id"], name: "index_academy_section_assets_on_academy_section_id"
+    t.index ["slug"], name: "index_academy_section_assets_on_slug"
   end
 
   create_table "academy_sections", force: :cascade do |t|
@@ -322,6 +345,7 @@ ActiveRecord::Schema.define(version: 20180207095030) do
 
   add_foreign_key "academy_courses", "academy_categories"
   add_foreign_key "academy_enrollments", "academy_categories"
+  add_foreign_key "academy_section_assets", "academy_sections"
   add_foreign_key "academy_sections", "academy_courses"
   add_foreign_key "journal_assets", "journal_articles"
   add_foreign_key "wallet_assets", "wallet_categories"

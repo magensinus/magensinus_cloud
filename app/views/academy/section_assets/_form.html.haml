@@ -1,0 +1,44 @@
+= form_for [grand_parent, parent, object], url: academy_section_asset_form_url do |f|
+  = render "lib/components/errors", object: object
+  = hidden_field :academy_section_id, value: @academy_section.id
+  .field
+    = f.label :text
+    = f.check_box :text
+  .field
+    = f.label :text_box
+    = f.text_area :text_box
+  .field
+    = f.label :image
+    = f.check_box :image
+  .field
+    = f.label :image_box
+    = f.text_field :image_box
+  .field
+    = f.label :image_caption
+    = f.text_field :image_caption
+  .field
+    = f.label :document
+    = f.check_box :document
+  .field
+    = f.label :document_box
+    = f.text_field :document_box
+  .field
+    = f.label :document_caption
+    = f.text_field :document_caption
+  .field
+    = f.label :video
+    = f.check_box :video
+  .field
+    = f.label :video_box
+    = f.text_field :video_box
+  .field
+    = f.label :video_caption
+    = f.text_field :video_caption
+  .field
+    = f.label :video_service
+    = f.text_field :video_service
+  .field
+    = f.label :alignment
+    = f.text_field :alignment
+  .actions
+    = f.submit "Save"
