@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180204103429) do
+ActiveRecord::Schema.define(version: 20180207095030) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -92,6 +92,18 @@ ActiveRecord::Schema.define(version: 20180204103429) do
     t.datetime "updated_at", null: false
     t.index ["academy_category_id"], name: "index_academy_enrollments_on_academy_category_id"
     t.index ["slug"], name: "index_academy_enrollments_on_slug"
+  end
+
+  create_table "academy_sections", force: :cascade do |t|
+    t.bigint "academy_course_id"
+    t.string "slug"
+    t.string "title"
+    t.boolean "published", default: false
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["academy_course_id"], name: "index_academy_sections_on_academy_course_id"
+    t.index ["slug"], name: "index_academy_sections_on_slug"
   end
 
   create_table "journal_articles", force: :cascade do |t|
@@ -310,6 +322,7 @@ ActiveRecord::Schema.define(version: 20180204103429) do
 
   add_foreign_key "academy_courses", "academy_categories"
   add_foreign_key "academy_enrollments", "academy_categories"
+  add_foreign_key "academy_sections", "academy_courses"
   add_foreign_key "journal_assets", "journal_articles"
   add_foreign_key "wallet_assets", "wallet_categories"
 end

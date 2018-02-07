@@ -4,9 +4,11 @@ module Academy
   class EnrollmentsController < ApplicationController
     # Callbacks
     # ---------
-    # Academy categories
+    # Academy category
     before_action :academy_category
+    # Academy course
     before_action :academy_courses, only: [:new, :create, :edit, :update]
+    # Academy enrollment
     before_action :academy_enrollment, only: [:show, :edit, :update, :destroy]
 
     # Index

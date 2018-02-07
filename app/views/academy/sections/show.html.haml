@@ -1,0 +1,21 @@
+%p#notice= notice
+
+= link_to "Back", academy_course_sections_path(@academy_course)
+
+%p
+  %b Course:
+  = @academy_section.course
+%p
+  %b Slug:
+  = @academy_section.slug
+%p
+  %b Title:
+  = @academy_section.title
+%p
+  %b Published:
+  = @academy_section.published
+%p
+  %b Position:
+  = @academy_section.position
+
+= link_to "Edit", edit_academy_course_section_path(@academy_course, @academy_section)

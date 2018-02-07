@@ -38,6 +38,7 @@ Rails.application.routes.draw do
       collection do
         patch :sortable
       end
+      resources :sections, controller: :sections
     end
     resources :enrollments, controller: :enrollments
   end

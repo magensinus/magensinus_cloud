@@ -1,0 +1,10 @@
+= form_with model: [@academy_course, @academy_section], url: academy_section_form_url, local: true do |f|
+  = hidden_field :academy_course_id, value: @academy_course.id
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :published
+    = f.check_box :published
+  .actions
+    = f.submit "Save"

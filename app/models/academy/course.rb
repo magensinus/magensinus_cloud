@@ -44,5 +44,8 @@ module Academy
     has_many :enrollment_courses, dependent: :destroy, foreign_key: "academy_course_id", inverse_of: false
     # Academy enrollments
     has_many :enrollments, through: :enrollment_courses
+    # Academy sections
+    has_many :sections, foreign_key: "academy_course_id", inverse_of: false
+    accepts_nested_attributes_for :sections
   end
 end
