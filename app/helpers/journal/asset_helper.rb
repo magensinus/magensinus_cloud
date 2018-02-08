@@ -2,8 +2,6 @@
 
 module Journal
   module AssetHelper
-    include ApplicationHelper
-
     # Journal asset form url
     def journal_asset_form_url
       if params_new || params_create

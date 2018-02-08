@@ -2,8 +2,6 @@
 
 module Academy
   module EnrollmentHelper
-    include ApplicationHelper
-
     # Academy enrollment form url
     def academy_enrollment_form_url
       if params_new || params_create

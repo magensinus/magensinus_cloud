@@ -1,6 +1,12 @@
 # frozen_string_literal: true
 
 module ApplicationHelper
+  include Academy::EnrollmentHelper
+  include Academy::SectionAssetHelper
+  include Academy::SectionHelper
+  include Journal::AssetHelper
+  include Wallet::AssetHelper
+
   # Params all
   def params_all
     params[:all] == "true" || !params.key?(:all)

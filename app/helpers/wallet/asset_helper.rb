@@ -2,8 +2,6 @@
 
 module Wallet
   module AssetHelper
-    include ApplicationHelper
-
     # Wallet asset form url
     def wallet_asset_form_url
       if params_new || params_create

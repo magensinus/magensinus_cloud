@@ -2,8 +2,6 @@
 
 module Academy
   module SectionAssetHelper
-    include ApplicationHelper
-
     # Academy section asset form url
     def academy_section_asset_form_url
       if params_new || params_create

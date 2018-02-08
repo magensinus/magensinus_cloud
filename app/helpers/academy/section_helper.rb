@@ -2,8 +2,6 @@
 
 module Academy
   module SectionHelper
-    include ApplicationHelper
-
     # Academy section form url
     def academy_section_form_url
       if params_new || params_create
