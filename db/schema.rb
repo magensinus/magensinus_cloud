@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180207105356) do
+ActiveRecord::Schema.define(version: 20180208094751) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,19 @@ ActiveRecord::Schema.define(version: 20180207105356) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_academy_categories_on_slug"
+  end
+
+  create_table "academy_course_tutors", force: :cascade do |t|
+    t.bigint "academy_course_id"
+    t.bigint "academy_tutor_id"
+    t.string "slug"
+    t.boolean "coordinator"
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["academy_course_id"], name: "index_academy_course_tutors_on_academy_course_id"
+    t.index ["academy_tutor_id"], name: "index_academy_course_tutors_on_academy_tutor_id"
+    t.index ["slug"], name: "index_academy_course_tutors_on_slug"
   end
 
   create_table "academy_courses", force: :cascade do |t|
@@ -127,6 +140,20 @@ ActiveRecord::Schema.define(version: 20180207105356) do
     t.datetime "updated_at", null: false
     t.index ["academy_course_id"], name: "index_academy_sections_on_academy_course_id"
     t.index ["slug"], name: "index_academy_sections_on_slug"
+  end
+
+  create_table "academy_tutors", force: :cascade do |t|
+    t.string "slug"
+    t.string "name"
+    t.string "surname"
+    t.text "biography"
+    t.boolean "image", default: false
+    t.string "image_box"
+    t.string "image_caption"
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_academy_tutors_on_slug"
   end
 
   create_table "journal_articles", force: :cascade do |t|

@@ -38,5 +38,8 @@
   .field
     = f.label :magensinus
     = f.check_box :magensinus
+  .field
+    = f.label :tutors
+    = f.collection_check_boxes :tutor_ids, tutors, :id, :name, include_hidden: false
   .actions
     = f.submit 'Save'

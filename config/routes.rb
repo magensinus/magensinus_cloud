@@ -45,8 +45,14 @@ Rails.application.routes.draw do
           end
         end
       end
+      resources :course_tutors, controller: :course_tutors do
+        collection do
+          patch :sortable
+        end
+      end
     end
     resources :enrollments, controller: :enrollments
+    resources :tutors, controller: :tutors
   end
 
   namespace :wallet do

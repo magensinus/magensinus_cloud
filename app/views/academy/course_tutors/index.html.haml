@@ -1,0 +1,23 @@
+%h1 Listing academy_course_tutors
+
+%table
+  %thead
+    %tr
+      %th Slug
+      %th Academy course
+      %th Academy tutor
+      %th Coordinator
+      %th Position
+      %th
+      %th
+
+  %tbody
+    - @academy_course_tutors.each do |academy_course_tutor|
+      %tr
+        %td= academy_course_tutor.slug
+        %td= academy_course_tutor.course.title
+        %td= academy_course_tutor.tutor.name
+        %td= academy_course_tutor.coordinator
+        %td= academy_course_tutor.position
+        %td= link_to "Edit", edit_academy_course_course_tutor_path(@academy_course, academy_course_tutor)
+        %td= link_to "Destroy", academy_course_course_tutor_path(@academy_course, academy_course_tutor), method: :delete, data: { confirm: "Are you sure?" }

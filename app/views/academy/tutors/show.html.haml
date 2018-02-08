@@ -1,0 +1,29 @@
+%p#notice= notice
+
+%p
+  %b Slug:
+  = @academy_tutor.slug
+%p
+  %b Name:
+  = @academy_tutor.name
+%p
+  %b Surname:
+  = @academy_tutor.surname
+%p
+  %b Biography:
+  = @academy_tutor.biography
+%p
+  %b Image:
+  = @academy_tutor.image
+%p
+  %b Image box:
+  = @academy_tutor.image_box
+%p
+  %b Image caption:
+  = @academy_tutor.image_caption
+%p
+  %b Position:
+  = @academy_tutor.position
+
+= link_to "Edit", edit_academy_tutor_path(@academy_tutor)
+= link_to "Back", academy_tutors_path

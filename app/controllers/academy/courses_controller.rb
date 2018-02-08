@@ -23,18 +23,21 @@ module Academy
     # ----
     # GET /academy/courses/BCjsHY4R
     def show
+      @academy_tutors = @academy_course.course_tutors.all
     end
 
     # Edit
     # ----
     # GET /academy/courses/BCjsHY4R/edit
     def edit
+      @academy_tutors = Academy::Tutor.all
     end
 
     # Update
     # ------
     # PATCH/PUT /academy/courses/BCjsHY4R
     def update
+      @academy_tutors = Academy::Tutor.all
       if @academy_course.update(academy_course_params)
         flash[:notice] = "Successfully updated..."
         redirect_to academy_course_path(@academy_course)
@@ -56,6 +59,7 @@ module Academy
     # ---
     # GET /academy/courses/new
     def new
+      @academy_tutors = Academy::Tutor.all
       @academy_course = Academy::Course.new
     end
 
@@ -63,6 +67,7 @@ module Academy
     # ------
     # POST /academy/courses
     def create
+      @academy_tutors = Academy::Tutor.all
       order = Academy::Course.pluck(:position).compact
       @academy_course = Academy::Course.new(academy_course_params)
       order << 0
@@ -125,7 +130,8 @@ module Academy
         :eml,
         :magestil,
         :magensinus,
-        :position
+        :position,
+        tutor_ids: []
       )
     end
   end

@@ -25,10 +25,10 @@
   = @academy_course.description
 %p
   %b Body:
-  = @academy_course.body.html_safe
+  = @academy_course.body.html_safe if @academy_course.body.presence
 %p
   %b Misc:
-  = @academy_course.misc.html_safe
+  = @academy_course.misc.html_safe if @academy_course.misc.presence
 -#
   %p
     %b Thumb:
@@ -73,6 +73,11 @@
 %p
   %b Magensinus:
   = @academy_course.magensinus
+
+%h3 Tutors
+
+- @academy_tutors.each do |item|
+  = item.tutor.name
 
 = link_to "Edit", edit_academy_course_path(@academy_course)
 = link_to "Sections", academy_course_sections_path(@academy_course)

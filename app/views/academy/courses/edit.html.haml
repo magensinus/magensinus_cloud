@@ -18,7 +18,7 @@
 - elsif params_misc
   = render "misc", object: @academy_course
 - else
-  = render "form", object: @academy_course, categories: @academy_categories
+  = render "form", object: @academy_course, categories: @academy_categories, tutors: @academy_tutors
 
 = link_to "Misc", edit_academy_course_path(@academy_course, misc: "true")
 = link_to "Thumb", edit_academy_course_path(@academy_course, thumb: "true")

@@ -1,0 +1,12 @@
+= form_for @academy_tutor do |f|
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :surname
+    = f.text_field :surname
+  .field
+    = f.label :biography
+    = f.text_area :biography
+  .actions
+    = f.submit "Save"
