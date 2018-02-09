@@ -70,5 +70,13 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :endorsement do
+    resources :badges, controller: :badges do
+      collection do
+        patch :sortable
+      end
+    end
+  end
+
   resources :subscriptions, controller: :subscriptions
 end

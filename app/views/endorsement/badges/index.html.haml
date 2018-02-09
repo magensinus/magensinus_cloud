@@ -1,0 +1,29 @@
+%h1 Listing endorsement_badges
+
+%table
+  %thead
+    %tr
+      %th Position
+      %th Title
+      %th Url
+      %th Published
+      %th Eml
+      %th Magestil
+      %th Magensinus
+      %th
+      %th
+
+  %tbody
+    - @endorsement_badges.each do |endorsement_badge|
+      %tr
+        %td= endorsement_badge.position
+        %td= endorsement_badge.title
+        %td= endorsement_badge.url
+        %td= endorsement_badge.published
+        %td= endorsement_badge.eml
+        %td= endorsement_badge.magestil
+        %td= endorsement_badge.magensinus
+        %td= link_to "Edit", edit_endorsement_badge_path(endorsement_badge)
+        %td= link_to "Destroy", endorsement_badge_path(endorsement_badge), method: :delete, data: { confirm: "Are you sure?" }
+
+= link_to "New Endorsement badge", new_endorsement_badge_path
