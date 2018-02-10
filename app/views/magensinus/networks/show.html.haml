@@ -1,0 +1,25 @@
+// Show
+
+%p#notice= notice
+
+%p
+  %b Title:
+  = @magensinus_network.title
+%p
+  %b Username:
+  = @magensinus_network.username
+%p
+  %b Url:
+  = @magensinus_network.url
+%p
+  %b Thumb:
+  = @magensinus_network.thumb
+%p
+  %b Thumb box:
+  = @magensinus_network.thumb_box
+%p
+  %b Thumb caption:
+  = @magensinus_network.thumb_caption
+
+= link_to "Edit", edit_magensinus_network_path(@magensinus_network)
+= link_to "Back", magensinus_networks_path

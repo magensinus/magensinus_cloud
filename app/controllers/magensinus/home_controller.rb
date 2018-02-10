@@ -15,7 +15,8 @@ module Magensinus
     # PATCH/PUT /magensinus_home/1
     def update
       if @magensinus_home.update(magensinus_home_params)
-        redirect_to magensinus_home_path, notice: "Magensinus home was successfully updated."
+        flash[:notice] = "Successfully updated..."
+        redirect_to magensinus_home_path
       else
         render :edit
       end

@@ -15,7 +15,8 @@ module Magensinus
     # PATCH/PUT /magensinus_about/1
     def update
       if @magensinus_about.update(magensinus_about_params)
-        redirect_to magensinus_about_path, notice: "Magensinus about was successfully updated."
+        flash[:notice] = "Successfully updated..."
+        redirect_to magensinus_about_path
       else
         render :edit
       end

@@ -1,0 +1,14 @@
+// Form
+
+= form_for object do |f|
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :username
+    = f.text_field :username
+  .field
+    = f.label :url
+    = f.text_field :url
+  .actions
+    = f.submit "Save"

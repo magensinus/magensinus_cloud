@@ -1,0 +1,27 @@
+// Index
+
+%h1 Listing magensinus_networks
+
+%table
+  %thead
+    %tr
+      %th Title
+      %th Username
+      %th Url
+      %th Position
+      %th
+      %th
+      %th
+
+  %tbody
+    - @magensinus_networks.each do |magensinus_network|
+      %tr
+        %td= magensinus_network.title
+        %td= magensinus_network.username
+        %td= magensinus_network.url
+        %td= magensinus_network.position
+        %td= link_to "Show", magensinus_network
+        %td= link_to "Edit", edit_magensinus_network_path(magensinus_network)
+        %td= link_to "Destroy", magensinus_network, method: :delete, data: { confirm: "Are you sure?" }
+
+= link_to "New Magensinus network", new_magensinus_network_path

@@ -15,7 +15,8 @@ module Magensinus
     # PATCH/PUT /magensinus_courses/1
     def update
       if @magensinus_courses.update(magensinus_courses_params)
-        redirect_to magensinus_courses_path, notice: "Magensinus course was successfully updated."
+        flash[:notice] = "Successfully updated..."
+        redirect_to magensinus_courses_path
       else
         render :edit
       end

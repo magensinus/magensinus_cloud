@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180209115735) do
+ActiveRecord::Schema.define(version: 20180210131211) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -294,6 +294,20 @@ ActiveRecord::Schema.define(version: 20180209115735) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_magensinus_home_on_slug"
+  end
+
+  create_table "magensinus_networks", force: :cascade do |t|
+    t.string "slug"
+    t.string "title"
+    t.string "username"
+    t.string "url"
+    t.boolean "thumb", default: false
+    t.string "thumb_box"
+    t.string "thumb_caption"
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_magensinus_networks_on_slug"
   end
 
   create_table "magensinus_newsletter", force: :cascade do |t|

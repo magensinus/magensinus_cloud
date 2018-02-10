@@ -15,7 +15,8 @@ module Magensinus
     # PATCH/PUT /magensinus_quality/1
     def update
       if @magensinus_quality.update(magensinus_quality_params)
-        redirect_to magensinus_quality_path, notice: "Magensinus quality was successfully updated."
+        flash[:notice] = "Successfully updated..."
+        redirect_to magensinus_quality_path
       else
         render :edit
       end

@@ -15,7 +15,8 @@ module Magensinus
     # PATCH/PUT /magensinus_contact/1
     def update
       if @magensinus_contact.update(magensinus_contact_params)
-        redirect_to magensinus_contact_path, notice: "Magensinus contact was successfully updated."
+        flash[:notice] = "Successfully updated..."
+        redirect_to magensinus_contact_path
       else
         render :edit
       end
