@@ -2,26 +2,39 @@
 
 module Magensinus
   class NetworksController < ApplicationController
+    # Callbacks
+    # ---------
+    # Magensinus network
     before_action :magensinus_network, only: [:show, :edit, :update, :destroy]
 
+    # Index
+    # -----
     # GET /magensinus/networks
     def index
       @magensinus_networks = Magensinus::Network.all
     end
 
-    # GET /magensinus/networks/1
+    # Show
+    # ----
+    # GET /magensinus/networks/jKl67Yt5
     def show
     end
 
+    # New
+    # ---
     # GET /magensinus/networks/new
     def new
       @magensinus_network = Magensinus::Network.new
     end
 
-    # GET /magensinus/networks/1/edit
+    # Edit
+    # ----
+    # GET /magensinus/networks/jKl67Yt5/edit
     def edit
     end
 
+    # Create
+    # ------
     # POST /magensinus/networks
     def create
       @magensinus_network = Magensinus::Network.new(magensinus_network_params)
@@ -34,7 +47,9 @@ module Magensinus
       end
     end
 
-    # PATCH/PUT /magensinus/networks/1
+    # Update
+    # ------
+    # PATCH/PUT /magensinus/networks/jKl67Yt5
     def update
       if @magensinus_network.update(magensinus_network_params)
         flash[:notice] = "Successfully updated..."
@@ -44,7 +59,9 @@ module Magensinus
       end
     end
 
-    # DELETE /magensinus/networks/1
+    # Destroy
+    # -------
+    # DELETE /magensinus/networks/jKl67Yt5
     def destroy
       @magensinus_network.destroy
       flash[:notice] = "Successfully destroyed..."

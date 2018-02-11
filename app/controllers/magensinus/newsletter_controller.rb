@@ -2,17 +2,26 @@
 
 module Magensinus
   class NewsletterController < ApplicationController
-    before_action :set_magensinus_newsletter, only: [:show, :edit, :update]
+    # Callbacks
+    # ---------
+    # Magensinus newsletter
+    before_action :magensinus_newsletter, only: [:show, :edit, :update]
 
-    # GET /magensinus_newsletter/1
+    # Show
+    # ----
+    # GET /magensinus/newsletter
     def show
     end
 
-    # GET /magensinus_newsletter/1/edit
+    # Edit
+    # ----
+    # GET /magensinus/newsletter/edit
     def edit
     end
 
-    # PATCH/PUT /magensinus_newsletter/1
+    # Update
+    # ------
+    # PATCH/PUT /magensinus/newsletter
     def update
       if @magensinus_newsletter.update(magensinus_newsletter_params)
         flash[:notice] = "Successfully updated..."
@@ -25,11 +34,11 @@ module Magensinus
     private
 
     # Use callbacks to share common setup or constraints between actions.
-    def set_magensinus_newsletter
+    def magensinus_newsletter
       @magensinus_newsletter = Magensinus::Newsletter.first!
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    # Whitelist parameters
     def magensinus_newsletter_params
       params.require(:magensinus_newsletter).permit(
         :meta_title,
@@ -40,7 +49,12 @@ module Magensinus
         :description,
         :body,
         :success,
-        :failure
+        :failure,
+        :image,
+        :image_box,
+        :image_caption,
+        :remove_image_box,
+        :image_box_cache
       )
     end
   end

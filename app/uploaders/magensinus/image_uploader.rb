@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
 module Magensinus
-  class ThumbUploader < ApplicationUploader
+  class ImageUploader < ApplicationUploader
     # Provide a default URL as a default if there hasn't been a file uploaded:
     def default_url
-      "/images/fallback/" + [version_name, "magensinus-thumb-default.png"].compact.join("_")
+      "/images/fallback/" + [version_name, "magensinus-image-default.png"].compact.join("_")
     end
 
     # Prefix variable
     def prefix
-      "magensinus-thumb-"
+      "magensinus-image-"
     end
 
     # Original

@@ -17,6 +17,10 @@ class CreateMagensinusNewsletter < ActiveRecord::Migration[5.1]
       t.text    :success
       t.text    :failure
 
+      t.boolean :image, default: false
+      t.string  :image_box
+      t.string  :image_caption
+
       t.timestamps
     end
   end

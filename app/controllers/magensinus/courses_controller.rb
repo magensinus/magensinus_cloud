@@ -2,17 +2,26 @@
 
 module Magensinus
   class CoursesController < ApplicationController
-    before_action :set_magensinus_courses, only: [:show, :edit, :update]
+    # Callbacks
+    # ---------
+    # Magensinus courses
+    before_action :magensinus_courses, only: [:show, :edit, :update]
 
-    # GET /magensinus_courses/1
+    # Show
+    # ----
+    # GET /magensinus/courses
     def show
     end
 
-    # GET /magensinus_courses/1/edit
+    # Edit
+    # ----
+    # GET /magensinus/courses/edit
     def edit
     end
 
-    # PATCH/PUT /magensinus_courses/1
+    # Update
+    # ------
+    # PATCH/PUT /magensinus/courses
     def update
       if @magensinus_courses.update(magensinus_courses_params)
         flash[:notice] = "Successfully updated..."
@@ -24,12 +33,12 @@ module Magensinus
 
     private
 
-    # Use callbacks to share common setup or constraints between actions.
-    def set_magensinus_courses
+    # Magensinus courses
+    def magensinus_courses
       @magensinus_courses = Magensinus::Courses.first!
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    # Whitelist parameters
     def magensinus_courses_params
       params.require(:magensinus_courses).permit(
         :meta_title,
@@ -38,7 +47,12 @@ module Magensinus
         :meta_url,
         :title,
         :description,
-        :body
+        :body,
+        :image,
+        :image_box,
+        :image_caption,
+        :remove_image_box,
+        :image_box_cache
       )
     end
   end

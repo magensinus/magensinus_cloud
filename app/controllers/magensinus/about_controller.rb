@@ -2,17 +2,26 @@
 
 module Magensinus
   class AboutController < ApplicationController
-    before_action :set_magensinus_about, only: [:show, :edit, :update]
+    # Callbacks
+    # ---------
+    # Magensinus about
+    before_action :magensinus_about, only: [:show, :edit, :update]
 
-    # GET /magensinus_about/1
+    # Show
+    # ----
+    # GET /magensinus/about
     def show
     end
 
-    # GET /magensinus_about/1/edit
+    # Edit
+    # ----
+    # GET /magensinus/about/edit
     def edit
     end
 
-    # PATCH/PUT /magensinus_about/1
+    # Update
+    # ------
+    # PATCH/PUT /magensinus/about
     def update
       if @magensinus_about.update(magensinus_about_params)
         flash[:notice] = "Successfully updated..."
@@ -24,12 +33,12 @@ module Magensinus
 
     private
 
-    # Use callbacks to share common setup or constraints between actions.
-    def set_magensinus_about
+    # Magensinus about
+    def magensinus_about
       @magensinus_about = Magensinus::About.first!
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    # Whitelist parameters
     def magensinus_about_params
       params.require(:magensinus_about).permit(
         :meta_title,
@@ -38,7 +47,12 @@ module Magensinus
         :meta_url,
         :title,
         :description,
-        :body
+        :body,
+        :image,
+        :image_box,
+        :image_caption,
+        :remove_image_box,
+        :image_box_cache
       )
     end
   end

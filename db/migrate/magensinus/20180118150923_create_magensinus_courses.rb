@@ -14,6 +14,10 @@ class CreateMagensinusCourses < ActiveRecord::Migration[5.1]
       t.text    :description
       t.text    :body
 
+      t.boolean :image, default: false
+      t.string  :image_box
+      t.string  :image_caption
+
       t.timestamps
     end
   end

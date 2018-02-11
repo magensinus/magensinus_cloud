@@ -2,17 +2,26 @@
 
 module Magensinus
   class SettingsController < ApplicationController
-    before_action :set_magensinus_setting, only: [:show, :edit, :update]
+    # Callbacks
+    # ---------
+    # Magensinus settings
+    before_action :magensinus_settings, only: [:show, :edit, :update]
 
-    # GET /magensinus_settings/1
+    # Show
+    # ----
+    # GET /magensinus/settings
     def show
     end
 
-    # GET /magensinus_settings/1/edit
+    # Edit
+    # ----
+    # GET /magensinus/settings/edit
     def edit
     end
 
-    # PATCH/PUT /magensinus_settings/1
+    # Update
+    # ------
+    # PATCH/PUT /magensinus/settings
     def update
       if @magensinus_settings.update(magensinus_settings_params)
         flash[:notice] = "Successfully updated..."
@@ -25,11 +34,11 @@ module Magensinus
     private
 
     # Use callbacks to share common setup or constraints between actions.
-    def set_magensinus_setting
+    def magensinus_settings
       @magensinus_settings = Magensinus::Settings.first!
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    # Whitelist parameters
     def magensinus_settings_params
       params.require(:magensinus_settings).permit(
         :meta_title,

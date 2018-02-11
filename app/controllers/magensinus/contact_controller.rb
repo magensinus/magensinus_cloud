@@ -2,17 +2,26 @@
 
 module Magensinus
   class ContactController < ApplicationController
-    before_action :set_magensinus_contact, only: [:show, :edit, :update]
+    # Callbacks
+    # ---------
+    # Magensinus contact
+    before_action :magensinus_contact, only: [:show, :edit, :update]
 
-    # GET /magensinus_contact/1
+    # Show
+    # ----
+    # GET /magensinus/contact
     def show
     end
 
-    # GET /magensinus_contact/1/edit
+    # Edit
+    # ----
+    # GET /magensinus/contact/edit
     def edit
     end
 
-    # PATCH/PUT /magensinus_contact/1
+    # Update
+    # ------
+    # PATCH/PUT /magensinus/contact
     def update
       if @magensinus_contact.update(magensinus_contact_params)
         flash[:notice] = "Successfully updated..."
@@ -24,12 +33,12 @@ module Magensinus
 
     private
 
-    # Use callbacks to share common setup or constraints between actions.
-    def set_magensinus_contact
+    # Magensinus contact
+    def magensinus_contact
       @magensinus_contact = Magensinus::Contact.first!
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    # Whitelist parameters
     def magensinus_contact_params
       params.require(:magensinus_contact).permit(
         :meta_title,
@@ -46,7 +55,12 @@ module Magensinus
         :address_two,
         :postcode,
         :city,
-        :country
+        :country,
+        :image,
+        :image_box,
+        :image_caption,
+        :remove_image_box,
+        :image_box_cache
       )
     end
   end

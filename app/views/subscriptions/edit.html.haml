@@ -2,8 +2,7 @@
 
 %h1 Editing subscriptions_email
 
-= render 'form'
+= render "form", object: @subscription
 
-= link_to 'Show', @subscription
-\|
-= link_to 'Back', subscriptions_path
+= link_to "Show", @subscription
+= link_to "Back", subscriptions_path

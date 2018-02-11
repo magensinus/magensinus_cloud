@@ -1,5 +1,11 @@
+// Edit
+
 %h1 Editing magensinus_contact
 
-= render 'form'
+- if params_image
+  = render "image", object: @magensinus_contact
+- else
+  = render "form", object: @magensinus_contact
 
-= link_to 'Back', magensinus_contact_path
+= link_to "Image", edit_magensinus_contact_path(image: "true")
+= link_to "Back", magensinus_contact_path

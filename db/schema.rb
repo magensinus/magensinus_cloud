@@ -227,6 +227,9 @@ ActiveRecord::Schema.define(version: 20180210131211) do
     t.string "title"
     t.text "description"
     t.text "body"
+    t.boolean "image", default: false
+    t.string "image_box"
+    t.string "image_caption"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_magensinus_about_on_slug"
@@ -241,6 +244,9 @@ ActiveRecord::Schema.define(version: 20180210131211) do
     t.string "title"
     t.text "description"
     t.text "body"
+    t.boolean "image", default: false
+    t.string "image_box"
+    t.string "image_caption"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_magensinus_articles_on_slug"
@@ -263,6 +269,9 @@ ActiveRecord::Schema.define(version: 20180210131211) do
     t.string "postcode"
     t.string "city"
     t.string "country"
+    t.boolean "image", default: false
+    t.string "image_box"
+    t.string "image_caption"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_magensinus_contact_on_slug"
@@ -277,6 +286,9 @@ ActiveRecord::Schema.define(version: 20180210131211) do
     t.string "title"
     t.text "description"
     t.text "body"
+    t.boolean "image", default: false
+    t.string "image_box"
+    t.string "image_caption"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_magensinus_courses_on_slug"
@@ -291,6 +303,9 @@ ActiveRecord::Schema.define(version: 20180210131211) do
     t.string "title"
     t.text "description"
     t.text "body"
+    t.boolean "image", default: false
+    t.string "image_box"
+    t.string "image_caption"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_magensinus_home_on_slug"
@@ -321,6 +336,9 @@ ActiveRecord::Schema.define(version: 20180210131211) do
     t.text "body"
     t.text "success"
     t.text "failure"
+    t.boolean "image", default: false
+    t.string "image_box"
+    t.string "image_caption"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_magensinus_newsletter_on_slug"
@@ -335,6 +353,9 @@ ActiveRecord::Schema.define(version: 20180210131211) do
     t.string "title"
     t.text "description"
     t.text "body"
+    t.boolean "image", default: false
+    t.string "image_box"
+    t.string "image_caption"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_magensinus_quality_on_slug"

@@ -2,17 +2,20 @@
 
 module Magensinus
   class HomeController < ApplicationController
-    before_action :set_magensinus_home, only: [:show, :edit, :update]
+    # Callbacks
+    # ---------
+    # Magensinus home
+    before_action :magensinus_home, only: [:show, :edit, :update]
 
-    # GET /magensinus_home/1
+    # GET /magensinus/home
     def show
     end
 
-    # GET /magensinus_home/1/edit
+    # GET /magensinus/home/edit
     def edit
     end
 
-    # PATCH/PUT /magensinus_home/1
+    # PATCH/PUT /magensinus/home
     def update
       if @magensinus_home.update(magensinus_home_params)
         flash[:notice] = "Successfully updated..."
@@ -24,12 +27,12 @@ module Magensinus
 
     private
 
-    # Use callbacks to share common setup or constraints between actions.
-    def set_magensinus_home
+    # Magensinus home
+    def magensinus_home
       @magensinus_home = Magensinus::Home.first!
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    # Whitelist parameters
     def magensinus_home_params
       params.require(:magensinus_home).permit(
         :meta_title,
@@ -38,7 +41,12 @@ module Magensinus
         :meta_url,
         :title,
         :description,
-        :body
+        :body,
+        :image,
+        :image_box,
+        :image_caption,
+        :remove_image_box,
+        :image_box_cache
       )
     end
   end

@@ -24,6 +24,10 @@ class CreateMagensinusContact < ActiveRecord::Migration[5.1]
       t.string  :city
       t.string  :country
 
+      t.boolean :image, default: false
+      t.string  :image_box
+      t.string  :image_caption
+
       t.timestamps
     end
   end

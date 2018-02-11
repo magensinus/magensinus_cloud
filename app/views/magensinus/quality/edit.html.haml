@@ -1,5 +1,11 @@
+// Edit
+
 %h1 Editing magensinus_quality
 
-= render 'form'
+- if params_image
+  = render "image", object: @magensinus_quality
+- else
+  = render "form", object: @magensinus_quality
 
-= link_to 'Back', magensinus_quality_path
+= link_to "Image", edit_magensinus_quality_path(image: "true")
+= link_to "Back", magensinus_quality_path

@@ -1,11 +1,7 @@
-= form_with model: @magensinus_home, local: true do |f|
-  - if @magensinus_home.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@magensinus_home.errors.count, "error")} prohibited this magensinus_home from being saved:"
-      %ul
-        - @magensinus_home.errors.full_messages.each do |message|
-          %li= message
+// Form
 
+= form_with model: object, local: true do |f|
+  = render "lib/components/errors", object: object
   .field
     = f.label :meta_title
     = f.text_field :meta_title
