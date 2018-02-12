@@ -12,6 +12,7 @@ module Wallet
       "wallet-document-"
     end
 
+    # Extension whitelist
     def extension_whitelist
       %w[pdf]
     end

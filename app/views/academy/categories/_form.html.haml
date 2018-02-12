@@ -1,6 +1,6 @@
 // Form
 
-= form_for object do |f|
+= form_with model: object, local: true do |f|
   = render "lib/components/errors", object: object
   .field
     = f.label :meta_title
@@ -36,4 +36,4 @@
     = f.label :magensinus
     = f.check_box :magensinus
   .actions
-    = f.submit 'Save'
+    = f.submit "Save"

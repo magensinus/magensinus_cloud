@@ -1,5 +1,9 @@
 // Show
 
+= link_to "Back", magensinus_root_path
+
+= image_tag @magensinus_newsletter.image_box_url.to_s
+
 %p
   %b Meta title:
   = @magensinus_newsletter.meta_title
@@ -28,6 +32,4 @@
   %b Failure:
   = @magensinus_newsletter.failure
 
-= link_to 'Edit', edit_magensinus_newsletter_path
-\|
-= link_to 'Magensinus Dashboard', magensinus_root_path
+= link_to "Edit", edit_magensinus_newsletter_path

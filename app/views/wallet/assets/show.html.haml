@@ -1,6 +1,6 @@
 // Show
 
-%p#notice= notice
+= link_to "Back", wallet_category_assets_path(@wallet_category)
 
 %p
   %b Wallet category:
@@ -19,5 +19,3 @@
   = @wallet_asset.position
 
 = link_to "Edit", edit_wallet_category_asset_path(@wallet_category, @wallet_asset, document: true)
-\|
-= link_to "Back", wallet_category_assets_path(@wallet_category)

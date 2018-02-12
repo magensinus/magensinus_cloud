@@ -1,6 +1,8 @@
+// Index
+
 %h1 Listing academy_section_assets
 
-= render "all"
+= render "all", grandparent: @academy_course, parent: @academy_section, objects: @academy_section_assets
 
 = link_to "Text", new_academy_course_section_section_asset_path(@academy_course, @academy_section, text: "true")
 = link_to "Image", new_academy_course_section_section_asset_path(@academy_course, @academy_section, image: "true")

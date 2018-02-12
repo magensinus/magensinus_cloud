@@ -1,13 +1,13 @@
 // Image
 
-= form_with model: @journal_asset, url: journal_asset_form_url, local: true do |f|
-  = render "lib/components/errors", object: @journal_asset
+= form_with model: object, url: journal_asset_form_url, local: true do |f|
+  = render "lib/components/errors", object: object
   = f.hidden_field :image, value: true
   = f.hidden_field :image_box_cache
   - if params_new || params_create
     .field
       = f.label :image_box
-      = f.file_field :image_box unless @journal_asset.image_box.presence
+      = f.file_field :image_box unless object.image_box.presence
   .field
     = f.label :image_caption
     = f.text_field :image_caption

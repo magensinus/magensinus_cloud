@@ -1,6 +1,6 @@
 // Show
 
-%p#notice= notice
+= link_to "Back", wallet_categories_path
 
 %p
   %b Meta title:
@@ -52,7 +52,4 @@
   = @wallet_category.magensinus
 
 = link_to "Edit", edit_wallet_category_path(@wallet_category)
-\|
-= link_to "Back", wallet_categories_path
-\|
 = link_to "Category Assets", wallet_category_assets_path(@wallet_category)

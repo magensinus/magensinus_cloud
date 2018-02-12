@@ -1,12 +1,12 @@
 // New
 
+= link_to "Back", journal_article_assets_path(@journal_article)
+
 %h1 New journal_asset
 
 - if params_text
-  = render "text"
+  = render "text", object: @journal_asset
 - if params_image
-  = render "image"
+  = render "image", object: @journal_asset
 - if params_video
-  = render "video"
-
-= link_to "Back", journal_article_assets_path(@journal_article)
+  = render "video", object: @journal_asset

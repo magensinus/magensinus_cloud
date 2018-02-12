@@ -1,5 +1,7 @@
-= form_with model: [@academy_course, @academy_section], url: academy_section_form_url, local: true do |f|
-  = hidden_field :academy_course_id, value: @academy_course.id
+// Form
+
+= form_with model: [parent, object], url: academy_section_form_url, local: true do |f|
+  = hidden_field :academy_course_id, value: parent.id
   .field
     = f.label :title
     = f.text_field :title

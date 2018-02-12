@@ -1,9 +1,11 @@
 // Index
-%h1 Listing journal_assets
-
-= render "all"
 
 = link_to "Back", journal_article_path(@journal_article)
+
+%h1 Listing journal_assets
+
+= render "all", parent: @journal_article, objects: @journal_assets
+
 = link_to "Text", new_journal_article_asset_path(@journal_article, text: "true")
 = link_to "Image", new_journal_article_asset_path(@journal_article, image: "true")
 = link_to "Video", new_journal_article_asset_path(@journal_article, video: "true")

@@ -1,8 +1,8 @@
 // New
 
+= link_to "Back", wallet_category_assets_path(@wallet_category)
+
 %h1 New wallet_asset
 
 - if params_document
-  = render "document"
-
-= link_to "Back", wallet_category_assets_path(@wallet_category)
+  = render "document", object: @wallet_asset

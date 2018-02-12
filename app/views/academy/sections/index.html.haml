@@ -1,29 +1,7 @@
+// Index
+
 %h1 Listing academy_sections
 
-%table
-  %thead
-    %tr
-      %th Course
-      %th Slug
-      %th Title
-      %th Published
-      %th Position
-      %th
-      %th
-      %th
-
-  %tbody
-    - @academy_sections.each do |academy_section|
-      %tr
-        %td= academy_section.course
-        %td= academy_section.slug
-        %td= academy_section.title
-        %td= academy_section.published
-        %td= academy_section.position
-        %td= link_to "Show", academy_section
-        %td= link_to "Edit", edit_academy_section_path(academy_section)
-        %td= link_to "Destroy", academy_section, method: :delete, data: { confirm: "Are you sure?" }
-
-%br
+= render "all", objects: @academy_sections
 
 = link_to "New Academy section", new_academy_course_section_path(@academy_course)

@@ -1,10 +1,10 @@
 // Edit
 
+= link_to "Back", wallet_category_assets_path(@wallet_category)
+
 %h1 Editing wallet_asset
 
 - if params_document
-  = render "document"
+  = render "document", object: @wallet_asset
 
 = link_to "Show", wallet_category_asset_path(@wallet_category, @wallet_asset)
-\|
-= link_to "Back", wallet_category_assets_path(@wallet_category)

@@ -13,33 +13,33 @@ module Magensinus
     end
 
     # Original
-    process resize_to_limit: [1024, 1024]
+    process resize_to_limit: [720, 1024]
 
     # Versions
     # --------
     # Nano
     version :nano do
-      process resize_to_limit: [120, 1024]
+      process resize_to_limit: [40, 1024]
     end
 
     # Tiny
     version :tiny do
-      process resize_to_limit: [240, 1024]
+      process resize_to_limit: [80, 1024]
     end
 
     # Small
     version :small do
-      process resize_to_limit: [480, 1024]
+      process resize_to_limit: [120, 1024]
     end
 
     # Medium
     version :medium do
-      process resize_to_limit: [720, 1024]
+      process resize_to_limit: [240, 1024]
     end
 
     # large
     version :large do
-      process resize_to_limit: [960, 1024]
+      process resize_to_limit: [480, 1024]
     end
 
     # Extension whitelist

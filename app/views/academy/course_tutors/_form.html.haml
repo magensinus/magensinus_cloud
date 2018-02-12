@@ -1,13 +1,9 @@
-= form_for [@academy_course, @academy_course_tutor], url: academy_course_course_tutor_path(@academy_course) do |f|
-  - if @academy_course_tutor.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@academy_course_tutor.errors.count, "error")} prohibited this academy_course_tutor from being saved:"
-      %ul
-        - @academy_course_tutor.errors.full_messages.each do |message|
-          %li= message
+// Form
 
+= form_with model: [parent, object], url: academy_course_course_tutor_path(parent), local: true do |f|
+  = render "lib/components/errors", object: object
   .field
     = f.label :coordinator
     = f.check_box :coordinator
   .actions
-    = f.submit 'Save'
+    = f.submit "Save"

@@ -30,7 +30,7 @@ Metrics/ModuleLength:
   CountComments: false
 
 Metrics/BlockLength:
-  Max: 64
+  Max: 128
   CountComments: false
 
 ## Style

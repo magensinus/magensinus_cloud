@@ -1,32 +1,9 @@
 // Index
 
+= link_to "Back", wallet_root_path
+
 %h1 Listing wallet_categories
 
-%table
-  %thead
-    %tr
-      %th
-      %th Title
-      %th Published
-      %th Eml
-      %th Magestil
-      %th Magensinus
-      %th
-      %th
-      %th
-  %tbody.sortable{ "data-url" => sortable_wallet_categories_path }
-    - @wallet_categories.each do |item|
-      %tr{ id: "wallet_category_#{item.id}" }
-        %td= link_to "Sort Me", "#", class: "handle"
-        %td= item.title
-        %td= item.published
-        %td= item.eml
-        %td= item.magestil
-        %td= item.magensinus
-        %td= link_to "Show", wallet_category_path(item)
-        %td= link_to "Edit", edit_wallet_category_path(item)
-        %td= link_to "Destroy", wallet_category_path(item), method: :delete, data: { confirm: "Are you sure?" }
+= render "all", objects: @wallet_categories
 
 = link_to "New Wallet category", new_wallet_category_path
-\|
-= link_to "Wallet Dashboard", wallet_root_path

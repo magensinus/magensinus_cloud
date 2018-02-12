@@ -1,6 +1,6 @@
 // Show
 
-%p#notice= notice
+= link_to "Back", journal_article_assets_path(@journal_article)
 
 %p
   %b Journal article:
@@ -45,5 +45,3 @@
   = link_to "Image", edit_journal_article_asset_path(@journal_article, @journal_asset, image: true)
 - if @journal_asset.video == true
   = link_to "Video", edit_journal_article_asset_path(@journal_article, @journal_asset, video: true)
-\|
-= link_to "Back", journal_article_assets_path(@journal_article)

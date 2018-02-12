@@ -2,10 +2,9 @@
 
 %h1 Listing journal_articles
 
-= render "unpublished", items: @unpublished_journal_articles
-= render "scheduled",   items: @scheduled_journal_articles
-= render "published",   items: @published_journal_articles
+= render "unpublished", objects: @unpublished_journal_articles
+= render "scheduled",   objects: @scheduled_journal_articles
+= render "published",   objects: @published_journal_articles
 
 = link_to "New Journal article", new_journal_article_path
-\|
 = link_to "Journal Dashboard", journal_root_path

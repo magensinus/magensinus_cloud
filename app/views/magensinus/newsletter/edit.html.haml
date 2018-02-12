@@ -1,5 +1,7 @@
 // Edit
 
+= link_to "Back", magensinus_newsletter_path
+
 %h1 Editing magensinus_newsletter
 
 - if params_image
@@ -8,4 +10,3 @@
   = render "form", object: @magensinus_newsletter
 
 = link_to "Image", edit_magensinus_newsletter_path(image: "true")
-= link_to "Back", magensinus_newsletter_path

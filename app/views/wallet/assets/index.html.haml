@@ -1,32 +1,9 @@
 // Index
 
+= link_to "Back", new_wallet_category_path(@wallet_category)
+
 %h1 Listing wallet_assets
 
-%table
-  %thead
-    %tr
-      %th
-      %th Wallet category
-      %th Document
-      %th Document box
-      %th Document caption
-      %th Position
-      %th
-      %th
-      %th
-  %tbody.sortable{ "data-url" => sortable_wallet_category_assets_path(@wallet_category) }
-    - @wallet_assets.each do |item|
-      %tr{ id: "wallet_asset_#{item.id}" }
-        %td= link_to "Sort Me", "#", class: "handle"
-        %td= item.category
-        %td= item.document
-        %td= item.document_box
-        %td= item.document_caption
-        %td= item.position
-        %td= link_to "Show", wallet_category_asset_path(@wallet_category, item)
-        %td= link_to "Edit", edit_wallet_category_asset_path(@wallet_category, item, document: true)
-        %td= link_to "Destroy", wallet_category_asset_path(@wallet_category, item), method: :delete, data: { confirm: "Are you sure?" }
+= render "all", parent: @wallet_category, objects: @wallet_assets
 
 = link_to "New Wallet Document", new_wallet_category_asset_path(@wallet_category, document: "true")
-\|
-= link_to "Back", new_wallet_category_path(@wallet_category)

@@ -1,5 +1,9 @@
 // Show
 
+= link_to "Back", magensinus_root_path
+
+= image_tag @magensinus_courses.image_box_url.to_s
+
 %p
   %b Meta title:
   = @magensinus_courses.meta_title
@@ -22,6 +26,4 @@
   %b Body:
   = @magensinus_courses.body
 
-= link_to 'Edit', edit_magensinus_courses_path
-\|
-= link_to 'Magensinus Dashboard', magensinus_root_path
+= link_to "Edit", edit_magensinus_courses_path

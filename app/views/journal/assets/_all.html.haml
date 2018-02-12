@@ -1,20 +1,22 @@
+// All
+
 %table
   %tbody
-    - @journal_assets.each do |journal_asset|
+    - objects.each do |object|
       %tr
-        - if journal_asset.text == true
-          %td= journal_asset.text_box
-        - if journal_asset.image == true
-          %td= image_tag journal_asset.image_box_url.to_s
-          %td= journal_asset.image_caption
-        - if journal_asset.video == true
-          %td= journal_asset.video_box
-          %td= journal_asset.video_caption
+        - if object.text == true
+          %td= object.text_box
+        - if object.image == true
+          %td= image_tag object.image_box_url.to_s
+          %td= object.image_caption
+        - if object.video == true
+          %td= object.video_box
+          %td= object.video_caption
         %td
-          - if journal_asset.text == true
-            = link_to "Edit", edit_journal_article_asset_path(@journal_article, journal_asset, text: true)
-          - if journal_asset.image == true
-            = link_to "Edit", edit_journal_article_asset_path(@journal_article, journal_asset, image: true)
-          - if journal_asset.video == true
-            = link_to "Edit", edit_journal_article_asset_path(@journal_article, journal_asset, video: true)
-        %td= link_to "Destroy", journal_article_asset_path(@journal_article, journal_asset), method: :delete, data: { confirm: "Are you sure?" }
+          - if object.text == true
+            = link_to "Edit", edit_journal_article_asset_path(parent, object, text: true)
+          - if object.image == true
+            = link_to "Edit", edit_journal_article_asset_path(parent, object, image: true)
+          - if object.video == true
+            = link_to "Edit", edit_journal_article_asset_path(parent, object, video: true)
+        %td= link_to "Destroy", journal_article_asset_path(parent, object), method: :delete, data: { confirm: "Are you sure?" }

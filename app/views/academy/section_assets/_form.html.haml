@@ -1,6 +1,8 @@
-= form_for [grand_parent, parent, object], url: academy_section_asset_form_url do |f|
+// Form
+
+= form_with model: [grand_parent, parent, object], url: academy_section_asset_form_url, local: true do |f|
   = render "lib/components/errors", object: object
-  = hidden_field :academy_section_id, value: @academy_section.id
+  = hidden_field :academy_section_id, value: parent.id
   .field
     = f.label :text
     = f.check_box :text

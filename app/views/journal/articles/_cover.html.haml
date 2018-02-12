@@ -1,13 +1,13 @@
 // Cover
 
-= form_with model: @journal_article, local: true do |f|
-  = render "lib/components/errors", object: @journal_article
+= form_with model: object, local: true do |f|
+  = render "lib/components/errors", object: object
   = f.hidden_field :cover, value: true
   = f.hidden_field :cover_box_cache
   .field
     = f.label :cover_box
-    = f.file_field :cover_box unless @journal_article.cover_box.presence
-  - if @journal_article.cover_box.presence
+    = f.file_field :cover_box unless object.cover_box.presence
+  - if object.cover_box.presence
     .field
       = f.label :remove_cover_box
       = f.check_box :remove_cover_box

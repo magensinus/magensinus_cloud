@@ -1,7 +1,7 @@
 // Video
 
-= form_with model: @journal_asset, url: journal_asset_form_url, local: true do |f|
-  = render "lib/components/errors", object: @journal_asset
+= form_with model: object, url: journal_asset_form_url, local: true do |f|
+  = render "lib/components/errors", object: object
   = f.hidden_field :video, value: true
   - if params_new || params_create
     .field

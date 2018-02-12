@@ -1,0 +1,26 @@
+// All
+
+%table
+  %thead
+    %tr
+      %th
+      %th Wallet category
+      %th Document
+      %th Document box
+      %th Document caption
+      %th Position
+      %th
+      %th
+      %th
+  %tbody.sortable{ "data-url" => sortable_wallet_category_assets_path(parent) }
+    - objects.each do |object|
+      %tr{ id: "wallet_asset_#{object.id}" }
+        %td= link_to "Sort Me", "#", class: "handle"
+        %td= object.category
+        %td= object.document
+        %td= object.document_box
+        %td= object.document_caption
+        %td= object.position
+        %td= link_to "Show", wallet_category_asset_path(parent, object)
+        %td= link_to "Edit", edit_wallet_category_asset_path(parent, object, document: true)
+        %td= link_to "Destroy", wallet_category_asset_path(parent, object), method: :delete, data: { confirm: "Are you sure?" }

@@ -1,6 +1,6 @@
 // Form
 
-= form_for object do |f|
+= form_with model: object, local: true do |f|
   = render "lib/components/errors", object: object
   .field
     = f.label :meta_title
@@ -42,4 +42,4 @@
     = f.label :tutors
     = f.collection_check_boxes :tutor_ids, tutors, :id, :name, include_hidden: false
   .actions
-    = f.submit 'Save'
+    = f.submit "Save"

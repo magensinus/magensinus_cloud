@@ -19,7 +19,7 @@ module Academy
     # Uploaders
     # ---------
     # Image
-    mount_uploader :image_box, Academy::Tutor::ImageUploader
+    mount_uploader :image_box, Academy::ImageUploader
 
     # Relationships
     # -------------

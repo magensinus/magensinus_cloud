@@ -1,0 +1,22 @@
+// All
+
+%table
+  %thead
+    %tr
+      %th Title
+      %th Username
+      %th Url
+      %th Position
+      %th
+      %th
+      %th
+  %tbody
+    - objects.each do |object|
+      %tr
+        %td= object.title
+        %td= object.username
+        %td= object.url
+        %td= object.position
+        %td= link_to "Show", magensinus_network_path(object)
+        %td= link_to "Edit", edit_magensinus_network_path(object)
+        %td= link_to "Destroy", magensinus_network_path(object), method: :delete, data: { confirm: "Are you sure?" }

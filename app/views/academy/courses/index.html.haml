@@ -5,7 +5,7 @@
 %h1 Listing academy_courses
 
 - if params_all
-  = render "all",objects: @academy_courses
+  = render "all", objects: @academy_courses
 - if params_scheduled
   = render "scheduled", objects: @scheduled_academy_courses
 - if params_published

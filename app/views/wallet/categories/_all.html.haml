@@ -1,0 +1,26 @@
+// All
+
+%table
+  %thead
+    %tr
+      %th
+      %th Title
+      %th Published
+      %th Eml
+      %th Magestil
+      %th Magensinus
+      %th
+      %th
+      %th
+  %tbody.sortable{ "data-url" => sortable_wallet_categories_path }
+    - objects.each do |object|
+      %tr{ id: "wallet_category_#{object.id}" }
+        %td= link_to "Sort Me", "#", class: "handle"
+        %td= object.title
+        %td= object.published
+        %td= object.eml
+        %td= object.magestil
+        %td= object.magensinus
+        %td= link_to "Show", wallet_category_path(object)
+        %td= link_to "Edit", edit_wallet_category_path(object)
+        %td= link_to "Destroy", wallet_category_path(object), method: :delete, data: { confirm: "Are you sure?" }

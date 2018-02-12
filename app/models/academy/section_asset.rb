@@ -19,9 +19,9 @@ module Academy
     # Uploaders
     # ---------
     # Image
-    mount_uploader :image_box, Academy::SectionAsset::ImageUploader
+    mount_uploader :image_box, Academy::ImageUploader
     # Document
-    mount_uploader :document_box, Academy::SectionAsset::DocumentUploader
+    mount_uploader :document_box, Academy::DocumentUploader
 
     # Clean Capitions
     # ---------------

@@ -1,6 +1,6 @@
 // Show
 
-%p#notice= notice
+= link_to "Back", subscriptions_path
 
 %p
   %b Active:
@@ -16,4 +16,3 @@
   = @subscription.email
 
 = link_to "Edit", edit_subscription_path(@subscription)
-= link_to "Back", subscriptions_path

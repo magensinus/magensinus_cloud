@@ -5,7 +5,7 @@ module Endorsement
     # Callbacks
     # ---------
     # Endorsement badge
-    before_action :endorsement_badge, only: [:show, :edit, :update, :destroy]
+    before_action :endorsement_badge, only: [:edit, :update, :destroy]
 
     # Index
     # -----

@@ -12,6 +12,7 @@ module Academy
       "academy-document-"
     end
 
+    # Extension whitelist
     def extension_whitelist
       %w[pdf]
     end

@@ -3,7 +3,7 @@
 module Academy
   class CourseTutorsController < ApplicationController
     before_action :academy_course
-    before_action :academy_course_tutor, only: [:show, :edit, :update, :destroy]
+    before_action :academy_course_tutor, only: [:edit, :update, :destroy]
 
     # GET /academy_course_tutors
     def index

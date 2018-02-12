@@ -1,33 +1,7 @@
+// Index
+
 %h1 Listing academy_tutors
 
-%table
-  %thead
-    %tr
-      %th Name
-      %th Surname
-      %th Biography
-      %th Image
-      %th Image box
-      %th Image caption
-      %th Position
-      %th
-      %th
-      %th
-
-  %tbody
-    - @academy_tutors.each do |academy_tutor|
-      %tr
-        %td= academy_tutor.name
-        %td= academy_tutor.surname
-        %td= academy_tutor.biography
-        %td= academy_tutor.image
-        %td= academy_tutor.image_box
-        %td= academy_tutor.image_caption
-        %td= academy_tutor.position
-        %td= link_to "Show", academy_tutor
-        %td= link_to "Edit", edit_academy_tutor_path(academy_tutor)
-        %td= link_to "Destroy", academy_tutor, method: :delete, data: { confirm: "Are you sure?" }
-
-%br
+= render "all", objects: @academy_tutors
 
 = link_to "New Academy tutor", new_academy_tutor_path

@@ -1,5 +1,9 @@
 // Show
 
+= link_to "Back", magensinus_root_path
+
+= image_tag @magensinus_contact.image_box_url.to_s
+
 %p
   %b Meta title:
   = @magensinus_contact.meta_title
@@ -46,6 +50,4 @@
   %b Country:
   = @magensinus_contact.country
 
-= link_to 'Edit', edit_magensinus_contact_path
-\|
-= link_to 'Magensinus Dashboard', magensinus_root_path
+= link_to "Edit", edit_magensinus_contact_path

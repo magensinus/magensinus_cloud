@@ -1,12 +1,12 @@
 // Edit
 
+= link_to "Back", endorsement_badges_path
+
 %h1 Editing endorsement_badge
 
 - if params_thumb
-  = render "thumb"
+  = render "thumb", object: @endorsement_badge
 - else
-  = render "form"
+  = render "form", object: @endorsement_badge
 
 = link_to "Thumb", edit_endorsement_badge_path(@endorsement_badge, thumb: "true")
-\|
-= link_to "Back", endorsement_badges_path
