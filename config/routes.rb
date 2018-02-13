@@ -54,6 +54,7 @@ Rails.application.routes.draw do
     end
     resources :enrollments, controller: :enrollments
     resources :tutors, controller: :tutors
+    resources :schools, controller: :schools
   end
 
   namespace :wallet do

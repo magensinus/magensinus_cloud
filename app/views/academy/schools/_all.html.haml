@@ -1,0 +1,21 @@
+// All
+
+%table
+  %thead
+    %tr
+      %th Title
+      %th Description
+      %th Published
+      %th
+      %th
+      %th
+
+  %tbody
+    - objects.each do |object|
+      %tr
+        %td= object.title
+        %td= object.description
+        %td= object.published
+        %td= link_to "Show", academy_school_path(object)
+        %td= link_to "Edit", edit_academy_school_path(object)
+        %td= link_to "Destroy", academy_school_path(object), method: :delete, data: { confirm: "Are you sure?" }

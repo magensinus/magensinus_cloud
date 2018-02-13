@@ -1,0 +1,43 @@
+= link_to "Back", academy_schools_path
+
+%p
+  %b Meta title:
+  = @academy_school.meta_title
+%p
+  %b Meta description:
+  = @academy_school.meta_description
+%p
+  %b Meta image box:
+  = @academy_school.meta_image_box
+%p
+  %b Meta url:
+  = @academy_school.meta_url
+%p
+  %b Title:
+  = @academy_school.title
+%p
+  %b Description:
+  = @academy_school.description
+%p
+  %b Thumb:
+  = @academy_school.thumb
+%p
+  %b Thumb box:
+  = @academy_school.thumb_box
+%p
+  %b Thumb caption:
+  = @academy_school.thumb_caption
+%p
+  %b Cover:
+  = @academy_school.cover
+%p
+  %b Cover box:
+  = @academy_school.cover_box
+%p
+  %b Cover caption:
+  = @academy_school.cover_caption
+%p
+  %b Published:
+  = @academy_school.published
+
+= link_to "Edit", edit_academy_school_path(@academy_school)

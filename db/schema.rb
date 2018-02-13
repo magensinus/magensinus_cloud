@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180210131211) do
+ActiveRecord::Schema.define(version: 20180213154602) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -105,6 +105,28 @@ ActiveRecord::Schema.define(version: 20180210131211) do
     t.datetime "updated_at", null: false
     t.index ["academy_category_id"], name: "index_academy_enrollments_on_academy_category_id"
     t.index ["slug"], name: "index_academy_enrollments_on_slug"
+  end
+
+  create_table "academy_schools", force: :cascade do |t|
+    t.string "slug"
+    t.string "meta_title"
+    t.text "meta_description"
+    t.string "meta_image_box"
+    t.string "meta_url"
+    t.string "title"
+    t.text "description"
+    t.string "url"
+    t.boolean "thumb", default: false
+    t.string "thumb_box"
+    t.string "thumb_caption"
+    t.boolean "cover", default: false
+    t.string "cover_box"
+    t.string "cover_caption"
+    t.boolean "published", default: false
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_academy_schools_on_slug"
   end
 
   create_table "academy_section_assets", force: :cascade do |t|
