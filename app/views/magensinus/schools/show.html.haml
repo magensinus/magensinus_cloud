@@ -1,0 +1,29 @@
+// Show
+
+= link_to "Back", magensinus_root_path
+
+= image_tag @magensinus_schools.image_box_url.to_s
+
+%p
+  %b Meta title:
+  = @magensinus_schools.meta_title
+%p
+  %b Meta description:
+  = @magensinus_schools.meta_description
+%p
+  %b Meta image box:
+  = @magensinus_schools.meta_image_box
+%p
+  %b Meta url:
+  = @magensinus_schools.meta_url
+%p
+  %b Title:
+  = @magensinus_schools.title
+%p
+  %b Description:
+  = @magensinus_schools.description
+%p
+  %b Body:
+  = @magensinus_schools.body
+
+= link_to "Edit", edit_magensinus_schools_path

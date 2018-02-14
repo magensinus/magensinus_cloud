@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resource :articles,   controller: :articles
     resource :contact,    controller: :contact
     resource :newsletter, controller: :newsletter
+    resource :schools,    controller: :schools
     resources :networks,  controller: :networks
   end
 

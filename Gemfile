@@ -7,6 +7,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# See https://github.com/rails/execjs#readme for more supported runtimes
+gem "therubyracer", platforms: :ruby
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails"
 gem "rails", "~> 5.1.4"
 
@@ -19,8 +22,6 @@ gem "puma", "~> 3.11"
 # Use SCSS for stylesheets
 gem "sass-rails", "~> 5.0"
 
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem "therubyracer", platforms: :ruby
 # Use CoffeeScript for .coffee assets and views
 gem "coffee-rails", "~> 4.2"
 
