@@ -1,0 +1,35 @@
+// Show
+
+= link_to "Back", magestil_root_path
+
+= image_tag @magestil_newsletter.image_box_url.to_s
+
+%p
+  %b Meta title:
+  = @magestil_newsletter.meta_title
+%p
+  %b Meta description:
+  = @magestil_newsletter.meta_description
+%p
+  %b Meta image box:
+  = @magestil_newsletter.meta_image_box
+%p
+  %b Meta url:
+  = @magestil_newsletter.meta_url
+%p
+  %b Title:
+  = @magestil_newsletter.title
+%p
+  %b Description:
+  = @magestil_newsletter.description
+%p
+  %b Body:
+  = @magestil_newsletter.body
+%p
+  %b Success:
+  = @magestil_newsletter.success
+%p
+  %b Failure:
+  = @magestil_newsletter.failure
+
+= link_to "Edit", edit_magestil_newsletter_path

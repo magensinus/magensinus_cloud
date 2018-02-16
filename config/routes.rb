@@ -4,6 +4,19 @@ Rails.application.routes.draw do
   root to: "dashboard#show"
   resource :dashboard, controller: :dashboard
 
+  namespace :magestil do
+    root to: "dashboard#show"
+    resource :dashboard,  controller: :dashboard
+    resource :settings,   controller: :settings
+    resource :home,       controller: :home
+    resource :about,      controller: :about
+    resource :courses,    controller: :courses
+    resource :articles,   controller: :articles
+    resource :contact,    controller: :contact
+    resource :newsletter, controller: :newsletter
+    resources :networks,  controller: :networks
+  end
+
   namespace :magensinus do
     root to: "dashboard#show"
     resource :dashboard,  controller: :dashboard

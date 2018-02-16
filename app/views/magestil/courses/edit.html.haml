@@ -1,0 +1,12 @@
+// Edit
+
+= link_to "Back", magestil_courses_path
+
+%h1 Editing magestil_course
+
+- if params_image
+  = render "image", object: @magestil_courses
+- else
+  = render "form", object: @magestil_courses
+
+= link_to "Image", edit_magestil_courses_path(image: "true")

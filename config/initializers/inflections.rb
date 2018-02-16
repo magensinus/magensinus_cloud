@@ -7,6 +7,14 @@
 # locales as you wish. All of these examples are active by default:
 ActiveSupport::Inflector.inflections(:en) do |inflect|
   inflect.uncountable %w[
+    magestil_settings
+    magestil_home
+    magestil_about
+    magestil_courses
+    magestil_articles
+    magestil_contact
+    magestil_newsletter
+    magestil_networks
     magensinus_settings
     magensinus_home
     magensinus_about

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180214104050) do
+ActiveRecord::Schema.define(version: 20180220131211) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -412,6 +412,146 @@ ActiveRecord::Schema.define(version: 20180214104050) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_magensinus_settings_on_slug"
+  end
+
+  create_table "magestil_about", force: :cascade do |t|
+    t.string "slug"
+    t.string "meta_title"
+    t.text "meta_description"
+    t.string "meta_image_box"
+    t.string "meta_url"
+    t.string "title"
+    t.text "description"
+    t.text "body"
+    t.boolean "image", default: false
+    t.string "image_box"
+    t.string "image_caption"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_magestil_about_on_slug"
+  end
+
+  create_table "magestil_articles", force: :cascade do |t|
+    t.string "slug"
+    t.string "meta_title"
+    t.text "meta_description"
+    t.string "meta_image_box"
+    t.string "meta_url"
+    t.string "title"
+    t.text "description"
+    t.text "body"
+    t.boolean "image", default: false
+    t.string "image_box"
+    t.string "image_caption"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_magestil_articles_on_slug"
+  end
+
+  create_table "magestil_contact", force: :cascade do |t|
+    t.string "slug"
+    t.string "meta_title"
+    t.text "meta_description"
+    t.string "meta_image_box"
+    t.string "meta_url"
+    t.string "title"
+    t.text "description"
+    t.text "body"
+    t.string "fax"
+    t.string "email"
+    t.string "phone"
+    t.string "address_one"
+    t.string "address_two"
+    t.string "postcode"
+    t.string "city"
+    t.string "country"
+    t.boolean "image", default: false
+    t.string "image_box"
+    t.string "image_caption"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_magestil_contact_on_slug"
+  end
+
+  create_table "magestil_courses", force: :cascade do |t|
+    t.string "slug"
+    t.string "meta_title"
+    t.text "meta_description"
+    t.string "meta_image_box"
+    t.string "meta_url"
+    t.string "title"
+    t.text "description"
+    t.text "body"
+    t.boolean "image", default: false
+    t.string "image_box"
+    t.string "image_caption"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_magestil_courses_on_slug"
+  end
+
+  create_table "magestil_home", force: :cascade do |t|
+    t.string "slug"
+    t.string "meta_title"
+    t.text "meta_description"
+    t.string "meta_image_box"
+    t.string "meta_url"
+    t.string "title"
+    t.text "description"
+    t.text "body"
+    t.boolean "image", default: false
+    t.string "image_box"
+    t.string "image_caption"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_magestil_home_on_slug"
+  end
+
+  create_table "magestil_networks", force: :cascade do |t|
+    t.string "slug"
+    t.string "title"
+    t.string "username"
+    t.string "url"
+    t.boolean "thumb", default: false
+    t.string "thumb_box"
+    t.string "thumb_caption"
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_magestil_networks_on_slug"
+  end
+
+  create_table "magestil_newsletter", force: :cascade do |t|
+    t.string "slug"
+    t.string "meta_title"
+    t.text "meta_description"
+    t.string "meta_image_box"
+    t.string "meta_url"
+    t.string "title"
+    t.text "description"
+    t.text "body"
+    t.text "success"
+    t.text "failure"
+    t.boolean "image", default: false
+    t.string "image_box"
+    t.string "image_caption"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_magestil_newsletter_on_slug"
+  end
+
+  create_table "magestil_settings", force: :cascade do |t|
+    t.string "slug"
+    t.string "meta_title"
+    t.text "meta_description"
+    t.string "meta_image_box"
+    t.string "meta_url"
+    t.string "title"
+    t.text "description"
+    t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_magestil_settings_on_slug"
   end
 
   create_table "subscriptions", force: :cascade do |t|

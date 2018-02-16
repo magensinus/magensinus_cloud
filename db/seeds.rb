@@ -1,6 +1,4 @@
 =begin
-=end
-
 # Create Magensinus Settings
 Magensinus::Settings.create(
   meta_title: "",
@@ -59,6 +57,56 @@ Magensinus::Newsletter.create(
 
 # Create Magensinus Schools
 Magensinus::Schools.create(
+  meta_title: "",
+  meta_description: "",
+  meta_url: ""
+)
+=end
+
+# Create Magestil Settings
+Magestil::Settings.create(
+  meta_title: "",
+  meta_description: "",
+  meta_url: ""
+)
+
+# Create Magestil Home
+Magestil::Home.create(
+  meta_title: "",
+  meta_description: "",
+  meta_url: ""
+)
+
+# Create Magestil About
+Magestil::About.create(
+  meta_title: "",
+  meta_description: "",
+  meta_url: ""
+)
+
+# Create Magestil Courses
+Magestil::Courses.create(
+  meta_title: "",
+  meta_description: "",
+  meta_url: ""
+)
+
+# Create Magestil Articles
+Magestil::Articles.create(
+  meta_title: "",
+  meta_description: "",
+  meta_url: ""
+)
+
+# Create Magestil Contact
+Magestil::Contact.create(
+  meta_title: "",
+  meta_description: "",
+  meta_url: ""
+)
+
+# Create Magestil Newsletter
+Magestil::Newsletter.create(
   meta_title: "",
   meta_description: "",
   meta_url: ""

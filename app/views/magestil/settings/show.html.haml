@@ -1,0 +1,27 @@
+// Show
+
+= link_to "Back", magestil_root_path
+
+%p
+  %b Meta title:
+  = @magestil_settings.meta_title
+%p
+  %b Meta description:
+  = @magestil_settings.meta_description
+%p
+  %b Meta image box:
+  = @magestil_settings.meta_image_box
+%p
+  %b Meta url:
+  = @magestil_settings.meta_url
+%p
+  %b Title:
+  = @magestil_settings.title
+%p
+  %b Description:
+  = @magestil_settings.description
+%p
+  %b Url:
+  = @magestil_settings.url
+
+= link_to "Edit", edit_magestil_settings_path

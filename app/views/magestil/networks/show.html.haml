@@ -1,0 +1,24 @@
+// Show
+
+= link_to "Back", magestil_networks_path
+
+%p
+  %b Title:
+  = @magestil_network.title
+%p
+  %b Username:
+  = @magestil_network.username
+%p
+  %b Url:
+  = @magestil_network.url
+%p
+  %b Thumb:
+  = @magestil_network.thumb
+%p
+  %b Thumb box:
+  = @magestil_network.thumb_box
+%p
+  %b Thumb caption:
+  = @magestil_network.thumb_caption
+
+= link_to "Edit", edit_magestil_network_path(@magestil_network)
