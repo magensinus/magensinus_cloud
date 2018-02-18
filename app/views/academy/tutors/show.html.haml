@@ -14,17 +14,15 @@
 %p
   %b Biography:
   = @academy_tutor.biography
-%p
-  %b Image:
-  = @academy_tutor.image
-%p
-  %b Image box:
-  = @academy_tutor.image_box
-%p
-  %b Image caption:
-  = @academy_tutor.image_caption
-%p
-  %b Position:
-  = @academy_tutor.position
+-#
+  %p
+    %b Image:
+    = @academy_tutor.image
+  %p
+    %b Image box:
+    = @academy_tutor.image_box
+  %p
+    %b Image caption:
+    = @academy_tutor.image_caption
 
 = link_to "Edit", edit_academy_tutor_path(@academy_tutor)

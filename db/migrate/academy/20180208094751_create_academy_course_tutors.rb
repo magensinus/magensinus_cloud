@@ -11,7 +11,7 @@ class CreateAcademyCourseTutors < ActiveRecord::Migration[5.1]
 
       t.string  :slug, unique: true, index: true
 
-      t.boolean :coordinator, deafult: true
+      t.boolean :coordinator, default: false
 
       t.integer :position
 

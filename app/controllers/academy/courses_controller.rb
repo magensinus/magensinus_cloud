@@ -23,7 +23,7 @@ module Academy
     # ----
     # GET /academy/courses/BCjsHY4R
     def show
-      @academy_tutors = @academy_course.course_tutors.all
+      @academy_tutors = @academy_course.course_tutors.includes(:tutor).all
     end
 
     # Edit

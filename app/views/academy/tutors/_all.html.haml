@@ -5,11 +5,6 @@
     %tr
       %th Name
       %th Surname
-      %th Biography
-      %th Image
-      %th Image box
-      %th Image caption
-      %th Position
       %th
       %th
       %th
@@ -18,11 +13,6 @@
       %tr
         %td= object.name
         %td= object.surname
-        %td= object.biography
-        %td= object.image
-        %td= object.image_box
-        %td= object.image_caption
-        %td= object.position
         %td= link_to "Show", academy_tutor_path(object)
         %td= link_to "Edit", edit_academy_tutor_path(object)
         %td= link_to "Destroy", academy_tutor_path(object), method: :delete, data: { confirm: "Are you sure?" }

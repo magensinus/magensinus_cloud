@@ -3,18 +3,6 @@
 = form_with model: object, local: true do |f|
   = render "lib/components/errors", object: object
   .field
-    = f.label :meta_title
-    = f.text_field :meta_title
-  .field
-    = f.label :meta_description
-    = f.text_area :meta_description
-  .field
-    = f.label :meta_image_box
-    = f.text_field :meta_image_box
-  .field
-    = f.label :meta_url
-    = f.text_field :meta_url
-  .field
     = f.label :academy_categories
     = f.collection_radio_buttons :academy_category_id, categories, :id, :title, include_hidden: false
   .field

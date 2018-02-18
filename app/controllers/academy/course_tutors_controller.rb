@@ -7,7 +7,7 @@ module Academy
 
     # GET /academy_course_tutors
     def index
-      @academy_course_tutors = @academy_course.course_tutors.all
+      @academy_course_tutors ||= @academy_course.course_tutors.includes(:course).includes(:tutor).all
     end
 
     # GET /academy_course_tutors/1/edit

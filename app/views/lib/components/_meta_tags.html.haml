@@ -1,0 +1,21 @@
+// Meta tags
+
+= form_with model: object, local: true do |f|
+  = render "lib/components/errors", object: object
+  = f.hidden_field :meta_image_box_cache
+  .field
+    = f.label :meta_title
+    = f.text_field :meta_title
+  .field
+    = f.label :meta_description
+    = f.text_area :meta_description
+  .field
+    = f.label :meta_url
+    = f.text_field :meta_url
+  .field
+    = f.label :meta_image_box
+    = f.file_field :meta_image_box unless object.meta_image_box.presence
+  - if object.meta_image_box.presence
+    .field
+      = f.label :remove_meta_image_box
+      = f.check_box :remove_meta_image_box
