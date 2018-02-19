@@ -10,10 +10,10 @@
   = @academy_course.description
 %p
   %b Body:
-  = safe_join(@academy_course.body) if @academy_course.body.presence
+  = safe_join([@academy_course.body.html_safe]) if @academy_course.body.presence
 %p
   %b Misc:
-  = safe_join(@academy_course.misc) if @academy_course.misc.presence
+  = safe_join([@academy_course.misc.html_safe]) if @academy_course.misc.presence
 -#
   %p
     %b Thumb:
