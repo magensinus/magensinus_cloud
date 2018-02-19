@@ -1,9 +1,10 @@
 // All
 
 %table
-  %tbody
+  %tbody.sortable{ "data-url" => sortable_journal_article_assets_path(parent) }
     - objects.each do |object|
-      %tr
+      %tr{ id: "journal_asset_#{object.id}" }
+        %td= link_to "Sort Me", "#", class: "handle"
         - if object.text == true
           %td= object.text_box
         - if object.image == true

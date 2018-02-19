@@ -3,7 +3,7 @@
 module Journal
   class AssetsController < ApplicationController
     before_action :journal_article
-    before_action :journal_asset, only: [:show, :edit, :update, :destroy]
+    before_action :journal_asset, only: [:show, :edit, :update, :destroy, :sortable]
 
     # Index
     # -----
@@ -68,6 +68,14 @@ module Journal
       else
         render :new
       end
+    end
+
+    # Sortable
+    # --------
+    # PATCH /journal/articles/KItfGH7E/assets/
+    def sortable
+      @journal_article.assets.sort_position(params[:journal_asset])
+      head :ok
     end
 
     private

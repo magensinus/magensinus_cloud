@@ -1,6 +1,6 @@
 // Thumb
 
-= form_with model: object, local: true do |f|
+= form_with model: object, url: magensinus_network_form_url, local: true do |f|
   = render "lib/components/errors", object: object
   = f.hidden_field :thumb, value: true
   = f.hidden_field :thumb_box_cache

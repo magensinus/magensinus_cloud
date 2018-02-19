@@ -4,7 +4,7 @@
   = render "lib/components/errors", object: object
   = f.hidden_field :text, value: true
   .field
-    = f.label :text_box
-    = f.text_area :text_box
+    %trix-editor{ input: "text_box" }
+    = f.hidden_field :text_box, id: "text_box"
   .actions
     = f.submit "Save"
