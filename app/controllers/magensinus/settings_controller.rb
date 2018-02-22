@@ -47,7 +47,12 @@ module Magensinus
         :meta_url,
         :title,
         :description,
-        :url
+        :url,
+        :enrollment_success,
+        :enrollment_failure,
+        :enrollment_description,
+        :newsletter_success,
+        :newsletter_failure
       )
     end
   end

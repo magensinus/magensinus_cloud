@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20180220131211) do
     t.bigint "academy_course_id"
     t.bigint "academy_tutor_id"
     t.string "slug"
-    t.boolean "coordinator"
+    t.boolean "coordinator", default: false
     t.integer "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -100,7 +100,21 @@ ActiveRecord::Schema.define(version: 20180220131211) do
   create_table "academy_enrollments", force: :cascade do |t|
     t.bigint "academy_category_id"
     t.string "slug"
+    t.string "name"
+    t.string "surname"
+    t.date "dob"
     t.string "email"
+    t.string "phone"
+    t.string "address_one"
+    t.string "address_two"
+    t.string "postcode"
+    t.string "city"
+    t.string "country"
+    t.string "secondary_name"
+    t.string "secondary_surname"
+    t.string "secondary_email"
+    t.string "secondary_phone"
+    t.boolean "accept_terms", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["academy_category_id"], name: "index_academy_enrollments_on_academy_category_id"
@@ -356,8 +370,6 @@ ActiveRecord::Schema.define(version: 20180220131211) do
     t.string "title"
     t.text "description"
     t.text "body"
-    t.text "success"
-    t.text "failure"
     t.boolean "image", default: false
     t.string "image_box"
     t.string "image_caption"
@@ -409,6 +421,10 @@ ActiveRecord::Schema.define(version: 20180220131211) do
     t.string "title"
     t.text "description"
     t.string "url"
+    t.text "enrollment_success"
+    t.text "enrollment_failure"
+    t.text "newsletter_success"
+    t.text "newsletter_failure"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_magensinus_settings_on_slug"
@@ -559,7 +575,7 @@ ActiveRecord::Schema.define(version: 20180220131211) do
     t.string "name"
     t.string "surname"
     t.string "email"
-    t.boolean "active", default: true
+    t.boolean "accept_terms", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_subscriptions_on_slug"

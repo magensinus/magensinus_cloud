@@ -116,7 +116,21 @@ module Academy
     def academy_enrollment_params
       params.require(:academy_enrollment).permit(
         :academy_category_id,
+        :name,
+        :surname,
+        :dob,
         :email,
+        :phone,
+        :address_one,
+        :address_two,
+        :postcode,
+        :city,
+        :country,
+        :secondary_name,
+        :secondary_surname,
+        :secondary_email,
+        :secondary_phone,
+        :accept_terms,
         course_ids: []
       )
     end

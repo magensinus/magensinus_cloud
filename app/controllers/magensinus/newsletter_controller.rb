@@ -48,8 +48,6 @@ module Magensinus
         :title,
         :description,
         :body,
-        :success,
-        :failure,
         :image,
         :image_box,
         :image_caption,

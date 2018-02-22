@@ -23,5 +23,20 @@
   .field
     = f.label :url
     = f.text_field :url
+  .field
+    = f.label :enrollment_success
+    = f.text_area :enrollment_success
+  .field
+    = f.label :enrollment_failure
+    = f.text_area :enrollment_failure
+  .field
+    = f.label :enrollment_description
+    = f.text_area :enrollment_description
+  .field
+    = f.label :newsletter_success
+    = f.text_area :newsletter_success
+  .field
+    = f.label :newsletter_failure
+    = f.text_area :newsletter_failure
   .actions
     = f.submit "Save"

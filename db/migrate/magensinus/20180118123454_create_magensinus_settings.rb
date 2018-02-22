@@ -14,6 +14,13 @@ class CreateMagensinusSettings < ActiveRecord::Migration[5.1]
       t.text    :description
       t.string  :url
 
+      t.text    :enrollment_success
+      t.text    :enrollment_failure
+      t.text    :enrollment_description
+
+      t.text    :newsletter_success
+      t.text    :newsletter_failure
+
       t.timestamps
     end
   end

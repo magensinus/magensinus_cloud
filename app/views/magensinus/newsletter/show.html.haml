@@ -27,9 +27,9 @@
   = @magensinus_newsletter.body
 %p
   %b Success:
-  = @magensinus_newsletter.success
+  = fetch_settings.newsletter_success
 %p
   %b Failure:
-  = @magensinus_newsletter.failure
+  = fetch_settings.newsletter_failure
 
 = link_to "Edit", edit_magensinus_newsletter_path

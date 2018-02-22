@@ -6,6 +6,7 @@ module ApplicationHelper
   include Academy::SectionHelper
   include Journal::AssetHelper
   include Wallet::AssetHelper
+  include Magensinus::NetworkHelper
 
   # Params all
   def params_all

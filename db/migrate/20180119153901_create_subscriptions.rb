@@ -8,7 +8,7 @@ class CreateSubscriptions < ActiveRecord::Migration[5.1]
       t.string  :name
       t.string  :surname
       t.string  :email, unique: true
-      t.boolean :active, default: true
+      t.boolean :accept_terms, default: true
 
       t.timestamps
     end

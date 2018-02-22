@@ -50,7 +50,7 @@ gem "figaro", "~> 1.1"
 gem "fog", "~> 1.42"
 
 # Drop-in plug-in for ActionMailer to send emails via Postmark
-gem "postmark-rails", "~> 0.15.0"
+gem "postmark-rails", "~> 0.15"
 
 # Use webpack to manage app-like JavaScript modules in Rails
 # gem "webpacker", "~> 3.2", ">= 3.2.1"

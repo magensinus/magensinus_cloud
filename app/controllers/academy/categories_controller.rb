@@ -95,8 +95,6 @@ module Academy
         :meta_url,
         :title,
         :description,
-        :email,
-        :form_type,
         :thumb,
         :thumb_box,
         :thumb_caption,
@@ -109,7 +107,10 @@ module Academy
         :eml,
         :magestil,
         :magensinus,
-        :position
+        :position,
+        :form_type,
+        :email,
+        :form_type
       )
     end
   end
