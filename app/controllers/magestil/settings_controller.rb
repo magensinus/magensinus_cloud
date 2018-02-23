@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Magensinus
+module Magestil
   class SettingsController < ApplicationController
     # Callbacks
     # ---------
