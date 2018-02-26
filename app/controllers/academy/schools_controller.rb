@@ -79,7 +79,10 @@ module Academy
         :remove_cover_box,
         :cover_box_cache,
         :published,
-        :position
+        :position,
+        :eml,
+        :magestil,
+        :magensinus
       )
     end
   end

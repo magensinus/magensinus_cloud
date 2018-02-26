@@ -8,14 +8,18 @@ AllCops:
     - "test/**/*"
     - "vendor/**/*"
 
-## Base
+# Rails
 Rails:
   Enabled: true
 
+Rails/OutputSafety:
+  Enabled: false
+
+# Documentation
 Documentation:
   Enabled: false
 
-## Metrics
+# Metrics
 Metrics/AbcSize:
   Max: 32
 
@@ -30,10 +34,10 @@ Metrics/ModuleLength:
   CountComments: false
 
 Metrics/BlockLength:
-  Max: 128
+  Max: 64
   CountComments: false
 
-## Style
+# Style
 Style/StringLiterals:
   EnforcedStyle: double_quotes
 
