@@ -2,6 +2,6 @@
 
 %h1 Listing academy_sections
 
-= render "all", objects: @academy_sections
+= render "all", parent: @academy_course, objects: @academy_sections
 
 = link_to "New Academy section", new_academy_course_section_path(@academy_course)

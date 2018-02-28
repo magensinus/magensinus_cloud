@@ -19,6 +19,6 @@
         %td= object.title
         %td= object.published
         %td= object.position
-        %td= link_to "Show", academy_section_path(object)
-        %td= link_to "Edit", edit_academy_section_path(object)
-        %td= link_to "Destroy", academy_section_path(object), method: :delete, data: { confirm: "Are you sure?" }
+        %td= link_to "Show", academy_course_section_path(parent, object)
+        %td= link_to "Edit", edit_academy_course_section_path(parent, object)
+        %td= link_to "Destroy", academy_course_section_path(parent, object), method: :delete, data: { confirm: "Are you sure?" }

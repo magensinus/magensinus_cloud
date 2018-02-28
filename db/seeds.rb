@@ -112,3 +112,24 @@ Magestil::Newsletter.create(
   meta_description: "",
   meta_url: ""
 )
+
+# Create Magestil Campus
+Magestil::Campus.create(
+  meta_title: "",
+  meta_description: "",
+  meta_url: ""
+)
+
+# Create Magestil Equipment
+Magestil::Equipment.create(
+  meta_title: "",
+  meta_description: "",
+  meta_url: ""
+)
+
+# Create Magestil Partnerships
+Magestil::Partnerships.create(
+  meta_title: "",
+  meta_description: "",
+  meta_url: ""
+)

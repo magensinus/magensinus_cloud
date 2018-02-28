@@ -24,6 +24,10 @@ class CreateAcademySchools < ActiveRecord::Migration[5.1]
 
       t.boolean   :published, default: false
 
+      t.boolean   :eml, default: false
+      t.boolean   :magestil, default: false
+      t.boolean   :magensinus, default: false
+
       t.integer   :position
 
       t.timestamps

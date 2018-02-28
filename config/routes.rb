@@ -6,15 +6,18 @@ Rails.application.routes.draw do
 
   namespace :magestil do
     root to: "dashboard#show"
-    resource :dashboard,  controller: :dashboard
-    resource :settings,   controller: :settings
-    resource :home,       controller: :home
-    resource :about,      controller: :about
-    resource :courses,    controller: :courses
-    resource :articles,   controller: :articles
-    resource :contact,    controller: :contact
-    resource :newsletter, controller: :newsletter
-    resources :networks,  controller: :networks
+    resource :dashboard,    controller: :dashboard
+    resource :settings,     controller: :settings
+    resource :home,         controller: :home
+    resource :about,        controller: :about
+    resource :courses,      controller: :courses
+    resource :articles,     controller: :articles
+    resource :contact,      controller: :contact
+    resource :newsletter,   controller: :newsletter
+    resource :campus,       controller: :campus
+    resource :equipment,    controller: :equipment
+    resource :partnerships, controller: :partnerships
+    resources :networks,    controller: :networks
   end
 
   namespace :magensinus do

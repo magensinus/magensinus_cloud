@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180226095523) do
+ActiveRecord::Schema.define(version: 20180227121052) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -137,12 +137,12 @@ ActiveRecord::Schema.define(version: 20180226095523) do
     t.string "cover_box"
     t.string "cover_caption"
     t.boolean "published", default: false
+    t.boolean "eml", default: false
+    t.boolean "magestil", default: false
+    t.boolean "magensinus", default: false
     t.integer "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "eml"
-    t.boolean "magestil"
-    t.boolean "magensinus"
     t.index ["slug"], name: "index_academy_schools_on_slug"
   end
 
@@ -468,6 +468,23 @@ ActiveRecord::Schema.define(version: 20180226095523) do
     t.index ["slug"], name: "index_magestil_articles_on_slug"
   end
 
+  create_table "magestil_campus", force: :cascade do |t|
+    t.string "slug"
+    t.string "meta_title"
+    t.text "meta_description"
+    t.string "meta_image_box"
+    t.string "meta_url"
+    t.string "title"
+    t.text "description"
+    t.text "body"
+    t.boolean "image", default: false
+    t.string "image_box"
+    t.string "image_caption"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_magestil_campus_on_slug"
+  end
+
   create_table "magestil_contact", force: :cascade do |t|
     t.string "slug"
     t.string "meta_title"
@@ -508,6 +525,23 @@ ActiveRecord::Schema.define(version: 20180226095523) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_magestil_courses_on_slug"
+  end
+
+  create_table "magestil_equipment", force: :cascade do |t|
+    t.string "slug"
+    t.string "meta_title"
+    t.text "meta_description"
+    t.string "meta_image_box"
+    t.string "meta_url"
+    t.string "title"
+    t.text "description"
+    t.text "body"
+    t.boolean "image", default: false
+    t.string "image_box"
+    t.string "image_caption"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_magestil_equipment_on_slug"
   end
 
   create_table "magestil_home", force: :cascade do |t|
@@ -558,6 +592,23 @@ ActiveRecord::Schema.define(version: 20180226095523) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_magestil_newsletter_on_slug"
+  end
+
+  create_table "magestil_partnerships", force: :cascade do |t|
+    t.string "slug"
+    t.string "meta_title"
+    t.text "meta_description"
+    t.string "meta_image_box"
+    t.string "meta_url"
+    t.string "title"
+    t.text "description"
+    t.text "body"
+    t.boolean "image", default: false
+    t.string "image_box"
+    t.string "image_caption"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_magestil_partnerships_on_slug"
   end
 
   create_table "magestil_settings", force: :cascade do |t|
