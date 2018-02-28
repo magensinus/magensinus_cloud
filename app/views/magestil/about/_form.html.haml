@@ -21,7 +21,7 @@
     = f.label :description
     = f.text_area :description
   .field
-    = f.label :body
-    = f.text_area :body
+    %trix-editor{ input: "body" }
+    = f.hidden_field :body, id: "body"
   .actions
     = f.submit "Save"
