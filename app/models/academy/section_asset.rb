@@ -11,6 +11,8 @@ module Academy
     # --------
     # Slug
     include Slug
+    # Clean video
+    include CleanVideo
     # Clean caption
     include CleanCaption
     # Sortable position
