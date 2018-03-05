@@ -25,9 +25,21 @@ ActiveRecord::Schema.define(version: 20180227121052) do
     t.text "description"
     t.boolean "thumb", default: false
     t.string "thumb_box"
+    t.boolean "thumb_eml", default: false
+    t.string "thumb_box_eml"
+    t.boolean "thumb_magestil", default: false
+    t.string "thumb_box_magestil"
+    t.boolean "thumb_magensinus", default: false
+    t.string "thumb_box_magensinus"
     t.string "thumb_caption"
     t.boolean "cover", default: false
     t.string "cover_box"
+    t.boolean "cover_eml", default: false
+    t.string "cover_box_eml"
+    t.boolean "cover_magestil", default: false
+    t.string "cover_box_magestil"
+    t.boolean "cover_magensinus", default: false
+    t.string "cover_box_magensinus"
     t.string "cover_caption"
     t.boolean "published", default: false
     t.boolean "eml", default: false
@@ -67,12 +79,30 @@ ActiveRecord::Schema.define(version: 20180227121052) do
     t.text "misc"
     t.boolean "thumb", default: false
     t.string "thumb_box"
+    t.boolean "thumb_eml", default: false
+    t.string "thumb_box_eml"
+    t.boolean "thumb_magestil", default: false
+    t.string "thumb_box_magestil"
+    t.boolean "thumb_magensinus", default: false
+    t.string "thumb_box_magensinus"
     t.string "thumb_caption"
     t.boolean "cover", default: false
     t.string "cover_box"
+    t.boolean "cover_eml", default: false
+    t.string "cover_box_eml"
+    t.boolean "cover_magestil", default: false
+    t.string "cover_box_magestil"
+    t.boolean "cover_magensinus", default: false
+    t.string "cover_box_magensinus"
     t.string "cover_caption"
     t.boolean "document", default: false
     t.string "document_box"
+    t.boolean "document_eml", default: false
+    t.string "document_box_eml"
+    t.boolean "document_magestil", default: false
+    t.string "document_box_magestil"
+    t.boolean "document_magensinus", default: false
+    t.string "document_box_magensinus"
     t.string "document_caption"
     t.boolean "published", default: false
     t.datetime "published_at"
@@ -132,9 +162,21 @@ ActiveRecord::Schema.define(version: 20180227121052) do
     t.string "url"
     t.boolean "thumb", default: false
     t.string "thumb_box"
+    t.boolean "thumb_eml", default: false
+    t.string "thumb_box_eml"
+    t.boolean "thumb_magestil", default: false
+    t.string "thumb_box_magestil"
+    t.boolean "thumb_magensinus", default: false
+    t.string "thumb_box_magensinus"
     t.string "thumb_caption"
     t.boolean "cover", default: false
     t.string "cover_box"
+    t.boolean "cover_eml", default: false
+    t.string "cover_box_eml"
+    t.boolean "cover_magestil", default: false
+    t.string "cover_box_magestil"
+    t.boolean "cover_magensinus", default: false
+    t.string "cover_box_magensinus"
     t.string "cover_caption"
     t.boolean "published", default: false
     t.boolean "eml", default: false
@@ -223,9 +265,21 @@ ActiveRecord::Schema.define(version: 20180227121052) do
     t.text "description"
     t.boolean "thumb", default: false
     t.string "thumb_box"
+    t.boolean "thumb_eml", default: false
+    t.string "thumb_box_eml"
+    t.boolean "thumb_magestil", default: false
+    t.string "thumb_box_magestil"
+    t.boolean "thumb_magensinus", default: false
+    t.string "thumb_box_magensinus"
     t.string "thumb_caption"
     t.boolean "cover", default: false
     t.string "cover_box"
+    t.boolean "cover_eml", default: false
+    t.string "cover_box_eml"
+    t.boolean "cover_magestil", default: false
+    t.string "cover_box_magestil"
+    t.boolean "cover_magensinus", default: false
+    t.string "cover_box_magensinus"
     t.string "cover_caption"
     t.boolean "published", default: false
     t.datetime "published_at"
@@ -659,9 +713,21 @@ ActiveRecord::Schema.define(version: 20180227121052) do
     t.text "description"
     t.boolean "thumb", default: false
     t.string "thumb_box"
+    t.boolean "thumb_eml", default: false
+    t.string "thumb_box_eml"
+    t.boolean "thumb_magestil", default: false
+    t.string "thumb_box_magestil"
+    t.boolean "thumb_magensinus", default: false
+    t.string "thumb_box_magensinus"
     t.string "thumb_caption"
     t.boolean "cover", default: false
     t.string "cover_box"
+    t.boolean "cover_eml", default: false
+    t.string "cover_box_eml"
+    t.boolean "cover_magestil", default: false
+    t.string "cover_box_magestil"
+    t.boolean "cover_magensinus", default: false
+    t.string "cover_box_magensinus"
     t.string "cover_caption"
     t.boolean "published", default: false
     t.boolean "eml", default: false

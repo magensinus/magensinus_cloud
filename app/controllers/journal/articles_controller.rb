@@ -2,6 +2,9 @@
 
 module Journal
   class ArticlesController < ApplicationController
+    include ThumbParams
+    include CoverParams
+
     before_action :journal_article, only: [:show, :edit, :update, :destroy]
 
     # Index
@@ -83,19 +86,13 @@ module Journal
         :meta_url,
         :title,
         :description,
-        :thumb,
-        :thumb_box,
-        :thumb_caption,
-        :remove_thumb_box,
-        :cover,
-        :cover_box,
-        :cover_caption,
-        :remove_cover_box,
         :published,
         :published_at,
         :eml,
         :magestil,
-        :magensinus
+        :magensinus,
+        thumb_params,
+        cover_params
       )
     end
   end

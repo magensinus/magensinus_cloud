@@ -13,7 +13,7 @@ module Academy
     end
 
     # Original
-    process resize_to_limit: [1024, 1024]
+    process resize_to_limit: [1920, 1080]
 
     # Versions
     # --------

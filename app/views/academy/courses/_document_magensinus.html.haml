@@ -1,0 +1,14 @@
+// Document
+
+= form_with model: object, local: true do |f|
+  = render "lib/components/errors", object: object
+  = f.hidden_field :document_magensinus, value: true
+  = f.hidden_field :document_box_magensinus_cache
+  .field
+    = f.label :document_box_magensinus
+    = f.file_field :document_box_magensinus unless object.document_box_magensinus.presence
+  .field
+    = f.label :document_caption
+    = f.text_field :document_caption
+  .actions
+    = f.submit "Save"

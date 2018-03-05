@@ -9,11 +9,31 @@
 
 - if params_thumb
   = render "thumb", object: @journal_article
+- elsif params_thumb_eml
+  = render "thumb_eml", object: @journal_article
+- elsif params_thumb_magestil
+  = render "thumb_magestil", object: @journal_article
+- elsif params_thumb_magensinus
+  = render "thumb_magensinus", object: @journal_article
 - elsif params_cover
   = render "cover", object: @journal_article
+- elsif params_cover_eml
+  = render "cover_eml", object: @journal_article
+- elsif params_cover_magestil
+  = render "cover_magestil", object: @journal_article
+- elsif params_cover_magensinus
+  = render "cover_magensinus", object: @journal_article
 - else
   = render "form", object: @journal_article
 
-= link_to "Thumb", edit_journal_article_path(@journal_article, thumb: "true")
-= link_to "Cover", edit_journal_article_path(@journal_article, cover: "true")
+= link_to "Thumb",            edit_journal_article_path(@journal_article, thumb: "true")
+= link_to "Thumb Eml",        edit_journal_article_path(@journal_article, thumb_eml: "true")
+= link_to "Thumb Magestil",   edit_journal_article_path(@journal_article, thumb_magestil: "true")
+= link_to "Thumb Magensinus", edit_journal_article_path(@journal_article, thumb_magensinus: "true")
+
+= link_to "Cover",            edit_journal_article_path(@journal_article, cover: "true")
+= link_to "Cover Eml",        edit_journal_article_path(@journal_article, cover_eml: "true")
+= link_to "Cover Magestil",   edit_journal_article_path(@journal_article, cover_magestil: "true")
+= link_to "Cover Magensinus", edit_journal_article_path(@journal_article, cover_magensinus: "true")
+
 = link_to "Show", @journal_article

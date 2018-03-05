@@ -13,14 +13,37 @@ class CreateWalletCategories < ActiveRecord::Migration[5.1]
       t.string    :title
       t.text      :description
 
+      # Thumb
       t.boolean   :thumb, default: false
       t.string    :thumb_box
+
+      t.boolean   :thumb_eml, default: false
+      t.string    :thumb_box_eml
+
+      t.boolean   :thumb_magestil, default: false
+      t.string    :thumb_box_magestil
+
+      t.boolean   :thumb_magensinus, default: false
+      t.string    :thumb_box_magensinus
+
       t.string    :thumb_caption
 
+      # Cover
       t.boolean   :cover, default: false
       t.string    :cover_box
+
+      t.boolean   :cover_eml, default: false
+      t.string    :cover_box_eml
+
+      t.boolean   :cover_magestil, default: false
+      t.string    :cover_box_magestil
+
+      t.boolean   :cover_magensinus, default: false
+      t.string    :cover_box_magensinus
+
       t.string    :cover_caption
 
+      # Other
       t.boolean   :published, default: false
 
       t.boolean   :eml, default: false

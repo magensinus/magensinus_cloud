@@ -2,6 +2,10 @@
 
 module Academy
   class CoursesController < ApplicationController
+    include ThumbParams
+    include CoverParams
+    include DocumentParams
+
     # Callbacks
     # ---------
     # Academy categories
@@ -104,6 +108,9 @@ module Academy
     # Whitelist parameters
     def academy_course_params
       params.require(:academy_course).permit(
+        thumb_params,
+        cover_params,
+        document_params,
         :academy_category_id,
         :meta_title,
         :meta_description,
@@ -113,18 +120,6 @@ module Academy
         :description,
         :body,
         :misc,
-        :thumb,
-        :thumb_box,
-        :thumb_caption,
-        :remove_thumb_box,
-        :cover,
-        :cover_box,
-        :cover_caption,
-        :remove_cover_box,
-        :document,
-        :document_box,
-        :document_caption,
-        :remove_document_box,
         :published,
         :published_at,
         :eml,

@@ -2,6 +2,12 @@
 
 module Academy
   class SchoolsController < ApplicationController
+    include ThumbParams
+    include CoverParams
+
+    # Callbacks
+    # ---------
+    # Academy school
     before_action :academy_school, only: [:show, :edit, :update, :destroy]
 
     # GET /academy/schools
@@ -61,6 +67,8 @@ module Academy
     # Whitelist parameters
     def academy_school_params
       params.require(:academy_school).permit(
+        thumb_params,
+        cover_params,
         :meta_title,
         :meta_description,
         :meta_image_box,
@@ -68,16 +76,6 @@ module Academy
         :title,
         :description,
         :url,
-        :thumb,
-        :thumb_box,
-        :thumb_caption,
-        :remove_thumb_box,
-        :thumb_box_cache,
-        :cover,
-        :cover_box,
-        :cover_caption,
-        :remove_cover_box,
-        :cover_box_cache,
         :published,
         :position,
         :eml,

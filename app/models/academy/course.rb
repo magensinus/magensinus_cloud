@@ -14,7 +14,7 @@ module Academy
     # Scope lists
     include ScopeLists
     # Clean caption
-    include CleanCaption
+    # include CleanCaption
     # Sortable position
     include SortablePosition
 
@@ -22,19 +22,28 @@ module Academy
     # ---------
     # Thumb
     mount_uploader :thumb_box, Academy::ThumbUploader
+    mount_uploader :thumb_box_eml, Academy::ThumbUploader
+    mount_uploader :thumb_box_magestil, Academy::ThumbUploader
+    mount_uploader :thumb_box_magensinus, Academy::ThumbUploader
     # Cover
     mount_uploader :cover_box, Academy::CoverUploader
+    mount_uploader :cover_box_eml, Academy::CoverUploader
+    mount_uploader :cover_box_magestil, Academy::CoverUploader
+    mount_uploader :cover_box_magensinus, Academy::CoverUploader
     # Document
     mount_uploader :document_box, Academy::DocumentUploader
+    mount_uploader :document_box_eml, Academy::DocumentUploader
+    mount_uploader :document_box_magestil, Academy::DocumentUploader
+    mount_uploader :document_box_magensinus, Academy::DocumentUploader
 
     # Clean Capitions
     # ---------------
     # Thumb
-    after_save(-> { clean_caption(thumb_box, :thumb_caption) })
+    # after_save(-> { clean_caption(thumb_box, :thumb_caption) })
     # Cover
-    after_save(-> { clean_caption(cover_box, :cover_caption) })
+    # after_save(-> { clean_caption(cover_box, :cover_caption) })
     # Document
-    after_save(-> { clean_caption(document_box, :document_caption) })
+    # after_save(-> { clean_caption(document_box, :document_caption) })
 
     # Relationships
     # -------------

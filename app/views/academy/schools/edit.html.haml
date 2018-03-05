@@ -6,4 +6,34 @@
 
 = render "form", object: @academy_school
 
+- if params_thumb
+  = render "thumb", object: @academy_school
+- elsif params_thumb_eml
+  = render "thumb_eml", object: @academy_school
+- elsif params_thumb_magestil
+  = render "thumb_magestil", object: @academy_school
+- elsif params_thumb_magensinus
+  = render "thumb_magensinus", object: @academy_school
+- elsif params_cover
+  = render "cover", object: @academy_school
+- elsif params_cover_eml
+  = render "cover_eml", object: @academy_school
+- elsif params_cover_magestil
+  = render "cover_magestil", object: @academy_school
+- elsif params_cover_magensinus
+  = render "cover_magensinus", object: @academy_school
+- else
+  = render "form", object: @academy_school, categories: @academy_categories, tutors: @academy_tutors
+
+
+= link_to "Thumb",            edit_academy_school_path(@academy_school, thumb: "true")
+= link_to "Thumb Eml",        edit_academy_school_path(@academy_school, thumb_eml: "true")
+= link_to "Thumb Magestil",   edit_academy_school_path(@academy_school, thumb_magestil: "true")
+= link_to "Thumb Magensinus", edit_academy_school_path(@academy_school, thumb_magensinus: "true")
+
+= link_to "Cover",            edit_academy_school_path(@academy_school, cover: "true")
+= link_to "Cover Eml",        edit_academy_school_path(@academy_school, cover_eml: "true")
+= link_to "Cover Magestil",   edit_academy_school_path(@academy_school, cover_magestil: "true")
+= link_to "Cover Magensinus", edit_academy_school_path(@academy_school, cover_magensinus: "true")
+
 = link_to "Show", @academy_school

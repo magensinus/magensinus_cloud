@@ -9,10 +9,28 @@
 
 - if params_thumb
   = render "thumb", object: @academy_course
+- elsif params_thumb_eml
+  = render "thumb_eml", object: @academy_course
+- elsif params_thumb_magestil
+  = render "thumb_magestil", object: @academy_course
+- elsif params_thumb_magensinus
+  = render "thumb_magensinus", object: @academy_course
 - elsif params_cover
   = render "cover", object: @academy_course
+- elsif params_cover_eml
+  = render "cover_eml", object: @academy_course
+- elsif params_cover_magestil
+  = render "cover_magestil", object: @academy_course
+- elsif params_cover_magensinus
+  = render "cover_magensinus", object: @academy_course
 - elsif params_document
   = render "document", object: @academy_course
+- elsif params_document_eml
+  = render "document_eml", object: @academy_course
+- elsif params_document_magestil
+  = render "document_magestil", object: @academy_course
+- elsif params_document_magensinus
+  = render "document_magensinus", object: @academy_course
 - elsif params_body
   = render "body", object: @academy_course
 - elsif params_misc
@@ -20,8 +38,21 @@
 - else
   = render "form", object: @academy_course, categories: @academy_categories, tutors: @academy_tutors
 
-= link_to "Misc", edit_academy_course_path(@academy_course, misc: "true")
-= link_to "Thumb", edit_academy_course_path(@academy_course, thumb: "true")
-= link_to "Cover", edit_academy_course_path(@academy_course, cover: "true")
-= link_to "Document", edit_academy_course_path(@academy_course, document: "true")
+= link_to "Misc",                 edit_academy_course_path(@academy_course, misc: "true")
+
+= link_to "Thumb",                edit_academy_course_path(@academy_course, thumb: "true")
+= link_to "Thumb Eml",            edit_academy_course_path(@academy_course, thumb_eml: "true")
+= link_to "Thumb Magestil",       edit_academy_course_path(@academy_course, thumb_magestil: "true")
+= link_to "Thumb Magensinus",     edit_academy_course_path(@academy_course, thumb_magensinus: "true")
+
+= link_to "Cover",                edit_academy_course_path(@academy_course, cover: "true")
+= link_to "Cover Eml",            edit_academy_course_path(@academy_course, cover_eml: "true")
+= link_to "Cover Magestil",       edit_academy_course_path(@academy_course, cover_magestil: "true")
+= link_to "Cover Magensinus",     edit_academy_course_path(@academy_course, cover_magensinus: "true")
+
+= link_to "Documento",            edit_academy_course_path(@academy_course, documento: "true")
+= link_to "Documento Eml",        edit_academy_course_path(@academy_course, documento_eml: "true")
+= link_to "Documento Magestil",   edit_academy_course_path(@academy_course, documento_magestil: "true")
+= link_to "Documento Magensinus", edit_academy_course_path(@academy_course, documento_magensinus: "true")
+
 = link_to "Show", @academy_course

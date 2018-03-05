@@ -33,5 +33,3 @@ class CreateAcademySectionAssets < ActiveRecord::Migration[5.1]
     end
   end
 end
-
-# rails g scaffold AcademySectionAsset academy_section:references slug:string text:boolean text_box:text image:boolean image_box:string image_caption:string document:boolean document_box:string document_caption:string video:boolean video_box:string video_caption:string video_service:string alignment:string position:integer

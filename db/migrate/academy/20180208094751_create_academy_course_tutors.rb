@@ -3,17 +3,14 @@
 class CreateAcademyCourseTutors < ActiveRecord::Migration[5.1]
   def change
     create_table :academy_course_tutors do |t|
-      # Relationships
-      # Academy course
-      t.references :academy_course, index: true
-      # Academy tutor
-      t.references :academy_tutor, index: true
+      t.references  :academy_course, index: true
+      t.references  :academy_tutor, index: true
 
-      t.string  :slug, unique: true, index: true
+      t.string      :slug, unique: true, index: true
 
-      t.boolean :coordinator, default: false
+      t.boolean     :coordinator, default: false
 
-      t.integer :position
+      t.integer     :position
 
       t.timestamps
     end

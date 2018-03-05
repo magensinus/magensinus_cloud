@@ -2,6 +2,9 @@
 
 module Wallet
   class CategoriesController < ApplicationController
+    include ThumbParams
+    include CoverParams
+
     before_action :wallet_category, only: [:show, :edit, :update, :destroy]
 
     # Index
@@ -92,18 +95,14 @@ module Wallet
         :meta_url,
         :title,
         :description,
-        :thumb,
-        :thumb_box,
-        :thumb_caption,
-        :cover,
-        :cover_box,
-        :cover_caption,
         :published,
         :publish_at,
         :eml,
         :magestil,
         :magensinus,
-        :position
+        :position,
+        thumb_params,
+        cover_params
       )
     end
   end
