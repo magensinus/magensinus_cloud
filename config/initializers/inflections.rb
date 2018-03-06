@@ -18,6 +18,9 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
     magestil_equipment
     magestil_partnerships
     magestil_networks
+    magestil_students
+    magestil_parents
+    magestil_tutors
     magensinus_settings
     magensinus_home
     magensinus_about

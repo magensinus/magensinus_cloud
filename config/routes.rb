@@ -10,13 +10,17 @@ Rails.application.routes.draw do
     resource :settings,     controller: :settings
     resource :home,         controller: :home
     resource :about,        controller: :about
+    resource :campus,       controller: :campus
+    resource :equipment,    controller: :equipment
+    resource :partnerships, controller: :partnerships
+    resource :students,     controller: :students
+    resource :parents,      controller: :parents
+    resource :tutors,       controller: :tutors
     resource :courses,      controller: :courses
     resource :articles,     controller: :articles
     resource :contact,      controller: :contact
     resource :newsletter,   controller: :newsletter
-    resource :campus,       controller: :campus
-    resource :equipment,    controller: :equipment
-    resource :partnerships, controller: :partnerships
+    # Plugins
     resources :networks,    controller: :networks
   end
 
@@ -32,6 +36,7 @@ Rails.application.routes.draw do
     resource :contact,    controller: :contact
     resource :newsletter, controller: :newsletter
     resource :schools,    controller: :schools
+    # Plugins
     resources :networks,  controller: :networks
   end
 

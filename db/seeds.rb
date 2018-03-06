@@ -1,6 +1,4 @@
 =begin
-=end
-
 # Create Magensinus Settings
 Magensinus::Settings.create(
   meta_title: "",
@@ -129,6 +127,28 @@ Magestil::Equipment.create(
 
 # Create Magestil Partnerships
 Magestil::Partnerships.create(
+  meta_title: "",
+  meta_description: "",
+  meta_url: ""
+)
+=end
+
+# Create Magestil Students
+Magestil::Students.create(
+  meta_title: "",
+  meta_description: "",
+  meta_url: ""
+)
+
+# Create Magestil Parents
+Magestil::Parents.create(
+  meta_title: "",
+  meta_description: "",
+  meta_url: ""
+)
+
+# Create Magestil Tutors
+Magestil::Tutors.create(
   meta_title: "",
   meta_description: "",
   meta_url: ""

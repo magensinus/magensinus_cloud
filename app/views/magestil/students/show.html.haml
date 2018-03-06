@@ -1,0 +1,29 @@
+// Show
+
+= link_to "Back", magestil_root_path
+
+// = image_tag @magestil_students.image_box_url.to_s
+
+%p
+  %b Meta title:
+  = @magestil_students.meta_title
+%p
+  %b Meta description:
+  = @magestil_students.meta_description
+%p
+  %b Meta image box:
+  = @magestil_students.meta_image_box
+%p
+  %b Meta url:
+  = @magestil_students.meta_url
+%p
+  %b Title:
+  = @magestil_students.title
+%p
+  %b Description:
+  = @magestil_students.description
+%p
+  %b Body:
+  = @magestil_students.body
+
+= link_to "Edit", edit_magestil_students_path

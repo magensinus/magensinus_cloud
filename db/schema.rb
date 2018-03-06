@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180227121052) do
+ActiveRecord::Schema.define(version: 20180306114402) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -705,6 +705,23 @@ ActiveRecord::Schema.define(version: 20180227121052) do
     t.index ["slug"], name: "index_magestil_newsletter_on_slug"
   end
 
+  create_table "magestil_parents", force: :cascade do |t|
+    t.string "slug"
+    t.string "meta_title"
+    t.text "meta_description"
+    t.string "meta_image_box"
+    t.string "meta_url"
+    t.string "title"
+    t.text "description"
+    t.text "body"
+    t.boolean "image", default: false
+    t.string "image_box"
+    t.string "image_caption"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_magestil_parents_on_slug"
+  end
+
   create_table "magestil_partnerships", force: :cascade do |t|
     t.string "slug"
     t.string "meta_title"
@@ -739,6 +756,40 @@ ActiveRecord::Schema.define(version: 20180227121052) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_magestil_settings_on_slug"
+  end
+
+  create_table "magestil_students", force: :cascade do |t|
+    t.string "slug"
+    t.string "meta_title"
+    t.text "meta_description"
+    t.string "meta_image_box"
+    t.string "meta_url"
+    t.string "title"
+    t.text "description"
+    t.text "body"
+    t.boolean "image", default: false
+    t.string "image_box"
+    t.string "image_caption"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_magestil_students_on_slug"
+  end
+
+  create_table "magestil_tutors", force: :cascade do |t|
+    t.string "slug"
+    t.string "meta_title"
+    t.text "meta_description"
+    t.string "meta_image_box"
+    t.string "meta_url"
+    t.string "title"
+    t.text "description"
+    t.text "body"
+    t.boolean "image", default: false
+    t.string "image_box"
+    t.string "image_caption"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_magestil_tutors_on_slug"
   end
 
   create_table "subscriptions", force: :cascade do |t|
