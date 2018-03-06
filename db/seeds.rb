@@ -111,28 +111,6 @@ Magestil::Newsletter.create(
   meta_url: ""
 )
 
-# Create Magestil Campus
-Magestil::Campus.create(
-  meta_title: "",
-  meta_description: "",
-  meta_url: ""
-)
-
-# Create Magestil Equipment
-Magestil::Equipment.create(
-  meta_title: "",
-  meta_description: "",
-  meta_url: ""
-)
-
-# Create Magestil Partnerships
-Magestil::Partnerships.create(
-  meta_title: "",
-  meta_description: "",
-  meta_url: ""
-)
-=end
-
 # Create Magestil Students
 Magestil::Students.create(
   meta_title: "",
@@ -149,6 +127,29 @@ Magestil::Parents.create(
 
 # Create Magestil Tutors
 Magestil::Tutors.create(
+  meta_title: "",
+  meta_description: "",
+  meta_url: ""
+)
+
+=end
+
+# Create Magestil Campus
+Magestil::Campus.create(
+  meta_title: "",
+  meta_description: "",
+  meta_url: ""
+)
+
+# Create Magestil Equipment
+Magestil::Equipment.create(
+  meta_title: "",
+  meta_description: "",
+  meta_url: ""
+)
+
+# Create Magestil Partnerships
+Magestil::Partnerships.create(
   meta_title: "",
   meta_description: "",
   meta_url: ""
