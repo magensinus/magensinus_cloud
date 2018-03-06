@@ -11,7 +11,6 @@ class CreateAcademySections < ActiveRecord::Migration[5.1]
 
       t.string      :title
       t.boolean     :published, default: false
-
       t.integer     :position
 
       t.timestamps

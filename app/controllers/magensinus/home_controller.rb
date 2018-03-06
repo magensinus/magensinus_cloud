@@ -7,15 +7,18 @@ module Magensinus
     # Magensinus home
     before_action :magensinus_home, only: [:show, :edit, :update]
 
-    # GET /magensinus/home
+    # Show
+    # ----
     def show
     end
 
-    # GET /magensinus/home/edit
+    # Edit
+    # ----
     def edit
     end
 
-    # PATCH/PUT /magensinus/home
+    # Update
+    # ------
     def update
       if @magensinus_home.update(magensinus_home_params)
         flash[:notice] = "Successfully updated..."
@@ -32,7 +35,7 @@ module Magensinus
       @magensinus_home = Magensinus::Home.first!
     end
 
-    # Whitelist parameters
+    # Whitelist params
     def magensinus_home_params
       params.require(:magensinus_home).permit(
         :meta_title,

@@ -2,6 +2,11 @@
 
 module Endorsement
   class BadgesController < ApplicationController
+    # Params
+    # ------
+    # Thumb
+    include ThumbParams
+
     # Callbacks
     # ---------
     # Endorsement badge
@@ -9,20 +14,17 @@ module Endorsement
 
     # Index
     # -----
-    # GET /endorsement/badges
     def index
       @endorsement_badges = Endorsement::Badge.all
     end
 
     # Edit
     # ----
-    # GET /endorsement/badges/1/edit
     def edit
     end
 
     # Update
     # ------
-    # PATCH/PUT /endorsement/badges/1
     def update
       if @endorsement_badge.update(endorsement_badge_params)
         flash[:notice] = "Successfully updated..."
@@ -34,7 +36,6 @@ module Endorsement
 
     # Destroy
     # -------
-    # DELETE /endorsement/badges/1
     def destroy
       @endorsement_badge.destroy
       redirect_to endorsement_badges_path
@@ -42,20 +43,17 @@ module Endorsement
 
     # New
     # ---
-    # GET /endorsement/badges/new
     def new
       @endorsement_badge = Endorsement::Badge.new
     end
 
     # Create
     # ------
-    # POST /endorsement/badges
     def create
       order = Endorsement::Badge.pluck(:position).compact
       @endorsement_badge = Endorsement::Badge.new(endorsement_badge_params)
       order << 0
       @endorsement_badge.position = (order.min - 1)
-
       if @endorsement_badge.save
         flash[:notice] = "Successfully created..."
         redirect_to endorsement_badges_path
@@ -66,7 +64,6 @@ module Endorsement
 
     # Sortable
     # --------
-    # PATCH /endorsement/badges
     def sortable
       Endorsement::Badge.sort_position(params[:endorsement_badge])
       head :ok
@@ -79,17 +76,13 @@ module Endorsement
       @endorsement_badge = Endorsement::Badge.find_by(slug: params[:id])
     end
 
-    # Whitelist parameters
+    # Whitelist params
     def endorsement_badge_params
       params.require(:endorsement_badge).permit(
+        thumb_params,
         :title,
         :description,
         :url,
-        :thumb,
-        :thumb_box,
-        :thumb_caption,
-        :remove_thumb_box,
-        :thumb_box_cache,
         :published,
         :eml,
         :magestil,

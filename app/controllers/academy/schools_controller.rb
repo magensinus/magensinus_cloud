@@ -2,7 +2,13 @@
 
 module Academy
   class SchoolsController < ApplicationController
+    # Params
+    # ------
+    # Image
+    include ImageParams
+    # Thumb
     include ThumbParams
+    # Cover
     include CoverParams
 
     # Callbacks
@@ -10,20 +16,24 @@ module Academy
     # Academy school
     before_action :academy_school, only: [:show, :edit, :update, :destroy]
 
-    # GET /academy/schools
+    # Index
+    # -----
     def index
       @academy_schools = Academy::School.all
     end
 
-    # GET /academy/schools/jk89Re87
+    # Show
+    # ----
     def show
     end
 
-    # GET /academy/schools/jk89Re87/edit
+    # Edit
+    # ----
     def edit
     end
 
-    # PATCH/PUT /academy/schools/jk89Re87
+    # Update
+    # ------
     def update
       if @academy_school.update(academy_school_params)
         flash[:notice] = "Successfully updated..."
@@ -33,22 +43,24 @@ module Academy
       end
     end
 
-    # DELETE /academy/schools/jk89Re87
+    # Destroy
+    # -------
     def destroy
       @academy_school.destroy
       flash[:notice] = "Successfully destroyed..."
       redirect_to academy_schools_path
     end
 
-    # GET /academy/schools/new
+    # New
+    # ---
     def new
       @academy_school = Academy::School.new
     end
 
-    # POST /academy/schools
+    # Create
+    # ------
     def create
       @academy_school = Academy::School.new(academy_school_params)
-
       if @academy_school.save
         flash[:notice] = "Successfully created..."
         redirect_to academy_school_path(@academy_school)
@@ -64,9 +76,10 @@ module Academy
       @academy_school = Academy::School.find_by(slug: params[:id])
     end
 
-    # Whitelist parameters
+    # Whitelist params
     def academy_school_params
       params.require(:academy_school).permit(
+        image_params,
         thumb_params,
         cover_params,
         :meta_title,

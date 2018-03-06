@@ -13,26 +13,22 @@ module Academy
 
     # Index
     # -----
-    # GET /academy_section_assets
     def index
       @academy_section_assets = @academy_section.section_assets.includes(:section).all
     end
 
     # Show
     # ----
-    # GET /academy_section_assets/1
     def show
     end
 
     # Edit
     # ----
-    # GET /academy_section_assets/1/edit
     def edit
     end
 
     # Update
     # ------
-    # PATCH/PUT /academy_section_assets/1
     def update
       if @academy_section_asset.update(academy_section_asset_params)
         redirect_to academy_course_section_section_assets_path(@academy_course, @academy_section)
@@ -43,7 +39,6 @@ module Academy
 
     # Destroy
     # -------
-    # DELETE /academy_section_assets/1
     def destroy
       @academy_section_asset.destroy
       redirect_to academy_course_section_section_assets_path(@academy_course, @academy_section)
@@ -51,21 +46,18 @@ module Academy
 
     # New
     # ---
-    # GET /academy_section_assets/new
     def new
       @academy_section_asset = @academy_section.section_assets.new
     end
 
     # Create
     # ------
-    # POST /academy_section_assets
     def create
       assets = @academy_section.section_assets
       order = assets.pluck(:position).compact
       @academy_section_asset = assets.new(academy_section_asset_params)
       order << 0
       @academy_section_asset.position = (order.min - 1)
-
       if @academy_section_asset.save
         redirect_to academy_course_section_section_assets_path(@academy_course, @academy_section)
       else
@@ -75,7 +67,6 @@ module Academy
 
     # Sortable
     # --------
-    # PATCH /academy/categories
     def sortable
       @academy_section.section_assets.sort_position(params[:academy_section_asset])
       head :ok
@@ -98,7 +89,7 @@ module Academy
       @academy_section_asset = @academy_section.section_assets.find_by(slug: params[:id])
     end
 
-    # Whitelist parameters
+    # Whitelist params
     def academy_section_asset_params
       params.require(:academy_section_asset).permit(
         :academy_section_id,

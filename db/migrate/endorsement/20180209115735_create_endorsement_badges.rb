@@ -9,17 +9,24 @@ class CreateEndorsementBadges < ActiveRecord::Migration[5.1]
       t.text      :description
       t.string    :url
 
+      # Thumb
       t.boolean   :thumb, default: false
       t.string    :thumb_box
+      t.boolean   :thumb_eml, default: false
+      t.string    :thumb_box_eml
+      t.boolean   :thumb_magestil, default: false
+      t.string    :thumb_box_magestil
+      t.boolean   :thumb_magensinus, default: false
+      t.string    :thumb_box_magensinus
       t.string    :thumb_caption
 
       t.boolean   :published, default: false
+      t.integer   :position
 
+      # Schools
       t.boolean   :eml, default: false
       t.boolean   :magestil, default: false
       t.boolean   :magensinus, default: false
-
-      t.integer   :position
 
       t.timestamps
     end

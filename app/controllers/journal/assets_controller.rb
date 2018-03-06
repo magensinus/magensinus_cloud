@@ -7,26 +7,22 @@ module Journal
 
     # Index
     # -----
-    # GET /journal/articles/KItfGH7E/assets
     def index
       @journal_assets = @journal_article.assets.order(position: :asc)
     end
 
     # Show
     # ----
-    # GET /journal/articles/KItfGH7E/assets/BHdGTS6D
     def show
     end
 
     # Edit
     # ----
-    # GET /journal/articles/KItfGH7E/assets/BHdGTS6D/edit
     def edit
     end
 
     # Update
     # ------
-    # PATCH/PUT /journal/articles/KItfGH7E/assets/BHdGTS6D
     def update
       if @journal_asset.update(journal_asset_params)
         flash[:notice] = "Successfully updated..."
@@ -38,7 +34,6 @@ module Journal
 
     # Destroy
     # -------
-    # DELETE /journal/articles/KItfGH7E/assets/BHdGTS6D
     def destroy
       @journal_asset.destroy
       flash[:notice] = "Successfully destroyed..."
@@ -47,21 +42,18 @@ module Journal
 
     # New
     # ---
-    # GET /journal/articles/KItfGH7E/assets/new
     def new
       @journal_asset = @journal_article.assets.new
     end
 
     # Create
     # ------
-    # POST /journal/articles/KItfGH7E/assets
     def create
       assets = journal_article.assets
       order = assets.pluck(:position).compact
       @journal_asset = assets.new(journal_asset_params)
       order << 0
       @journal_asset.position = (order.min - 1)
-
       if @journal_asset.save
         flash[:notice] = "Successfully created..."
         redirect_to journal_article_assets_path(@journal_article)
@@ -72,7 +64,6 @@ module Journal
 
     # Sortable
     # --------
-    # PATCH /journal/articles/KItfGH7E/assets/
     def sortable
       @journal_article.assets.sort_position(params[:journal_asset])
       head :ok
@@ -90,7 +81,7 @@ module Journal
       @journal_asset = @journal_article.assets.find_by(slug: params[:id])
     end
 
-    # Whitelist parameters
+    # Whitelist params
     def journal_asset_params
       params.require(:journal_asset).permit(
         :journal_article_id,

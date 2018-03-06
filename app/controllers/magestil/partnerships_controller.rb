@@ -9,19 +9,16 @@ module Magestil
 
     # Show
     # ----
-    # GET /magestil/partnerships
     def show
     end
 
     # Edit
     # ----
-    # GET /magestil/partnerships/edit
     def edit
     end
 
     # Update
     # ------
-    # PATCH/PUT /magestil/partnerships
     def update
       if @magestil_partnerships.update(magestil_partnerships_params)
         flash[:notice] = "Successfully updated..."
@@ -38,7 +35,7 @@ module Magestil
       @magestil_partnerships = Magestil::Partnerships.first!
     end
 
-    # Whitelist parameters
+    # Whitelist params
     def magestil_partnerships_params
       params.require(:magestil_partnerships).permit(
         :meta_title,

@@ -4,7 +4,7 @@ module CoverParams
   extend ActiveSupport::Concern
   included do
     def cover_params
-      cover_params = [
+      [
         :cover,
         :cover_box,
         :remove_cover_box,

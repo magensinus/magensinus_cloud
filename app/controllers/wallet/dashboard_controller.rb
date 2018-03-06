@@ -4,7 +4,6 @@ module Wallet
   class DashboardController < ApplicationController
     # Show
     # ----
-    # GET wallet/
     def show
     end
   end

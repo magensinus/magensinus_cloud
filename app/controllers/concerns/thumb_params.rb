@@ -4,7 +4,7 @@ module ThumbParams
   extend ActiveSupport::Concern
   included do
     def thumb_params
-      thumb_params = [
+      [
         :thumb,
         :thumb_box,
         :remove_thumb_box,

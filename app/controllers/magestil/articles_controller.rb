@@ -9,19 +9,16 @@ module Magestil
 
     # Show
     # ----
-    # GET /magestil/articles
     def show
     end
 
     # Edit
     # ----
-    # GET /magestil/articles/edit
     def edit
     end
 
     # Update
     # ------
-    # PATCH/PUT /magestil/articles
     def update
       if @magestil_articles.update(magestil_articles_params)
         flash[:notice] = "Successfully updated..."
@@ -38,7 +35,7 @@ module Magestil
       @magestil_articles = Magestil::Articles.first!
     end
 
-    # Whitelist parameters
+    # Whitelist params
     def magestil_articles_params
       params.require(:magestil_articles).permit(
         :meta_title,

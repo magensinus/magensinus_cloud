@@ -4,7 +4,6 @@ module Magensinus
   class DashboardController < ApplicationController
     # Show
     # ----
-    # Get /
     def show
     end
   end

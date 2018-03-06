@@ -1,0 +1,33 @@
+// Misc
+
+= form_with model: object, local: true do |f|
+  = render "lib/components/errors", object: object
+  .field
+    = f.label :gradient_color_one
+    = f.text_field :gradient_color_one
+  .field
+    = f.label :gradient_color_two
+    = f.text_field :gradient_color_two
+  .field
+    = f.label :gradient_color_fallback
+    = f.text_field :gradient_color_fallback
+  .field
+    = f.label :font_color_one
+    = f.text_field :font_color_one
+  .field
+    = f.label :font_color_two
+    = f.text_field :font_color_two
+  .field
+    = f.label :hover_color_one
+    = f.text_field :hover_color_one
+  .field
+    = f.label :hover_color_two
+    = f.text_field :hover_color_two
+  .field
+    = f.label :background_color_one
+    = f.text_field :background_color_one
+  .field
+    = f.label :background_color_two
+    = f.text_field :background_color_two
+  .actions
+    = f.submit "Save"

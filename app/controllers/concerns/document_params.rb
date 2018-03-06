@@ -4,7 +4,7 @@ module DocumentParams
   extend ActiveSupport::Concern
   included do
     def document_params
-      document_params = [
+      [
         :document,
         :document_box,
         :remove_document_box,

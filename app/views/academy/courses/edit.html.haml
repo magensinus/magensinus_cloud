@@ -35,10 +35,13 @@
   = render "body", object: @academy_course
 - elsif params_misc
   = render "misc", object: @academy_course
+- elsif params_theme
+  = render "theme", object: @academy_course
 - else
   = render "form", object: @academy_course, categories: @academy_categories, tutors: @academy_tutors
 
 = link_to "Misc",                 edit_academy_course_path(@academy_course, misc: "true")
+= link_to "Theme",                edit_academy_course_path(@academy_course, theme: "true")
 
 = link_to "Thumb",                edit_academy_course_path(@academy_course, thumb: "true")
 = link_to "Thumb Eml",            edit_academy_course_path(@academy_course, thumb_eml: "true")

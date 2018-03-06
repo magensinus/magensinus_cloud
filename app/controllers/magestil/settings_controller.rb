@@ -9,19 +9,16 @@ module Magestil
 
     # Show
     # ----
-    # GET /magestil/settings
     def show
     end
 
     # Edit
     # ----
-    # GET /magestil/settings/edit
     def edit
     end
 
     # Update
     # ------
-    # PATCH/PUT /magestil/settings
     def update
       if @magestil_settings.update(magestil_settings_params)
         flash[:notice] = "Successfully updated..."
@@ -33,12 +30,12 @@ module Magestil
 
     private
 
-    # Use callbacks to share common setup or constraints between actions.
+    # Magestil settings
     def magestil_settings
       @magestil_settings = Magensinus::Settings.first!
     end
 
-    # Whitelist parameters
+    # Whitelist params
     def magestil_settings_params
       params.require(:magestil_settings).permit(
         :meta_title,

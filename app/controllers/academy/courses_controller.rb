@@ -2,8 +2,17 @@
 
 module Academy
   class CoursesController < ApplicationController
+    # Params
+    # ------
+    # Theme
+    include ThemeParams
+    # Image
+    include ImageParams
+    # Thumb
     include ThumbParams
+    # Cover
     include CoverParams
+    # Document
     include DocumentParams
 
     # Callbacks
@@ -15,7 +24,6 @@ module Academy
 
     # Index
     # -----
-    # GET /academy/courses
     def index
       @academy_courses              ||= Academy::Course.all.includes(:category).order(academy_category_id: :asc)
       @scheduled_academy_courses    ||= Academy::Course.scheduled.includes(:category).order(academy_category_id: :asc)
@@ -25,21 +33,18 @@ module Academy
 
     # Show
     # ----
-    # GET /academy/courses/BCjsHY4R
     def show
       @academy_tutors = @academy_course.course_tutors.includes(:tutor).all
     end
 
     # Edit
     # ----
-    # GET /academy/courses/BCjsHY4R/edit
     def edit
       @academy_tutors = Academy::Tutor.all
     end
 
     # Update
     # ------
-    # PATCH/PUT /academy/courses/BCjsHY4R
     def update
       @academy_tutors = Academy::Tutor.all
       if @academy_course.update(academy_course_params)
@@ -52,7 +57,6 @@ module Academy
 
     # Destroy
     # -------
-    # DELETE /academy/courses/BCjsHY4R
     def destroy
       @academy_course.destroy
       flash[:notice] = "Successfully destroyed..."
@@ -61,7 +65,6 @@ module Academy
 
     # New
     # ---
-    # GET /academy/courses/new
     def new
       @academy_tutors = Academy::Tutor.all
       @academy_course = Academy::Course.new
@@ -69,14 +72,12 @@ module Academy
 
     # Create
     # ------
-    # POST /academy/courses
     def create
       @academy_tutors = Academy::Tutor.all
       order = Academy::Course.pluck(:position).compact
       @academy_course = Academy::Course.new(academy_course_params)
       order << 0
       @academy_course.position = (order.min - 1)
-
       if @academy_course.save
         flash[:notice] = "Successfully created..."
         redirect_to academy_course_path(@academy_course)
@@ -87,7 +88,6 @@ module Academy
 
     # Sortable
     # --------
-    # PATCH /academy/courses
     def sortable
       Academy::Course.sort_position(params[:academy_course])
       head :ok
@@ -105,9 +105,11 @@ module Academy
       @academy_course ||= Academy::Course.find_by(slug: params[:id])
     end
 
-    # Whitelist parameters
+    # Whitelist params
     def academy_course_params
       params.require(:academy_course).permit(
+        theme_params,
+        image_params,
         thumb_params,
         cover_params,
         document_params,

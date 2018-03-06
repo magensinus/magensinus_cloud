@@ -11,26 +11,22 @@ module Academy
 
     # Index
     # -----
-    # GET /academy/courses/ghh78sd4Tg/sections
     def index
       @academy_sections = @academy_course.sections.all
     end
 
     # Show
     # ----
-    # GET /academy/courses/ghh78sd4Tg/sections/hj62Ftg5jI
     def show
     end
 
     # Edit
     # ----
-    # GET /academy/courses/ghh78sd4Tg/sections/hj62Ftg5jI/edit
     def edit
     end
 
     # Update
     # ------
-    # PATCH/PUT /academy/courses/ghh78sd4Tg/sections/hj62Ftg5jI
     def update
       if @academy_section.update(academy_section_params)
         flash[:notice] = "Successfully updated..."
@@ -42,7 +38,6 @@ module Academy
 
     # Destroy
     # -------
-    # DELETE /academy/courses/ghh78sd4Tg/sections/hj62Ftg5jI
     def destroy
       @academy_section.destroy
       flash[:notice] = "Successfully destroyed..."
@@ -51,14 +46,12 @@ module Academy
 
     # New
     # ---
-    # GET /academy/courses/ghh78sd4Tg/sections/new
     def new
       @academy_section = @academy_course.sections.new
     end
 
     # Create
     # ------
-    # POST /academy/courses/ghh78sd4Tg/sections/
     def create
       @academy_section = @academy_course.sections.new(academy_section_params)
       if @academy_section.save
@@ -81,7 +74,7 @@ module Academy
       @academy_section = @academy_course.sections.find_by(slug: params[:id])
     end
 
-    # Whitelist parameters
+    # Whitelist params
     def academy_section_params
       params.require(:academy_section).permit(
         :academy_course_id,

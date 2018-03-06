@@ -5,7 +5,6 @@ class SubscriptionsController < ApplicationController
 
   # Index
   # -----
-  # GET /subscriptions
   def index
     @subscriptions = Subscription.all
   end

@@ -9,19 +9,16 @@ module Magestil
 
     # Show
     # ----
-    # GET /magestil/contact
     def show
     end
 
     # Edit
     # ----
-    # GET /magestil/contact/edit
     def edit
     end
 
     # Update
     # ------
-    # PATCH/PUT /magestil/contact
     def update
       if @magestil_contact.update(magestil_contact_params)
         flash[:notice] = "Successfully updated..."
@@ -38,7 +35,7 @@ module Magestil
       @magestil_contact = Magestil::Contact.first!
     end
 
-    # Whitelist parameters
+    # Whitelist params
     def magestil_contact_params
       params.require(:magestil_contact).permit(
         :meta_title,

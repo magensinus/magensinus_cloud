@@ -9,19 +9,16 @@ module Magestil
 
     # Show
     # ----
-    # GET /magestil/newsletter
     def show
     end
 
     # Edit
     # ----
-    # GET /magestil/newsletter/edit
     def edit
     end
 
     # Update
     # ------
-    # PATCH/PUT /magestil/newsletter
     def update
       if @magestil_newsletter.update(magestil_newsletter_params)
         flash[:notice] = "Successfully updated..."
@@ -33,12 +30,12 @@ module Magestil
 
     private
 
-    # Use callbacks to share common setup or constraints between actions.
+    # Magestil newsletter
     def magestil_newsletter
       @magestil_newsletter = Magestil::Newsletter.first!
     end
 
-    # Whitelist parameters
+    # Whitelist params
     def magestil_newsletter_params
       params.require(:magestil_newsletter).permit(
         :meta_title,

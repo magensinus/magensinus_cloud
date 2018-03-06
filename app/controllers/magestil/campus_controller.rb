@@ -9,19 +9,16 @@ module Magestil
 
     # Show
     # ----
-    # GET /magestil/campus
     def show
     end
 
     # Edit
     # ----
-    # GET /magestil/campus/edit
     def edit
     end
 
     # Update
     # ------
-    # PATCH/PUT /magestil/campus
     def update
       if @magestil_campus.update(magestil_campus_params)
         flash[:notice] = "Successfully updated..."
@@ -38,7 +35,7 @@ module Magestil
       @magestil_campus = Magestil::Campus.first!
     end
 
-    # Whitelist parameters
+    # Whitelist params
     def magestil_campus_params
       params.require(:magestil_campus).permit(
         :meta_title,

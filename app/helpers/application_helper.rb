@@ -1,41 +1,29 @@
 # frozen_string_literal: true
 
 module ApplicationHelper
+  include CrudHelper
+  include CoverHelper
+  include ThumbHelper
+  include ImageHelper
+  include DocumentHelper
+
   include Academy::EnrollmentHelper
   include Academy::SectionAssetHelper
   include Academy::SectionHelper
+
   include Journal::AssetHelper
-  include Wallet::AssetHelper
+
   include Magensinus::NetworkHelper
+  include Magensinus::SettingsHelper
+
+  include Magestil::NetworkHelper
+  include Magestil::SettingsHelper
+
+  include Wallet::AssetHelper
 
   # Params all
   def params_all
     params[:all] == "true" || !params.key?(:all)
-  end
-
-  # Params show
-  def params_show
-    params[:action] == "show"
-  end
-
-  # Params new
-  def params_new
-    params[:action] == "new"
-  end
-
-  # Params create
-  def params_create
-    params[:action] == "create"
-  end
-
-  # Params edit
-  def params_edit
-    params[:action] == "edit"
-  end
-
-  # Params update
-  def params_update
-    params[:action] == "update"
   end
 
   # Params body
@@ -48,96 +36,14 @@ module ApplicationHelper
     params[:misc] == "true"
   end
 
+  # Params theme
+  def params_theme
+    params[:theme] == "true"
+  end
+
   # Params text
   def params_text
     params[:text] == "true"
-  end
-
-  # Image
-  # Params image
-  def params_image
-    params[:image] == "true"
-  end
-
-  # Params image eml
-  def params_image_eml
-    params[:image_eml] == "true"
-  end
-
-  # Params image magestil
-  def params_image_magestil
-    params[:image_magestil] == "true"
-  end
-
-  # Params image magensinus
-  def params_image_magensinus
-    params[:image_magensinus] == "true"
-  end
-
-  # Thumb
-  # -----
-  # Params thumb
-  def params_thumb
-    params[:thumb] == "true"
-  end
-
-  # Params thumb eml
-  def params_thumb_eml
-    params[:thumb_eml] == "true"
-  end
-
-  # Params thumb magestil
-  def params_thumb_magestil
-    params[:thumb_magestil] == "true"
-  end
-
-  # Params thumb magensinus
-  def params_thumb_magensinus
-    params[:thumb_magensinus] == "true"
-  end
-
-  # Cover
-  # -----
-  # Params cover
-  def params_cover
-    params[:cover] == "true"
-  end
-
-  # Params cover eml
-  def params_cover_eml
-    params[:cover_eml] == "true"
-  end
-
-  # Params cover magestil
-  def params_cover_magestil
-    params[:cover_magestil] == "true"
-  end
-
-  # Params cover magensinus
-  def params_cover_magensinus
-    params[:cover_magensinus] == "true"
-  end
-
-  # Document
-  # --------
-  # Params document
-  def params_document
-    params[:document] == "true"
-  end
-
-  # Params document eml
-  def params_document_eml
-    params[:document_eml] == "true"
-  end
-
-  # Params document magestil
-  def params_document_magestil
-    params[:document_magestil] == "true"
-  end
-
-  # Params document magensinus
-  def params_document_magensinus
-    params[:document_magensinus] == "true"
   end
 
   # Video

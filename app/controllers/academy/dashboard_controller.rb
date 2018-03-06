@@ -4,7 +4,6 @@ module Academy
   class DashboardController < ApplicationController
     # Show
     # ----
-    # GET academy/
     def show
     end
   end

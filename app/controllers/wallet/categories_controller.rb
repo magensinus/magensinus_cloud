@@ -2,33 +2,38 @@
 
 module Wallet
   class CategoriesController < ApplicationController
+    # Params
+    # ------
+    # Image
+    include ImageParams
+    # Thumb
     include ThumbParams
+    # Cover
     include CoverParams
 
+    # Callbacks
+    # ---------
+    # Wallet category
     before_action :wallet_category, only: [:show, :edit, :update, :destroy]
 
     # Index
     # -----
-    # GET /wallet/categories
     def index
       @wallet_categories = Wallet::Category.all
     end
 
     # Show
     # ----
-    # GET /wallet/categories/N78jPa89
     def show
     end
 
     # Edit
     # ----
-    # GET /wallet/categories/N78jPa89/edit
     def edit
     end
 
     # Update
     # ------
-    # PATCH/PUT /wallet/categories/N78jPa89
     def update
       if @wallet_category.update(wallet_category_params)
         flash[:notice] = "Successfully updated..."
@@ -40,7 +45,6 @@ module Wallet
 
     # Destroy
     # -------
-    # DELETE /wallet/categories/N78jPa89
     def destroy
       @wallet_category.destroy
       flash[:notice] = "Successfully destroyed..."
@@ -49,20 +53,17 @@ module Wallet
 
     # New
     # ---
-    # GET /wallet/categories/new
     def new
       @wallet_category = Wallet::Category.new
     end
 
     # Create
     # ------
-    # POST /wallet/categories
     def create
       order = Wallet::Category.pluck(:position).compact
       @wallet_category = Wallet::Category.new(wallet_category_params)
       order << 0
       @wallet_category.position = (order.min - 1)
-
       if @wallet_category.save
         flash[:notice] = "Successfully created..."
         redirect_to @wallet_category
@@ -73,7 +74,6 @@ module Wallet
 
     # Sortable
     # --------
-    # PATCH /academy/categories
     def sortable
       Wallet::Category.sort_position(params[:wallet_category])
       head :ok
@@ -86,9 +86,12 @@ module Wallet
       @wallet_category = Wallet::Category.find_by(slug: params[:id])
     end
 
-    # Whitelist parameters
+    # Whitelist params
     def wallet_category_params
       params.require(:wallet_category).permit(
+        image_params,
+        thumb_params,
+        cover_params,
         :meta_title,
         :meta_description,
         :meta_image_box,
@@ -101,8 +104,7 @@ module Wallet
         :magestil,
         :magensinus,
         :position,
-        thumb_params,
-        cover_params
+        :wallet_type
       )
     end
   end

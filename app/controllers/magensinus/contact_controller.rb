@@ -9,19 +9,16 @@ module Magensinus
 
     # Show
     # ----
-    # GET /magensinus/contact
     def show
     end
 
     # Edit
     # ----
-    # GET /magensinus/contact/edit
     def edit
     end
 
     # Update
     # ------
-    # PATCH/PUT /magensinus/contact
     def update
       if @magensinus_contact.update(magensinus_contact_params)
         flash[:notice] = "Successfully updated..."
@@ -38,7 +35,7 @@ module Magensinus
       @magensinus_contact = Magensinus::Contact.first!
     end
 
-    # Whitelist parameters
+    # Whitelist params
     def magensinus_contact_params
       params.require(:magensinus_contact).permit(
         :meta_title,

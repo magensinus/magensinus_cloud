@@ -13,7 +13,6 @@ module Academy
 
     # Index
     # -----
-    # GET /academy/enrollments
     def index
       @academy_enrollments ||=
         if params[:category_id]
@@ -25,20 +24,17 @@ module Academy
 
     # Show
     # ----
-    # GET /academy/enrollments/wrTyhg67Ty
     def show
       @academy_courses ||= @academy_enrollment.enrollment_courses.includes(:course).all
     end
 
     # Edit
     # ----
-    # GET /academy/enrollments/wrTyhg67Ty/edit
     def edit
     end
 
     # Update
     # ------
-    # PATCH/PUT /academy/enrollments/wrTyhg67Ty
     def update
       if @academy_enrollment.update(academy_enrollment_params)
         flash[:notice] = "Successfully updated..."
@@ -50,7 +46,6 @@ module Academy
 
     # Destroy
     # -------
-    # DELETE /academy/enrollments/wrTyhg67Ty
     def destroy
       @academy_enrollment.destroy
       flash[:notice] = "Successfully destroyed..."
@@ -59,17 +54,14 @@ module Academy
 
     # New
     # ---
-    # GET /academy/enrollments/new
     def new
       @academy_enrollment = @academy_category.enrollments.new
     end
 
     # Create
     # ------
-    # POST /academy/enrollments
     def create
       @academy_enrollment = @academy_category.enrollments.new(academy_enrollment_params)
-
       if @academy_enrollment.save
         # send_enrollment_email
         flash[:notice] = "Successfully created..."
@@ -112,7 +104,7 @@ module Academy
       )
     end
 
-    # Whitelist parameters
+    # Whitelist params
     def academy_enrollment_params
       params.require(:academy_enrollment).permit(
         :academy_category_id,

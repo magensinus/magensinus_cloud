@@ -3,7 +3,6 @@
 class DashboardController < ApplicationController
   # Show
   # ----
-  # GET /
   def show
   end
 end

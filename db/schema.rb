@@ -41,13 +41,22 @@ ActiveRecord::Schema.define(version: 20180227121052) do
     t.boolean "cover_magensinus", default: false
     t.string "cover_box_magensinus"
     t.string "cover_caption"
+    t.boolean "image", default: false
+    t.string "image_box"
+    t.boolean "image_eml", default: false
+    t.string "image_box_eml"
+    t.boolean "image_magestil", default: false
+    t.string "image_box_magestil"
+    t.boolean "image_magensinus", default: false
+    t.string "image_box_magensinus"
+    t.string "image_caption"
     t.boolean "published", default: false
-    t.boolean "eml", default: false
-    t.boolean "magestil", default: false
-    t.boolean "magensinus", default: false
     t.integer "position"
     t.string "form_type", default: "basic"
     t.string "email"
+    t.boolean "eml", default: false
+    t.boolean "magestil", default: false
+    t.boolean "magensinus", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_academy_categories_on_slug"
@@ -95,6 +104,15 @@ ActiveRecord::Schema.define(version: 20180227121052) do
     t.boolean "cover_magensinus", default: false
     t.string "cover_box_magensinus"
     t.string "cover_caption"
+    t.boolean "image", default: false
+    t.string "image_box"
+    t.boolean "image_eml", default: false
+    t.string "image_box_eml"
+    t.boolean "image_magestil", default: false
+    t.string "image_box_magestil"
+    t.boolean "image_magensinus", default: false
+    t.string "image_box_magensinus"
+    t.string "image_caption"
     t.boolean "document", default: false
     t.string "document_box"
     t.boolean "document_eml", default: false
@@ -106,10 +124,19 @@ ActiveRecord::Schema.define(version: 20180227121052) do
     t.string "document_caption"
     t.boolean "published", default: false
     t.datetime "published_at"
+    t.integer "position"
+    t.string "gradient_color_one"
+    t.string "gradient_color_two"
+    t.string "gradient_color_fallback"
+    t.string "font_color_one"
+    t.string "font_color_two"
+    t.string "hover_color_one"
+    t.string "hover_color_two"
+    t.string "background_color_one"
+    t.string "background_color_two"
     t.boolean "eml", default: false
     t.boolean "magestil", default: false
     t.boolean "magensinus", default: false
-    t.integer "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["academy_category_id"], name: "index_academy_courses_on_academy_category_id"
@@ -178,11 +205,20 @@ ActiveRecord::Schema.define(version: 20180227121052) do
     t.boolean "cover_magensinus", default: false
     t.string "cover_box_magensinus"
     t.string "cover_caption"
+    t.boolean "image", default: false
+    t.string "image_box"
+    t.boolean "image_eml", default: false
+    t.string "image_box_eml"
+    t.boolean "image_magestil", default: false
+    t.string "image_box_magestil"
+    t.boolean "image_magensinus", default: false
+    t.string "image_box_magensinus"
+    t.string "image_caption"
     t.boolean "published", default: false
+    t.integer "position"
     t.boolean "eml", default: false
     t.boolean "magestil", default: false
     t.boolean "magensinus", default: false
-    t.integer "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_academy_schools_on_slug"
@@ -230,6 +266,12 @@ ActiveRecord::Schema.define(version: 20180227121052) do
     t.text "biography"
     t.boolean "image", default: false
     t.string "image_box"
+    t.boolean "image_eml", default: false
+    t.string "image_box_eml"
+    t.boolean "image_magestil", default: false
+    t.string "image_box_magestil"
+    t.boolean "image_magensinus", default: false
+    t.string "image_box_magensinus"
     t.string "image_caption"
     t.integer "position"
     t.datetime "created_at", null: false
@@ -244,12 +286,18 @@ ActiveRecord::Schema.define(version: 20180227121052) do
     t.string "url"
     t.boolean "thumb", default: false
     t.string "thumb_box"
+    t.boolean "thumb_eml", default: false
+    t.string "thumb_box_eml"
+    t.boolean "thumb_magestil", default: false
+    t.string "thumb_box_magestil"
+    t.boolean "thumb_magensinus", default: false
+    t.string "thumb_box_magensinus"
     t.string "thumb_caption"
     t.boolean "published", default: false
+    t.integer "position"
     t.boolean "eml", default: false
     t.boolean "magestil", default: false
     t.boolean "magensinus", default: false
-    t.integer "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_endorsement_badges_on_slug"
@@ -281,6 +329,15 @@ ActiveRecord::Schema.define(version: 20180227121052) do
     t.boolean "cover_magensinus", default: false
     t.string "cover_box_magensinus"
     t.string "cover_caption"
+    t.boolean "image", default: false
+    t.string "image_box"
+    t.boolean "image_eml", default: false
+    t.string "image_box_eml"
+    t.boolean "image_magestil", default: false
+    t.string "image_box_magestil"
+    t.boolean "image_magensinus", default: false
+    t.string "image_box_magensinus"
+    t.string "image_caption"
     t.boolean "published", default: false
     t.datetime "published_at"
     t.boolean "eml", default: false
@@ -674,6 +731,11 @@ ActiveRecord::Schema.define(version: 20180227121052) do
     t.string "title"
     t.text "description"
     t.string "url"
+    t.text "enrollment_success"
+    t.text "enrollment_failure"
+    t.text "enrollment_description"
+    t.text "newsletter_success"
+    t.text "newsletter_failure"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_magestil_settings_on_slug"
@@ -729,11 +791,21 @@ ActiveRecord::Schema.define(version: 20180227121052) do
     t.boolean "cover_magensinus", default: false
     t.string "cover_box_magensinus"
     t.string "cover_caption"
+    t.boolean "image", default: false
+    t.string "image_box"
+    t.boolean "image_eml", default: false
+    t.string "image_box_eml"
+    t.boolean "image_magestil", default: false
+    t.string "image_box_magestil"
+    t.boolean "image_magensinus", default: false
+    t.string "image_box_magensinus"
+    t.string "image_caption"
     t.boolean "published", default: false
+    t.integer "position"
+    t.string "wallet_type", default: "student"
     t.boolean "eml", default: false
     t.boolean "magestil", default: false
     t.boolean "magensinus", default: false
-    t.integer "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_wallet_categories_on_slug"

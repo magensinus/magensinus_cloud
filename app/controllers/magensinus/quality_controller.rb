@@ -9,19 +9,16 @@ module Magensinus
 
     # Show
     # ----
-    # GET /magensinus/quality
     def show
     end
 
     # Edit
     # ----
-    # GET /magensinus/quality/edit
     def edit
     end
 
     # Update
     # ------
-    # PATCH/PUT /magensinus/quality
     def update
       if @magensinus_quality.update(magensinus_quality_params)
         flash[:notice] = "Successfully updated..."
@@ -33,12 +30,12 @@ module Magensinus
 
     private
 
-    # Use callbacks to share common setup or constraints between actions.
+    # Magensinus quality
     def magensinus_quality
       @magensinus_quality = Magensinus::Quality.first!
     end
 
-    # Whitelist parameters
+    # Whitelist params
     def magensinus_quality_params
       params.require(:magensinus_quality).permit(
         :meta_title,

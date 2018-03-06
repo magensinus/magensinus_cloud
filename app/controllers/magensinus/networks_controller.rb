@@ -9,36 +9,30 @@ module Magensinus
 
     # Index
     # -----
-    # GET /magensinus/networks
     def index
       @magensinus_networks = Magensinus::Network.all
     end
 
     # Show
     # ----
-    # GET /magensinus/networks/jKl67Yt5
     def show
     end
 
     # New
     # ---
-    # GET /magensinus/networks/new
     def new
       @magensinus_network = Magensinus::Network.new
     end
 
     # Edit
     # ----
-    # GET /magensinus/networks/jKl67Yt5/edit
     def edit
     end
 
     # Create
     # ------
-    # POST /magensinus/networks
     def create
       @magensinus_network = Magensinus::Network.new(magensinus_network_params)
-
       if @magensinus_network.save
         flash[:notice] = "Successfully created..."
         redirect_to magensinus_networks_path
@@ -49,7 +43,6 @@ module Magensinus
 
     # Update
     # ------
-    # PATCH/PUT /magensinus/networks/jKl67Yt5
     def update
       if @magensinus_network.update(magensinus_network_params)
         flash[:notice] = "Successfully updated..."
@@ -61,7 +54,6 @@ module Magensinus
 
     # Destroy
     # -------
-    # DELETE /magensinus/networks/jKl67Yt5
     def destroy
       @magensinus_network.destroy
       flash[:notice] = "Successfully destroyed..."
@@ -75,7 +67,7 @@ module Magensinus
       @magensinus_network = Magensinus::Network.find_by(slug: params[:id])
     end
 
-    # Whitelist parameters
+    # Whitelist params
     def magensinus_network_params
       params.require(:magensinus_network).permit(
         :title,

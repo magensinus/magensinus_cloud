@@ -9,19 +9,16 @@ module Magensinus
 
     # Show
     # ----
-    # GET /magensinus/articles
     def show
     end
 
     # Edit
     # ----
-    # GET /magensinus/articles/edit
     def edit
     end
 
     # Update
     # ------
-    # PATCH/PUT /magensinus/articles
     def update
       if @magensinus_articles.update(magensinus_articles_params)
         flash[:notice] = "Successfully updated..."
@@ -38,7 +35,7 @@ module Magensinus
       @magensinus_articles = Magensinus::Articles.first!
     end
 
-    # Whitelist parameters
+    # Whitelist params
     def magensinus_articles_params
       params.require(:magensinus_articles).permit(
         :meta_title,

@@ -7,15 +7,18 @@ module Magestil
     # Magestil home
     before_action :magestil_home, only: [:show, :edit, :update]
 
-    # GET /magestil/home
+    # Show
+    # ----
     def show
     end
 
-    # GET /magestil/home/edit
+    # Edit
+    # ----
     def edit
     end
 
-    # PATCH/PUT /magestil/home
+    # Update
+    # ------
     def update
       if @magestil_home.update(magestil_home_params)
         flash[:notice] = "Successfully updated..."
@@ -32,7 +35,7 @@ module Magestil
       @magestil_home = Magestil::Home.first!
     end
 
-    # Whitelist parameters
+    # Whitelist params
     def magestil_home_params
       params.require(:magestil_home).permit(
         :meta_title,

@@ -2,25 +2,34 @@
 
 module Academy
   class TutorsController < ApplicationController
+    # Params
+    # ------
+    # Image
+    include ImageParams
+
     # Callbacks
     # ---------
     # Academy tutor
     before_action :academy_tutor, only: [:show, :edit, :update, :destroy]
 
-    # GET /academy/tutors
+    # Index
+    # -----
     def index
       @academy_tutors = Academy::Tutor.all
     end
 
-    # GET /academy/tutors/1
+    # Show
+    # ----
     def show
     end
 
-    # GET /academy/tutors/1/edit
+    # Edit
+    # ----
     def edit
     end
 
-    # PATCH/PUT /academy/tutors/1
+    # Update
+    # ------
     def update
       if @academy_tutor.update(academy_tutor_params)
         flash[:notice] = "Successfully updated..."
@@ -30,22 +39,24 @@ module Academy
       end
     end
 
-    # DELETE /academy/tutors/1
+    # Destroy
+    # -------
     def destroy
       @academy_tutor.destroy
       flash[:notice] = "Successfully destroyed..."
       redirect_to academy_tutors_url
     end
 
-    # GET /academy/tutors/new
+    # New
+    # ---
     def new
       @academy_tutor = Academy::Tutor.new
     end
 
-    # POST /academy/tutors
+    # Create
+    # ------
     def create
       @academy_tutor = Academy::Tutor.new(academy_tutor_params)
-
       if @academy_tutor.save
         flash[:notice] = "Successfully created..."
         redirect_to @academy_tutor
@@ -61,15 +72,13 @@ module Academy
       @academy_tutor = Academy::Tutor.find_by(slug: params[:id])
     end
 
-    # Whitelist parameters
+    # Whitelist params
     def academy_tutor_params
       params.require(:academy_tutor).permit(
+        image_params,
         :name,
         :surname,
         :biography,
-        :image,
-        :image_box,
-        :image_caption,
         :position
       )
     end

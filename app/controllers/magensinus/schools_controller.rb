@@ -9,19 +9,16 @@ module Magensinus
 
     # Show
     # ----
-    # GET /magensinus/schools
     def show
     end
 
     # Edit
     # ----
-    # GET /magensinus/schools/edit
     def edit
     end
 
     # Update
     # ------
-    # PATCH/PUT /magensinus/schools
     def update
       if @magensinus_schools.update(magensinus_schools_params)
         flash[:notice] = "Successfully updated..."
@@ -38,7 +35,7 @@ module Magensinus
       @magensinus_schools = Magensinus::Schools.first
     end
 
-    # Whitelist parameters
+    # Whitelist params
     def magensinus_schools_params
       params.require(:magensinus_schools).permit(
         :meta_title,
