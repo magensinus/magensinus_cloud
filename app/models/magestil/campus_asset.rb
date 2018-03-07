@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 module Magestil
-  class Network < ApplicationRecord
+  class CampusAsset < ApplicationRecord
     # Table name
     # ----------
-    # Magestil network
-    self.table_name = "magestil_networks"
+    # Magestil campus_asset
+    self.table_name = "magestil_campus_assets"
 
     # Concerns
     # --------
@@ -16,12 +16,12 @@ module Magestil
 
     # Uploaders
     # ---------
-    # Thumb
-    mount_uploader :thumb_box, Magensinus::ThumbUploader
+    # Image
+    mount_uploader :image_box, Magensinus::ThumbUploader
 
     # Clean capitions
     # ---------------
-    # Thumb
-    after_save(-> { clean_caption(thumb_box, :thumb_caption) })
+    # Image
+    after_save(-> { clean_caption(image_box, :image_caption) })
   end
 end

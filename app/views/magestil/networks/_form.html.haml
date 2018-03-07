@@ -1,6 +1,6 @@
 // Form
 
-= form_with model: object, local: true do |f|
+= form_with model: object, url: magestil_network_form_url, local: true do |f|
   = render "lib/components/errors", object: object
   .field
     = f.label :title

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180306114402) do
+ActiveRecord::Schema.define(version: 20180307224649) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -723,6 +723,17 @@ ActiveRecord::Schema.define(version: 20180306114402) do
     t.index ["slug"], name: "index_magestil_campus_on_slug"
   end
 
+  create_table "magestil_campus_assets", force: :cascade do |t|
+    t.string "slug"
+    t.integer "position"
+    t.boolean "image", default: false
+    t.string "image_box"
+    t.string "image_caption"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_magestil_campus_assets_on_slug"
+  end
+
   create_table "magestil_contact", force: :cascade do |t|
     t.string "slug"
     t.string "meta_title"
@@ -789,6 +800,17 @@ ActiveRecord::Schema.define(version: 20180306114402) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_magestil_equipment_on_slug"
+  end
+
+  create_table "magestil_equipment_assets", force: :cascade do |t|
+    t.string "slug"
+    t.integer "position"
+    t.boolean "image", default: false
+    t.string "image_box"
+    t.string "image_caption"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_magestil_equipment_assets_on_slug"
   end
 
   create_table "magestil_home", force: :cascade do |t|

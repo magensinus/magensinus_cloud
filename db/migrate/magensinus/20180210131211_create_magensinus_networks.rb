@@ -13,10 +13,6 @@ class CreateMagensinusNetworks < ActiveRecord::Migration[5.1]
       t.boolean :thumb, default: false
       t.string  :thumb_box
       t.string  :thumb_caption
-      # Document
-      t.boolean :document, default: false
-      t.string  :document_box
-      t.string  :document_caption
 
       t.timestamps
     end

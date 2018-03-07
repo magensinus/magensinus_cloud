@@ -1,0 +1,15 @@
+// Show
+
+= link_to "Back", magestil_campus_assets_path
+
+%p
+  %b Image:
+  = @magestil_campus_asset.image
+%p
+  %b Image box:
+  = @magestil_campus_asset.image_box
+%p
+  %b Image caption:
+  = @magestil_campus_asset.image_caption
+
+= link_to "Edit", edit_magestil_campus_asset_path(@magestil_campus_asset)

@@ -15,7 +15,9 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
     magestil_contact
     magestil_newsletter
     magestil_campus
+    magestil_campus_assets
     magestil_equipment
+    magestil_equipment_assets
     magestil_partnerships
     magestil_networks
     magestil_students
