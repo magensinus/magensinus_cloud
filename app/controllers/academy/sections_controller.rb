@@ -77,7 +77,9 @@ module Academy
     # Whitelist params
     def academy_section_params
       params.require(:academy_section).permit(
+        # Relationships
         :academy_course_id,
+        # Misc
         :title,
         :published,
         :position

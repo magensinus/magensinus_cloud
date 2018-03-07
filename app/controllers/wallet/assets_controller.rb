@@ -88,12 +88,16 @@ module Wallet
     # Whitelist params
     def wallet_asset_params
       params.require(:wallet_asset).permit(
+        # Relationships
         :wallet_category_id,
+        # Misc
+        :position,
+        # Document
         :document,
         :document_box,
-        :document_caption,
         :remove_document_box,
-        :position
+        :document_box_cache,
+        :document_caption
       )
     end
   end

@@ -4,16 +4,19 @@ class CreateMagensinusNetworks < ActiveRecord::Migration[5.1]
   def change
     create_table :magensinus_networks do |t|
       t.string  :slug, unique: true, index: true
-
+      # Misc
       t.string  :title
       t.string  :username
       t.string  :url
-
+      t.integer :position
+      # Thumb
       t.boolean :thumb, default: false
       t.string  :thumb_box
       t.string  :thumb_caption
-
-      t.integer :position
+      # Document
+      t.boolean :document, default: false
+      t.string  :document_box
+      t.string  :document_caption
 
       t.timestamps
     end

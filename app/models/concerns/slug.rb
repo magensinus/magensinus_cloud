@@ -4,6 +4,8 @@ module Slug
   extend ActiveSupport::Concern
   included do
     # Callbacks
+    # ---------
+    # Generate slug
     before_validation :generate_slug, on: :create, uniqueness: true
 
     # Call slug instead of ID

@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 module ThumbHelper
-  # Thumb
-  # -----
   # Params thumb
   def params_thumb
     params[:thumb] == "true"

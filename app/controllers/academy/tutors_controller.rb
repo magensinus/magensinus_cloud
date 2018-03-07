@@ -4,8 +4,14 @@ module Academy
   class TutorsController < ApplicationController
     # Params
     # ------
+    # Thumb
+    include ThumbParams
+    # Cover
+    include CoverParams
     # Image
     include ImageParams
+    # Document
+    include DocumentParams
 
     # Callbacks
     # ---------
@@ -75,7 +81,11 @@ module Academy
     # Whitelist params
     def academy_tutor_params
       params.require(:academy_tutor).permit(
+        thumb_params,
+        cover_params,
         image_params,
+        document_params,
+        # Misc
         :name,
         :surname,
         :biography,

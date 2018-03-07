@@ -4,12 +4,14 @@ module Academy
   class CategoriesController < ApplicationController
     # Params
     # ------
-    # Image
-    include ImageParams
     # Thumb
     include ThumbParams
     # Cover
     include CoverParams
+    # Image
+    include ImageParams
+    # Document
+    include DocumentParams
 
     # Callbacks
     # ---------
@@ -19,7 +21,7 @@ module Academy
     # Index
     # -----
     def index
-      @academy_categories ||= Academy::Category.all
+      @academy_categories = Academy::Category.all
     end
 
     # Show
@@ -89,23 +91,26 @@ module Academy
     # Whitelist params
     def academy_category_params
       params.require(:academy_category).permit(
-        image_params,
         thumb_params,
         cover_params,
+        image_params,
+        document_params,
+        # Meta tags
         :meta_title,
         :meta_description,
         :meta_image_box,
         :meta_url,
+        # Misc
         :title,
         :description,
         :published,
-        :eml,
-        :magestil,
-        :magensinus,
         :position,
         :form_type,
         :email,
-        :form_type
+        # Schools
+        :eml,
+        :magestil,
+        :magensinus
       )
     end
   end

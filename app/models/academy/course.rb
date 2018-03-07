@@ -13,8 +13,6 @@ module Academy
     include Slug
     # Scope lists
     include ScopeLists
-    # Clean caption
-    # include CleanCaption
     # Sortable position
     include SortablePosition
 
@@ -30,35 +28,36 @@ module Academy
     mount_uploader :cover_box_eml, Academy::CoverUploader
     mount_uploader :cover_box_magestil, Academy::CoverUploader
     mount_uploader :cover_box_magensinus, Academy::CoverUploader
+    # Image
+    mount_uploader :image_box, Academy::ImageUploader
+    mount_uploader :image_box_eml, Academy::ImageUploader
+    mount_uploader :image_box_magestil, Academy::ImageUploader
+    mount_uploader :image_box_magensinus, Academy::ImageUploader
     # Document
     mount_uploader :document_box, Academy::DocumentUploader
     mount_uploader :document_box_eml, Academy::DocumentUploader
     mount_uploader :document_box_magestil, Academy::DocumentUploader
     mount_uploader :document_box_magensinus, Academy::DocumentUploader
 
-    # Clean Capitions
-    # ---------------
-    # Thumb
-    # after_save(-> { clean_caption(thumb_box, :thumb_caption) })
-    # Cover
-    # after_save(-> { clean_caption(cover_box, :cover_caption) })
-    # Document
-    # after_save(-> { clean_caption(document_box, :document_caption) })
-
     # Relationships
     # -------------
     # Academy category
     belongs_to :category, optional: true, foreign_key: "academy_category_id", inverse_of: false
+    accepts_nested_attributes_for :category
     # Academy enrollment courses
     has_many :enrollment_courses, dependent: :destroy, foreign_key: "academy_course_id", inverse_of: false
+    accepts_nested_attributes_for :enrollment_courses
     # Academy enrollments
     has_many :enrollments, through: :enrollment_courses
+    accepts_nested_attributes_for :enrollments
     # Academy sections
     has_many :sections, dependent: :destroy, foreign_key: "academy_course_id", inverse_of: false
     accepts_nested_attributes_for :sections
     # Academy course tutors
     has_many :course_tutors, dependent: :destroy, foreign_key: "academy_course_id", inverse_of: false
+    accepts_nested_attributes_for :course_tutors
     # Academy tutors
     has_many :tutors, through: :course_tutors
+    accepts_nested_attributes_for :tutors
   end
 end

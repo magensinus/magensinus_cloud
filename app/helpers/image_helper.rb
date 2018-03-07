@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 module ImageHelper
-  # Image
   # Params image
   def params_image
     params[:image] == "true"

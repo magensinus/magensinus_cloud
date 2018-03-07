@@ -6,19 +6,14 @@ module ApplicationHelper
   include ThumbHelper
   include ImageHelper
   include DocumentHelper
-
   include Academy::EnrollmentHelper
   include Academy::SectionAssetHelper
   include Academy::SectionHelper
-
   include Journal::AssetHelper
-
   include Magensinus::NetworkHelper
   include Magensinus::SettingsHelper
-
   include Magestil::NetworkHelper
   include Magestil::SettingsHelper
-
   include Wallet::AssetHelper
 
   # Params all

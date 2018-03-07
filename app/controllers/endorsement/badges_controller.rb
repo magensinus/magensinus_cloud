@@ -6,6 +6,12 @@ module Endorsement
     # ------
     # Thumb
     include ThumbParams
+    # Cover
+    include CoverParams
+    # Image
+    include ImageParams
+    # Document
+    include DocumentParams
 
     # Callbacks
     # ---------
@@ -80,14 +86,19 @@ module Endorsement
     def endorsement_badge_params
       params.require(:endorsement_badge).permit(
         thumb_params,
+        cover_params,
+        image_params,
+        document_params,
+        # Misc
         :title,
         :description,
         :url,
         :published,
+        :position,
+        # Schools
         :eml,
         :magestil,
-        :magensinus,
-        :position
+        :magensinus
       )
     end
   end

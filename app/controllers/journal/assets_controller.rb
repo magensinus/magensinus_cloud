@@ -2,7 +2,11 @@
 
 module Journal
   class AssetsController < ApplicationController
+    # Callbacks
+    # ---------
+    # Journal article
     before_action :journal_article
+    # Journal asset
     before_action :journal_asset, only: [:show, :edit, :update, :destroy, :sortable]
 
     # Index
@@ -84,19 +88,31 @@ module Journal
     # Whitelist params
     def journal_asset_params
       params.require(:journal_asset).permit(
+        # Relationships
         :journal_article_id,
+        # Misc
+        :alignment,
+        :position,
+        # Text
         :text,
         :text_box,
+        # Image
         :image,
         :image_box,
-        :image_caption,
         :remove_image_box,
+        :image_box_cache,
+        :image_caption,
+        # Document
+        :document,
+        :document_box,
+        :remove_document_box,
+        :document_box_cache,
+        :document_caption,
+        # Video
         :video,
         :video_box,
         :video_caption,
-        :video_service,
-        :alignment,
-        :position
+        :video_service
       )
     end
   end

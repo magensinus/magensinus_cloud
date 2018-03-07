@@ -20,34 +20,35 @@
 %p
   %b Description:
   = @journal_article.description
-%p
-  %b Thumb:
-  = @journal_article.thumb
-%p
-  %b Thumb box:
-  = image_tag @journal_article.thumb_box_url.to_s
-  = image_tag @journal_article.thumb_box_url(:nano).to_s
-  = image_tag @journal_article.thumb_box_url(:tiny).to_s
-  = image_tag @journal_article.thumb_box_url(:small).to_s
-  = image_tag @journal_article.thumb_box_url(:medium).to_s
-  = image_tag @journal_article.thumb_box_url(:large).to_s
-%p
-  %b Thumb caption:
-  = @journal_article.thumb_caption
-%p
-  %b Cover:
-  = @journal_article.cover
-%p
-  %b Cover box:
-  = image_tag @journal_article.cover_box_url.to_s
-  = image_tag @journal_article.cover_box_url(:nano).to_s
-  = image_tag @journal_article.cover_box_url(:tiny).to_s
-  = image_tag @journal_article.cover_box_url(:small).to_s
-  = image_tag @journal_article.cover_box_url(:medium).to_s
-  = image_tag @journal_article.cover_box_url(:large).to_s
-%p
-  %b Cover caption:
-  = @journal_article.cover_caption
+-#
+  %p
+    %b Thumb:
+    = @journal_article.thumb
+  %p
+    %b Thumb box:
+    = image_tag @journal_article.thumb_box_url.to_s
+    = image_tag @journal_article.thumb_box_url(:nano).to_s
+    = image_tag @journal_article.thumb_box_url(:tiny).to_s
+    = image_tag @journal_article.thumb_box_url(:small).to_s
+    = image_tag @journal_article.thumb_box_url(:medium).to_s
+    = image_tag @journal_article.thumb_box_url(:large).to_s
+  %p
+    %b Thumb caption:
+    = @journal_article.thumb_caption
+  %p
+    %b Cover:
+    = @journal_article.cover
+  %p
+    %b Cover box:
+    = image_tag @journal_article.cover_box_url.to_s
+    = image_tag @journal_article.cover_box_url(:nano).to_s
+    = image_tag @journal_article.cover_box_url(:tiny).to_s
+    = image_tag @journal_article.cover_box_url(:small).to_s
+    = image_tag @journal_article.cover_box_url(:medium).to_s
+    = image_tag @journal_article.cover_box_url(:large).to_s
+  %p
+    %b Cover caption:
+    = @journal_article.cover_caption
 %p
   %b Published:
   = @journal_article.published

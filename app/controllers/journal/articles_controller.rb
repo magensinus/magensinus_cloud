@@ -4,12 +4,14 @@ module Journal
   class ArticlesController < ApplicationController
     # Params
     # ------
-    # Image
-    include ImageParams
     # Thumb
     include ThumbParams
     # Cover
     include CoverParams
+    # Image
+    include ImageParams
+    # Document
+    include DocumentParams
 
     # Callbacks
     # ---------
@@ -19,9 +21,9 @@ module Journal
     # Index
     # -----
     def index
-      @scheduled_journal_articles   ||= Journal::Article.scheduled
-      @published_journal_articles   ||= Journal::Article.published
-      @unpublished_journal_articles ||= Journal::Article.unpublished
+      @scheduled_journal_articles   = Journal::Article.scheduled
+      @published_journal_articles   = Journal::Article.published
+      @unpublished_journal_articles = Journal::Article.unpublished
     end
 
     # Show
@@ -81,17 +83,21 @@ module Journal
     # Whitelist params
     def journal_article_params
       params.require(:journal_article).permit(
-        image_params,
         thumb_params,
         cover_params,
+        image_params,
+        document_params,
+        # Meta tags
         :meta_title,
         :meta_description,
         :meta_image_box,
         :meta_url,
+        # Misc
         :title,
         :description,
         :published,
         :published_at,
+        # Schools
         :eml,
         :magestil,
         :magensinus

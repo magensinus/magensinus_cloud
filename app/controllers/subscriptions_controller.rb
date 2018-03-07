@@ -73,6 +73,7 @@ class SubscriptionsController < ApplicationController
   # Whitelist parameters
   def subscription_params
     params.require(:subscription).permit(
+      # Misc
       :email,
       :accept_terms
     )

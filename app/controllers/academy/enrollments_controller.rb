@@ -14,7 +14,7 @@ module Academy
     # Index
     # -----
     def index
-      @academy_enrollments ||=
+      @academy_enrollments =
         if params[:category_id]
           @academy_category.enrollments.includes(:category).all
         else
@@ -25,7 +25,7 @@ module Academy
     # Show
     # ----
     def show
-      @academy_courses ||= @academy_enrollment.enrollment_courses.includes(:course).all
+      @academy_courses = @academy_enrollment.enrollment_courses.includes(:course).all
     end
 
     # Edit
@@ -107,7 +107,9 @@ module Academy
     # Whitelist params
     def academy_enrollment_params
       params.require(:academy_enrollment).permit(
+        # Relationships
         :academy_category_id,
+        # Misc
         :name,
         :surname,
         :dob,
@@ -123,6 +125,7 @@ module Academy
         :secondary_email,
         :secondary_phone,
         :accept_terms,
+        # Collections
         course_ids: []
       )
     end

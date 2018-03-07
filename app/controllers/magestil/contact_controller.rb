@@ -38,10 +38,12 @@ module Magestil
     # Whitelist params
     def magestil_contact_params
       params.require(:magestil_contact).permit(
+        # Meta tags
         :meta_title,
         :meta_description,
         :meta_image_box,
         :meta_url,
+        # Misc
         :title,
         :description,
         :body,
@@ -53,11 +55,18 @@ module Magestil
         :postcode,
         :city,
         :country,
+        # Image
         :image,
         :image_box,
-        :image_caption,
         :remove_image_box,
-        :image_box_cache
+        :image_box_cache,
+        :image_caption,
+        # Document
+        :document,
+        :document_box,
+        :remove_document_box,
+        :document_box_cache,
+        :document_caption
       )
     end
   end

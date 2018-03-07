@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 module CoverHelper
-  # Cover
-  # -----
   # Params cover
   def params_cover
     params[:cover] == "true"

@@ -4,12 +4,12 @@ module Wallet
   class CategoriesController < ApplicationController
     # Params
     # ------
-    # Image
-    include ImageParams
     # Thumb
     include ThumbParams
     # Cover
     include CoverParams
+    # Image
+    include ImageParams
 
     # Callbacks
     # ---------
@@ -89,22 +89,25 @@ module Wallet
     # Whitelist params
     def wallet_category_params
       params.require(:wallet_category).permit(
-        image_params,
         thumb_params,
         cover_params,
+        image_params,
+        # Meta tags
         :meta_title,
         :meta_description,
         :meta_image_box,
         :meta_url,
+        # Misc
         :title,
         :description,
         :published,
         :publish_at,
+        :wallet_type,
+        :position,
+        # Schools
         :eml,
         :magestil,
-        :magensinus,
-        :position,
-        :wallet_type
+        :magensinus
       )
     end
   end

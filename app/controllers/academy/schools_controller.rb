@@ -4,12 +4,14 @@ module Academy
   class SchoolsController < ApplicationController
     # Params
     # ------
-    # Image
-    include ImageParams
     # Thumb
     include ThumbParams
     # Cover
     include CoverParams
+    # Image
+    include ImageParams
+    # Document
+    include DocumentParams
 
     # Callbacks
     # ---------
@@ -79,18 +81,22 @@ module Academy
     # Whitelist params
     def academy_school_params
       params.require(:academy_school).permit(
-        image_params,
         thumb_params,
         cover_params,
+        image_params,
+        document_params,
+        # Meta tags
         :meta_title,
         :meta_description,
         :meta_image_box,
         :meta_url,
+        # Misc
         :title,
         :description,
         :url,
         :published,
         :position,
+        # Schools
         :eml,
         :magestil,
         :magensinus

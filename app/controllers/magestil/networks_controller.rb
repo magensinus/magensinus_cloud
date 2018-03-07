@@ -70,15 +70,17 @@ module Magestil
     # Whitelist params
     def magestil_network_params
       params.require(:magestil_network).permit(
+        # Misc
         :title,
         :username,
         :url,
+        :position,
+        # Thumb
         :thumb,
         :thumb_box,
         :thumb_caption,
         :remove_thumb_box,
-        :thumb_box_cache,
-        :position
+        :thumb_box_cache
       )
     end
   end

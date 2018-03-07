@@ -16,7 +16,9 @@ module Academy
     # -------------
     # Academy enrollment
     belongs_to :enrollment, optional: true, foreign_key: "academy_enrollment_id", inverse_of: false
+    accepts_nested_attributes_for :enrollment
     # Academy course
     belongs_to :course, optional: true, foreign_key: "academy_course_id", inverse_of: false
+    accepts_nested_attributes_for :course
   end
 end

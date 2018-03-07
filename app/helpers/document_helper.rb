@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 module DocumentHelper
-  # Document
-  # --------
   # Params document
   def params_document
     params[:document] == "true"

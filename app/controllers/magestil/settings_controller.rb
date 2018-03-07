@@ -38,13 +38,26 @@ module Magestil
     # Whitelist params
     def magestil_settings_params
       params.require(:magestil_settings).permit(
+        # Meta tags
         :meta_title,
         :meta_description,
         :meta_image_box,
         :meta_url,
+        # Misc
         :title,
         :description,
-        :url
+        :url,
+        :enrollment_success,
+        :enrollment_failure,
+        :enrollment_description,
+        :newsletter_success,
+        :newsletter_failure,
+        # Document
+        :document,
+        :document_box,
+        :remove_document_box,
+        :document_box_cache,
+        :document_caption
       )
     end
   end

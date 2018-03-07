@@ -23,6 +23,14 @@
   = render "cover_magestil", object: @academy_course
 - elsif params_cover_magensinus
   = render "cover_magensinus", object: @academy_course
+- elsif params_image
+  = render "image", object: @academy_course
+- elsif params_image_eml
+  = render "image_eml", object: @academy_course
+- elsif params_image_magestil
+  = render "image_magestil", object: @academy_course
+- elsif params_image_magensinus
+  = render "image_magensinus", object: @academy_course
 - elsif params_document
   = render "document", object: @academy_course
 - elsif params_document_eml
@@ -53,9 +61,14 @@
 = link_to "Cover Magestil",       edit_academy_course_path(@academy_course, cover_magestil: "true")
 = link_to "Cover Magensinus",     edit_academy_course_path(@academy_course, cover_magensinus: "true")
 
-= link_to "Documento",            edit_academy_course_path(@academy_course, documento: "true")
-= link_to "Documento Eml",        edit_academy_course_path(@academy_course, documento_eml: "true")
-= link_to "Documento Magestil",   edit_academy_course_path(@academy_course, documento_magestil: "true")
-= link_to "Documento Magensinus", edit_academy_course_path(@academy_course, documento_magensinus: "true")
+= link_to "Image",                edit_academy_course_path(@academy_course, image: "true")
+= link_to "Image Eml",            edit_academy_course_path(@academy_course, image_eml: "true")
+= link_to "Image Magestil",       edit_academy_course_path(@academy_course, image_magestil: "true")
+= link_to "Image Magensinus",     edit_academy_course_path(@academy_course, image_magensinus: "true")
+
+= link_to "Documento",            edit_academy_course_path(@academy_course, document: "true")
+= link_to "Documento Eml",        edit_academy_course_path(@academy_course, document_eml: "true")
+= link_to "Documento Magestil",   edit_academy_course_path(@academy_course, document_magestil: "true")
+= link_to "Documento Magensinus", edit_academy_course_path(@academy_course, document_magensinus: "true")
 
 = link_to "Show", @academy_course

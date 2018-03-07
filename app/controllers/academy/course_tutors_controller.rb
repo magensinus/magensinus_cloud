@@ -12,7 +12,7 @@ module Academy
     # Index
     # -----
     def index
-      @academy_course_tutors ||= @academy_course.course_tutors.includes(:course).includes(:tutor).all
+      @academy_course_tutors = @academy_course.course_tutors.includes(:course).includes(:tutor).all
     end
 
     # Edit
@@ -52,6 +52,7 @@ module Academy
     # Whitelist params
     def academy_course_tutor_params
       params.require(:academy_course_tutor).permit(
+        # Misc
         :academy_course_id,
         :academy_tutor_id,
         :coordinator,

@@ -4,10 +4,12 @@ module CleanVideo
   extend ActiveSupport::Concern
   included do
     # Callbacks
+    # ---------
+    # Clean video
     before_validation :clean_video_id, on: :create, if: :check_if_video?
 
     # Save only the ID
-    # This should work with youtube & vimeo
+    # Applied to the following services: youtube & vimeo
     def clean_video_id
       self.video_box = clean_video_regex
     end

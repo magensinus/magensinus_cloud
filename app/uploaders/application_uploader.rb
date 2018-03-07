@@ -14,9 +14,4 @@ class ApplicationUploader < CarrierWave::Uploader::Base
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.slug}"
   end
-
-  # Override the filename of the uploaded files:
-  def filename
-    "#{prefix}#{model.slug}-#{Time.zone.today}.#{file.extension}" if original_filename.present?
-  end
 end

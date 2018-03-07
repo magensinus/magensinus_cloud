@@ -92,21 +92,31 @@ module Academy
     # Whitelist params
     def academy_section_asset_params
       params.require(:academy_section_asset).permit(
+        # Relationships
         :academy_section_id,
+        # Misc
+        :alignment,
+        :position,
+        # Text
         :text,
         :text_box,
+        # Image
         :image,
         :image_box,
+        :remove_image_box,
+        :image_box_cache,
         :image_caption,
+        # Document
         :document,
         :document_box,
+        :remove_document_box,
+        :document_box_cache,
         :document_caption,
+        # Video
         :video,
         :video_box,
         :video_caption,
-        :video_service,
-        :alignment,
-        :position
+        :video_service
       )
     end
   end

@@ -6,12 +6,12 @@ module Academy
     # ------
     # Theme
     include ThemeParams
-    # Image
-    include ImageParams
     # Thumb
     include ThumbParams
     # Cover
     include CoverParams
+    # Image
+    include ImageParams
     # Document
     include DocumentParams
 
@@ -25,10 +25,10 @@ module Academy
     # Index
     # -----
     def index
-      @academy_courses              ||= Academy::Course.all.includes(:category).order(academy_category_id: :asc)
-      @scheduled_academy_courses    ||= Academy::Course.scheduled.includes(:category).order(academy_category_id: :asc)
-      @published_academy_courses    ||= Academy::Course.published.includes(:category).order(academy_category_id: :asc)
-      @unpublished_academy_courses  ||= Academy::Course.unpublished.includes(:category).order(academy_category_id: :asc)
+      @academy_courses              = Academy::Course.all.includes(:category).order(academy_category_id: :asc)
+      @scheduled_academy_courses    = Academy::Course.scheduled.includes(:category).order(academy_category_id: :asc)
+      @published_academy_courses    = Academy::Course.published.includes(:category).order(academy_category_id: :asc)
+      @unpublished_academy_courses  = Academy::Course.unpublished.includes(:category).order(academy_category_id: :asc)
     end
 
     # Show
@@ -109,25 +109,28 @@ module Academy
     def academy_course_params
       params.require(:academy_course).permit(
         theme_params,
-        image_params,
         thumb_params,
         cover_params,
+        image_params,
         document_params,
-        :academy_category_id,
+        # Meta tags
         :meta_title,
         :meta_description,
         :meta_image_box,
         :meta_url,
+        # Misc
         :title,
         :description,
         :body,
         :misc,
         :published,
         :published_at,
+        :position,
+        # Schools
         :eml,
         :magestil,
         :magensinus,
-        :position,
+        # Collections
         tutor_ids: []
       )
     end

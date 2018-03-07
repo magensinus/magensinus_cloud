@@ -3,25 +3,28 @@
 = form_with model: object, local: true do |f|
   = render "lib/components/errors", object: object
   .field
-    = f.label :meta_title
-    = f.text_field :meta_title
-  .field
-    = f.label :meta_description
-    = f.text_area :meta_description
-  .field
-    = f.label :meta_image_box
-    = f.text_field :meta_image_box
-  .field
-    = f.label :meta_url
-    = f.text_field :meta_url
-  .field
     = f.label :title
     = f.text_field :title
   .field
-    = f.label :description
-    = f.text_area :description
+    %trix-editor{ input: "description" }
+    = f.hidden_field :description, id: "description"
   .field
     = f.label :url
     = f.text_field :url
+  .field
+    = f.label :enrollment_success
+    = f.text_area :enrollment_success
+  .field
+    = f.label :enrollment_failure
+    = f.text_area :enrollment_failure
+  .field
+    = f.label :enrollment_description
+    = f.text_area :enrollment_description
+  .field
+    = f.label :newsletter_success
+    = f.text_area :newsletter_success
+  .field
+    = f.label :newsletter_failure
+    = f.text_area :newsletter_failure
   .actions
     = f.submit "Save"

@@ -11,8 +11,6 @@ module Academy
     # --------
     # Slug
     include Slug
-    # Clean caption
-    # include CleanCaption
     # Sortable position
     include SortablePosition
 
@@ -28,12 +26,15 @@ module Academy
     mount_uploader :cover_box_eml, Academy::CoverUploader
     mount_uploader :cover_box_magestil, Academy::CoverUploader
     mount_uploader :cover_box_magensinus, Academy::CoverUploader
-
-    # Clean Capitions
-    # ---------------
-    # Thumb
-    # after_save(-> { clean_caption(thumb_box, :thumb_caption) })
-    # Cover
-    # after_save(-> { clean_caption(cover_box, :cover_caption) })
+    # Image
+    mount_uploader :image_box, Academy::ImageUploader
+    mount_uploader :image_box_eml, Academy::ImageUploader
+    mount_uploader :image_box_magestil, Academy::ImageUploader
+    mount_uploader :image_box_magensinus, Academy::ImageUploader
+    # Document
+    mount_uploader :document_box, Academy::DocumentUploader
+    mount_uploader :document_box_eml, Academy::DocumentUploader
+    mount_uploader :document_box_magestil, Academy::DocumentUploader
+    mount_uploader :document_box_magensinus, Academy::DocumentUploader
   end
 end
