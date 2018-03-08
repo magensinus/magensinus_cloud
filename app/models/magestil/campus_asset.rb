@@ -17,7 +17,7 @@ module Magestil
     # Uploaders
     # ---------
     # Image
-    mount_uploader :image_box, Magensinus::ThumbUploader
+    mount_uploader :image_box, Magestil::CampusAssetUploader
 
     # Clean capitions
     # ---------------

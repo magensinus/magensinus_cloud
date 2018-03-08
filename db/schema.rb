@@ -573,9 +573,6 @@ ActiveRecord::Schema.define(version: 20180307224649) do
     t.boolean "thumb", default: false
     t.string "thumb_box"
     t.string "thumb_caption"
-    t.boolean "document", default: false
-    t.string "document_box"
-    t.string "document_caption"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_magensinus_networks_on_slug"

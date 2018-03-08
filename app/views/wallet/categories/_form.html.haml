@@ -3,18 +3,6 @@
 = form_with model: object, local: true do |f|
   = render "lib/components/errors", object: object
   .field
-    = f.label :meta_title
-    = f.text_field :meta_title
-  .field
-    = f.label :meta_description
-    = f.text_area :meta_description
-  .field
-    = f.label :meta_image_box
-    = f.text_field :meta_image_box
-  .field
-    = f.label :meta_url
-    = f.text_field :meta_url
-  .field
     = f.label :title
     = f.text_field :title
   .field
@@ -23,6 +11,9 @@
   .field
     = f.label :published
     = f.check_box :published
+  .field
+    = f.label :wallet_type
+    = f.select :wallet_type, ["students", "parents", "tutors", "other"]
   .field
     = f.label :eml
     = f.check_box :eml
