@@ -20,10 +20,10 @@ Rails.application.routes.draw do
     resource :articles,           controller: :articles
     resource :contact,            controller: :contact
     resource :newsletter,         controller: :newsletter
-    resources :campus_assets,     controller: :campus_assets
-    resources :equipment_assets,  controller: :equipment_assets
     # Plugins
     resources :networks,          controller: :networks
+    resources :campus_assets,     controller: :campus_assets
+    resources :equipment_assets,  controller: :equipment_assets
   end
 
   namespace :magensinus do
