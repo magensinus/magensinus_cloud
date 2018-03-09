@@ -43,7 +43,7 @@ module Academy
     # -------------
     # Academy category
     belongs_to :category, optional: true, foreign_key: "academy_category_id", inverse_of: false
-    accepts_nested_attributes_for :category
+    # accepts_nested_attributes_for :category
     # Academy enrollment courses
     has_many :enrollment_courses, dependent: :destroy, foreign_key: "academy_course_id", inverse_of: false
     accepts_nested_attributes_for :enrollment_courses

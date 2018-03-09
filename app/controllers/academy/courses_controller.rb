@@ -113,6 +113,8 @@ module Academy
         cover_params,
         image_params,
         document_params,
+        # relationships
+        :academy_category_id,
         # Meta tags
         :meta_title,
         :meta_description,
