@@ -6,8 +6,8 @@
     = f.label :meta_title
     = f.text_field :meta_title
   .field
-    = f.label :meta_description
-    = f.text_area :meta_description
+    %trix-editor{ input: "description" }
+    = f.hidden_field :description, id: "description"
   .field
     = f.label :meta_image_box
     = f.text_field :meta_image_box

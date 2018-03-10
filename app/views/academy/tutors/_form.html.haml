@@ -8,7 +8,7 @@
     = f.label :surname
     = f.text_field :surname
   .field
-    = f.label :biography
-    = f.text_area :biography
+    %trix-editor{ input: "biography" }
+    = f.hidden_field :biography, id: "biography"
   .actions
     = f.submit "Save"
