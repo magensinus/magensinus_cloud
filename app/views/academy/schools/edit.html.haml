@@ -4,8 +4,6 @@
 
 %h1 Editing academy_school
 
-= render "form", object: @academy_school
-
 - if params_thumb
   = render "thumb", object: @academy_school
 - elsif params_thumb_eml
