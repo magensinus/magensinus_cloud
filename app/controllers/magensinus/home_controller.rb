@@ -45,6 +45,7 @@ module Magensinus
         :meta_url,
         # Misc
         :title,
+        :subtitle,
         :description,
         :body,
         # Image
