@@ -13,7 +13,5 @@
 4 - heroku repo:purge_cache --app magensinus-cloud-sta
 
 ### Production
-1 - heroku pg:reset --app magensinus-cloud-pro --confirm magensinus-cloud-pro
 2 - heroku run rails db:migrate --app magensinus-cloud-pro
-3 - heroku run rails db:seed --app magensinus-cloud-pro
 4 - heroku repo:purge_cache --app magensinus-cloud-pro

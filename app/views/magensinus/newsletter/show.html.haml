@@ -11,11 +11,12 @@
 %p
   %b Body:
   = @magensinus_newsletter.body
-%p
-  %b Success:
-  = fetch_settings.newsletter_success
-%p
-  %b Failure:
-  = fetch_settings.newsletter_failure
+-#
+  %p
+    %b Success:
+    = fetch_settings.newsletter_success
+  %p
+    %b Failure:
+    = fetch_settings.newsletter_failure
 
 = link_to "Edit", edit_magensinus_newsletter_path
