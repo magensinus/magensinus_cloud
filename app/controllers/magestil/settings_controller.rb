@@ -32,7 +32,7 @@ module Magestil
 
     # Magestil settings
     def magestil_settings
-      @magestil_settings = Magensinus::Settings.first!
+      @magestil_settings = Magestil::Settings.first!
     end
 
     # Whitelist params

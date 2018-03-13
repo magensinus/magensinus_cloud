@@ -128,6 +128,9 @@ module Academy
         :published,
         :published_at,
         :position,
+        # External
+        :external,
+        :url,
         # Schools
         :eml,
         :magestil,
