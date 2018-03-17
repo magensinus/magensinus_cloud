@@ -101,7 +101,19 @@ Rails.application.routes.draw do
   end
 
   namespace :endorsement do
+    root to: "dashboard#show"
+    resource :dashboard, controller: :dashboard
     resources :badges, controller: :badges do
+      collection do
+        patch :sortable
+      end
+    end
+  end
+
+  namespace :partnerships do
+    root to: "dashboard#show"
+    resource :dashboard, controller: :dashboard
+    resources :identities, controller: :identities do
       collection do
         patch :sortable
       end

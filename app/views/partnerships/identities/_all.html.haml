@@ -1,0 +1,26 @@
+// All
+
+%table
+  %thead
+    %tr
+      %th Position
+      %th Title
+      %th Url
+      %th Published
+      %th Eml
+      %th Magestil
+      %th Magensinus
+      %th
+      %th
+  %tbody
+    - objects.each do |object|
+      %tr
+        %td= object.position
+        %td= object.title
+        %td= object.url
+        %td= object.published
+        %td= object.eml
+        %td= object.magestil
+        %td= object.magensinus
+        %td= link_to "Edit", edit_partnerships_identity_path(object)
+        %td= link_to "Destroy", partnerships_identity_path(object), method: :delete, data: { confirm: "Are you sure?" }

@@ -1,0 +1,12 @@
+// Edit
+
+= link_to "Back", partnerships_identities_path
+
+%h1 Editing partnerships_identity
+
+- if params_thumb
+  = render "thumb", object: @partnerships_identity
+- else
+  = render "form", object: @partnerships_identity
+
+= link_to "Thumb", edit_partnerships_identity_path(@partnerships_identity, thumb: "true")
