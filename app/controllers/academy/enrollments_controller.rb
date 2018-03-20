@@ -18,7 +18,7 @@ module Academy
         if params[:category_id]
           @academy_category.enrollments.includes(:category).all
         else
-          Academy::Enrollment.all
+          Academy::Enrollment.includes(:category).all
         end
     end
 
