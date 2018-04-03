@@ -2,8 +2,10 @@
   "name": "magensinus_cloud",
   "private": true,
   "dependencies": {
-    "jquery": "^3.3.1",
-    "jquery-ui": "^1.12.1",
-    "trix": "^0.11.1"
+    "jquery": "^3.3.0",
+    "jquery-ui": "^1.12.0",
+    "trix": "^0.11.0",
+    "altai_off": "^1.0.0",
+    "altai_sortable": "^1.0.0"
   }
 }

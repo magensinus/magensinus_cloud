@@ -25,10 +25,10 @@ module Academy
     # Index
     # -----
     def index
-      @academy_courses              = Academy::Course.all.includes(:category).order(academy_category_id: :asc)
-      @scheduled_academy_courses    = Academy::Course.scheduled.includes(:category).order(academy_category_id: :asc)
-      @published_academy_courses    = Academy::Course.published.includes(:category).order(academy_category_id: :asc)
-      @unpublished_academy_courses  = Academy::Course.unpublished.includes(:category).order(academy_category_id: :asc)
+      @academy_courses             = Academy::Course.all_by_group.includes(:category)
+      @scheduled_academy_courses   = Academy::Course.scheduled.includes(:category)
+      @published_academy_courses   = Academy::Course.published.includes(:category)
+      @unpublished_academy_courses = Academy::Course.unpublished.includes(:category)
     end
 
     # Show

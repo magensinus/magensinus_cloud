@@ -10,6 +10,7 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
     magestil_settings
     magestil_home
     magestil_about
+    magestil_quality
     magestil_courses
     magestil_articles
     magestil_contact

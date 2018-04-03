@@ -1,0 +1,12 @@
+// Edit
+
+= link_to "Back", magestil_quality_path
+
+%h1 Editing magestil_quality
+
+- if params_image
+  = render "image", object: @magestil_quality
+- else
+  = render "form", object: @magestil_quality
+
+= link_to "Image", edit_magestil_quality_path(image: "true")

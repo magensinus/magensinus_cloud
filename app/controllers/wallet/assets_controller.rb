@@ -12,7 +12,7 @@ module Wallet
     # Index
     # -----
     def index
-      @wallet_assets = @wallet_category.assets.all
+      @wallet_assets = @wallet_category.assets.order(position: :asc)
     end
 
     # Show

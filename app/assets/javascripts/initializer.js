@@ -1,8 +1,8 @@
 // Initializer
 
 bindEvents = function() {
-  $(".off").setOff();
-  $(".sortable").setSortable();
+  $(".off").altaiOff();
+  $(".sortable").altaiSortable();
 };
 
 $(document).on( "turbolinks:load", function() {

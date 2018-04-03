@@ -59,5 +59,11 @@ module Academy
     # Academy tutors
     has_many :tutors, through: :course_tutors
     accepts_nested_attributes_for :tutors
+
+    # Validations
+    # -----------
+    # Category
+    validates_associated :category
+    validates :category, presence: true
   end
 end

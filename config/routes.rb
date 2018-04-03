@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resource :settings,           controller: :settings
     resource :home,               controller: :home
     resource :about,              controller: :about
+    resource :quality,            controller: :quality
     resource :campus,             controller: :campus
     resource :equipment,          controller: :equipment
     resource :partnerships,       controller: :partnerships
