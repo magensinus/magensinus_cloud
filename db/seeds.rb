@@ -152,7 +152,6 @@ Magestil::Partnerships.create(
   meta_description: "",
   meta_url: ""
 )
-=end
 
 # Create Magestil Quality
 Magestil::Quality.create(
@@ -160,3 +159,4 @@ Magestil::Quality.create(
   meta_description: "",
   meta_url: ""
 )
+=end
