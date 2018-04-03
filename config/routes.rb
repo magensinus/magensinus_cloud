@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     resources :networks,          controller: :networks
     resources :campus_assets,     controller: :campus_assets
     resources :equipment_assets,  controller: :equipment_assets
+    resources :about_assets,      controller: :about_assets
   end
 
   namespace :magensinus do

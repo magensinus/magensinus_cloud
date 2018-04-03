@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180331100206) do
+ActiveRecord::Schema.define(version: 20180403100619) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -681,6 +681,17 @@ ActiveRecord::Schema.define(version: 20180331100206) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_magestil_about_on_slug"
+  end
+
+  create_table "magestil_about_assets", force: :cascade do |t|
+    t.string "slug"
+    t.integer "position"
+    t.boolean "image", default: false
+    t.string "image_box"
+    t.string "image_caption"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_magestil_about_assets_on_slug"
   end
 
   create_table "magestil_articles", force: :cascade do |t|

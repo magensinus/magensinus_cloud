@@ -1,0 +1,18 @@
+// Thumb
+
+= form_with model: object, url: magestil_about_asset_form_url, local: true do |f|
+  = render "lib/components/errors", object: object
+  = f.hidden_field :image, value: true
+  = f.hidden_field :image_box_cache
+  .field
+    = f.label :image_box
+    = f.file_field :image_box unless object.image_box.presence
+  - if object.image_box.presence
+    .field
+      = f.label :remove_image_box
+      = f.check_box :remove_image_box
+  .field
+    = f.label :image_caption
+    = f.text_field :image_caption
+  .actions
+    = f.submit "Save"
