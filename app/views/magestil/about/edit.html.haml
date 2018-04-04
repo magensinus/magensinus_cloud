@@ -6,7 +6,10 @@
 
 - if params_image
   = render "image", object: @magestil_about
+- elsif params_document
+  = render "document", object: @magestil_about
 - else
   = render "form", object: @magestil_about
 
 = link_to "Image", edit_magestil_about_path(image: "true")
+= link_to "Document", edit_magestil_about_path(document: "true")
