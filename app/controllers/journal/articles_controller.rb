@@ -100,7 +100,8 @@ module Journal
         # Schools
         :eml,
         :magestil,
-        :magensinus
+        :magensinus,
+        :featured
       )
     end
   end

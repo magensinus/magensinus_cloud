@@ -9,6 +9,9 @@
     %trix-editor{ input: "description" }
     = f.hidden_field :description, id: "description"
   .field
+    = f.label :featured
+    = f.check_box :featured
+  .field
     = f.label :published
     = f.check_box :published
   .field

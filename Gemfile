@@ -7,6 +7,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# Ruby version
+ruby "2.5.1"
+
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem "therubyracer", platforms: :ruby
 
