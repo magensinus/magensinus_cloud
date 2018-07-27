@@ -127,6 +127,8 @@ module Academy
         :misc,
         :published,
         :published_at,
+        :enrollment_status,
+        :enrollment_status_label,
         :position,
         # External
         :external,

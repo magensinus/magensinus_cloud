@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180719100929) do
+ActiveRecord::Schema.define(version: 20180727122114) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -151,6 +151,8 @@ ActiveRecord::Schema.define(version: 20180719100929) do
     t.datetime "updated_at", null: false
     t.boolean "external"
     t.string "url"
+    t.boolean "enrollment_status"
+    t.string "enrollment_status_label"
     t.index ["academy_category_id"], name: "index_academy_courses_on_academy_category_id"
     t.index ["slug"], name: "index_academy_courses_on_slug"
   end
