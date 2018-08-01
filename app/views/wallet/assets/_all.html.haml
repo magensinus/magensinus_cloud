@@ -5,8 +5,6 @@
     %tr
       %th
       %th Wallet category
-      %th Document
-      %th Document box
       %th Document caption
       %th Position
       %th
@@ -16,11 +14,9 @@
     - objects.each do |object|
       %tr{ id: "wallet_asset_#{object.id}" }
         %td= link_to "Sort Me", "#", class: "handle"
-        %td= object.category
-        %td= object.document
-        %td= object.document_box
+        %td= object.category.title
         %td= object.document_caption
         %td= object.position
-        %td= link_to "Show", wallet_category_asset_path(parent, object)
+        %td= link_to "Show", object.document_box.url, target: "_blank"
         %td= link_to "Edit", edit_wallet_category_asset_path(parent, object, document: true)
         %td= link_to "Destroy", wallet_category_asset_path(parent, object), method: :delete, data: { confirm: "Are you sure?" }
