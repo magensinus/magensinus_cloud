@@ -2,7 +2,7 @@
 
 = link_to "Back", new_wallet_category_path(@wallet_category)
 
-%h1 Listing wallet_assets
+%h1 #{@wallet_category.title} - wallet assets
 
 = render "all", parent: @wallet_category, objects: @wallet_assets
 
