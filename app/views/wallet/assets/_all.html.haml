@@ -4,7 +4,6 @@
   %thead
     %tr
       %th
-      %th Wallet category
       %th Document caption
       %th Position
       %th
@@ -14,7 +13,6 @@
     - objects.each do |object|
       %tr{ id: "wallet_asset_#{object.id}" }
         %td= link_to "Sort Me", "#", class: "handle"
-        %td= object.category.title
         %td= object.document_caption
         %td= object.position
         %td= link_to "Show", object.document_box.url, target: "_blank"
