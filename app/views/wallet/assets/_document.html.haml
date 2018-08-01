@@ -4,10 +4,11 @@
   = render "lib/components/errors", object: object
   = f.hidden_field :document, value: true
   = f.hidden_field :document_box_cache
-  - if params_new || params_create
-    .field
-      = f.label :document_box
-      = f.file_field :document_box unless object.document_box.presence
+  // - if params_new || params_create
+  .field
+    = f.label :document_box
+    = f.file_field :document_box
+    // = f.file_field :document_box unless object.document_box.presence
   .field
     = f.label :document_caption
     = f.text_field :document_caption

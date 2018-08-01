@@ -215,7 +215,7 @@ GEM
     fog-profitbricks (4.1.1)
       fog-core (~> 1.42)
       fog-json (~> 1.0)
-    fog-rackspace (0.1.5)
+    fog-rackspace (0.1.6)
       fog-core (>= 1.35)
       fog-json (>= 1.0)
       fog-xml (>= 0.1)
@@ -438,7 +438,7 @@ GEM
     turbolinks-source (5.1.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    uglifier (4.1.16)
+    uglifier (4.1.17)
       execjs (>= 0.3.0, < 3)
     unf (0.1.4)
       unf_ext
