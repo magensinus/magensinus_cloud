@@ -1,3 +1,5 @@
+# Notes
+
 ### Development
 1 - heroku pg:reset --app magensinus-cloud-dev --confirm magensinus-cloud-dev
 2 - heroku run rails db:migrate --app magensinus-cloud-dev

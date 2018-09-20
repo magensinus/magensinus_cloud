@@ -18,7 +18,8 @@
 
 .byebug_history
 
-# Ignore uploaded files
+# Ignore uploaded files & misc
+/notes.md
 /public/uploads
 
 # IMPORTANT: Environment files that may contain sensitive data

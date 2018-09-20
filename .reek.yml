@@ -1,0 +1,31 @@
+exclude_paths:
+  - db
+  - bin
+  - spec
+  - test
+  - vendor
+
+detectors:
+  InstanceVariableAssumption:
+    enabled: false
+
+  IrresponsibleModule:
+    enabled: false
+
+  NestedIterators:
+    max_allowed_nesting: 2
+
+  UtilityFunction:
+    enabled: false
+
+  UnusedPrivateMethod:
+    enabled: false
+
+  FeatureEnvy:
+    enabled: false
+
+  TooManyStatements:
+    enabled: false
+
+  RepeatedConditional:
+    enabled: false
