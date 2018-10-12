@@ -7,6 +7,10 @@
   .field
     = f.label :document_box_magestil
     = f.file_field :document_box_magestil unless object.document_box_magestil.presence
+  - if object.document_box_magestil.presence
+    .field
+      = f.label :remove_document_box_magestil
+      = f.check_box :remove_document_box_magestil
   .field
     = f.label :document_caption
     = f.text_field :document_caption
