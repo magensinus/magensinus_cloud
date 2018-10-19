@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180727122114) do
+ActiveRecord::Schema.define(version: 20180938152530) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -462,6 +462,84 @@ ActiveRecord::Schema.define(version: 20180727122114) do
     t.index ["slug"], name: "index_journal_assets_on_slug"
   end
 
+  create_table "legal_articles", force: :cascade do |t|
+    t.string "slug"
+    t.string "meta_title"
+    t.text "meta_description"
+    t.string "meta_image_box"
+    t.string "meta_url"
+    t.string "title"
+    t.text "description"
+    t.boolean "published", default: false
+    t.datetime "published_at"
+    t.integer "position"
+    t.boolean "eml", default: false
+    t.boolean "magestil", default: false
+    t.boolean "magensinus", default: false
+    t.boolean "thumb", default: false
+    t.string "thumb_box"
+    t.boolean "thumb_eml", default: false
+    t.string "thumb_box_eml"
+    t.boolean "thumb_magestil", default: false
+    t.string "thumb_box_magestil"
+    t.boolean "thumb_magensinus", default: false
+    t.string "thumb_box_magensinus"
+    t.string "thumb_caption"
+    t.boolean "cover", default: false
+    t.string "cover_box"
+    t.boolean "cover_eml", default: false
+    t.string "cover_box_eml"
+    t.boolean "cover_magestil", default: false
+    t.string "cover_box_magestil"
+    t.boolean "cover_magensinus", default: false
+    t.string "cover_box_magensinus"
+    t.string "cover_caption"
+    t.boolean "image", default: false
+    t.string "image_box"
+    t.boolean "image_eml", default: false
+    t.string "image_box_eml"
+    t.boolean "image_magestil", default: false
+    t.string "image_box_magestil"
+    t.boolean "image_magensinus", default: false
+    t.string "image_box_magensinus"
+    t.string "image_caption"
+    t.boolean "document", default: false
+    t.string "document_box"
+    t.boolean "document_eml", default: false
+    t.string "document_box_eml"
+    t.boolean "document_magestil", default: false
+    t.string "document_box_magestil"
+    t.boolean "document_magensinus", default: false
+    t.string "document_box_magensinus"
+    t.string "document_caption"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_legal_articles_on_slug"
+  end
+
+  create_table "legal_assets", force: :cascade do |t|
+    t.string "slug"
+    t.bigint "legal_article_id"
+    t.string "alignment"
+    t.integer "position"
+    t.boolean "text"
+    t.text "text_box"
+    t.boolean "image", default: false
+    t.string "image_box"
+    t.string "image_caption"
+    t.boolean "document", default: false
+    t.string "document_box"
+    t.string "document_caption"
+    t.boolean "video", default: false
+    t.string "video_box"
+    t.string "video_caption"
+    t.string "video_service"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["legal_article_id"], name: "index_legal_assets_on_legal_article_id"
+    t.index ["slug"], name: "index_legal_assets_on_slug"
+  end
+
   create_table "magensinus_about", force: :cascade do |t|
     t.string "slug"
     t.string "meta_title"
@@ -848,6 +926,26 @@ ActiveRecord::Schema.define(version: 20180727122114) do
     t.index ["slug"], name: "index_magestil_home_on_slug"
   end
 
+  create_table "magestil_legal", force: :cascade do |t|
+    t.string "slug"
+    t.string "meta_title"
+    t.text "meta_description"
+    t.string "meta_image_box"
+    t.string "meta_url"
+    t.string "title"
+    t.text "description"
+    t.text "body"
+    t.boolean "image", default: false
+    t.string "image_box"
+    t.string "image_caption"
+    t.boolean "document", default: false
+    t.string "document_box"
+    t.string "document_caption"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_magestil_legal_on_slug"
+  end
+
   create_table "magestil_networks", force: :cascade do |t|
     t.string "slug"
     t.string "title"
@@ -982,6 +1080,26 @@ ActiveRecord::Schema.define(version: 20180727122114) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_magestil_students_on_slug"
+  end
+
+  create_table "magestil_terms_and_conditions", force: :cascade do |t|
+    t.string "slug"
+    t.string "meta_title"
+    t.text "meta_description"
+    t.string "meta_image_box"
+    t.string "meta_url"
+    t.string "title"
+    t.text "description"
+    t.text "body"
+    t.boolean "image", default: false
+    t.string "image_box"
+    t.string "image_caption"
+    t.boolean "document", default: false
+    t.string "document_box"
+    t.string "document_caption"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_magestil_terms_and_conditions_on_slug"
   end
 
   create_table "magestil_tutors", force: :cascade do |t|
@@ -1142,5 +1260,6 @@ ActiveRecord::Schema.define(version: 20180727122114) do
   add_foreign_key "academy_section_assets", "academy_sections"
   add_foreign_key "academy_sections", "academy_courses"
   add_foreign_key "journal_assets", "journal_articles"
+  add_foreign_key "legal_assets", "legal_articles"
   add_foreign_key "wallet_assets", "wallet_categories"
 end

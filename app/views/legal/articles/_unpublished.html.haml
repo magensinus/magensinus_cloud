@@ -1,0 +1,27 @@
+// Unpublished
+
+%table
+  %thead
+    %tr
+      %th Title
+      %th Published
+      %th Published at
+      %th Eml
+      %th Magestil
+      %th Magensinus
+      %th
+      %th
+      %th
+  %tbody
+    %h3 Unpublished
+    - @unpublished_legal_articles.each do |legal_article|
+      %tr
+        %td= legal_article.title
+        %td= legal_article.published
+        %td= legal_article.published_at
+        %td= legal_article.eml
+        %td= legal_article.magestil
+        %td= legal_article.magensinus
+        %td= link_to "Show", legal_article_path(legal_article)
+        %td= link_to "Edit", edit_legal_article_path(legal_article)
+        %td= link_to "Destroy", legal_article_path(legal_article), method: :delete, data: { confirm: "Are you sure?" }

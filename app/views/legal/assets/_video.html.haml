@@ -1,0 +1,18 @@
+// Video
+
+= form_with model: object, url: legal_asset_form_url, local: true do |f|
+  = render "lib/components/errors", object: object
+  = f.hidden_field :video, value: true
+  - if params_new || params_create
+    .field
+      = f.label :video_box
+      = f.text_field :video_box
+  .field
+    = f.label :video_caption
+    = f.text_field :video_caption
+  - if params_new || params_create
+    .field
+      = f.label :video_service
+      = f.select :video_service, %w[vimeo youtube], selected: "youtube"
+  .actions
+    = f.submit "Save"

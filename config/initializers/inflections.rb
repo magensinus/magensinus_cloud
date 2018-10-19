@@ -25,6 +25,7 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
     magestil_students
     magestil_parents
     magestil_tutors
+    magestil_terms_and_conditions
     magensinus_settings
     magensinus_home
     magensinus_about

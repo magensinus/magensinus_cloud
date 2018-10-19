@@ -1,0 +1,69 @@
+// Show
+
+= link_to "Back", legal_articles_path
+
+%p
+  %b Meta title:
+  = @legal_article.meta_title
+%p
+  %b Meta description:
+  = @legal_article.meta_description
+%p
+  %b Meta image box:
+  = @legal_article.meta_image_box
+%p
+  %b Meta url:
+  = @legal_article.meta_url
+%p
+  %b Title:
+  = @legal_article.title
+%p
+  %b Description:
+  = @legal_article.description
+-#
+  %p
+    %b Thumb:
+    = @legal_article.thumb
+  %p
+    %b Thumb box:
+    = image_tag @legal_article.thumb_box_url.to_s
+    = image_tag @legal_article.thumb_box_url(:nano).to_s
+    = image_tag @legal_article.thumb_box_url(:tiny).to_s
+    = image_tag @legal_article.thumb_box_url(:small).to_s
+    = image_tag @legal_article.thumb_box_url(:medium).to_s
+    = image_tag @legal_article.thumb_box_url(:large).to_s
+  %p
+    %b Thumb caption:
+    = @legal_article.thumb_caption
+  %p
+    %b Cover:
+    = @legal_article.cover
+  %p
+    %b Cover box:
+    = image_tag @legal_article.cover_box_url.to_s
+    = image_tag @legal_article.cover_box_url(:nano).to_s
+    = image_tag @legal_article.cover_box_url(:tiny).to_s
+    = image_tag @legal_article.cover_box_url(:small).to_s
+    = image_tag @legal_article.cover_box_url(:medium).to_s
+    = image_tag @legal_article.cover_box_url(:large).to_s
+  %p
+    %b Cover caption:
+    = @legal_article.cover_caption
+%p
+  %b Published:
+  = @legal_article.published
+%p
+  %b Published at:
+  = @legal_article.published_at
+%p
+  %b Eml:
+  = @legal_article.eml
+%p
+  %b Magestil:
+  = @legal_article.magestil
+%p
+  %b Magensinus:
+  = @legal_article.magensinus
+
+= link_to "Edit", edit_legal_article_path(@legal_article)
+= link_to "Article Assets", legal_article_assets_path(@legal_article)

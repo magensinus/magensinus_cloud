@@ -1,0 +1,12 @@
+// Edit
+
+= link_to "Back", magestil_terms_and_conditions_path
+
+%h1 Editing magestil_article
+
+- if params_image
+  = render "image", object: @magestil_terms_and_conditions
+- else
+  = render "form", object: @magestil_terms_and_conditions
+
+= link_to "Image", edit_magestil_terms_and_conditions_path(image: "true")

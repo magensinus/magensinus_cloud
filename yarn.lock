@@ -5,23 +5,28 @@
 altai_off@^1.0.0:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/altai_off/-/altai_off-1.0.6.tgz#a06b9953a13a403cbd139f21f2871951b658126c"
+  integrity sha1-oGuZU6E6QDy9E58h8ocZUbZYEmw=
   dependencies:
     jquery "^3.0.0"
 
 altai_sortable@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/altai_sortable/-/altai_sortable-1.0.0.tgz#eda666ab39fc559f57e7a22a82f566ff9c25c2a2"
+  integrity sha1-7aZmqzn8VZ9X56IqgvVm/5wlwqI=
   dependencies:
     jquery "^3.0.0"
 
-jquery-ui@^1.12.0:
+jquery-ui@^1.0.0:
   version "1.12.1"
   resolved "https://registry.yarnpkg.com/jquery-ui/-/jquery-ui-1.12.1.tgz#bcb4045c8dd0539c134bc1488cdd3e768a7a9e51"
+  integrity sha1-vLQEXI3QU5wTS8FIjN0+dop6nlE=
 
-jquery@^3.0.0, jquery@^3.3.0:
+jquery@^3.0.0:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
+  integrity sha512-Ubldcmxp5np52/ENotGxlLe6aGMvmF4R8S6tZjsP6Knsaxd/xp3Zrh50cG93lR6nPXyUFwzN3ZSOQI0wRJNdGg==
 
-trix@^0.11.0:
-  version "0.11.2"
-  resolved "https://registry.yarnpkg.com/trix/-/trix-0.11.2.tgz#6e8c322ffbb6b377978af41b114135eb3b3b70f0"
+trix@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/trix/-/trix-1.0.0.tgz#e9cc98cf6030c908f8d54e317b5b072f927b0c6b"
+  integrity sha512-feli9QVXe6gzZOCUfpPGpNDURW9jMciIRVQ5gkDudOctcA1oMtI5K/qEbsL2rFCoGl1rSoeRt+HPhIFGyQscKg==

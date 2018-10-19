@@ -1,0 +1,15 @@
+// Show
+
+= link_to "Back", magestil_root_path
+
+%p
+  %b Title:
+  = @magestil_terms_and_conditions.title
+%p
+  %b Description:
+  = @magestil_terms_and_conditions.description
+%p
+  %b Body:
+  = @magestil_terms_and_conditions.body
+
+= link_to "Edit", edit_magestil_terms_and_conditions_path

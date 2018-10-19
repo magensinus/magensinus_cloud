@@ -1,0 +1,10 @@
+// Index
+
+%h1 Listing legal_articles
+
+= render "unpublished", objects: @unpublished_legal_articles
+= render "scheduled",   objects: @scheduled_legal_articles
+= render "published",   objects: @published_legal_articles
+
+= link_to "New Legal article", new_legal_article_path
+= link_to "Legal Dashboard", legal_root_path

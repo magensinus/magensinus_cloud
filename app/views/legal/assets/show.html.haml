@@ -1,0 +1,47 @@
+// Show
+
+= link_to "Back", legal_article_assets_path(@legal_article)
+
+%p
+  %b Journal article:
+  = @legal_asset.article
+%p
+  %b Text:
+  = @legal_asset.text
+%p
+  %b Text box:
+  = @legal_asset.text_box
+%p
+  %b Image:
+  = @legal_asset.image
+%p
+  %b Image box:
+  = @legal_asset.image_box
+%p
+  %b Image caption:
+  = @legal_asset.image_caption
+%p
+  %b Video:
+  = @legal_asset.video
+%p
+  %b Video box:
+  = @legal_asset.video_box
+%p
+  %b Video caption:
+  = @legal_asset.video_caption
+%p
+  %b Video service:
+  = @legal_asset.video_service
+%p
+  %b Alignment:
+  = @legal_asset.alignment
+%p
+  %b Position:
+  = @legal_asset.position
+
+- if @legal_asset.text == true
+  = link_to "Text", edit_legal_article_asset_path(@legal_article, @legal_asset, text: true)
+- if @legal_asset.image == true
+  = link_to "Image", edit_legal_article_asset_path(@legal_article, @legal_asset, image: true)
+- if @legal_asset.video == true
+  = link_to "Video", edit_legal_article_asset_path(@legal_article, @legal_asset, video: true)

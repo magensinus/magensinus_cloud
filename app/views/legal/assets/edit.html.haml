@@ -1,0 +1,12 @@
+// Edit
+
+%h1 Editing legal_asset
+
+- if params_text
+  = render "text", object: @legal_asset
+- if params_image
+  = render "image", object: @legal_asset
+- if params_video
+  = render "video", object: @legal_asset
+
+= link_to "Back", legal_article_assets_path(@legal_article)

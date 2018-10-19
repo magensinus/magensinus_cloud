@@ -160,3 +160,10 @@ Magestil::Quality.create(
   meta_url: ""
 )
 =end
+
+# Create Magestil TermsAndConditions
+Magestil::TermsAndConditions.create(
+  meta_title: "",
+  meta_description: "",
+  meta_url: ""
+)

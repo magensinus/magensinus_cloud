@@ -1,0 +1,23 @@
+// All
+
+%table
+  %tbody.sortable{ "data-url" => sortable_legal_article_assets_path(parent) }
+    - objects.each do |object|
+      %tr{ id: "legal_asset_#{object.id}" }
+        %td= link_to "Sort Me", "#", class: "handle"
+        - if object.text == true
+          %td= object.text_box
+        - if object.image == true
+          %td= image_tag object.image_box_url.to_s
+          %td= object.image_caption
+        - if object.video == true
+          %td= object.video_box
+          %td= object.video_caption
+        %td
+          - if object.text == true
+            = link_to "Edit", edit_legal_article_asset_path(parent, object, text: true)
+          - if object.image == true
+            = link_to "Edit", edit_legal_article_asset_path(parent, object, image: true)
+          - if object.video == true
+            = link_to "Edit", edit_legal_article_asset_path(parent, object, video: true)
+        %td= link_to "Destroy", legal_article_asset_path(parent, object), method: :delete, data: { confirm: "Are you sure?" }
