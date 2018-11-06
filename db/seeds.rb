@@ -159,7 +159,6 @@ Magestil::Quality.create(
   meta_description: "",
   meta_url: ""
 )
-=end
 
 # Create Magestil TermsAndConditions
 Magestil::TermsAndConditions.create(
@@ -167,3 +166,4 @@ Magestil::TermsAndConditions.create(
   meta_description: "",
   meta_url: ""
 )
+=end
