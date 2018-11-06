@@ -11,8 +11,12 @@ module Magestil
     # --------
     # Slug
     include Slug
+    # Clean video
+    include CleanVideo
     # Clean caption
     include CleanCaption
+    # Sortable position
+    include SortablePosition
 
     # Uploaders
     # ---------

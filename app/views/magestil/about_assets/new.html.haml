@@ -4,4 +4,7 @@
 
 %h1 New magestil_about_asset
 
-= render "image", object: @magestil_about_asset
+- if params_image
+  = render "image", object: @magestil_about_asset
+- if params_video
+  = render "video", object: @magestil_about_asset

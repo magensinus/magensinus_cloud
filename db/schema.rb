@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180938152530) do
+ActiveRecord::Schema.define(version: 20181106085338) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -773,6 +773,16 @@ ActiveRecord::Schema.define(version: 20180938152530) do
     t.string "image_caption"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "alignment"
+    t.boolean "text", default: false
+    t.string "text_box"
+    t.boolean "document", default: false
+    t.string "document_box"
+    t.string "document_caption"
+    t.boolean "video", default: false
+    t.string "video_box"
+    t.string "video_caption"
+    t.string "video_service"
     t.index ["slug"], name: "index_magestil_about_assets_on_slug"
   end
 
@@ -924,26 +934,6 @@ ActiveRecord::Schema.define(version: 20180938152530) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_magestil_home_on_slug"
-  end
-
-  create_table "magestil_legal", force: :cascade do |t|
-    t.string "slug"
-    t.string "meta_title"
-    t.text "meta_description"
-    t.string "meta_image_box"
-    t.string "meta_url"
-    t.string "title"
-    t.text "description"
-    t.text "body"
-    t.boolean "image", default: false
-    t.string "image_box"
-    t.string "image_caption"
-    t.boolean "document", default: false
-    t.string "document_box"
-    t.string "document_caption"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["slug"], name: "index_magestil_legal_on_slug"
   end
 
   create_table "magestil_networks", force: :cascade do |t|

@@ -77,7 +77,18 @@ module Magestil
         :image_box,
         :image_caption,
         :remove_image_box,
-        :image_box_cache
+        :image_box_cache,
+        # Document
+        :document,
+        :document_box,
+        :remove_document_box,
+        :document_box_cache,
+        :document_caption,
+        # Video
+        :video,
+        :video_box,
+        :video_caption,
+        :video_service
       )
     end
   end
