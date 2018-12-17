@@ -21,6 +21,16 @@ module ApplicationHelper
     params[:all] == "true" || !params.key?(:all)
   end
 
+  # Params published
+  def params_published
+    params[:published] == "true"
+  end
+
+  # Params unpublished
+  def params_unpublished
+    params[:published] == "false"
+  end
+
   # Params body
   def params_body
     params[:body] == "true"
@@ -61,5 +71,20 @@ module ApplicationHelper
   # Params unpublished
   def params_unpublished
     params[:unpublished] == "true"
+  end
+
+  # Object published
+  def object_published(object)
+    if object.published?
+      "Published"
+    else
+      "Unpublished"
+    end
+  end
+
+  def asset_type(object)
+    if object.document?
+      "Document"
+    end
   end
 end

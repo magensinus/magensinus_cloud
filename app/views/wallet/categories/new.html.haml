@@ -1,7 +1,12 @@
 // New
-
-%h1 New wallet_category
-
+.content.altai-center
+  .content-box
+    .content-item
+      .breadcrumbs
+        .breadcrumbs-box
+          .breadcrumbs-item
+            = link_to "Back", wallet_categories_path, class: "link small"
+    .content-item
+      %h1.auto.inline New Category
+.separator.extra-small
 = render "form", object: @wallet_category
-
-= link_to "Back", wallet_categories_path

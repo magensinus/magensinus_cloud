@@ -15,7 +15,11 @@
 2 - heroku repo:purge_cache --app magensinus-cloud-sta
 
 ### Production
-1 - heroku run rails db:seed --app magensinus-cloud-pro
+---------------------------------------------------------------------------
 
+1 - heroku run rails db:seed --app magensinus-cloud-pro
 1 - heroku run rails db:migrate --app magensinus-cloud-pro
+
+---------------------------------------------------------------------------
+
 2 - heroku repo:purge_cache --app magensinus-cloud-pro

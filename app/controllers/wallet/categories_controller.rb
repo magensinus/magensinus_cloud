@@ -19,12 +19,14 @@ module Wallet
     # Index
     # -----
     def index
-      @wallet_categories = Wallet::Category.all
+      redirect_to wallet_root_path
+      # @wallet_categories = Wallet::Category.all
     end
 
     # Show
     # ----
     def show
+      @wallet_assets = @wallet_category.assets.order(position: :asc)
     end
 
     # Edit

@@ -30,7 +30,7 @@ module Wallet
     def update
       if @wallet_asset.update(wallet_asset_params)
         flash[:notice] = "Successfully updated..."
-        redirect_to wallet_category_asset_path(@wallet_category, @wallet_asset)
+        redirect_to wallet_category_path(@wallet_category)
       else
         render :edit
       end
@@ -41,7 +41,7 @@ module Wallet
     def destroy
       @wallet_asset.destroy
       flash[:notice] = "Successfully destroyed..."
-      redirect_to wallet_category_assets_path(@wallet_category)
+      redirect_to wallet_category_path(@wallet_category)
     end
 
     # New
@@ -60,7 +60,7 @@ module Wallet
       @wallet_asset.position = (order.min - 1)
       if @wallet_asset.save
         flash[:notice] = "Successfully created..."
-        redirect_to wallet_category_asset_path(@wallet_category, @wallet_asset)
+        redirect_to wallet_category_path(@wallet_category)
       else
         render :new
       end

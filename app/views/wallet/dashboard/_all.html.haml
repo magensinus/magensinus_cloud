@@ -1,0 +1,42 @@
+// All
+
+- if objects.presence
+  .card
+    .card-box
+      .card-item
+        %h3.auto.inline Categories
+        .sort-menu.right
+          .sort-menu-box
+            .sort-menu-item
+              = link_to "All", wallet_root_path, class: "button blue large right"
+            .sort-menu-item
+              = link_to "Published", wallet_root_path(published: true), class: "button blue large right"
+            .sort-menu-item
+              = link_to "Unpublished", wallet_root_path(published: false), class: "button blue large right"
+            .sort-menu-item
+              = link_to "New Wallet category", new_wallet_category_path, class: "button green large right"
+    .card-box.sortable{ "data-url" => sortable_wallet_categories_path }
+      - objects.each do |object|
+        .card-item.col-large-2-1{ id: "wallet_category_#{object.id}" }
+          .card-wrapper
+            .card-top
+              .left
+                = link_to "Sort Me", "#", class: "off link extra-small handle"
+            .card-middle
+              = link_to (object.title).truncate(64), wallet_category_path(object), class: "link medium wide hover-underline"
+            .card-bottom
+              .left
+                %p.extra-small.label
+                  %strong Last Updated:
+                  = object.updated_at.strftime("%d - %m - %Y")
+              .right
+                %p.extra-small.label
+                  %strong Status:
+                  = object_published(object)
+- else
+  .card
+    .card-box
+      .card-item.col-large-1-1
+        .card-wrapper
+          .card-middle
+            %p.medium.text-center.blue-500-cl There are no objects.

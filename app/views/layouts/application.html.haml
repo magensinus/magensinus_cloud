@@ -9,4 +9,16 @@
     = stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload"
     = javascript_include_tag "application", "data-turbolinks-track": "reload"
   %body
-    = yield
+
+    .universal.header
+      .universal-box
+        .universal-item
+
+    .universal.main
+      .universal-box
+        .universal-item
+          = yield
+
+    .universal.footer
+      .universal-box
+        .universal-item

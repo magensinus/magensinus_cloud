@@ -23,4 +23,5 @@
 //= require trix/dist/trix
 //= require altai_off/dist/altai_off
 //= require altai_sortable/dist/altai_sortable
+//= require altai_center/dist/altai_center
 //= require initializer

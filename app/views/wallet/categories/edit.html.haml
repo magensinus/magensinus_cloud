@@ -1,12 +1,17 @@
 // Edit
-
-- if params_thumb || params_cover
-  = link_to "Back", edit_wallet_category_path(@wallet_category)
-- else
-  = link_to "Back", wallet_categories_path
-
-%h1 Editing wallet_category
-
+.content.altai-center
+  .content-box
+    .content-item
+      .breadcrumbs
+        .breadcrumbs-box
+          .breadcrumbs-item
+            - if params_thumb || params_cover
+              = link_to "Back", edit_wallet_category_path(@wallet_category), class: "link small"
+            - else
+              = link_to "Back", wallet_category_path(@wallet_category), class: "link small"
+    .content-item
+      %h1.auto.inline Editing wallet_category
+.separator.extra-small
 - if params_thumb
   = render "thumb", object: @wallet_category
 - elsif params_thumb_eml
@@ -26,14 +31,15 @@
 - else
   = render "form", object: @wallet_category
 
-= link_to "Thumb",            edit_wallet_category_path(@wallet_category, thumb: "true")
-= link_to "Thumb Eml",        edit_wallet_category_path(@wallet_category, thumb_eml: "true")
-= link_to "Thumb Magestil",   edit_wallet_category_path(@wallet_category, thumb_magestil: "true")
-= link_to "Thumb Magensinus", edit_wallet_category_path(@wallet_category, thumb_magensinus: "true")
+/
+  = link_to "Thumb",            edit_wallet_category_path(@wallet_category, thumb: "true")
+  = link_to "Thumb Eml",        edit_wallet_category_path(@wallet_category, thumb_eml: "true")
+  = link_to "Thumb Magestil",   edit_wallet_category_path(@wallet_category, thumb_magestil: "true")
+  = link_to "Thumb Magensinus", edit_wallet_category_path(@wallet_category, thumb_magensinus: "true")
 
-= link_to "Cover",            edit_wallet_category_path(@wallet_category, cover: "true")
-= link_to "Cover Eml",        edit_wallet_category_path(@wallet_category, cover_eml: "true")
-= link_to "Cover Magestil",   edit_wallet_category_path(@wallet_category, cover_magestil: "true")
-= link_to "Cover Magensinus", edit_wallet_category_path(@wallet_category, cover_magensinus: "true")
+  = link_to "Cover",            edit_wallet_category_path(@wallet_category, cover: "true")
+  = link_to "Cover Eml",        edit_wallet_category_path(@wallet_category, cover_eml: "true")
+  = link_to "Cover Magestil",   edit_wallet_category_path(@wallet_category, cover_magestil: "true")
+  = link_to "Cover Magensinus", edit_wallet_category_path(@wallet_category, cover_magensinus: "true")
 
-= link_to "Show", @wallet_category
+  = link_to "Show", @wallet_category

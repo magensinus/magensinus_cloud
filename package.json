@@ -2,10 +2,11 @@
   "name": "magensinus_cloud",
   "private": true,
   "dependencies": {
+    "altai_center": "^0.0.3",
+    "altai_off": "^1.0.0",
+    "altai_sortable": "^1.0.0",
     "jquery": "^3.0.0",
     "jquery-ui": "^1.0.0",
-    "trix": "^1.0.0",
-    "altai_off": "^1.0.0",
-    "altai_sortable": "^1.0.0"
+    "trix": "^1.0.0"
   }
 }

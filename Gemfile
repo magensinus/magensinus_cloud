@@ -8,22 +8,26 @@ git_source(:github) do |repo_name|
 end
 
 # Ruby version
-ruby "2.5.1"
+ruby "2.5.3"
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
-gem "therubyracer", platforms: :ruby
+gem "mini_racer", platforms: :ruby
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails"
-gem "rails", "5.1.4"
+# gem "rails", "5.1.4"
+gem "rails", "5.2"
 
 # Use postgresql as the database for Active Record
-gem "pg", "~> 0.21"
+# gem "pg", "~> 0.21"
+gem "pg", "~> 1.0"
 
 # Use Puma as the app server
-gem "puma", "~> 3.11"
+gem "puma", "~> 3.0"
 
 # Use SCSS for stylesheets
-gem "sass-rails", "~> 5.0"
+# Use SCSS for stylesheets
+# gem "sass-rails", "~> 5.0"
+gem "sassc-rails", "~> 2.0"
 
 # Use CoffeeScript for .coffee assets and views
 gem "coffee-rails", "~> 4.2"
@@ -54,6 +58,10 @@ gem "fog", "~> 1.42"
 
 # Drop-in plug-in for ActionMailer to send emails via Postmark
 gem "postmark-rails", "~> 0.15"
+
+# Load Mies
+gem "mies", "0.0.1.alpha", github: "iigethr/mies"
+# gem "mies", "0.0.1.alpha", path: "/Users/tonydefaria/Box Sync/iigethr/gems/mies"
 
 # Use webpack to manage app-like JavaScript modules in Rails
 # gem "webpacker", "~> 3.2", ">= 3.2.1"
