@@ -1,10 +1,14 @@
 // Edit
 
-= link_to "Back", wallet_category_assets_path(@wallet_category)
-
-%h1 Editing wallet_asset
-
+.content
+  .content-box
+    .content-item
+      .breadcrumbs
+        .breadcrumbs-box
+          .breadcrumbs-item
+            = link_to "Back", wallet_category_path(@wallet_category), class: "link small"
+    .content-item
+      %h1 Edit Document
+.separator.small
 - if params_document
   = render "document", object: @wallet_asset
-
-= link_to "Show", wallet_category_asset_path(@wallet_category, @wallet_asset)

@@ -38,6 +38,6 @@
         .submit.col-large-3-1
           = f.button "Save", data: { disable_with: "Saving..." }, class: "button wide extra-large green"
       .field.right.col-large-3-1
-        .checkbox.yellow-500-bg
+        .checkbox
           = f.check_box :published, id: :published
-          = f.label :published, for: :published, class: "yellow-900-cl"
+          = f.label :published, for: :published

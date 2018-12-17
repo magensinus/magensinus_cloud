@@ -8,19 +8,19 @@
 /.bundle
 
 # Ignore all logfiles and tempfiles.
-/log/*
-/tmp/*
+log/*
+tmp/*
 !/log/.keep
 !/tmp/.keep
 
-/node_modules
-/yarn-error.log
+node_modules
+yarn-error.log
 
 .byebug_history
 
 # Ignore uploaded files & misc
-/notes.md
-/public/uploads
+notes.md
+public/uploads
 
 # IMPORTANT: Environment files that may contain sensitive data
 config/figaro

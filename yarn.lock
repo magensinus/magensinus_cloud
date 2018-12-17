@@ -16,14 +16,15 @@ altai_off@^1.0.0:
   dependencies:
     jquery "^3.0.0"
 
-altai_sortable@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/altai_sortable/-/altai_sortable-1.0.0.tgz#eda666ab39fc559f57e7a22a82f566ff9c25c2a2"
-  integrity sha1-7aZmqzn8VZ9X56IqgvVm/5wlwqI=
+altai_sortable@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/altai_sortable/-/altai_sortable-1.0.5.tgz#f3352772acc1be56d9f4399ac3812087c73b9da2"
+  integrity sha512-ujN8jUXFaIwvMZuxxsmpyoDwR340WNCaPU0LChl/hxe4jh2xLQSmQsHgcyARpzkLGFF1tVLrf3OqFsXOqTuOHg==
   dependencies:
-    jquery "^3.0.0"
+    jquery "^3.0"
+    jquery-ui "^1.0"
 
-jquery-ui@^1.0.0:
+jquery-ui@^1.0, jquery-ui@^1.0.0:
   version "1.12.1"
   resolved "https://registry.yarnpkg.com/jquery-ui/-/jquery-ui-1.12.1.tgz#bcb4045c8dd0539c134bc1488cdd3e768a7a9e51"
   integrity sha1-vLQEXI3QU5wTS8FIjN0+dop6nlE=

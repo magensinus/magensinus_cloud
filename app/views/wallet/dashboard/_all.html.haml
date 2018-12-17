@@ -1,20 +1,21 @@
 // All
 
-- if objects.presence
-  .card
-    .card-box
-      .card-item
-        %h3.auto.inline Categories
-        .sort-menu.right
-          .sort-menu-box
-            .sort-menu-item
-              = link_to "All", wallet_root_path, class: "button blue large right"
-            .sort-menu-item
-              = link_to "Published", wallet_root_path(published: true), class: "button blue large right"
-            .sort-menu-item
-              = link_to "Unpublished", wallet_root_path(published: false), class: "button blue large right"
-            .sort-menu-item
-              = link_to "New Wallet category", new_wallet_category_path, class: "button green large right"
+
+.card
+  .card-box
+    .card-item
+      %h3.auto.inline Categories
+      .sort-menu.right
+        .sort-menu-box
+          .sort-menu-item
+            = link_to "All", wallet_root_path, class: "button blue large right"
+          .sort-menu-item
+            = link_to "Published", wallet_root_path(published: true), class: "button blue large right"
+          .sort-menu-item
+            = link_to "Unpublished", wallet_root_path(published: false), class: "button blue large right"
+          .sort-menu-item
+            = link_to "New Wallet category", new_wallet_category_path, class: "button green large right"
+  - if objects.presence
     .card-box.sortable{ "data-url" => sortable_wallet_categories_path }
       - objects.each do |object|
         .card-item.col-large-2-1{ id: "wallet_category_#{object.id}" }
@@ -33,8 +34,7 @@
                 %p.extra-small.label
                   %strong Status:
                   = object_published(object)
-- else
-  .card
+  - else
     .card-box
       .card-item.col-large-1-1
         .card-wrapper
