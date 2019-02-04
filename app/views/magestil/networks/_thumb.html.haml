@@ -9,8 +9,9 @@
     = f.file_field :thumb_box unless object.thumb_box.presence
   - if object.thumb_box.presence
     .field
-      = f.label :remove_thumb_box
-      = f.check_box :remove_thumb_box
+      .checkbox
+        = f.label :remove_thumb_box
+        = f.check_box :remove_thumb_box
   .field
     = f.label :thumb_caption
     = f.text_field :thumb_caption
