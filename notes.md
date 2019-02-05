@@ -8,6 +8,7 @@ RAILS_ENV=production bundle exec rake assets:precompile
 
 1 - heroku pg:reset --app magensinus-cloud-dev --confirm magensinus-cloud-dev
 2 - heroku run rails db:seed --app magensinus-cloud-dev
+
 1 - heroku run rails db:migrate --app magensinus-cloud-dev
 
 ---------------------------------------------------------------------------
@@ -19,6 +20,7 @@ RAILS_ENV=production bundle exec rake assets:precompile
 
 1 - heroku pg:reset --app magensinus-cloud-sta --confirm magensinus-cloud-sta
 2 - heroku run rails db:seed --app magensinus-cloud-sta
+
 1 - heroku run rails db:migrate --app magensinus-cloud-sta
 
 ---------------------------------------------------------------------------
@@ -28,7 +30,6 @@ RAILS_ENV=production bundle exec rake assets:precompile
 ### Production
 ---------------------------------------------------------------------------
 
-1 - heroku run rails db:seed --app magensinus-cloud-pro
 1 - heroku run rails db:migrate --app magensinus-cloud-pro
 
 ---------------------------------------------------------------------------
