@@ -6,7 +6,8 @@ module CleanVideo
     # Callbacks
     # ---------
     # Clean video
-    before_validation :clean_video_id, on: :create, if: :check_if_video?
+    before_validation :clean_video_id, if: :check_if_video?
+    # before_validation :clean_video_id, on: :create, if: :check_if_video?
 
     # Save only the ID
     # Applied to the following services: youtube & vimeo

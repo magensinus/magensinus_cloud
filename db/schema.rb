@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181106085338) do
+ActiveRecord::Schema.define(version: 2019_02_05_152146) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -153,6 +153,22 @@ ActiveRecord::Schema.define(version: 20181106085338) do
     t.string "url"
     t.boolean "enrollment_status"
     t.string "enrollment_status_label"
+    t.boolean "video"
+    t.string "video_box"
+    t.string "video_caption"
+    t.string "video_service"
+    t.boolean "video_eml"
+    t.string "video_box_eml"
+    t.string "video_caption_eml"
+    t.string "video_service_eml"
+    t.boolean "video_magestil"
+    t.string "video_box_magestil"
+    t.string "video_caption_magestil"
+    t.string "video_service_magestil"
+    t.boolean "video_magensinus"
+    t.string "video_box_magensinus"
+    t.string "video_caption_magensinus"
+    t.string "video_service_magensinus"
     t.index ["academy_category_id"], name: "index_academy_courses_on_academy_category_id"
     t.index ["slug"], name: "index_academy_courses_on_slug"
   end

@@ -39,6 +39,8 @@
   = render "document_magestil", object: @academy_course
 - elsif params_document_magensinus
   = render "document_magensinus", object: @academy_course
+- elsif params_video
+  = render "video", object: @academy_course
 - elsif params_body
   = render "body", object: @academy_course
 - elsif params_misc
@@ -70,5 +72,7 @@
 = link_to "Documento Eml",        edit_academy_course_path(@academy_course, document_eml: "true")
 = link_to "Documento Magestil",   edit_academy_course_path(@academy_course, document_magestil: "true")
 = link_to "Documento Magensinus", edit_academy_course_path(@academy_course, document_magensinus: "true")
+
+= link_to "Video",            edit_academy_course_path(@academy_course, video: "true")
 
 = link_to "Show", @academy_course

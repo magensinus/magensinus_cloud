@@ -14,6 +14,8 @@ module Academy
     include ImageParams
     # Document
     include DocumentParams
+    # Video
+    include VideoParams
 
     # Callbacks
     # ---------
@@ -113,6 +115,7 @@ module Academy
         cover_params,
         image_params,
         document_params,
+        video_params,
         # relationships
         :academy_category_id,
         # Meta tags

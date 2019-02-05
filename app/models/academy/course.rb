@@ -15,6 +15,10 @@ module Academy
     include ScopeLists
     # Sortable position
     include SortablePosition
+    # Clean video
+    include CleanVideo
+    # Clean caption
+    include CleanCaption
 
     # Uploaders
     # ---------
