@@ -7,7 +7,15 @@
 
 %h1 Editing academy_course
 
-- if params_thumb
+- if params_icon
+  = render "icon", object: @academy_course
+- elsif params_icon_eml
+  = render "icon_eml", object: @academy_course
+- elsif params_icon_magestil
+  = render "icon_magestil", object: @academy_course
+- elsif params_icon_magensinus
+  = render "icon_magensinus", object: @academy_course
+- elsif params_thumb
   = render "thumb", object: @academy_course
 - elsif params_thumb_eml
   = render "thumb_eml", object: @academy_course
@@ -52,6 +60,11 @@
 
 = link_to "Misc",                 edit_academy_course_path(@academy_course, misc: "true")
 = link_to "Theme",                edit_academy_course_path(@academy_course, theme: "true")
+
+= link_to "Icon",                edit_academy_course_path(@academy_course, icon: "true")
+= link_to "Icon Eml",            edit_academy_course_path(@academy_course, icon_eml: "true")
+= link_to "Icon Magestil",       edit_academy_course_path(@academy_course, icon_magestil: "true")
+= link_to "Icon Magensinus",     edit_academy_course_path(@academy_course, icon_magensinus: "true")
 
 = link_to "Thumb",                edit_academy_course_path(@academy_course, thumb: "true")
 = link_to "Thumb Eml",            edit_academy_course_path(@academy_course, thumb_eml: "true")

@@ -22,6 +22,11 @@ module Academy
 
     # Uploaders
     # ---------
+    # Icon
+    mount_uploader :icon_box, Academy::IconUploader
+    mount_uploader :icon_box_eml, Academy::IconUploader
+    mount_uploader :icon_box_magestil, Academy::IconUploader
+    mount_uploader :icon_box_magensinus, Academy::IconUploader
     # Thumb
     mount_uploader :thumb_box, Academy::ThumbUploader
     mount_uploader :thumb_box_eml, Academy::ThumbUploader

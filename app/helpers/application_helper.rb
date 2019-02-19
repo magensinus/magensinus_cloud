@@ -3,6 +3,7 @@
 module ApplicationHelper
   include CrudHelper
   include CoverHelper
+  include IconHelper
   include ThumbHelper
   include ImageHelper
   include DocumentHelper

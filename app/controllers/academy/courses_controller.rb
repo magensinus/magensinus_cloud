@@ -6,6 +6,8 @@ module Academy
     # ------
     # Theme
     include ThemeParams
+    # Icon
+    include IconParams
     # Thumb
     include ThumbParams
     # Cover
@@ -111,6 +113,7 @@ module Academy
     def academy_course_params
       params.require(:academy_course).permit(
         theme_params,
+        icon_params,
         thumb_params,
         cover_params,
         image_params,

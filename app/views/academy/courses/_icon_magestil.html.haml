@@ -1,0 +1,19 @@
+// Icon
+
+= form_with model: object, local: true do |f|
+  = render "lib/components/errors", object: object
+  = f.hidden_field :icon_magestil, value: true
+  = f.hidden_field :icon_box_magestil_cache
+  .field
+    = f.label :icon_box_magestil
+    = f.file_field :icon_box_magestil unless object.icon_box_magestil.presence
+  - if object.icon_box_magestil.presence
+    .field
+      .checkbox
+        = f.check_box :remove_icon_box_magestil
+        = f.label :remove_icon_box_magestil
+  .field
+    = f.label :icon_caption
+    = f.text_field :icon_caption
+  .actions
+    = f.submit "Save"

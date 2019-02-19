@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_05_152146) do
+ActiveRecord::Schema.define(version: 2019_02_19_095233) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -169,6 +169,15 @@ ActiveRecord::Schema.define(version: 2019_02_05_152146) do
     t.string "video_box_magensinus"
     t.string "video_caption_magensinus"
     t.string "video_service_magensinus"
+    t.boolean "icon"
+    t.string "icon_box"
+    t.boolean "icon_eml"
+    t.string "icon_box_eml"
+    t.boolean "icon_magestil"
+    t.string "icon_box_magestil"
+    t.boolean "icon_magensinus"
+    t.string "icon_box_magensinus"
+    t.string "icon_caption"
     t.index ["academy_category_id"], name: "index_academy_courses_on_academy_category_id"
     t.index ["slug"], name: "index_academy_courses_on_slug"
   end
