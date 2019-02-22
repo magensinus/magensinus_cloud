@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/iigethr/mies.git
-  revision: 28942913797cbae21ff19966e21fbad84b683fe5
+  revision: 932e69786835036a9a084b244d4a520f12d683a7
   specs:
     mies (0.0.1.alpha)
       autoprefixer-rails (~> 9.0)
@@ -57,7 +57,7 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     arel (9.0.0)
     ast (2.4.0)
-    autoprefixer-rails (9.4.7)
+    autoprefixer-rails (9.4.8)
       execjs
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
@@ -312,7 +312,7 @@ GEM
     jbuilder (2.8.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
-    json (2.1.0)
+    json (2.2.0)
     kwalify (0.7.2)
     libv8 (6.7.288.46.1)
     listen (3.1.5)

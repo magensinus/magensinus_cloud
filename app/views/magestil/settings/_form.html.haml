@@ -2,29 +2,48 @@
 
 = form_with model: object, local: true do |f|
   = render "lib/components/errors", object: object
-  .field
-    = f.label :title
-    = f.text_field :title
-  .field
-    %trix-editor{ input: "description" }
-    = f.hidden_field :description, id: "description"
-  .field
-    = f.label :url
-    = f.text_field :url
-  .field
-    = f.label :enrollment_success
-    = f.text_area :enrollment_success
-  .field
-    = f.label :enrollment_failure
-    = f.text_area :enrollment_failure
-  .field
-    = f.label :enrollment_description
-    = f.text_area :enrollment_description
-  .field
-    = f.label :newsletter_success
-    = f.text_area :newsletter_success
-  .field
-    = f.label :newsletter_failure
-    = f.text_area :newsletter_failure
-  .actions
-    = f.submit "Save"
+  %fieldset
+    .form-row
+      .field
+        = f.label :title
+        .input
+          = f.text_field :title
+    .form-row
+      .field
+        .textarea
+          = f.text_area :description
+    .form-row
+      .field
+        = f.label :url
+        .input
+          = f.text_field :url
+    .form-row
+      .field
+        = f.label :enrollment_success
+        .textarea
+          = f.text_area :enrollment_success
+    .form-row
+      .field
+        = f.label :enrollment_failure
+        .textarea
+          = f.text_area :enrollment_failure
+    .form-row
+      .field
+        = f.label :enrollment_description
+        .textarea
+          = f.text_area :enrollment_description
+    .form-row
+      .field
+        = f.label :newsletter_success
+        .textarea
+          = f.text_area :newsletter_success
+    .form-row
+      .field
+        = f.label :newsletter_failure
+        .textarea
+          = f.text_area :newsletter_failure
+    .separator.small
+    .form-row
+      .field
+        .submit
+          = f.button "Save", type: :submit, data: { disable_with: "Please wait a moment..." }, class: "button double-extra-large green wide"
