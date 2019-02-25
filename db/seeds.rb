@@ -1,4 +1,3 @@
-=begin
 # Create Magensinus Settings
 Magensinus::Settings.create(
   meta_title: "",
@@ -166,4 +165,3 @@ Magestil::TermsAndConditions.create(
   meta_description: "",
   meta_url: ""
 )
-=end
