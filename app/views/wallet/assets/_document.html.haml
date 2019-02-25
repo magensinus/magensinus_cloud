@@ -1,22 +1,32 @@
 // Document
 
-= form_with model: object, url: wallet_asset_form_url, class: "col-large-1-1", local: true do |f|
+= form_with model: object, url: wallet_asset_form_url, local: true do |f|
   = render "lib/components/errors", object: object
+  = f.hidden_field :document, value: true
+  = f.hidden_field :document_box_cache
   %fieldset
-    = f.hidden_field :document, value: true
-    = f.hidden_field :document_box_cache
-    .field-row
-      .field.field.col-large-2-1
-        = f.label :document_caption
-        .input
-          = f.text_field :document_caption
-      // - if params_new || params_create
-      .field.col-large-2-1
-        = f.label :document_box
-        .file
-          = f.file_field :document_box
-          // = f.file_field :document_box unless object.document_box.presence
+    - if object.document_box.presence
+      .form-row
+        .field.col-large-2-1
+          = link_to "View File", object.document_box_url, target: :blank, class: "button extra-large white wide"
+        .field.col-large-2-1
+          .checkbox
+            = f.check_box :remove_document_box
+            = f.label :remove_file
     .form-row
-      .field.col-large-3-1
-        .submit.col-large-3-1
-          = f.button "Save", data: { disable_with: "Saving..." }, class: "button wide extra-large green"
+      .field
+        = f.label :Image
+        .file
+          = f.file_field :document_box, placeholder: "Upload File", id: "document_box"
+          = f.label :upload_file, for: "document_box", class: "button extra-large blue wide"
+    .form-row
+      .form-row
+        .field
+          = f.label :document_caption
+          .input
+            = f.text_field :document_caption
+    .separator.small
+    .form-row
+      .field
+        .submit
+          = f.button "Save", type: :submit, data: { disable_with: "Please wait a moment..." }, class: "button double-extra-large green wide"
