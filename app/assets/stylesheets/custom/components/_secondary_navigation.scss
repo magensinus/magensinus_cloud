@@ -1,58 +1,101 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-// File:    Base
+// File:    Secondary navigation
 // Project: Magensinus Cloud
 // -------------------------------------------------------------
 
-* {
-  @include border-box;
-  font-family: $sans;
-}
+$class: "secondary-navigation";
 
-html,
-body {
+.#{$class} {
   @include border-box;
-  @include clearfix;
-  background-color: $gray-100;
-  color: $black;
-  font-family: $sans;
-  font-size: 16px;
-  line-height: 24px;
-  margin: 0;
-  padding: 0;
-  width: auto;
+  float: left;
+  width: 100%;
+  .#{$class}-box {
+    @include border-box;
+    float: left;
+    padding: 8px;
+    width: 100%;
+    .#{$class}-item {
+      @include border-box;
+      float: left;
+      padding: 0;
+      width: 100%;
+    }
+  }
 }
 
 // Media Query 240px
 // -------------------------------------------------------------
 @media #{$double-extra-small} {
+  .#{$class} {
+    .#{$class}-box {
+      .#{$class}-item {
+      }
+    }
+  }
 }
 
 // Media Query 360px
 // ------------------------------------------------------------
 @media #{$extra-small} {
+  .#{$class} {
+    .#{$class}-box {
+      .#{$class}-item {
+      }
+    }
+  }
 }
 
 // Media Query 480px
 // -------------------------------------------------------------
 @media #{$small} {
+  .#{$class} {
+    .#{$class}-box {
+      .#{$class}-item {
+      }
+    }
+  }
 }
 
 // Media Query 720px
 // -------------------------------------------------------------
 @media #{$medium} {
+  .#{$class} {
+    .#{$class}-box {
+      .#{$class}-item {
+      }
+    }
+  }
 }
 
 // Media Query 960px
 // -------------------------------------------------------------
 @media #{$large} {
+  .#{$class} {
+    .#{$class}-box {
+      .#{$class}-item {
+      }
+    }
+  }
 }
 
 // Media Query 1440px
 // -------------------------------------------------------------
 @media #{$extra-large} {
+  .#{$class} {
+    .#{$class}-box {
+      .#{$class}-item {
+      }
+    }
+  }
 }
 
 // Media Query 1920px
 // -------------------------------------------------------------
 @media #{$double-extra-large} {
+  .#{$class} {
+    .#{$class}-box {
+      .#{$class}-item {
+      }
+    }
+  }
 }

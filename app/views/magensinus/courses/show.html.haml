@@ -1,15 +1,16 @@
 // Show
 
-= link_to "Back", magensinus_root_path
-
-%p
-  %b Title:
-  = @magensinus_courses.title
-%p
-  %b Description:
-  = @magensinus_courses.description
-%p
-  %b Body:
-  = @magensinus_courses.body
-
-= link_to "Edit", edit_magensinus_courses_path
+.container-top
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to "Dashboard", magensinus_dashboard_path, class: "link small gray"
+.container-middle.left
+  .board-double-extra-small.left
+    = render partial: "secondary_navigation"
+  .board-large.right
+    - if params_image
+      = render partial: "image", locals: { object: @magensinus_courses }
+    - else
+      = render partial: "form", locals: { object: @magensinus_courses }
+.container-bottom.left

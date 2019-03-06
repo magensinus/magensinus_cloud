@@ -1,8 +1,7 @@
 // Errors
 
-- if object.errors.any?
-  #error-explanation
-    %h2 #{pluralize(object.errors.count, 'error')} prohibited this object from being saved:
-    %ul
-      - object.errors.full_messages.each do |message|
-        %li= message
+#error-explanation
+  %h2 #{pluralize(object.errors.count, 'error')} prohibited this object from being saved:
+  %ul
+    - object.errors.full_messages.each do |message|
+      %li= message

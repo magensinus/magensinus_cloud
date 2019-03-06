@@ -1,39 +1,59 @@
 // Form
 
-= form_with model: object, local: true do |f|
-  = render "lib/components/errors", object: object
-  .field
-    = f.label :title
-    = f.text_field :title
-  .field
-    %trix-editor{ input: "description" }
-    = f.hidden_field :description, id: "description"
-  .field
-    %trix-editor{ input: "body" }
-    = f.hidden_field :body, id: "body"
-  .field
-    = f.label :fax
-    = f.text_field :fax
-  .field
-    = f.label :phone
-    = f.text_field :phone
-  .field
-    = f.label :email
-    = f.text_field :email
-  .field
-    = f.label :address_one
-    = f.text_field :address_one
-  .field
-    = f.label :address_two
-    = f.text_field :address_two
-  .field
-    = f.label :postcode
-    = f.text_field :postcode
-  .field
-    = f.label :city
-    = f.text_field :city
-  .field
-    = f.label :country
-    = f.text_field :country
-  .actions
-    = f.submit "Save"
+= form_with model: object, local: true, html: { autocomplete: false } do |f|
+  %fieldset
+    = legend("Magensinus Contact")
+    = errors(object)
+    .form-row
+      .field
+        = f.label :title
+        .input
+          = f.text_field :title
+    .form-row
+      .field
+        = f.label :description
+        .textarea
+          = f.hidden_field :description, id: "description"
+          %trix-editor{ input: "description" }
+    .form-row
+      .field
+        = f.label :body
+        .textarea.body
+          = f.hidden_field :body, id: "body"
+          %trix-editor{ input: "body" }
+    .form-row
+      .field.col-medium-3-1
+        = f.label :fax
+        .input
+          = f.text_field :fax
+      .field.col-medium-3-1
+        = f.label :phone
+        .input
+          = f.text_field :phone
+      .field.col-medium-3-1
+        = f.label :email
+        .input
+          = f.text_field :email
+    .form-row
+      .field.col-medium-2-1
+        = f.label :address_one
+        .input
+          = f.text_field :address_one
+      .field.col-medium-2-1
+        = f.label :address_two
+        .input
+          = f.text_field :address_two
+    .form-row
+      .field.col-medium-3-1
+        = f.label :postcode
+        .input
+          = f.text_field :postcode
+      .field.col-medium-3-1
+        = f.label :city
+        .input
+          = f.text_field :city
+      .field.col-medium-3-1
+        = f.label :country
+        .input
+          = f.text_field :country
+    = submit_button(f, "Save")

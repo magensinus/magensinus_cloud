@@ -1,27 +1,13 @@
 // Show
 
-= link_to "Back", magensinus_root_path
-
-%p
-  %b Meta title:
-  = @magensinus_settings.meta_title
-%p
-  %b Meta description:
-  = @magensinus_settings.meta_description
-%p
-  %b Meta image box:
-  = @magensinus_settings.meta_image_box
-%p
-  %b Meta url:
-  = @magensinus_settings.meta_url
-%p
-  %b Title:
-  = @magensinus_settings.title
-%p
-  %b Description:
-  = @magensinus_settings.description
-%p
-  %b Url:
-  = @magensinus_settings.url
-
-= link_to "Edit", edit_magensinus_settings_path
+.container-top
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to "Dashboard", magensinus_dashboard_path, class: "link small gray"
+.container-middle.left
+  .board-double-extra-small.left
+    = render partial: "secondary_navigation"
+  .board-large.right
+    = render partial: "form", locals: { object: @magensinus_settings }
+.container-bottom.left

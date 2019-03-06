@@ -14,10 +14,7 @@ $class: "breadcrumbs";
     .#{$class}-item {
       @include border-box;
       float: left;
-      padding: 0 8px 0 0;
-      &:last-child {
-        padding: 0;
-      }
+      padding: 8px;
     }
   }
 }

@@ -1,39 +1,16 @@
 // Show
 
-= link_to "Back", magensinus_root_path
-
-%p
-  %b Title:
-  = @magensinus_contact.title
-%p
-  %b Description:
-  = @magensinus_contact.description
-%p
-  %b Body:
-  = @magensinus_contact.body
-%p
-  %b Fax:
-  = @magensinus_contact.fax
-%p
-  %b Phone:
-  = @magensinus_contact.phone
-%p
-  %b Email:
-  = @magensinus_contact.email
-%p
-  %b Address One:
-  = @magensinus_contact.address_one
-%p
-  %b Address Two:
-  = @magensinus_contact.address_two
-%p
-  %b Postcode:
-  = @magensinus_contact.postcode
-%p
-  %b City:
-  = @magensinus_contact.city
-%p
-  %b Country:
-  = @magensinus_contact.country
-
-= link_to "Edit", edit_magensinus_contact_path
+.container-top
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to "Dashboard", magensinus_dashboard_path, class: "link small gray"
+.container-middle.left
+  .board-double-extra-small.left
+    = render partial: "secondary_navigation"
+  .board-large.right
+    - if params_image
+      = render partial: "image", locals: { object: @magensinus_contact }
+    - else
+      = render partial: "form", locals: { object: @magensinus_contact }
+.container-bottom.left

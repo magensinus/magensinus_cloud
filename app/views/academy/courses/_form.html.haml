@@ -58,8 +58,10 @@
           = f.check_box :magensinus
           = f.label :magensinus
     .field
-      = f.label :tutors
-      = f.collection_check_boxes :tutor_ids, tutors, :id, :name, include_hidden: false
+      - tutors.each do |tutor|
+        .checkbox
+          = check_box_tag 'academy_course[tutor_ids][]', tutor.id, object.tutors.include?(tutor), id: "academy_course_tutor_ids_#{tutor.id}"
+          = f.label :tutor, tutor.name
     .separator.small
     .form-row
       .field
