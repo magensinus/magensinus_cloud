@@ -42,7 +42,8 @@ Rails.application.routes.draw do
     resource :newsletter, controller: :newsletter
     resource :schools,    controller: :schools
     # Plugins
-    resources :networks,  controller: :networks
+    resources :networks,      controller: :networks
+    resources :about_assets,  controller: :about_assets
   end
 
   namespace :legal do

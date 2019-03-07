@@ -1,0 +1,10 @@
+// Index
+
+= link_to "Back", magensinus_root_path
+
+%h1 Listing magensinus_about_assets
+
+= render "all", objects: @magensinus_about_assets
+
+= link_to "Image", new_magensinus_about_asset_path(image: "true")
+= link_to "Video", new_magensinus_about_asset_path(video: "true")

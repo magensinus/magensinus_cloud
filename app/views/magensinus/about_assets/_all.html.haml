@@ -1,0 +1,28 @@
+// All
+
+%table
+  %thead
+    %tr
+      %th Position
+      %th
+      %th
+      %th
+  %tbody
+    - objects.each do |object|
+      %tr
+        - if object.image == true
+          %td= image_tag object.image_box_url.to_s
+          %td= object.image_caption
+        - if object.video == true
+          %td= object.video_box
+          %td= object.video_caption
+        - if object.text == true
+          %td
+            .trix.left
+              = safe_join([object.text_box.html_safe])
+        %td= link_to "Show", magensinus_about_asset_path(object)
+        - if object.image == true
+          %td= link_to "Edit", edit_magensinus_about_asset_path(object, image: "true")
+        - if object.video == true
+          %td= link_to "Edit", edit_magensinus_about_asset_path(object, video: "true")
+        %td= link_to "Destroy", magensinus_about_asset_path(object), method: :delete, data: { confirm: "Are you sure?" }

@@ -1,0 +1,10 @@
+// Text
+
+= form_with model: object, url: magestil_about_asset_form_url, local: true do |f|
+  = render "lib/components/errors", object: object
+  = f.hidden_field :text, value: true
+  .field
+    = f.hidden_field :text_box, id: "text_box"
+    %trix-editor{ input: "text_box" }
+  .actions
+    = f.submit "Save"
