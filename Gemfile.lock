@@ -1,5 +1,6 @@
-PATH
-  remote: /Users/tonydefaria/Box Sync/iigethr/gems/mies
+GIT
+  remote: https://github.com/iigethr/mies.git
+  revision: 1a7adaa1966056e312e0cb37f384a2a63c36e00f
   specs:
     mies (0.0.1.alpha)
       autoprefixer-rails (~> 9.0)
@@ -103,7 +104,7 @@ GEM
       coffee-script
       execjs
       json
-    concurrent-ruby (1.1.4)
+    concurrent-ruby (1.1.5)
     crass (1.0.4)
     debug_inspector (0.0.3)
     descendants_tracker (0.0.4)
