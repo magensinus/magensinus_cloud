@@ -1,0 +1,13 @@
+// Secondary navigation
+
+.secondary-navigation
+  .secondary-navigation-box
+    .secondary-navigation-item
+      %h3 Sections
+    .secondary-navigation-item
+      = link_to "About", magestil_about_path, class: "link large blue"
+    .secondary-navigation-item
+      = link_to "Image", magestil_about_path(image: "true"), class: "link large blue"
+    .separator.extra-small
+    .secondary-navigation-item
+      = link_to "Media Assets", magestil_about_assets_path, class: "link large blue"

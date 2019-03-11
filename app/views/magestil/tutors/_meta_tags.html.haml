@@ -1,8 +1,9 @@
 // Meta tags
 
-= form_with model: object, local: true do |f|
-  = render "lib/components/errors", object: object
+= form_with model: object, local: true, html: { autocomplete: false } do |f|
   %fieldset
+    = legend("Magestil Tutors Meta tags")
+    = errors(object)
     .form-row
       .field
         = f.label :meta_title
@@ -11,7 +12,7 @@
     .form-row
       .field
         = f.label :meta_description
-        .input
+        .textarea
           = f.text_area :meta_description
     .form-row
       .field
@@ -23,8 +24,4 @@
         = f.label :meta_url
         .input
           = f.text_field :meta_url
-    .separator.small
-    .form-row
-      .field
-        .submit
-          = f.button "Save", type: :submit, data: { disable_with: "Please wait a moment..." }, class: "button double-extra-large green wide"
+    = submit_button(f, "Save")

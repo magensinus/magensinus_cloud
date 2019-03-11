@@ -1,30 +1,16 @@
 // Show
 
-= link_to "Back", magestil_root_path
-
--# = image_tag @magestil_quality.image_box_url.to_s
-
-%p
-  %b Meta title:
-  = @magestil_quality.meta_title
-%p
-  %b Meta description:
-  = @magestil_quality.meta_description
-%p
-  %b Meta image box:
-  = @magestil_quality.meta_image_box
-%p
-  %b Meta url:
-  = @magestil_quality.meta_url
-%p
-  %b Title:
-  = @magestil_quality.title
-%p
-  %b Description:
-  = @magestil_quality.description
-%p
-  %b Body:
-  = @magestil_quality.body
-
-= link_to "Edit", edit_magestil_quality_path
-= link_to "Image", edit_magestil_quality_path(image: "true")
+.container-top
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to "Dashboard", magestil_dashboard_path, class: "link small gray"
+.container-middle.left
+  .board-double-extra-small
+    = render partial: "secondary_navigation"
+  .board-medium
+    - if params_image
+      = render partial: "image", locals: { object: @magestil_quality }
+    - else
+      = render partial: "form", locals: { object: @magestil_quality }
+.container-bottom.left

@@ -1,12 +1,18 @@
 // Edit
 
-= link_to "Back", magestil_about_assets_path
-
-%h1 Editing magestil_about_asset
-
-- if params_text
-  = render "text", object: @magestil_about_asset
-- if params_image
-  = render "image", object: @magestil_about_asset
-- if params_video
-  = render "video", object: @magestil_about_asset
+.container-top
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to "Back", magestil_about_assets_path, class: "link small gray"
+.container-middle.left
+  .board-medium.altai-center
+    - if params_text
+      = render "text", object: @magestil_about_asset
+    - elsif params_image
+      = render "image", object: @magestil_about_asset
+    - elsif params_video
+      = render "video", object: @magestil_about_asset
+    - else
+      = render "text", object: @magestil_about_asset
+.container-bottom.left

@@ -4,13 +4,12 @@ module Magestil
   class AboutAssetsController < ApplicationController
     # Callbacks
     # ---------
-    # Magestil about_asset
+    before_action :magestil_about_assets, only: [:index]
     before_action :magestil_about_asset, only: [:show, :edit, :update, :destroy]
 
     # Index
     # -----
     def index
-      @magestil_about_assets = Magestil::AboutAsset.all
     end
 
     # Show
@@ -32,7 +31,11 @@ module Magestil
     # Create
     # ------
     def create
+      order = Magestil::AboutAsset.pluck(:position).compact
+
       @magestil_about_asset = Magestil::AboutAsset.new(magestil_about_asset_params)
+      order << 0
+      @magestil_about_asset.position = (order.min - 1)
       if @magestil_about_asset.save
         flash[:notice] = "Successfully created..."
         redirect_to magestil_about_assets_path
@@ -60,11 +63,23 @@ module Magestil
       redirect_to magestil_about_assets_path
     end
 
+    # Sortable
+    # --------
+    def sortable
+      Magestil::AboutAsset.sort_position(params[:magestil_about_asset])
+      head :ok
+    end
+
     private
 
     # Magestil about_asset
     def magestil_about_asset
       @magestil_about_asset = Magestil::AboutAsset.find_by(slug: params[:id])
+    end
+
+    # Magestil about assets
+    def magestil_about_assets
+      @magestil_about_assets ||= Magestil::AboutAsset.order(position: :asc)
     end
 
     # Whitelist params

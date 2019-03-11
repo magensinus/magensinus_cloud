@@ -1,40 +1,16 @@
 // Show
 
-= link_to "Back", magestil_root_path
-
-%p
-  %b Title:
-  = @magestil_contact.title
-%p
-  %b Description:
-  = @magestil_contact.description
-%p
-  %b Body:
-  = @magestil_contact.body
-%p
-  %b Fax:
-  = @magestil_contact.fax
-%p
-  %b Phone:
-  = @magestil_contact.phone
-%p
-  %b Email:
-  = @magestil_contact.email
-%p
-  %b Address One:
-  = @magestil_contact.address_one
-%p
-  %b Address Two:
-  = @magestil_contact.address_two
-%p
-  %b Postcode:
-  = @magestil_contact.postcode
-%p
-  %b City:
-  = @magestil_contact.city
-%p
-  %b Country:
-  = @magestil_contact.country
-
-= link_to "Edit", edit_magestil_contact_path
-= link_to "Image", edit_magestil_contact_path(image: "true")
+.container-top
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to "Dashboard", magestil_dashboard_path, class: "link small gray"
+.container-middle.left
+  .board-double-extra-small
+    = render partial: "secondary_navigation"
+  .board-medium
+    - if params_image
+      = render partial: "image", locals: { object: @magestil_contact }
+    - else
+      = render partial: "form", locals: { object: @magestil_contact }
+.container-bottom.left

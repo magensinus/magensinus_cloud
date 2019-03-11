@@ -4,13 +4,13 @@ module Magensinus
   class AboutAssetsController < ApplicationController
     # Callbacks
     # ---------
+    before_action :magensinus_about_assets, only: [:index]
     # Magensinus about_asset
     before_action :magensinus_about_asset, only: [:show, :edit, :update, :destroy]
 
     # Index
     # -----
     def index
-      @magensinus_about_assets = Magensinus::AboutAsset.all
     end
 
     # Show
@@ -76,6 +76,10 @@ module Magensinus
     # Magensinus about_asset
     def magensinus_about_asset
       @magensinus_about_asset = Magensinus::AboutAsset.find_by(slug: params[:id])
+    end
+
+    def magensinus_about_assets
+      @magensinus_about_assets = Magensinus::AboutAsset.order(position: :asc)
     end
 
     # Whitelist params

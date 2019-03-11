@@ -1,26 +1,26 @@
 // Form
 
-= form_with model: object, local: true do |f|
-  = render "lib/components/errors", object: object
-  .form-row
-    .field
-      = f.label :title
-      .input
-        = f.text_field :title
-  .form-row
-    .field
-      = f.label :description
-      .textarea
-        = f.hidden_field :description, id: "description"
-        %trix-editor{ input: "description" }
-  .form-row
-    .field
-      = f.label :body
-      .textarea
-        = f.hidden_field :body, id: "body"
-        %trix-editor{ input: "body" }
-  .separator.small
-  .form-row
-    .field
-      .submit
-        = f.button "Save", type: :submit, data: { disable_with: "Please wait a moment..." }, class: "button double-extra-large green wide"
+= form_with model: object, local: true, html: { autocomplete: false } do |f|
+  %fieldset
+    = legend("Magestil Students")
+    = errors(object)
+    .form-row
+      .field
+        = f.label :title
+        .input
+          = f.text_field :title
+    .form-row
+      .field
+        = f.label :description
+        .textarea
+          = f.hidden_field :description, id: "description"
+          %trix-editor{ input: "description" }
+
+    // .form-row
+    //   .field
+    //     = f.label :body
+    //     .textarea.body
+    //       = f.hidden_field :body, id: "body"
+    //       %trix-editor{ input: "body" }
+
+    = submit_button(f, "Save")

@@ -1,0 +1,10 @@
+// Secondary navigation
+
+.secondary-navigation
+  .secondary-navigation-box
+    .secondary-navigation-item
+      %h3 Sections
+    .secondary-navigation-item
+      = link_to "Campus", magestil_campus_path, class: "link large blue wide hover-underline"
+    .secondary-navigation-item
+      = link_to "Image", magestil_campus_path(image: "true"), class: "link large blue wide hover-underline"

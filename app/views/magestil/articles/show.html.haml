@@ -1,16 +1,16 @@
 // Show
 
-= link_to "Back", magestil_root_path
-
-%p
-  %b Title:
-  = @magestil_articles.title
-%p
-  %b Description:
-  = @magestil_articles.description
-%p
-  %b Body:
-  = @magestil_articles.body
-
-= link_to "Edit", edit_magestil_articles_path
-= link_to "Image", edit_magestil_articles_path(image: "true")
+.container-top
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to "Dashboard", magestil_dashboard_path, class: "link small gray"
+.container-middle.left
+  .board-double-extra-small
+    = render partial: "secondary_navigation"
+  .board-medium
+    - if params_image
+      = render partial: "image", locals: { object: @magestil_articles }
+    - else
+      = render partial: "form", locals: { object: @magestil_articles }
+.container-bottom.left

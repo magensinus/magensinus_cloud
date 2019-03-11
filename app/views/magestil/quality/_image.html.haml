@@ -1,15 +1,16 @@
 // Image
 
-= form_with model: object, local: true do |f|
-  = render "lib/components/errors", object: object
+= form_with model: object, local: true, html: { autocomplete: false } do |f|
   = f.hidden_field :image, value: true
   = f.hidden_field :image_box_cache
   %fieldset
+    = legend("Magestil Quality Image")
+    = errors(object)
     - if object.image_box.presence
       .form-row
-        .field.col-large-2-1
+        .field.col-medium-2-1
           = link_to "View File", object.image_box_url, target: :blank, class: "button extra-large white wide"
-        .field.col-large-2-1
+        .field.col-medium-2-1
           .checkbox
             = f.check_box :remove_image_box
             = f.label :remove_file
@@ -24,8 +25,4 @@
         = f.label :image_caption
         .input
           = f.text_field :image_caption
-    .separator.small
-    .form-row
-      .field
-        .submit
-          = f.button "Save", type: :submit, data: { disable_with: "Please wait a moment..." }, class: "button double-extra-large green wide"
+    = submit_button(f, "Save")

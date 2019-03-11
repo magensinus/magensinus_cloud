@@ -1,8 +1,9 @@
 // Form
 
-= form_with model: object, local: true do |f|
-  = render "lib/components/errors", object: object
+= form_with model: object, local: true, html: { autocomplete: false } do |f|
   %fieldset
+    = legend("Magestil Contact")
+    = errors(object)
     .form-row
       .field
         = f.label :title
@@ -14,49 +15,47 @@
         .textarea
           = f.hidden_field :description, id: "description"
           %trix-editor{ input: "description" }
+
+    // .form-row
+    //   .field
+    //     = f.label :body
+    //     .textarea.body
+    //       = f.hidden_field :body, id: "body"
+    //       %trix-editor{ input: "body" }
+
     .form-row
-      .field
-        = f.label :body
-        .textarea
-          = f.hidden_field :body, id: "body"
-          %trix-editor{ input: "body" }
-    .form-row
-      .field.col-large-3-1
+      .field.col-medium-3-1
         = f.label :fax
         .input
           = f.text_field :fax
-      .field.col-large-3-1
+      .field.col-medium-3-1
         = f.label :phone
         .input
           = f.text_field :phone
-      .field.col-large-3-1
+      .field.col-medium-3-1
         = f.label :email
         .input
           = f.text_field :email
     .form-row
-      .field.col-large-2-1
+      .field.col-medium-2-1
         = f.label :address_one
         .input
           = f.text_field :address_one
-      .field.col-large-2-1
+      .field.col-medium-2-1
         = f.label :address_two
         .input
           = f.text_field :address_two
     .form-row
-      .field.col-large-3-1
+      .field.col-medium-3-1
         = f.label :postcode
         .input
           = f.text_field :postcode
-      .field.col-large-3-1
+      .field.col-medium-3-1
         = f.label :city
         .input
           = f.text_field :city
-      .field.col-large-3-1
+      .field.col-medium-3-1
         = f.label :country
         .input
           = f.text_field :country
-    .separator.small
-    .form-row
-      .field
-        .submit
-          = f.button "Save", type: :submit, data: { disable_with: "Please wait a moment..." }, class: "button double-extra-large green wide"
+    = submit_button(f, "Save")

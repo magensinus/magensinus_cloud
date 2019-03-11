@@ -26,7 +26,11 @@ Rails.application.routes.draw do
     resources :networks,            controller: :networks
     resources :campus_assets,       controller: :campus_assets
     resources :equipment_assets,    controller: :equipment_assets
-    resources :about_assets,        controller: :about_assets
+    resources :about_assets,        controller: :about_assets do
+      collection do
+        patch :sortable
+      end
+    end
   end
 
   namespace :magensinus do
