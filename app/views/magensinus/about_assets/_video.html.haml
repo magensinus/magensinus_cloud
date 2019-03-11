@@ -1,16 +1,17 @@
 // Video
 
 = form_with model: object, url: magensinus_about_asset_form_url, local: true do |f|
-  = render "lib/components/errors", object: object
   = f.hidden_field :video, value: true
   %fieldset
+    = legend("Video")
+    = errors(object)
     .form-row
       - if params_new || params_create
-        .field.col-large-2-1
+        .field.col-medium-2-1
           = f.label :video_box
           .input
             = f.text_field :video_box
-        .field.col-large-2-1
+        .field.col-medium-2-1
           = f.label :video_service
           .select
             = f.select :video_service, %w[vimeo youtube], selected: "youtube"
@@ -19,8 +20,4 @@
         = f.label :video_caption
         .input
           = f.text_field :video_caption
-    .separator.small
-    .form-row
-      .field
-        .submit
-          = f.button "Save", type: :submit, data: { disable_with: "Please wait a moment..." }, class: "button double-extra-large green wide"
+    = submit_button(f, "Save")

@@ -6,8 +6,8 @@
       .breadcrumbs-item
         = link_to "Dashboard", magensinus_dashboard_path, class: "link small gray"
 .container-middle.left
-  .board-double-extra-small.left
+  .board-double-extra-small
     = render partial: "secondary_navigation"
-  .board-large.right
+  .board-medium
     = render partial: "form", locals: { object: @magensinus_settings }
 .container-bottom.left

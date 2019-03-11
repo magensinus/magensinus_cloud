@@ -65,14 +65,14 @@ module ApplicationHelper
   end
 
   # Params published
-  def params_published
-    params[:published] == "true"
-  end
+  # def params_published
+  #   params[:published] == "true"
+  # end
 
   # Params unpublished
-  def params_unpublished
-    params[:unpublished] == "true"
-  end
+  # def params_unpublished
+  #   params[:unpublished] == "true"
+  # end
 
   # Object published
   def object_published(object)
@@ -83,8 +83,15 @@ module ApplicationHelper
     end
   end
 
-  def asset_type(object)
-    if object.document?
+  # Assets
+  def asset_type(object = "")
+    if object.text == true
+      "Text"
+    elsif object.image == true
+      "Image"
+    elsif object.video == true
+      "Video"
+    elsif object.document == true
       "Document"
     end
   end

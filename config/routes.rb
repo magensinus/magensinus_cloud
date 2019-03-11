@@ -31,19 +31,22 @@ Rails.application.routes.draw do
 
   namespace :magensinus do
     root to: "dashboard#show"
-    resource :dashboard,  controller: :dashboard
-    resource :settings,   controller: :settings
-    resource :home,       controller: :home
-    resource :about,      controller: :about
-    resource :quality,    controller: :quality
-    resource :courses,    controller: :courses
-    resource :articles,   controller: :articles
-    resource :contact,    controller: :contact
-    resource :newsletter, controller: :newsletter
-    resource :schools,    controller: :schools
+    resource :dashboard,      controller: :dashboard
+    resource :settings,       controller: :settings
+    resource :home,           controller: :home
+    resource :about,          controller: :about
+    resource :quality,        controller: :quality
+    resource :courses,        controller: :courses
+    resource :articles,       controller: :articles
+    resource :contact,        controller: :contact
+    resource :newsletter,     controller: :newsletter
     # Plugins
     resources :networks,      controller: :networks
-    resources :about_assets,  controller: :about_assets
+    resources :about_assets,  controller: :about_assets do
+      collection do
+        patch :sortable
+      end
+    end
   end
 
   namespace :legal do

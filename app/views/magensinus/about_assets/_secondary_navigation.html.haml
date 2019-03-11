@@ -1,0 +1,15 @@
+// Secondary navigation
+
+.secondary-navigation
+  .secondary-navigation-box
+    .secondary-navigation-item
+      %h3 Media Assets
+    .secondary-navigation-item
+      = link_to "Toggle Content", "#", class: "off link large blue wide toggle-trigger"
+    .separator.extra-small
+    .secondary-navigation-item
+      = link_to "Text", new_magensinus_about_asset_path(text: "true"), class: "link large blue"
+    .secondary-navigation-item
+      = link_to "Image", new_magensinus_about_asset_path(image: "true"), class: "link large blue"
+    .secondary-navigation-item
+      = link_to "Video", new_magensinus_about_asset_path(video: "true"), class: "link large blue"

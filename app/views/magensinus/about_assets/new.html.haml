@@ -1,12 +1,18 @@
 // New
 
-= link_to "Back", magensinus_about_assets_path
-
-%h1 New magensinus_about_asset
-
-- if params_text
-  = render "text", object: @magensinus_about_asset
-- if params_image
-  = render "image", object: @magensinus_about_asset
-- if params_video
-  = render "video", object: @magensinus_about_asset
+.container-top
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to "Back", magensinus_about_assets_path, class: "link small gray"
+.container-middle.left
+  .board-medium.altai-center
+    - if params_text
+      = render "text", object: @magensinus_about_asset
+    - elsif params_image
+      = render "image", object: @magensinus_about_asset
+    - elsif params_video
+      = render "video", object: @magensinus_about_asset
+    - else
+      = render "text", object: @magensinus_about_asset
+.container-bottom.left

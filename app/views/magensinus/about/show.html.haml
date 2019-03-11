@@ -6,9 +6,9 @@
       .breadcrumbs-item
         = link_to "Dashboard", magensinus_dashboard_path, class: "link small gray"
 .container-middle.left
-  .board-double-extra-small.left
+  .board-double-extra-small
     = render partial: "secondary_navigation"
-  .board-large.right
+  .board-medium
     - if params_image
       = render partial: "image", locals: { object: @magensinus_about }
     - else

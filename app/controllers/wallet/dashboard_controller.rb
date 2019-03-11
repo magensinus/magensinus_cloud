@@ -5,13 +5,14 @@ module Wallet
     # Show
     # ----
     def show
-      if params[:published] == "true"
-        @wallet_categories ||= Wallet::Category.where(published: true).order(position: :asc)
-      elsif params[:published] == "false"
-        @wallet_categories ||= Wallet::Category.where(published: false).order(position: :asc)
-      else
-        @wallet_categories ||= Wallet::Category.order(position: :asc)
-      end
+      @wallet_categories =
+        if params[:published] == "true"
+          Wallet::Category.where(published: true).order(position: :asc)
+        elsif params[:published] == "false"
+          Wallet::Category.where(published: false).order(position: :asc)
+        else
+          Wallet::Category.order(position: :asc)
+        end
     end
   end
 end

@@ -9,11 +9,10 @@ module FormsHelper
       end
     end
   end
+
   # Errors
   def errors(object = "")
-    if object.errors.any?
-      render "lib/components/errors", object: object
-    end
+    render "lib/components/errors", object: object if object.errors.any?
   end
 
   # Submit button

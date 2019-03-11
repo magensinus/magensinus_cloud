@@ -19,6 +19,10 @@ bindEvents = function() {
       $(this).next().text(dflt);
     }
   });
+
+  $( ".toggle-trigger" ).click(function() {
+    $( ".toggle-box" ).slideToggle( "fast" );
+  });
 };
 
 $(document).on( "turbolinks:load", function() {

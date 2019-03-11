@@ -1,11 +1,13 @@
 // Index
 
-= link_to "Back", magensinus_root_path
-
-%h1 Listing magensinus_about_assets
-
-= render "all", objects: @magensinus_about_assets
-
-= link_to "Text", new_magensinus_about_asset_path(text: "true")
-= link_to "Image", new_magensinus_about_asset_path(image: "true")
-= link_to "Video", new_magensinus_about_asset_path(video: "true")
+.container-top
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to "Back", magensinus_about_path, class: "link small gray"
+.container-middle.left
+  .board-double-extra-small
+    = render partial: "secondary_navigation"
+  .board-medium
+    = render "all", objects: @magensinus_about_assets
+.container-bottom.left

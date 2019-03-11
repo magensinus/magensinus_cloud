@@ -10,7 +10,7 @@ module Magestil
     # Nano
     version :thumb do
       # process resize_to_fill: [480, 270, gravity = "Center"]
-      process resize_to_fill: [512, 512, gravity = "Center"]
+      process resize_to_fill: [512, 512, "Center"]
     end
 
     # Prefix variable

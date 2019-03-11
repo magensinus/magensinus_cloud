@@ -32,7 +32,11 @@ module Magensinus
     # Create
     # ------
     def create
+      order = Magensinus::AboutAsset.pluck(:position).compact
+
       @magensinus_about_asset = Magensinus::AboutAsset.new(magensinus_about_asset_params)
+      order << 0
+      @magensinus_about_asset.position = (order.min - 1)
       if @magensinus_about_asset.save
         flash[:notice] = "Successfully created..."
         redirect_to magensinus_about_assets_path
@@ -58,6 +62,13 @@ module Magensinus
       @magensinus_about_asset.destroy
       flash[:notice] = "Successfully destroyed..."
       redirect_to magensinus_about_assets_path
+    end
+
+    # Sortable
+    # --------
+    def sortable
+      Magensinus::AboutAsset.sort_position(params[:magensinus_about_asset])
+      head :ok
     end
 
     private

@@ -1,41 +1,19 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-// File:    Content
+// File:    Content nav
 // Project: Magensinus Cloud
 // -------------------------------------------------------------
 
-$class: "content";
+$class: "content-nav";
 
 .#{$class} {
   @include border-box;
   float: left;
-  width: 100%;
   .#{$class}-box {
     @include border-box;
     float: left;
-    width: 100%;
     .#{$class}-item {
       @include border-box;
       float: left;
-      padding: 8px;
-      width: 100%;
-      .#{$class}-top {
-        @include border-box;
-        float: left;
-        padding: 16px;
-        width: 100%;
-      }
-      .#{$class}-middle {
-        @include border-box;
-        float: left;
-        padding: 16px;
-        width: 100%;
-      }
-      .#{$class}-bottom {
-        @include border-box;
-        float: left;
-        padding: 16px;
-        width: 100%;
-      }
     }
   }
 }
