@@ -1,91 +1,63 @@
 // Edit
 
-- if params_thumb || params_cover || params_body || params_misc
-  = link_to "Back", edit_academy_course_path(@academy_course)
-- else
-  = link_to "Back", academy_courses_path
-
-%h1 Editing academy_course
-
-- if params_icon
-  = render "icon", object: @academy_course
-- elsif params_icon_eml
-  = render "icon_eml", object: @academy_course
-- elsif params_icon_magestil
-  = render "icon_magestil", object: @academy_course
-- elsif params_icon_magensinus
-  = render "icon_magensinus", object: @academy_course
-- elsif params_thumb
-  = render "thumb", object: @academy_course
-- elsif params_thumb_eml
-  = render "thumb_eml", object: @academy_course
-- elsif params_thumb_magestil
-  = render "thumb_magestil", object: @academy_course
-- elsif params_thumb_magensinus
-  = render "thumb_magensinus", object: @academy_course
-- elsif params_cover
-  = render "cover", object: @academy_course
-- elsif params_cover_eml
-  = render "cover_eml", object: @academy_course
-- elsif params_cover_magestil
-  = render "cover_magestil", object: @academy_course
-- elsif params_cover_magensinus
-  = render "cover_magensinus", object: @academy_course
-- elsif params_image
-  = render "image", object: @academy_course
-- elsif params_image_eml
-  = render "image_eml", object: @academy_course
-- elsif params_image_magestil
-  = render "image_magestil", object: @academy_course
-- elsif params_image_magensinus
-  = render "image_magensinus", object: @academy_course
-- elsif params_document
-  = render "document", object: @academy_course
-- elsif params_document_eml
-  = render "document_eml", object: @academy_course
-- elsif params_document_magestil
-  = render "document_magestil", object: @academy_course
-- elsif params_document_magensinus
-  = render "document_magensinus", object: @academy_course
-- elsif params_video
-  = render "video", object: @academy_course
-- elsif params_body
-  = render "body", object: @academy_course
-- elsif params_misc
-  = render "misc", object: @academy_course
-- elsif params_theme
-  = render "theme", object: @academy_course
-- else
-  = render "form", object: @academy_course, categories: @academy_categories, tutors: @academy_tutors
-
-= link_to "Misc",                 edit_academy_course_path(@academy_course, misc: "true")
-= link_to "Theme",                edit_academy_course_path(@academy_course, theme: "true")
-
-= link_to "Icon",                edit_academy_course_path(@academy_course, icon: "true")
-= link_to "Icon Eml",            edit_academy_course_path(@academy_course, icon_eml: "true")
-= link_to "Icon Magestil",       edit_academy_course_path(@academy_course, icon_magestil: "true")
-= link_to "Icon Magensinus",     edit_academy_course_path(@academy_course, icon_magensinus: "true")
-
-= link_to "Thumb",                edit_academy_course_path(@academy_course, thumb: "true")
-= link_to "Thumb Eml",            edit_academy_course_path(@academy_course, thumb_eml: "true")
-= link_to "Thumb Magestil",       edit_academy_course_path(@academy_course, thumb_magestil: "true")
-= link_to "Thumb Magensinus",     edit_academy_course_path(@academy_course, thumb_magensinus: "true")
-
-= link_to "Cover",                edit_academy_course_path(@academy_course, cover: "true")
-= link_to "Cover Eml",            edit_academy_course_path(@academy_course, cover_eml: "true")
-= link_to "Cover Magestil",       edit_academy_course_path(@academy_course, cover_magestil: "true")
-= link_to "Cover Magensinus",     edit_academy_course_path(@academy_course, cover_magensinus: "true")
-
-= link_to "Image",                edit_academy_course_path(@academy_course, image: "true")
-= link_to "Image Eml",            edit_academy_course_path(@academy_course, image_eml: "true")
-= link_to "Image Magestil",       edit_academy_course_path(@academy_course, image_magestil: "true")
-= link_to "Image Magensinus",     edit_academy_course_path(@academy_course, image_magensinus: "true")
-
-= link_to "Documento",            edit_academy_course_path(@academy_course, document: "true")
-= link_to "Documento Eml",        edit_academy_course_path(@academy_course, document_eml: "true")
-= link_to "Documento Magestil",   edit_academy_course_path(@academy_course, document_magestil: "true")
-= link_to "Documento Magensinus", edit_academy_course_path(@academy_course, document_magensinus: "true")
-
-= link_to "Video",            edit_academy_course_path(@academy_course, video: "true")
-
-= link_to "Show", @academy_course
+.container-top
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        - if params_thumb || params_cover || params_body || params_misc
+          = link_to "Back", edit_academy_course_path(@academy_course) class: "link small gray"
+        - else
+          = link_to "Back", academy_courses_path class: "link small gray"
+.container-middle.left
+  .board-medium.altai-center
+    - if params_icon
+      = render "icon", object: @academy_course
+    - elsif params_icon_eml
+      = render "icon_eml", object: @academy_course
+    - elsif params_icon_magestil
+      = render "icon_magestil", object: @academy_course
+    - elsif params_icon_magensinus
+      = render "icon_magensinus", object: @academy_course
+    - elsif params_thumb
+      = render "thumb", object: @academy_course
+    - elsif params_thumb_eml
+      = render "thumb_eml", object: @academy_course
+    - elsif params_thumb_magestil
+      = render "thumb_magestil", object: @academy_course
+    - elsif params_thumb_magensinus
+      = render "thumb_magensinus", object: @academy_course
+    - elsif params_cover
+      = render "cover", object: @academy_course
+    - elsif params_cover_eml
+      = render "cover_eml", object: @academy_course
+    - elsif params_cover_magestil
+      = render "cover_magestil", object: @academy_course
+    - elsif params_cover_magensinus
+      = render "cover_magensinus", object: @academy_course
+    - elsif params_image
+      = render "image", object: @academy_course
+    - elsif params_image_eml
+      = render "image_eml", object: @academy_course
+    - elsif params_image_magestil
+      = render "image_magestil", object: @academy_course
+    - elsif params_image_magensinus
+      = render "image_magensinus", object: @academy_course
+    - elsif params_document
+      = render "document", object: @academy_course
+    - elsif params_document_eml
+      = render "document_eml", object: @academy_course
+    - elsif params_document_magestil
+      = render "document_magestil", object: @academy_course
+    - elsif params_document_magensinus
+      = render "document_magensinus", object: @academy_course
+    - elsif params_video
+      = render "video", object: @academy_course
+    - elsif params_body
+      = render "body", object: @academy_course
+    - elsif params_misc
+      = render "misc", object: @academy_course
+    - elsif params_theme
+      = render "theme", object: @academy_course
+    - else
+      = render "form", object: @academy_course, categories: @academy_categories, tutors: @academy_tutors
+.container-bottom.left

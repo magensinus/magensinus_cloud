@@ -104,7 +104,7 @@ module ApplicationHelper
     elsif object.video == true
       render partial: "#{path}/video", locals: { object: object }
     elsif object.text == true
-      render partial: "#{path}/video", locals: { object: object }
+      render partial: "#{path}/text", locals: { object: object }
     end
   end
 end

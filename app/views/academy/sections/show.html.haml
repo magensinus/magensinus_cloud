@@ -1,23 +1,12 @@
-// Show
+// Edit
 
-%p#notice= notice
-
-= link_to "Back", academy_course_sections_path(@academy_course)
-
-%p
-  %b Course:
-  = @academy_section.course
-%p
-  %b Slug:
-  = @academy_section.slug
-%p
-  %b Title:
-  = @academy_section.title
-%p
-  %b Published:
-  = @academy_section.published
-%p
-  %b Position:
-  = @academy_section.position
-
-= link_to "Edit", edit_academy_course_section_path(@academy_course, @academy_section)
+.container-top
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to "Back", academy_course_sections_path(@academy_course), class: "link small gray"
+  = link_to "Section Assets", academy_course_section_section_assets_path(@academy_course, @academy_section), class: "button green extra-large right"
+.container-middle.left
+  .board-medium.altai-center
+    = render partial: "form", locals: { parent: @academy_course, object: @academy_section }
+.container-bottom.left

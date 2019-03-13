@@ -1,7 +1,11 @@
 // New
 
-= link_to "Back", academy_course_sections_path(@academy_course)
-
-%h1 New academy_section
-
-= render "form", parent: @academy_course, object: @academy_section
+.container-top
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to "Back", academy_course_sections_path(@academy_course), class: "link small gray"
+.container-middle.left
+  .board-medium.altai-center
+    = render partial: "form", locals: { parent: @academy_course, object: @academy_section }
+.container-bottom.left

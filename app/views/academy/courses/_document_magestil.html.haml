@@ -1,18 +1,29 @@
 // Document
 
 = form_with model: object, local: true do |f|
-  = render "lib/components/errors", object: object
   = f.hidden_field :document_magestil, value: true
   = f.hidden_field :document_box_magestil_cache
-  .field
-    = f.label :document_box_magestil
-    = f.file_field :document_box_magestil unless object.document_box_magestil.presence
-  - if object.document_box_magestil.presence
-    .field
-      = f.label :remove_document_box_magestil
-      = f.check_box :remove_document_box_magestil
-  .field
-    = f.label :document_caption
-    = f.text_field :document_caption
-  .actions
-    = f.submit "Save"
+  %fieldset
+    = legend("Course Magestil Document")
+    = errors(object)
+    - if object.document_box_magestil.presence
+      .form-row
+        .field.col-medium-2-1
+          = link_to "View File", object.document_box_magestil_url, target: :blank, class: "button extra-large white wide"
+        .field.col-medium-2-1
+          .checkbox
+            = f.check_box :remove_document_box_magestil
+            = f.label :remove_file
+    .form-row
+      .field
+        = f.label :document
+        .file
+          = f.file_field :document_box_magestil, placeholder: "Upload File", id: "document_box_magestil"
+          = f.label :upload_file, for: "document_box_magestil", class: "button extra-large blue wide"
+    .form-row
+      .form-row
+        .field
+          = f.label :document_caption
+          .input
+            = f.text_field :document_caption
+    = submit_button(f, "Save")

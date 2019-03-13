@@ -1,75 +1,63 @@
 // Show
 
-= link_to "Back", academy_courses_path
+.container-top
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to "Back", academy_courses_path, class: "link small gray"
+.container-middle.left
+  .board-double-extra-small
+    = render partial: "secondary_navigation"
+  .board-medium
+    - if params_icon
+      = render "icon", object: @academy_course
+    - elsif params_icon_eml
+      = render "icon_eml", object: @academy_course
+    - elsif params_icon_magestil
+      = render "icon_magestil", object: @academy_course
+    - elsif params_icon_magensinus
+      = render "icon_magensinus", object: @academy_course
+    - elsif params_thumb
+      = render "thumb", object: @academy_course
+    - elsif params_thumb_eml
+      = render "thumb_eml", object: @academy_course
+    - elsif params_thumb_magestil
+      = render "thumb_magestil", object: @academy_course
+    - elsif params_thumb_magensinus
+      = render "thumb_magensinus", object: @academy_course
+    - elsif params_cover
+      = render "cover", object: @academy_course
+    - elsif params_cover_eml
+      = render "cover_eml", object: @academy_course
+    - elsif params_cover_magestil
+      = render "cover_magestil", object: @academy_course
+    - elsif params_cover_magensinus
+      = render "cover_magensinus", object: @academy_course
+    - elsif params_image
+      = render "image", object: @academy_course
+    - elsif params_image_eml
+      = render "image_eml", object: @academy_course
+    - elsif params_image_magestil
+      = render "image_magestil", object: @academy_course
+    - elsif params_image_magensinus
+      = render "image_magensinus", object: @academy_course
+    - elsif params_document
+      = render "document", object: @academy_course
+    - elsif params_document_eml
+      = render "document_eml", object: @academy_course
+    - elsif params_document_magestil
+      = render "document_magestil", object: @academy_course
+    - elsif params_document_magensinus
+      = render "document_magensinus", object: @academy_course
+    - elsif params_video
+      = render "video", object: @academy_course
+    - elsif params_body
+      = render "body", object: @academy_course
+    - elsif params_misc
+      = render "misc", object: @academy_course
+    - elsif params_theme
+      = render "theme", object: @academy_course
+    - else
+      = render "form", object: @academy_course, categories: @academy_categories, tutors: @academy_tutors
 
-%p
-  %b Title:
-  = @academy_course.title
-%p
-  %b Description:
-  = @academy_course.description
-%p
-  %b Body:
-  = safe_join([@academy_course.body.html_safe]) if @academy_course.body.presence
-%p
-  %b Misc:
-  = safe_join([@academy_course.misc.html_safe]) if @academy_course.misc.presence
--#
-  %p
-    %b Thumb:
-    = @academy_course.thumb
-  %p
-    %b Thumb box:
-    = image_tag @academy_course.thumb_box_url.to_s
-    = image_tag @academy_course.thumb_box_url(:nano).to_s
-    = image_tag @academy_course.thumb_box_url(:tiny).to_s
-    = image_tag @academy_course.thumb_box_url(:small).to_s
-    = image_tag @academy_course.thumb_box_url(:medium).to_s
-    = image_tag @academy_course.thumb_box_url(:large).to_s
-  %p
-    %b Thumb caption:
-    = @academy_course.thumb_caption
-  %p
-    %b Cover:
-    = @academy_course.cover
-  %p
-    %b Cover box:
-    = image_tag @academy_course.cover_box_url.to_s
-    = image_tag @academy_course.cover_box_url(:nano).to_s
-    = image_tag @academy_course.cover_box_url(:tiny).to_s
-    = image_tag @academy_course.cover_box_url(:small).to_s
-    = image_tag @academy_course.cover_box_url(:medium).to_s
-    = image_tag @academy_course.cover_box_url(:large).to_s
-  %p
-    %b Cover caption:
-    = @academy_course.cover_caption
-%p
-  %b Published:
-  = @academy_course.published
-%p
-  %b Published at:
-  = @academy_course.published_at
-
-%p
-  %b Enrollment status:
-  = @academy_course.enrollment_status
-%p
-  %b Enrollment status label:
-  = @academy_course.enrollment_status_label
-%p
-  %b Eml:
-  = @academy_course.eml
-%p
-  %b Magestil:
-  = @academy_course.magestil
-%p
-  %b Magensinus:
-  = @academy_course.magensinus
-
-%h3 Tutors
-
-- @academy_tutors.each do |item|
-  = item.tutor.name
-
-= link_to "Edit", edit_academy_course_path(@academy_course)
-= link_to "Sections", academy_course_sections_path(@academy_course)
+.container-bottom.left

@@ -14,7 +14,7 @@ module Academy
     # Index
     # -----
     def index
-      @academy_section_assets = @academy_section.section_assets.includes(:section).all
+      @academy_section_assets = @academy_section.section_assets.order(position: :asc)
     end
 
     # Show

@@ -1,0 +1,13 @@
+/* Content Nav */
+
+.content-nav.right
+  .content-nav-box
+    .content-nav-item
+      = link_to "Destroy", academy_course_section_section_asset_path(grandparent, parent, object), method: :delete, data: { confirm: "Are you sure?" }, class: "link gray-light left"
+    .content-nav-item.pg-0-0-0-16
+      - if object.image == true
+        = link_to "Edit", edit_academy_course_section_section_asset_path(grandparent, parent, object, image: true), class: "button yellow left"
+      - if object.video == true
+        = link_to "Edit", edit_academy_course_section_section_asset_path(grandparent, parent, object, video: true), class: "button yellow left"
+      - if object.text == true
+        = link_to "Edit", edit_academy_course_section_section_asset_path(grandparent, parent, object, text: true), class: "button yellow left"

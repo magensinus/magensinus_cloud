@@ -1,7 +1,13 @@
 // Index
 
-%h1 Listing academy_sections
+.container-top
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to "Back", academy_course_path(@academy_course), class: "link small gray"
 
-= render "all", parent: @academy_course, objects: @academy_sections
-
-= link_to "New Academy section", new_academy_course_section_path(@academy_course)
+  = link_to "New Academy section", new_academy_course_section_path(@academy_course), class: "button green extra-large right"
+.container-middle.left
+  .board-large.altai-center
+    = render "all", parent: @academy_course, objects: @academy_sections
+.container-bottom.left

@@ -1,10 +1,14 @@
 // Text
 
 = form_with model: [grand_parent, parent, object], url: academy_section_asset_form_url, local: true do |f|
-  = render "lib/components/errors", object: object
   = f.hidden_field :text, value: true
-  .field
-    %trix-editor{ input: "text_box" }
-    = f.hidden_field :text_box, id: "text_box"
-  .actions
-    = f.submit "Save"
+  %fieldset
+    = legend("Text")
+    = errors(object)
+    .form-row
+      .field
+        = f.label :text_box
+        .textarea
+          = f.hidden_field :text_box, id: "text_box"
+          %trix-editor{ input: "text_box" }
+    = submit_button(f, "Save")

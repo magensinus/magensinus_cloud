@@ -1,26 +1,18 @@
 // All
 
-%table
-  %thead
-    %tr
-      %th
-      %th Academy section
-      %th Text box
-      %th Image box
-      %th Document box
-      %th Video box
-      %th
-      %th
-      %th
-  %tbody.sortable{ "data-url" => sortable_academy_course_section_section_assets_path(grandparent, parent) }
+.content
+  .content-box.sortable{ "data-url" => sortable_academy_course_section_section_assets_path(grandparent, parent) }
+    .content-item
+      %h3.gray-700-cl.sans.lighter= parent.title
     - objects.each do |object|
-      %tr{ id: "academy_section_asset_#{object.id}" }
-        %td= link_to "Sort Me", "#", class: "handle"
-        %td= object.section.title
-        %td= object.text_box
-        %td= object.image_box
-        %td= object.document_box
-        %td= object.video_box
-        %td= link_to "Show", academy_course_section_section_asset_path(grandparent, parent, object)
-        %td= link_to "Edit", edit_academy_course_section_section_asset_path(grandparent, parent, object)
-        %td= link_to "Destroy", academy_course_section_section_asset_path(grandparent, parent, object), method: :delete, data: { confirm: "Are you sure?" }
+      .content-item{ id: "academy_section_asset_#{object.id}" }
+        .content-top.white-bg
+          = link_to "Sort Me", "#", class: "off link gray-light left handle"
+          %p.small.right.auto.blue-300-cl
+            %strong Type:
+            = asset_type(object)
+        .toggle-box.wide.left
+          .content-middle.white-bg
+            = assets_renderer(object)
+          .content-bottom.white-bg
+            = render partial: "academy/section_assets/content_nav", locals: { grandparent: grandparent, parent: parent, object: object }

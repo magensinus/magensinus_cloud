@@ -1,0 +1,28 @@
+// Cover
+
+= form_with model: object, local: true, html: { autocomplete: false } do |f|
+  = f.hidden_field :cover, value: true
+  = f.hidden_field :cover_box_cache
+  %fieldset
+    = legend("Course Cover")
+    = errors(object)
+    - if object.cover_box.presence
+      .form-row
+        .field.col-medium-2-1
+          = link_to "View File", object.cover_box_url, target: :blank, class: "button extra-large white wide"
+        .field.col-medium-2-1
+          .checkbox
+            = f.check_box :remove_cover_box
+            = f.label :remove_file
+    .form-row
+      .field
+        = f.label :cover
+        .file
+          = f.file_field :cover_box, placeholder: "Upload File", id: "cover_box"
+          = f.label :upload_file, for: "cover_box", class: "button extra-large blue wide"
+    .form-row
+      .field
+        = f.label :cover_caption
+        .input
+          = f.text_field :cover_caption, autocomplete: false
+    = submit_button(f, "Save")

@@ -22,7 +22,7 @@ module Academy
     # Callbacks
     # ---------
     # Academy categories
-    before_action :academy_categories, only: [:new, :create, :edit, :update]
+    before_action :academy_categories, only: [:show, :new, :create, :edit, :update]
     # Academy course
     before_action :academy_course, only: [:show, :edit, :update, :destroy]
 
