@@ -95,4 +95,16 @@ module ApplicationHelper
       "Document"
     end
   end
+
+  # Assets renderer
+  def assets_renderer(object = "")
+    path = "lib/components/assets"
+    if object.image == true
+      render partial: "#{path}/image", locals: { object: object }
+    elsif object.video == true
+      render partial: "#{path}/video", locals: { object: object }
+    elsif object.text == true
+      render partial: "#{path}/video", locals: { object: object }
+    end
+  end
 end

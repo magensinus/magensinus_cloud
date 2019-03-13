@@ -16,11 +16,11 @@
           = f.hidden_field :description, id: "description"
           %trix-editor{ input: "description" }
 
-    // .form-row
-    //   .field
-    //     = f.label :body
-    //     .textarea.body
-    //       = f.hidden_field :body, id: "body"
-    //       %trix-editor{ input: "body" }
+    .form-row
+      .field
+        = f.label :body
+        .textarea.body
+          = f.hidden_field :body, id: "body"
+          %trix-editor{ input: "body" }
 
     = submit_button(f, "Save")

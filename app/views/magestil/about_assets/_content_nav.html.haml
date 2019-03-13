@@ -1,0 +1,13 @@
+/* Content Nav */
+
+.content-nav.right
+  .content-nav-box
+    .content-nav-item
+      = link_to "Destroy", magestil_about_asset_path(object), method: :delete, data: { confirm: "Are you sure?" }, class: "link gray-light left"
+    .content-nav-item.pg-0-0-0-16
+      - if object.image == true
+        = link_to "Edit", edit_magestil_about_asset_path(object, image: true), class: "button yellow left"
+      - if object.video == true
+        = link_to "Edit", edit_magestil_about_asset_path(object, video: true), class: "button yellow left"
+      - if object.text == true
+        = link_to "Edit", edit_magestil_about_asset_path(object, text: true), class: "button yellow left"

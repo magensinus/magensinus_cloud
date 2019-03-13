@@ -29,6 +29,10 @@ $class: "content";
         float: left;
         padding: 16px;
         width: 100%;
+        // img {
+        //   max-width: 100%;
+        //   width: 100%;
+        // }
       }
       .#{$class}-bottom {
         @include border-box;

@@ -59,8 +59,8 @@ gem "fog", "~> 1.42"
 gem "postmark-rails", "~> 0.15"
 
 # Load Mies
-gem "mies", "0.0.1.alpha", github: "iigethr/mies"
-# gem "mies", "0.0.1.alpha", path: "/Users/tonydefaria/Box Sync/iigethr/gems/mies"
+# gem "mies", "0.0.1.alpha", github: "iigethr/mies"
+gem "mies", "0.0.1.alpha", path: "/Users/tonydefaria/Box Sync/iigethr/gems/mies"
 
 # Use webpack to manage app-like JavaScript modules in Rails
 # gem "webpacker", "~> 3.2", ">= 3.2.1"
