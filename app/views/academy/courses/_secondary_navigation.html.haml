@@ -5,12 +5,16 @@
     .secondary-navigation-item
       %h3 Sections
     .secondary-navigation-item
-      = link_to "Course",                 academy_course_path(@academy_course), class: "link large blue"
+      = link_to "Course", academy_course_path(@academy_course), class: "link large blue"
+    .secondary-navigation-item
+      = link_to "Tutors", academy_course_path(@academy_course, tutors: "true"), class: "link large blue"
+    .secondary-navigation-item
+      = link_to "Theme", academy_course_path(@academy_course, theme: "true"), class: "link large blue"
+    .secondary-navigation-item
+      = link_to "Misc", academy_course_path(@academy_course, misc: "true"), class: "link large blue"
     .separator.extra-small
     // .secondary-navigation-item
     //   = link_to "Misc",                 academy_course_path(@academy_course, misc: "true"), class: "link large blue"
-    .secondary-navigation-item
-      = link_to "Theme",                academy_course_path(@academy_course, theme: "true"), class: "link large blue"
     .secondary-navigation-item
       = link_to "Icon",                academy_course_path(@academy_course, icon: "true"), class: "link large blue"
     // .secondary-navigation-item

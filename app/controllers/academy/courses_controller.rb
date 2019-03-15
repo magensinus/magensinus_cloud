@@ -38,7 +38,8 @@ module Academy
     # Show
     # ----
     def show
-      @academy_tutors = @academy_course.course_tutors.includes(:tutor).all
+      @academy_tutors = Academy::Tutor.all
+      # @academy_selected_tutors = @academy_course.course_tutors.includes(:tutor).all
     end
 
     # Edit
@@ -51,6 +52,7 @@ module Academy
     # ------
     def update
       @academy_tutors = Academy::Tutor.all
+
       if @academy_course.update(academy_course_params)
         flash[:notice] = "Successfully updated..."
         redirect_to academy_course_path(@academy_course)

@@ -1,7 +1,7 @@
 // Errors
 
-#error-explanation
-  %h2 #{pluralize(object.errors.count, 'error')} prohibited this object from being saved:
-  %ul
+.errors
+  %ul.errors-box
     - object.errors.full_messages.each do |message|
-      %li= message
+      %li.errors-item
+        %p.pg-8.red-500-bg.red-000-cl= message

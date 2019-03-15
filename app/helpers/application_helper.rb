@@ -74,6 +74,11 @@ module ApplicationHelper
   #   params[:unpublished] == "true"
   # end
 
+  # Params tutors
+  def params_tutors
+    params[:tutors] == "true"
+  end
+
   # Object published
   def object_published(object)
     if object.published?

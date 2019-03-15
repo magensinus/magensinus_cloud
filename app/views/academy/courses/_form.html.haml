@@ -5,6 +5,13 @@
   %fieldset
     = legend("Course")
     = errors(object)
+
+    .form-row
+      = f.collection_radio_buttons :academy_category_id, categories, :id, :title, include_hidden: false do |b|
+        .field.col-medium-2-1
+          .radiobutton
+            = b.radio_button
+            = b.label
     .form-row
       .field
         = f.label :title
@@ -30,35 +37,6 @@
           = f.check_box :magensinus
           = f.label :magensinus
 
-
-    .form-row
-      .field.col-medium-3-2
-        = f.label :url
-        .input
-          = f.text_field :url
-      .field.col-medium-3-1
-        = f.label :external
-        .checkbox
-          = f.check_box :external
-          = f.label :external
-
-    .form-row
-      .field.col-medium-2-1
-        = f.label :enrollment_status_label
-        .input
-          = f.text_field :enrollment_status_label
-      .field.col-medium-2-1
-        = f.label :enrollment_status_label
-        .checkbox
-          = f.check_box :enrollment_status
-          = f.label :enrollment_status
-
-    .form-row
-      .field.col-medium-2-1
-        .checkbox
-          = f.check_box :published
-          = f.label :published
-
     // .form-row
     //   .field
     //     = f.label :body
@@ -66,4 +44,10 @@
     //       = f.hidden_field :body, id: "body"
     //       %trix-editor{ input: "body" }
 
-    = submit_button(f, "Save")
+    .separator.small
+    .form-row
+      = submit_button_misc(f, "Save")
+      .field.col-medium-2-1
+        .checkbox
+          = f.check_box :published
+          = f.label :published

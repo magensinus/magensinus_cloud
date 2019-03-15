@@ -1,7 +1,11 @@
 // New
 
-= link_to "Back", academy_categories_path
-
-%h1 New academy_category
-
-= render "form", object: @academy_category
+.container-top
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to "Back", academy_categories_path, class: "link small gray"
+.container-middle.left
+  .board-medium.altai-center
+    = render "form", object: @academy_category
+.container-bottom.left

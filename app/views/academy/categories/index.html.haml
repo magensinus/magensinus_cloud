@@ -1,9 +1,12 @@
 // Index
 
-= link_to "Back", academy_root_path
-
-%h1 Listing academy_categories
-
-= render "all", objects: @academy_categories
-
-= link_to "New Academy category", new_academy_category_path
+.container-top
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to "Back", academy_root_path, class: "link small gray"
+  = link_to "New Academy category", new_academy_category_path, class: "button green extra-large right"
+.container-middle.left
+  .board-medium.altai-center
+    = render "all", objects: @academy_categories
+.container-bottom.left

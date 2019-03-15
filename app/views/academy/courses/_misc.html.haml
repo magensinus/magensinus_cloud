@@ -1,9 +1,36 @@
 // Misc
 
-= form_with model: object, local: true do |f|
-  = render "lib/components/errors", object: object
-  .field
-    %trix-editor{ input: "misc" }
-    = f.hidden_field :misc, id: "misc"
-  .actions
-    = f.submit "Save"
+= form_with model: object, local: true, html: { autocomplete: false } do |f|
+  %fieldset
+    = legend("Course Misc")
+    = errors(object)
+
+    .form-row
+      .field
+        = f.label :misc
+        .textarea
+          = f.hidden_field :misc, id: "misc"
+          %trix-editor{ input: "misc" }
+
+    .form-row
+      .field.col-medium-3-2
+        = f.label :url
+        .input
+          = f.text_field :url
+      .field.col-medium-3-1
+        = f.label :external
+        .checkbox
+          = f.check_box :external
+          = f.label :external
+
+    .form-row
+      .field.col-medium-2-1
+        = f.label :enrollment_status_label
+        .input
+          = f.text_field :enrollment_status_label
+      .field.col-medium-2-1
+        = f.label :enrollment_status_label
+        .checkbox
+          = f.check_box :enrollment_status
+          = f.label :enrollment_status
+    = submit_button(f, "Save")

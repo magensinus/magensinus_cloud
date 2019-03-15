@@ -57,6 +57,8 @@
       = render "misc", object: @academy_course
     - elsif params_theme
       = render "theme", object: @academy_course
+    - elsif params_tutors
+      = render "tutors",object: @academy_course, categories: @academy_categories, tutors: @academy_tutors
     - else
       = render "form", object: @academy_course, categories: @academy_categories, tutors: @academy_tutors
 

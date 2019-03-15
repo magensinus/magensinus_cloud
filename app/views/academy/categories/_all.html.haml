@@ -11,7 +11,6 @@
       %th Magensinus
       %th
       %th
-      %th
   %tbody.sortable{ "data-url" => sortable_academy_categories_path }
     - objects.each do |object|
       %tr{ id: "academy_category_#{object.id}" }
@@ -22,5 +21,4 @@
         %td= object.magestil
         %td= object.magensinus
         %td= link_to "Show", academy_category_path(object)
-        %td= link_to "Edit", edit_academy_category_path(object)
         %td= link_to "Destroy", academy_category_path(object), method: :delete, data: { confirm: "Are you sure?" }
