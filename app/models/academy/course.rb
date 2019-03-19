@@ -71,8 +71,8 @@ module Academy
 
     # Validations
     # -----------
-    # Category
     validates_associated :category
     validates :category, presence: true
+    validates :title, presence: true
   end
 end

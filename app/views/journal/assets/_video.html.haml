@@ -1,18 +1,23 @@
 // Video
 
 = form_with model: object, url: journal_asset_form_url, local: true do |f|
-  = render "lib/components/errors", object: object
   = f.hidden_field :video, value: true
-  - if params_new || params_create
-    .field
-      = f.label :video_box
-      = f.text_field :video_box
-  .field
-    = f.label :video_caption
-    = f.text_field :video_caption
-  - if params_new || params_create
-    .field
-      = f.label :video_service
-      = f.select :video_service, %w[vimeo youtube], selected: "youtube"
-  .actions
-    = f.submit "Save"
+  %fieldset
+    = legend("Video")
+    = errors(object)
+    .form-row
+      - if params_new || params_create
+        .field.col-medium-2-1
+          = f.label :video_box
+          .input
+            = f.text_field :video_box
+        .field.col-medium-2-1
+          = f.label :video_service
+          .select
+            = f.select :video_service, %w[vimeo youtube], selected: "youtube"
+    .form-row
+      .field
+        = f.label :video_caption
+        .input
+          = f.text_field :video_caption
+    = submit_button(f, "Save")

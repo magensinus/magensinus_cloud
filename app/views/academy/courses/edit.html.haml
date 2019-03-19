@@ -4,10 +4,7 @@
   .breadcrumbs
     .breadcrumbs-box
       .breadcrumbs-item
-        - if params_thumb || params_cover || params_body || params_misc
-          = link_to "Back", edit_academy_course_path(@academy_course) class: "link small gray"
-        - else
-          = link_to "Back", academy_courses_path class: "link small gray"
+        = link_to "Back", academy_courses_path, class: "link small gray"
 .container-middle.left
   .board-medium.altai-center
     - if params_icon

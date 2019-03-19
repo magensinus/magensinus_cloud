@@ -1,69 +1,31 @@
 // Show
 
-= link_to "Back", journal_articles_path
+.container-top
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to "Back", journal_articles_path, class: "link small gray"
+.container-middle.left
+  .board-double-extra-small
+    = render partial: "secondary_navigation"
+  .board-medium
+    - if params_thumb
+      = render "thumb", object: @journal_article
+    - elsif params_thumb_eml
+      = render "thumb_eml", object: @journal_article
+    - elsif params_thumb_magestil
+      = render "thumb_magestil", object: @journal_article
+    - elsif params_thumb_magensinus
+      = render "thumb_magensinus", object: @journal_article
+    - elsif params_cover
+      = render "cover", object: @journal_article
+    - elsif params_cover_eml
+      = render "cover_eml", object: @journal_article
+    - elsif params_cover_magestil
+      = render "cover_magestil", object: @journal_article
+    - elsif params_cover_magensinus
+      = render "cover_magensinus", object: @journal_article
+    - else
+      = render "form", object: @journal_article
 
-%p
-  %b Meta title:
-  = @journal_article.meta_title
-%p
-  %b Meta description:
-  = @journal_article.meta_description
-%p
-  %b Meta image box:
-  = @journal_article.meta_image_box
-%p
-  %b Meta url:
-  = @journal_article.meta_url
-%p
-  %b Title:
-  = @journal_article.title
-%p
-  %b Description:
-  = @journal_article.description
--#
-  %p
-    %b Thumb:
-    = @journal_article.thumb
-  %p
-    %b Thumb box:
-    = image_tag @journal_article.thumb_box_url.to_s
-    = image_tag @journal_article.thumb_box_url(:nano).to_s
-    = image_tag @journal_article.thumb_box_url(:tiny).to_s
-    = image_tag @journal_article.thumb_box_url(:small).to_s
-    = image_tag @journal_article.thumb_box_url(:medium).to_s
-    = image_tag @journal_article.thumb_box_url(:large).to_s
-  %p
-    %b Thumb caption:
-    = @journal_article.thumb_caption
-  %p
-    %b Cover:
-    = @journal_article.cover
-  %p
-    %b Cover box:
-    = image_tag @journal_article.cover_box_url.to_s
-    = image_tag @journal_article.cover_box_url(:nano).to_s
-    = image_tag @journal_article.cover_box_url(:tiny).to_s
-    = image_tag @journal_article.cover_box_url(:small).to_s
-    = image_tag @journal_article.cover_box_url(:medium).to_s
-    = image_tag @journal_article.cover_box_url(:large).to_s
-  %p
-    %b Cover caption:
-    = @journal_article.cover_caption
-%p
-  %b Published:
-  = @journal_article.published
-%p
-  %b Published at:
-  = @journal_article.published_at
-%p
-  %b Eml:
-  = @journal_article.eml
-%p
-  %b Magestil:
-  = @journal_article.magestil
-%p
-  %b Magensinus:
-  = @journal_article.magensinus
-
-= link_to "Edit", edit_journal_article_path(@journal_article)
-= link_to "Article Assets", journal_article_assets_path(@journal_article)
+.container-bottom.left

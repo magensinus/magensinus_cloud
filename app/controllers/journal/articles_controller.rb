@@ -21,6 +21,7 @@ module Journal
     # Index
     # -----
     def index
+      @journal_articles             = Journal::Article.order(position: :asc)
       @scheduled_journal_articles   = Journal::Article.scheduled
       @published_journal_articles   = Journal::Article.published
       @unpublished_journal_articles = Journal::Article.unpublished

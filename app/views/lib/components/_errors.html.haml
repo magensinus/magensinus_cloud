@@ -1,7 +1,8 @@
 // Errors
 
-.errors
-  %ul.errors-box
-    - object.errors.full_messages.each do |message|
-      %li.errors-item
-        %p.pg-8.red-500-bg.red-000-cl= message
+- if object.errors.presence
+  .errors
+    %ul.errors-box
+      - object.errors.full_messages.each do |message|
+        %li.errors-item
+          %p.pg-8.red-500-bg.red-000-cl= message

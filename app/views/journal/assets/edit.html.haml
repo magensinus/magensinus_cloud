@@ -1,12 +1,16 @@
-// Edit
+// New
 
-%h1 Editing journal_asset
-
-- if params_text
-  = render "text", object: @journal_asset
-- if params_image
-  = render "image", object: @journal_asset
-- if params_video
-  = render "video", object: @journal_asset
-
-= link_to "Back", journal_article_assets_path(@journal_article)
+.container-top
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to "Back", journal_article_assets_path(@journal_article), class: "link small gray"
+.container-middle.left
+  .board-medium.altai-center
+    - if params_text
+      = render "text", object: @journal_asset
+    - if params_image
+      = render "image", object: @journal_asset
+    - if params_video
+      = render "video", object: @journal_asset
+.container-bottom.left

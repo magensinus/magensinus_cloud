@@ -3,36 +3,39 @@
 = form_with model: object, local: true do |f|
   = render "lib/components/errors", object: object
   = f.hidden_field :published_at, value: DateTime.now
-  .field
-    = f.label :title
-    .input
-      = f.text_field :title
-  .field
-    .textarea
-      %trix-editor{ input: "description" }
-      = f.hidden_field :description, id: "description"
-  .field
-    .checkbox
-      = f.check_box :featured
-      = f.label :featured
-  .field
-    .checkbox
-      = f.check_box :published
-      = f.label :published
-  / .field
-  /   = f.label :published_at
-  /   = f.datetime_select :published_at
-  .field
-    .checkbox
-      = f.check_box :eml
-      = f.label :eml
-  .field
-    .checkbox
-      = f.check_box :magestil
-      = f.label :magestil
-  .field
-    .checkbox
-      = f.check_box :magensinus
-      = f.label :magensinus
-  .actions
-    = f.submit "Save"
+  %fieldset
+    .form-row
+      .field
+        = f.label :title
+        .input
+          = f.text_field :title
+    .form-row
+      .field
+        .textarea
+          %trix-editor{ input: "description" }
+          = f.hidden_field :description, id: "description"
+    .form-row
+      .field.col-medium-3-1
+        .checkbox
+          = f.check_box :eml
+          = f.label :eml
+      .field.col-medium-3-1
+        .checkbox
+          = f.check_box :magestil
+          = f.label :magestil
+      .field.col-medium-3-1
+        .checkbox
+          = f.check_box :magensinus
+          = f.label :magensinus
+    .form-row
+      .field.col-medium-3-1
+        .checkbox
+          = f.check_box :featured
+          = f.label :featured
+    .separator.small
+    .form-row
+      = submit_button_misc(f, "Save")
+      .field.col-medium-2-1
+        .checkbox
+          = f.check_box :published
+          = f.label :published

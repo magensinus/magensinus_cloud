@@ -1,7 +1,11 @@
 // New
 
-= link_to "Back", journal_articles_path
-
-%h1 New journal_article
-
-= render "form", object: @journal_article
+.container-top
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to "Back", journal_articles_path, class: "link small gray"
+.container-middle.left
+  .board-medium.altai-center
+    = render "form", object: @journal_article
+.container-bottom.left

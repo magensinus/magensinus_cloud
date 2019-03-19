@@ -1,23 +1,18 @@
 // All
 
-%table
-  %tbody.sortable{ "data-url" => sortable_journal_article_assets_path(parent) }
+.content
+  .content-box.sortable{ "data-url": sortable_journal_article_assets_path(parent) }
+    .content-item
+      %h3.gray-700-cl.sans.lighter= parent.title
     - objects.each do |object|
-      %tr{ id: "journal_asset_#{object.id}" }
-        %td= link_to "Sort Me", "#", class: "handle"
-        - if object.text == true
-          %td= object.text_box
-        - if object.image == true
-          %td= image_tag object.image_box_url.to_s
-          %td= object.image_caption
-        - if object.video == true
-          %td= object.video_box
-          %td= object.video_caption
-        %td
-          - if object.text == true
-            = link_to "Edit", edit_journal_article_asset_path(parent, object, text: true)
-          - if object.image == true
-            = link_to "Edit", edit_journal_article_asset_path(parent, object, image: true)
-          - if object.video == true
-            = link_to "Edit", edit_journal_article_asset_path(parent, object, video: true)
-        %td= link_to "Destroy", journal_article_asset_path(parent, object), method: :delete, data: { confirm: "Are you sure?" }
+      .content-item{ id: "journal_asset_#{object.id}" }
+        .content-top.white-bg
+          = link_to "Sort Me", "#", class: "off link gray-light left handle"
+          %p.small.right.auto.blue-300-cl
+            %strong Type:
+            = asset_type(object)
+        .toggle-box.wide.left
+          .content-middle.white-bg
+            = assets_renderer(object)
+          .content-bottom.white-bg
+            = render partial: "journal/assets/content_nav", locals: { parent: parent, object: object }
