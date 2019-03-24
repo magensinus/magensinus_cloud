@@ -8,7 +8,7 @@ git_source(:github) do |repo_name|
 end
 
 # Ruby version
-ruby "2.5.3"
+ruby "2.6.2"
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem "mini_racer", platforms: :ruby
