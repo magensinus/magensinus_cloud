@@ -45,7 +45,15 @@ module Magestil
     # ------
     def update
       if @magestil_equipment_asset.update(magestil_equipment_asset_params)
-        @magestil_equipment_asset.image_box.recreate_versions!(:thumb) if @magestil_equipment_asset.image?
+        # @magestil_equipment_asset.image_box.recreate_versions!(:thumb) if @magestil_equipment_asset.image?
+
+        # Fog recreate
+        ym = @magestil_equipment_asset
+        ym.image_box.cache_stored_file!
+        ym.image_box.retrieve_from_cache!(ym.image_box.cache_name)
+        ym.image_box.recreate_versions!(:version1, :version2)
+        ym.save!
+
         flash[:notice] = "Successfully updated..."
         redirect_to magestil_equipment_assets_path
       else
