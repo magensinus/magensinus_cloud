@@ -35,15 +35,16 @@ Rails.application.routes.draw do
 
   namespace :magensinus do
     root to: "dashboard#show"
-    resource :dashboard,      controller: :dashboard
-    resource :settings,       controller: :settings
-    resource :home,           controller: :home
-    resource :about,          controller: :about
-    resource :quality,        controller: :quality
-    resource :courses,        controller: :courses
-    resource :articles,       controller: :articles
-    resource :contact,        controller: :contact
-    resource :newsletter,     controller: :newsletter
+    resource :dashboard,            controller: :dashboard
+    resource :settings,             controller: :settings
+    resource :home,                 controller: :home
+    resource :about,                controller: :about
+    resource :quality,              controller: :quality
+    resource :courses,              controller: :courses
+    resource :articles,             controller: :articles
+    resource :contact,              controller: :contact
+    resource :newsletter,           controller: :newsletter
+    resource :terms_and_conditions, controller: :terms_and_conditions
     # Plugins
     resources :networks,      controller: :networks
     resources :about_assets,  controller: :about_assets do

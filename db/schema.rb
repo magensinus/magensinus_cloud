@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_06_133018) do
+ActiveRecord::Schema.define(version: 2019_03_24_083647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -789,6 +789,26 @@ ActiveRecord::Schema.define(version: 2019_03_06_133018) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_magensinus_settings_on_slug"
+  end
+
+  create_table "magensinus_terms_and_conditions", force: :cascade do |t|
+    t.string "slug"
+    t.string "meta_title"
+    t.text "meta_description"
+    t.string "meta_image_box"
+    t.string "meta_url"
+    t.string "title"
+    t.text "description"
+    t.text "body"
+    t.boolean "image", default: false
+    t.string "image_box"
+    t.string "image_caption"
+    t.boolean "document", default: false
+    t.string "document_box"
+    t.string "document_caption"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_magensinus_terms_and_conditions_on_slug"
   end
 
   create_table "magestil_about", force: :cascade do |t|

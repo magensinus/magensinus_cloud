@@ -36,5 +36,6 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
     magensinus_newsletter
     magensinus_schools
     magensinus_networks
+    magensinus_terms_and_conditions
   ]
 end
