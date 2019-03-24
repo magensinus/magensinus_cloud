@@ -45,6 +45,7 @@ module Magestil
     # ------
     def update
       if @magestil_equipment_asset.update(magestil_equipment_asset_params)
+        @magestil_equipment_asset.image_box.recreate_versions!(:thumb) if @magestil_equipment_asset.image?
         flash[:notice] = "Successfully updated..."
         redirect_to magestil_equipment_assets_path
       else
