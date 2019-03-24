@@ -37,7 +37,6 @@ module Magestil
       order << 0
       @magestil_about_asset.position = (order.min - 1)
       if @magestil_about_asset.save
-        @magestil_about_asset.image_box.recreate_versions!(:thumb) if @magestil_about_asset.image?
         flash[:notice] = "Successfully created..."
         redirect_to magestil_about_assets_path
       else
@@ -49,6 +48,7 @@ module Magestil
     # ------
     def update
       if @magestil_about_asset.update(magestil_about_asset_params)
+        @magestil_about_asset.image_box.recreate_versions!(:thumb) if @magestil_about_asset.image?
         flash[:notice] = "Successfully updated..."
         redirect_to magestil_about_assets_path
       else
