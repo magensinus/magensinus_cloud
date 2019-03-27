@@ -4,7 +4,7 @@
   .breadcrumbs
     .breadcrumbs-box
       .breadcrumbs-item
-        = link_to "Back", academy_courses_path, class: "link small gray"
+        = link_to "Back", academy_category_courses_path(@academy_course.category.slug), class: "link small gray"
 .container-middle.left
   .board-double-extra-small
     = render partial: "secondary_navigation"

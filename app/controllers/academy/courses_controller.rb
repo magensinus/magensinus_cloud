@@ -22,6 +22,8 @@ module Academy
     # Callbacks
     # ---------
     # Academy categories
+    before_action :academy_category
+    # Academy categories
     before_action :academy_categories, only: [:show, :new, :create, :edit, :update]
     # Academy course
     before_action :academy_course, only: [:show, :edit, :update, :destroy]
@@ -29,7 +31,13 @@ module Academy
     # Index
     # -----
     def index
-      @academy_courses             = Academy::Course.all_by_group.includes(:category)
+      @academy_courses =
+                          if params[:category_id]
+                            @academy_category.courses.all_by_group.includes(:category)
+                          else
+                            Academy::Course.all_by_group.includes(:category)
+                          end
+
       @scheduled_academy_courses   = Academy::Course.scheduled.includes(:category)
       @published_academy_courses   = Academy::Course.published.includes(:category)
       @unpublished_academy_courses = Academy::Course.unpublished.includes(:category)
@@ -100,6 +108,11 @@ module Academy
     end
 
     private
+
+    # Academy category
+    def academy_category
+      @academy_category = Academy::Category.find_by(slug: params[:category_id])
+    end
 
     # Academy categories
     def academy_categories
