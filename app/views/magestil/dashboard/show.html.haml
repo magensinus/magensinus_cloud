@@ -1,46 +1,54 @@
-%h1 Magestil Dashboard
+// Show
 
-%nav
-  %div
-    = link_to "Dashboard", root_path
-  // %div
-  //   = link_to "Settings", magestil_settings_path
-  %div
-    = link_to "Home", magestil_home_path
-  %div
-    = link_to "About", magestil_about_path
-  %div
-    = link_to "Quality", magestil_quality_path
-  %div
-    = link_to "Courses", magestil_courses_path
-  %div
-    = link_to "Articles", magestil_articles_path
-  %div
-    = link_to "Campus", magestil_campus_path
-  %div
-    = link_to "Equipment", magestil_equipment_path
-  %div
-    = link_to "Students", magestil_students_path
-  %div
-    = link_to "Parents", magestil_parents_path
-  %div
-    = link_to "Tutors", magestil_tutors_path
-  %div
-    = link_to "Partnerships", magestil_partnerships_path
-  %div
-    = link_to "Contact", magestil_contact_path
-  %div
-    = link_to "Newsletter", magestil_newsletter_path
-  %div
-    = link_to "Terms & Conditions", magestil_terms_and_conditions_path
-
-%nav
-  %h3 Plugins
-  %div
-    = link_to "Networks", magestil_networks_path
-  %div
-    = link_to "About Assets", magestil_about_assets_path
-  %div
-    = link_to "Campus Assets", magestil_campus_assets_path
-  %div
-    = link_to "Equipment Assets", magestil_equipment_assets_path
+.container-top
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to "Dashboard", root_path, class: "link small gray"
+.container-middle.left
+  .board-large
+    .launchpad
+      .launchpad-box
+        // .launchpad-item.col-large-4-1
+        //   = link_to "Settings", magestil_settings_path
+        .launchpad-item.col-large-4-1
+          = link_to "Home", magestil_home_path, class: "button blue wide text-center extra-large"
+        .launchpad-item.col-large-4-1
+          = link_to "About", magestil_about_path, class: "button blue wide text-center extra-large"
+        .launchpad-item.col-large-4-1
+          = link_to "Quality", magestil_quality_path, class: "button blue wide text-center extra-large"
+        .launchpad-item.col-large-4-1
+          = link_to "Courses", magestil_courses_path, class: "button blue wide text-center extra-large"
+        .launchpad-item.col-large-4-1
+          = link_to "Articles", magestil_articles_path, class: "button blue wide text-center extra-large"
+        .launchpad-item.col-large-4-1
+          = link_to "Campus", magestil_campus_path, class: "button blue wide text-center extra-large"
+        .launchpad-item.col-large-4-1
+          = link_to "Equipment", magestil_equipment_path, class: "button blue wide text-center extra-large"
+        .launchpad-item.col-large-4-1
+          = link_to "Students", magestil_students_path, class: "button blue wide text-center extra-large"
+        .launchpad-item.col-large-4-1
+          = link_to "Parents", magestil_parents_path, class: "button blue wide text-center extra-large"
+        .launchpad-item.col-large-4-1
+          = link_to "Tutors", magestil_tutors_path, class: "button blue wide text-center extra-large"
+        .launchpad-item.col-large-4-1
+          = link_to "Partnerships", magestil_partnerships_path, class: "button blue wide text-center extra-large"
+        .launchpad-item.col-large-4-1
+          = link_to "Contact", magestil_contact_path, class: "button blue wide text-center extra-large"
+        .launchpad-item.col-large-4-1
+          = link_to "Newsletter", magestil_newsletter_path, class: "button blue wide text-center extra-large"
+        .launchpad-item.col-large-4-1
+          = link_to "Terms & Conditions", magestil_terms_and_conditions_path, class: "button blue wide text-center extra-large"
+      .separator.small
+      .launchpad-box
+        .launchpad-item.col-large-1-1
+          %h3 Plugins
+        .launchpad-item.col-large-4-1
+          = link_to "Networks", magestil_networks_path, class: "button wide text-center large"
+        .launchpad-item.col-large-4-1
+          = link_to "About Assets", magestil_about_assets_path, class: "button wide text-center large"
+        .launchpad-item.col-large-4-1
+          = link_to "Campus Assets", magestil_campus_assets_path, class: "button wide text-center large"
+        .launchpad-item.col-large-4-1
+          = link_to "Equipment Assets", magestil_equipment_assets_path, class: "button wide text-center large"
+.container-bottom.left

@@ -1,9 +1,9 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-// File:    Launchpad
+// File:    Brand
 // Project: Magensinus Cloud
 // -------------------------------------------------------------
 
-$class: "launchpad";
+$class: "brand";
 
 .#{$class} {
   @include border-box;
@@ -11,17 +11,10 @@ $class: "launchpad";
   .#{$class}-box {
     @include border-box;
     float: left;
-    width: 100%;
     .#{$class}-item {
       @include border-box;
       float: left;
-      padding: 8px;
-      .button {
-        &.extra-large {
-          padding-bottom: 48px;
-          padding-top: 48px;
-        }
-      }
+      padding: 16px;
     }
   }
 }

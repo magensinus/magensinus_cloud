@@ -1,27 +1,36 @@
-%h1 Magensinus Dashboard
+// Show
 
-%nav
-  %div
-    = link_to "Dashboard", root_path
-  // %div
-  //   = link_to "Settings", magensinus_settings_path
-  %div
-    = link_to "Home", magensinus_home_path
-  %div
-    = link_to "About", magensinus_about_path
-  %div
-    = link_to "Quality", magensinus_quality_path
-  %div
-    = link_to "Courses", magensinus_courses_path
-  %div
-    = link_to "Articles", magensinus_articles_path
-  %div
-    = link_to "Contact", magensinus_contact_path
-  %div
-    = link_to "Newsletter", magensinus_newsletter_path
-  %div
-    = link_to "Terms & Conditions", magensinus_terms_and_conditions_path
-%nav
-  %h3 Plugins
-  %div
-    = link_to "Networks", magensinus_networks_path
+.container-top
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to "Dashboard", root_path, class: "link small gray"
+.container-middle.left
+  .board-large
+    .launchpad
+      .launchpad-box
+        // .launchpad-item.col-large-4-1
+        //   = link_to "Settings", magensinus_settings_path
+        .launchpad-item.col-large-4-1
+          = link_to "Home", magensinus_home_path, class: "button green wide text-center extra-large"
+        .launchpad-item.col-large-4-1
+          = link_to "About", magensinus_about_path, class: "button green wide text-center extra-large"
+        .launchpad-item.col-large-4-1
+          = link_to "Quality", magensinus_quality_path, class: "button green wide text-center extra-large"
+        .launchpad-item.col-large-4-1
+          = link_to "Courses", magensinus_courses_path, class: "button green wide text-center extra-large"
+        .launchpad-item.col-large-4-1
+          = link_to "Articles", magensinus_articles_path, class: "button green wide text-center extra-large"
+        .launchpad-item.col-large-4-1
+          = link_to "Contact", magensinus_contact_path, class: "button green wide text-center extra-large"
+        .launchpad-item.col-large-4-1
+          = link_to "Newsletter", magensinus_newsletter_path, class: "button green wide text-center extra-large"
+        .launchpad-item.col-large-4-1
+          = link_to "Terms & Conditions", magensinus_terms_and_conditions_path, class: "button green wide text-center extra-large"
+      .separator.small
+      .launchpad-box
+        .launchpad-item.col-large-1-1
+          %h3 Plugins
+        .launchpad-item.col-large-4-1
+          = link_to "Networks", magensinus_networks_path, class: "button wide text-center large"
+.container-bottom.left

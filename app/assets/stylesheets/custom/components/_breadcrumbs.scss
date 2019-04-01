@@ -8,6 +8,7 @@ $class: "breadcrumbs";
 .#{$class} {
   @include border-box;
   float: left;
+  min-height: 36px;
   .#{$class}-box {
     @include border-box;
     float: left;

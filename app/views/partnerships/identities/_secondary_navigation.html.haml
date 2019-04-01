@@ -1,0 +1,10 @@
+// Secondary navigation
+
+.secondary-navigation
+  .secondary-navigation-box
+    .secondary-navigation-item
+      %h3 Sections
+    .secondary-navigation-item
+      = link_to "Partnership", partnerships_identity_path(@partnerships_identity), class: "link large blue"
+    .secondary-navigation-item
+      = link_to "Thumb", partnerships_identity_path(@partnerships_identity, thumb: "true"), class: "link large blue"

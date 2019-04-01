@@ -1,23 +1,30 @@
 // Show
 
-%h1 Dashboard
-.launchpad
-  .launchpad-box
-    .launchpad-item
-      = link_to "Magensinus Dashboard", magensinus_root_path, class: "button wide text-center large"
-    .launchpad-item
-      = link_to "Magestil Dashboard", magestil_root_path, class: "button wide text-center large"
-    .launchpad-item
-      = link_to "Journal Dashboard", journal_root_path, class: "button wide text-center large"
-    .launchpad-item
-      = link_to "Academy Dashboard", academy_root_path, class: "button wide text-center large"
-    .launchpad-item
-      = link_to "Wallet Dashboard", wallet_root_path, class: "button wide text-center large"
-    .launchpad-item
-      = link_to "Subscriptions Dashboard", subscriptions_path, class: "button wide text-center large"
-    .launchpad-item
-      = link_to "Endorsements", endorsement_root_path, class: "button wide text-center large"
-    .launchpad-item
-      = link_to "Partnerships", partnerships_root_path, class: "button wide text-center large"
-    .launchpad-item
-      = link_to "Legal", legal_root_path, class: "button wide text-center large"
+.container-top
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        // = link_to "Dashboard", root_path, class: "link small gray"
+.container-middle.left
+  .board-large
+    .launchpad
+      .launchpad-box
+        .launchpad-item.col-large-4-1
+          = link_to "Magensinus Dashboard", magensinus_root_path, class: "button wide text-center extra-large"
+        .launchpad-item.col-large-4-1
+          = link_to "Magestil Dashboard", magestil_root_path, class: "button wide text-center extra-large"
+        .launchpad-item.col-large-4-1
+          = link_to "Journal Dashboard", journal_root_path, class: "button wide text-center extra-large"
+        .launchpad-item.col-large-4-1
+          = link_to "Academy Dashboard", academy_root_path, class: "button wide text-center extra-large"
+        .launchpad-item.col-large-4-1
+          = link_to "Wallet Dashboard", wallet_root_path, class: "button wide text-center extra-large"
+        // .launchpad-item.col-large-4-1
+        //   = link_to "Subscriptions Dashboard", subscriptions_path, class: "button wide text-center extra-large"
+        .launchpad-item.col-large-4-1
+          = link_to "Endorsements", endorsement_root_path, class: "button wide text-center extra-large"
+        .launchpad-item.col-large-4-1
+          = link_to "Partnerships", partnerships_root_path, class: "button wide text-center extra-large"
+        .launchpad-item.col-large-4-1
+          = link_to "Legal", legal_root_path, class: "button wide text-center extra-large"
+.container-bottom.left
