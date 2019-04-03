@@ -8,16 +8,16 @@
     .form-row
       - if params_new || params_create
         .field.col-medium-2-1
-          = f.label :video_box
+          = f.label :url
           .input
             = f.text_field :video_box
         .field.col-medium-2-1
-          = f.label :video_service
+          = f.label :service
           .select
             = f.select :video_service, %w[vimeo youtube], selected: "youtube"
     .form-row
       .field
-        = f.label :video_caption
+        = f.label :caption
         .input
           = f.text_field :video_caption
     = submit_button(f, "Save")

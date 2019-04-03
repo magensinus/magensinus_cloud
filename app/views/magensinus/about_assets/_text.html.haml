@@ -7,7 +7,6 @@
     = errors(object)
     .form-row
       .field
-        = f.label :text_box
         .textarea
           = f.hidden_field :text_box, id: "text_box"
           %trix-editor{ input: "text_box" }

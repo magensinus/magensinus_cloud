@@ -4,13 +4,13 @@
   .breadcrumbs
     .breadcrumbs-box
       .breadcrumbs-item
-        = link_to "Dashboard", magensinus_dashboard_path, class: "link small gray"
+        = link_to "Back", magensinus_dashboard_path, class: "link small gray"
 .container-middle.left
   .board-double-extra-small
     = render partial: "secondary_navigation"
   .board-medium
-    - if params_image
-      = render partial: "image", locals: { object: @magensinus_quality }
-    - else
-      = render partial: "form", locals: { object: @magensinus_quality }
+    // - if params_image
+    //   = render partial: "image", locals: { object: @magensinus_quality }
+    // - else
+    = render partial: "form", locals: { object: @magensinus_quality }
 .container-bottom.left

@@ -4,13 +4,13 @@
   .breadcrumbs
     .breadcrumbs-box
       .breadcrumbs-item
-        = link_to "Dashboard", magestil_dashboard_path, class: "link small gray"
+        = link_to "Back", magestil_dashboard_path, class: "link small gray"
 .container-middle.left
   .board-double-extra-small
     = render partial: "secondary_navigation"
   .board-medium
-    - if params_image
-      = render partial: "image", locals: { object: @magestil_about }
-    - else
-      = render partial: "form", locals: { object: @magestil_about }
+    // - if params_image
+    //   = render partial: "image", locals: { object: @magestil_about }
+    // - else
+    = render partial: "form", locals: { object: @magestil_about }
 .container-bottom.left

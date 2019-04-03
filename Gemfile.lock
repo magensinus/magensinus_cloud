@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/iigethr/mies.git
-  revision: 156d5e43ec07621f9b00118735c95f15e1e232ff
+  revision: 34ac99b1271d72617e15d2470fdc92841f754e50
   specs:
     mies (0.0.1.alpha)
       autoprefixer-rails (~> 9.0)
@@ -357,7 +357,7 @@ GEM
     psych (3.1.0)
     public_suffix (3.0.3)
     puma (3.12.1)
-    rack (2.0.6)
+    rack (2.0.7)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (5.2.3)

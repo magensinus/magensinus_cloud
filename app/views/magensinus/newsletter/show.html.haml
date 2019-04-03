@@ -9,8 +9,8 @@
   .board-double-extra-small
     = render partial: "secondary_navigation"
   .board-medium
-    - if params_image
-      = render partial: "image", locals: { object: @magensinus_newsletter }
-    - else
-      = render partial: "form", locals: { object: @magensinus_newsletter }
+    // - if params_image
+    //   = render partial: "image", locals: { object: @magensinus_newsletter }
+    // - else
+    = render partial: "form", locals: { object: @magensinus_newsletter }
 .container-bottom.left

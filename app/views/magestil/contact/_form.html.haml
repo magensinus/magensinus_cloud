@@ -15,47 +15,4 @@
         .textarea
           = f.hidden_field :description, id: "description"
           %trix-editor{ input: "description" }
-
-    // .form-row
-    //   .field
-    //     = f.label :body
-    //     .textarea.body
-    //       = f.hidden_field :body, id: "body"
-    //       %trix-editor{ input: "body" }
-
-    .form-row
-      .field.col-medium-3-1
-        = f.label :fax
-        .input
-          = f.text_field :fax
-      .field.col-medium-3-1
-        = f.label :phone
-        .input
-          = f.text_field :phone
-      .field.col-medium-3-1
-        = f.label :email
-        .input
-          = f.text_field :email
-    .form-row
-      .field.col-medium-2-1
-        = f.label :address_one
-        .input
-          = f.text_field :address_one
-      .field.col-medium-2-1
-        = f.label :address_two
-        .input
-          = f.text_field :address_two
-    .form-row
-      .field.col-medium-3-1
-        = f.label :postcode
-        .input
-          = f.text_field :postcode
-      .field.col-medium-3-1
-        = f.label :city
-        .input
-          = f.text_field :city
-      .field.col-medium-3-1
-        = f.label :country
-        .input
-          = f.text_field :country
     = submit_button(f, "Save")
