@@ -19,8 +19,16 @@ module Wallet
     # Index
     # -----
     def index
-      redirect_to wallet_root_path
+      # redirect_to wallet_root_path
       # @wallet_categories = Wallet::Category.all
+      @wallet_categories =
+        if params[:published] == "true"
+          Wallet::Category.where(published: true).order(position: :asc)
+        elsif params[:published] == "false"
+          Wallet::Category.where(published: false).order(position: :asc)
+        else
+          Wallet::Category.order(position: :asc)
+        end
     end
 
     # Show

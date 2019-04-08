@@ -1,19 +1,16 @@
 // Show
 
-.content.altai-center
-  .content-box
-    .content-item
-      .breadcrumbs
-        .breadcrumbs-box
-          .breadcrumbs-item
-            = link_to "Back", wallet_root_path, class: "link small"
-    .content-item
-      = link_to edit_wallet_category_path(@wallet_category), class: "link gray extra-large" do
-        %span.icon.left
-          = image_tag "baseline_edit_black_18dp.png"
-        = @wallet_category.title
-    - if @wallet_category.description.presence
-      .content-item
-        = @wallet_category.description.html_safe
-.separator.extra-small
-= render "all", parent: @wallet_category, objects: @wallet_assets
+.container-top
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to wallet_root_path, class: "link medium gray" do
+          .icon.left
+            = image_tag "chevron_left.png"
+          Back
+.container-middle.left
+  .board-double-extra-small
+    = render partial: "secondary_navigation"
+  .board-medium
+    = render "form", object: @wallet_category
+.container-bottom.left

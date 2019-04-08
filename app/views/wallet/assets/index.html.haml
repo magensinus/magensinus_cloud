@@ -1,17 +1,15 @@
 // Index
 
-.content
-  .content-box
-    .content-item
-      .breadcrumbs
-        .breadcrumbs-box
-          .breadcrumbs-item
-            = link_to "Back", wallet_category_path(@wallet_category), class: "link small"
-      .actions
-        .actions-box
-          .actions-item
-            = link_to "New Document", new_wallet_category_asset_path(@wallet_category, document: "true"), class: "button green large right"
-    .content-item
-      %h1 #{@wallet_category.title}
-.separator.small
-= render "all", parent: @wallet_category, objects: @wallet_assets
+.container-top
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to wallet_category_path(@wallet_category), class: "link medium gray" do
+          .icon.left
+            = image_tag "chevron_left.png"
+          Back
+  = link_to "New Wallet asset", new_wallet_category_asset_path(@wallet_category, document: true), class: "button green extra-large right"
+.container-middle.left
+  .board-medium.altai-center
+    = render "all", parent: @wallet_category, objects: @wallet_assets
+.container-bottom.left

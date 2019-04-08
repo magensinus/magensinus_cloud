@@ -4,26 +4,10 @@
   .secondary-navigation-box
     .secondary-navigation-item
       = link_to "Main", journal_article_path(@journal_article), class: "link large blue"
-    // .separator.extra-small
     .secondary-navigation-item
       = link_to "Thumb", journal_article_path(@journal_article, thumb: "true"), class: "link large blue"
-    // .separator.extra-small
     .secondary-navigation-item
       = link_to "Media Assets", journal_article_assets_path(@journal_article), class: "link large blue"
-    // .secondary-navigation-item
-    //   = link_to "Thumb Eml",            journal_article_path(@journal_article, thumb_eml: "true"), class: "link large blue"
-    // .secondary-navigation-item
-    //   = link_to "Thumb Magestil",       journal_article_path(@journal_article, thumb_magestil: "true"), class: "link large blue"
-    // .secondary-navigation-item
-    //   = link_to "Thumb Magensinus",     journal_article_path(@journal_article, thumb_magensinus: "true"), class: "link large blue"
-    // .secondary-navigation-item
-    //   = link_to "Cover", journal_article_path(@journal_article, cover: "true"), class: "link large blue"
-    // .secondary-navigation-item
-    //   = link_to "Cover Eml", journal_article_path(@journal_article, cover_eml: "true"), class: "link large blue"
-    // .secondary-navigation-item
-    //   = link_to "Cover Magestil", journal_article_path(@journal_article, cover_magestil: "true"), class: "link large blue"
-    // .secondary-navigation-item
-    //   = link_to "Cover Magensinus", journal_article_path(@journal_article, cover_magensinus: "true"), class: "link large blue"
     .separator.small
     .secondary-navigation-item
       = link_to "Destroy", journal_article_path(@journal_article), method: :delete, data: { confirm: "Are you sure?" }, class: "link large red wide hover-underline"

@@ -1,9 +1,20 @@
 // Index
 
-= link_to "Back", wallet_root_path
-
-%h1 Listing wallet_categories
-
-= render "all", objects: @wallet_categories
-
-= link_to "New Wallet category", new_wallet_category_path
+.container-top
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to wallet_root_path, class: "link medium gray" do
+          .icon.left
+            = image_tag "chevron_left.png"
+          Back
+  = link_to "New Wallet category", new_wallet_category_path, class: "button green extra-large right"
+.container-middle.left
+  .board-medium.altai-center
+    %h1.lighter Wallet Categories
+    .separator.small
+    = render "all", objects: @wallet_categories
+    // = render "unpublished", objects: @unpublished_journal_articles
+    // = render "scheduled",   objects: @scheduled_journal_articles
+    // = render "published",   objects: @published_journal_articles
+.container-bottom.left

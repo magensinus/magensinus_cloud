@@ -1,14 +1,15 @@
-// New
+// Index
 
-.content
-  .content-box
-    .content-item
-      .breadcrumbs
-        .breadcrumbs-box
-          .breadcrumbs-item
-            = link_to "Back", wallet_category_path(@wallet_category), class: "link small"
-    .content-item
-      %h1 New Document
-.separator.small
-- if params_document
-  = render "document", object: @wallet_asset
+.container-top
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to wallet_category_assets_path(@wallet_category), class: "link medium gray" do
+          .icon.left
+            = image_tag "chevron_left.png"
+          Back
+.container-middle.left
+  .board-medium.altai-center
+    - if params_document
+      = render "document", object: @wallet_asset
+.container-bottom.left

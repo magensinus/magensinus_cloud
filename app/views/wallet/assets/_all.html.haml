@@ -1,41 +1,14 @@
 // All
 
-- if objects.presence
-  .card
-    .card-box.sortable{ "data-url" => sortable_wallet_category_assets_path(parent) }
-      - objects.each do |object|
-        .card-item.col-large-2-1{ id: "wallet_asset_#{object.id}" }
-          .card-wrapper
-            .card-top
-              .left
-                = link_to "Sort Me", "#", class: "link extra-small blue handle"
-              .right
-                .actions-menu
-                  .actions-menu-box
-                    .actions-menu-item
-                      %td= link_to "Edit", edit_wallet_category_asset_path(parent, object, document: true), class: "link extra-small"
-                    .actions-menu-item
-                      %td= link_to "Destroy", wallet_category_asset_path(parent, object), method: :delete, data: { confirm: "Are you sure?" }, class: "link extra-small"
-
-            .card-middle.min-height
-              - if object.document_caption.presence
-                = link_to (object.document_caption).truncate(96), object.document_box.url, class: "link medium wide hover-underline", target: "_blank"
-              - else
-                = link_to "No Caption", object.document_box.url, class: "link medium wide hover-underline", target: "_blank"
-
-            .card-bottom
-              .left
-                %p.extra-small.label
-                  %strong Last Updated:
-                  = object.updated_at.strftime("%d - %m - %Y")
-              .right
-                %p.extra-small.label
-                  %strong Asset Type:
-                  = asset_type(object)
-- else
-  .card
-    .card-box
-      .card-item.col-large-1-1
-        .card-wrapper
-          .card-middle
-            %p.medium.text-center.blue-500-cl There are no objects.
+%table
+  %thead
+    %tr
+      %th
+      %th Caption
+      %th
+  %tbody.sortable{ "data-url" => sortable_wallet_category_assets_path(parent) }
+    - objects.each do |object|
+      %tr{ id: "wallet_asset_#{object.id}" }
+        %td= link_to "Sort Me", "#", class: "off link gray-light left handle"
+        %td= object.document_caption
+        %td= link_to "Show", wallet_category_asset_path(parent, object, document: true)

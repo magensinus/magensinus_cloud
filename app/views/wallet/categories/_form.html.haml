@@ -1,6 +1,6 @@
 // Form
 
-= form_with model: object, class: "col-large-1-1", local: true do |f|
+= form_with model: object, local: true do |f|
   // = render "lib/components/errors", object: object
   %fieldset
     .form-row
@@ -16,28 +16,27 @@
           // = f.hidden_field :description, id: "description"
           = f.text_area :description, id: "description"
     .form-row
-      .field.col-large-3-1
+      .field.col-medium-3-1
         .checkbox
-          = f.check_box :eml, id: :eml
-          = f.label "Escola de Moda de Lisboa", for: :eml
-      .field.col-large-3-1
+          = f.check_box :eml
+          = f.label :eml
+      .field.col-medium-3-1
         .checkbox
-          = f.check_box :magestil, id: :magestil
-          = f.label :magestil, for: :magestil
-      .field.col-large-3-1
+          = f.check_box :magestil
+          = f.label :magestil
+      .field.col-medium-3-1
         .checkbox
-          = f.check_box :magensinus, id: :magensinus
-          = f.label :magensinus, for: :magensinus
+          = f.check_box :magensinus
+          = f.label :magensinus
     .form-row
-      .field.col-large-3-1
+      .field.col-medium-3-1
         = f.label :wallet_type
         .select
           = f.select :wallet_type, ["students", "parents", "tutors", "other"]
+    .separator.small
     .form-row
-      .field.col-large-3-1
-        .submit.col-large-3-1
-          = f.button "Save", data: { disable_with: "Saving..." }, class: "button wide extra-large green"
-      .field.right.col-large-3-1
+      = submit_button_misc(f, "Save")
+      .field.col-medium-2-1
         .checkbox
-          = f.check_box :published, id: :published
-          = f.label :published, for: :published
+          = f.check_box :published
+          = f.label :published

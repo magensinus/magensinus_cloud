@@ -1,21 +1,15 @@
-// Show
+// Index
 
-= link_to "Back", wallet_category_assets_path(@wallet_category)
-
-%p
-  %b Wallet category:
-  = @wallet_asset.category
-%p
-  %b Document:
-  = @wallet_asset.document
-%p
-  %b Document box:
-  = @wallet_asset.document_box
-%p
-  %b Document caption:
-  = @wallet_asset.document_caption
-%p
-  %b Position:
-  = @wallet_asset.position
-
-= link_to "Edit", edit_wallet_category_asset_path(@wallet_category, @wallet_asset, document: true)
+.container-top
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to wallet_category_assets_path(@wallet_category), class: "link medium gray" do
+          .icon.left
+            = image_tag "chevron_left.png"
+          Back
+.container-middle.left
+  .board-medium.altai-center
+    - if params_document
+      = render "document", object: @wallet_asset
+.container-bottom.left

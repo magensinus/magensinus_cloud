@@ -1,13 +1,17 @@
 // Show
 
-.content
-  .content-box
-    .content-item
-      .breadcrumbs
-        .breadcrumbs-box
-          .breadcrumbs-item
-            = link_to "Dashboard", root_path, class: "link small"
-    .content-item
-      %h1.auto.inline Wallet Dashboard
-.separator.extra-small
-= render "all", objects: @wallet_categories
+.container-top
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to root_path, class: "link medium gray" do
+          .icon.left
+            = image_tag "chevron_left.png"
+          Back
+.container-middle.left
+  .board-medium.altai-center
+    .launchpad
+      .launchpad-box
+        .launchpad-item.col-large-4-1
+          = link_to "Categories", wallet_categories_path, class: "button wide text-center extra-large"
+.container-bottom.left

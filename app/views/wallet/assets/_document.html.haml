@@ -1,15 +1,16 @@
 // Document
 
 = form_with model: object, url: wallet_asset_form_url, local: true do |f|
-  = render "lib/components/errors", object: object
   = f.hidden_field :document, value: true
   = f.hidden_field :document_box_cache
   %fieldset
+    = legend("Document")
+    = errors(object)
     - if object.document_box.presence
       .form-row
-        .field.col-large-2-1
+        .field.col-medium-2-1
           = link_to "View File", object.document_box_url, target: :blank, class: "button extra-large white wide"
-        .field.col-large-2-1
+        .field.col-medium-2-1
           .checkbox
             = f.check_box :remove_document_box
             = f.label :remove_file
