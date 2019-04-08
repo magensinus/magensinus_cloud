@@ -3,14 +3,16 @@
 %table
   %thead
     %tr
+      %th
       %th Position
       %th
       %th
-      %th
-  %tbody
+  %tbody.sortable{ "data-url" => sortable_magestil_campus_assets_path }
     - objects.each do |object|
-      %tr
-        %td= object.position
-        %td= link_to "Show", magestil_campus_asset_path(object)
-        %td= link_to "Edit", edit_magestil_campus_asset_path(object)
+      %tr{ id: "magestil_campus_asset_#{object.id}" }
+        %td= link_to "Sort Me", "#", class: "handle"
+        %td
+          = object.image_caption
+          = object.position
+        %td= link_to "Show", magestil_campus_asset_path(object, image: true)
         %td= link_to "Destroy", magestil_campus_asset_path(object), method: :delete, data: { confirm: "Are you sure?" }

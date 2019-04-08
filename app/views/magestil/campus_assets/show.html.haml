@@ -1,15 +1,15 @@
-// Show
+// Index
 
-= link_to "Back", magestil_campus_assets_path
-
-%p
-  %b Image:
-  = @magestil_campus_asset.image
-%p
-  %b Image box:
-  = @magestil_campus_asset.image_box
-%p
-  %b Image caption:
-  = @magestil_campus_asset.image_caption
-
-= link_to "Edit", edit_magestil_campus_asset_path(@magestil_campus_asset)
+.container-top
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to magestil_campus_assets_path, class: "link medium gray" do
+          .icon.left
+            = image_tag "icons/chevron_left.png"
+          Back
+.container-middle.left
+  .board-medium.altai-center
+    - if params_image
+      = render "image", object: @magestil_campus_asset
+.container-bottom.left

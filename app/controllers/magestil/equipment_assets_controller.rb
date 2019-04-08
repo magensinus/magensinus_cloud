@@ -32,7 +32,11 @@ module Magestil
     # Create
     # ------
     def create
+      order = Magestil::EquipmentAsset.pluck(:position).compact
+
       @magestil_equipment_asset = Magestil::EquipmentAsset.new(magestil_equipment_asset_params)
+      order << 0
+      @magestil_equipment_asset.position = (order.min - 1)
       if @magestil_equipment_asset.save
         flash[:notice] = "Successfully created..."
         redirect_to magestil_equipment_assets_path
@@ -48,11 +52,11 @@ module Magestil
         # @magestil_equipment_asset.image_box.recreate_versions!(:thumb) if @magestil_equipment_asset.image?
 
         # Fog recreate
-        ym = @magestil_equipment_asset
-        ym.image_box.cache_stored_file!
-        ym.image_box.retrieve_from_cache!(ym.image_box.cache_name)
-        ym.image_box.recreate_versions!(:version1, :version2)
-        ym.save!
+        # ym = @magestil_equipment_asset
+        # ym.image_box.cache_stored_file!
+        # ym.image_box.retrieve_from_cache!(ym.image_box.cache_name)
+        # ym.image_box.recreate_versions!(:version1, :version2)
+        # ym.save!
 
         flash[:notice] = "Successfully updated..."
         redirect_to magestil_equipment_assets_path
@@ -67,6 +71,13 @@ module Magestil
       @magestil_equipment_asset.destroy
       flash[:notice] = "Successfully destroyed..."
       redirect_to magestil_equipment_assets_path
+    end
+
+    # Sortable
+    # --------
+    def sortable
+      Magestil::EquipmentAsset.sort_position(params[:magestil_equipment_asset])
+      head :ok
     end
 
     private

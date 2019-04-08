@@ -1,7 +1,15 @@
-// New
+// Index
 
-= link_to "Back", magestil_campus_assets_path
-
-%h1 New magestil_campus_asset
-
-= render "image", object: @magestil_campus_asset
+.container-top
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to magestil_campus_assets_path, class: "link medium gray" do
+          .icon.left
+            = image_tag "icons/chevron_left.png"
+          Back
+.container-middle.left
+  .board-medium.altai-center
+    - if params_image
+      = render "image", object: @magestil_campus_asset
+.container-bottom.left

@@ -51,11 +51,11 @@ module Magestil
         # @magestil_about_asset.image_box.recreate_versions!(:thumb) if @magestil_about_asset.image?
 
         # Fog recreate
-        ym = @magestil_about_asset
-        ym.image_box.cache_stored_file!
-        ym.image_box.retrieve_from_cache!(ym.image_box.cache_name)
-        ym.image_box.recreate_versions!(:version1, :version2)
-        ym.save!
+        # ym = @magestil_about_asset
+        # ym.image_box.cache_stored_file!
+        # ym.image_box.retrieve_from_cache!(ym.image_box.cache_name)
+        # ym.image_box.recreate_versions!(:version1, :version2)
+        # ym.save!
 
         flash[:notice] = "Successfully updated..."
         redirect_to magestil_about_assets_path

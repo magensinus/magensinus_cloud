@@ -1,9 +1,15 @@
 // Index
 
-= link_to "Back", magestil_campus_path
-
-%h1 Listing magestil_campus_assets
-
-= render "all", objects: @magestil_campus_assets
-
-= link_to "New Magensinus campus_asset", new_magestil_campus_asset_path
+.container-top
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to magestil_campus_path, class: "link medium gray" do
+          .icon.left
+            = image_tag "icons/chevron_left.png"
+          Back
+  = link_to "New Magensinus campus_asset", new_magestil_campus_asset_path(image: true), class: "button green extra-large right"
+.container-middle.left
+  .board-medium.altai-center
+    = render "all", objects: @magestil_campus_assets
+.container-bottom.left

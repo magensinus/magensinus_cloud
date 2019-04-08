@@ -10,7 +10,7 @@ module Magestil
     # Index
     # -----
     def index
-      @magestil_campus_assets = Magestil::CampusAsset.all
+      @magestil_campus_assets = Magestil::CampusAsset.order(position: :asc)
     end
 
     # Show
@@ -32,7 +32,11 @@ module Magestil
     # Create
     # ------
     def create
+      order = Magestil::CampusAsset.pluck(:position).compact
+
       @magestil_campus_asset = Magestil::CampusAsset.new(magestil_campus_asset_params)
+      order << 0
+      @magestil_campus_asset.position = (order.min - 1)
       if @magestil_campus_asset.save
         flash[:notice] = "Successfully created..."
         redirect_to magestil_campus_assets_path
@@ -48,11 +52,11 @@ module Magestil
         # @magestil_campus_asset.image_box.recreate_versions!(:thumb) if @magestil_campus_asset.image?
 
         # Fog recreate
-        ym = @magestil_campus_asset
-        ym.image_box.cache_stored_file!
-        ym.image_box.retrieve_from_cache!(ym.image_box.cache_name)
-        ym.image_box.recreate_versions!(:version1, :version2)
-        ym.save!
+        # ym = @magestil_campus_asset
+        # ym.image_box.cache_stored_file!
+        # ym.image_box.retrieve_from_cache!(ym.image_box.cache_name)
+        # ym.image_box.recreate_versions!(:version1, :version2)
+        # ym.save!
 
         flash[:notice] = "Successfully updated..."
         redirect_to magestil_campus_assets_path
@@ -67,6 +71,13 @@ module Magestil
       @magestil_campus_asset.destroy
       flash[:notice] = "Successfully destroyed..."
       redirect_to magestil_campus_assets_path
+    end
+
+    # Sortable
+    # --------
+    def sortable
+      Magestil::CampusAsset.sort_position(params[:magestil_campus_asset])
+      head :ok
     end
 
     private
