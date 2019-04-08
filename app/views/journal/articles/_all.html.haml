@@ -8,9 +8,7 @@
       %th Magestil
       %th Magensinus
       %th
-      %th
   %tbody
-    %h3 Published
     - @published_journal_articles.each do |journal_article|
       %tr
         %td= journal_article.title
@@ -18,4 +16,3 @@
         %td= journal_article.magestil
         %td= journal_article.magensinus
         %td= link_to "Show", journal_article_path(journal_article)
-        %td= link_to "Destroy", journal_article_path(journal_article), method: :delete, data: { confirm: "Are you sure?" }

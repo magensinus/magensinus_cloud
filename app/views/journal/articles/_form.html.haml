@@ -4,6 +4,8 @@
   = render "lib/components/errors", object: object
   = f.hidden_field :published_at, value: DateTime.now
   %fieldset
+    = legend("Article Main")
+    = errors(object)
     .form-row
       .field
         = f.label :title
