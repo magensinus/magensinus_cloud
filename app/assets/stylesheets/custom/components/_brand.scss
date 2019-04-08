@@ -14,7 +14,7 @@ $class: "brand";
     .#{$class}-item {
       @include border-box;
       float: left;
-      padding: 16px;
+      padding: 8px;
     }
   }
 }

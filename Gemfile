@@ -106,4 +106,5 @@ gem "coffeelint", require: false
 gem "haml_lint", require: false
 gem "reek", require: false
 gem "rubocop", require: false
+gem "rubocop-performance", require: false
 gem "scss_lint", require: false

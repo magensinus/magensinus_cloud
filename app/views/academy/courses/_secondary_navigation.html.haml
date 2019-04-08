@@ -3,59 +3,60 @@
 .secondary-navigation
   .secondary-navigation-box
     .secondary-navigation-item
-      %h3 Sections
+      = link_to "Main", academy_course_path(@academy_course), class: "link large blue wide hover-underline"
     .secondary-navigation-item
-      = link_to "Course", academy_course_path(@academy_course), class: "link large blue"
+      = link_to "Tutors", academy_course_path(@academy_course, tutors: "true"), class: "link large blue wide hover-underline"
     .secondary-navigation-item
-      = link_to "Tutors", academy_course_path(@academy_course, tutors: "true"), class: "link large blue"
+      = link_to "Theme", academy_course_path(@academy_course, theme: "true"), class: "link large blue wide hover-underline"
     .secondary-navigation-item
-      = link_to "Theme", academy_course_path(@academy_course, theme: "true"), class: "link large blue"
-    .secondary-navigation-item
-      = link_to "Misc", academy_course_path(@academy_course, misc: "true"), class: "link large blue"
+      = link_to "Misc", academy_course_path(@academy_course, misc: "true"), class: "link large blue wide hover-underline"
     .separator.extra-small
     // .secondary-navigation-item
-    //   = link_to "Misc",                 academy_course_path(@academy_course, misc: "true"), class: "link large blue"
+    //   = link_to "Misc",                 academy_course_path(@academy_course, misc: "true"), class: "link large blue wide hover-underline"
     .secondary-navigation-item
-      = link_to "Icon",                academy_course_path(@academy_course, icon: "true"), class: "link large blue"
+      = link_to "Icon",                academy_course_path(@academy_course, icon: "true"), class: "link large blue wide hover-underline"
     // .secondary-navigation-item
-    //   = link_to "Icon Eml",            academy_course_path(@academy_course, icon_eml: "true"), class: "link large blue"
+    //   = link_to "Icon Eml",            academy_course_path(@academy_course, icon_eml: "true"), class: "link large blue wide hover-underline"
     // .secondary-navigation-item
-    //   = link_to "Icon Magestil",       academy_course_path(@academy_course, icon_magestil: "true"), class: "link large blue"
+    //   = link_to "Icon Magestil",       academy_course_path(@academy_course, icon_magestil: "true"), class: "link large blue wide hover-underline"
     // .secondary-navigation-item
-    //   = link_to "Icon Magensinus",     academy_course_path(@academy_course, icon_magensinus: "true"), class: "link large blue"
+    //   = link_to "Icon Magensinus",     academy_course_path(@academy_course, icon_magensinus: "true"), class: "link large blue wide hover-underline"
     .secondary-navigation-item
-      = link_to "Thumb",                academy_course_path(@academy_course, thumb: "true"), class: "link large blue"
+      = link_to "Thumb",                academy_course_path(@academy_course, thumb: "true"), class: "link large blue wide hover-underline"
     // .secondary-navigation-item
-    //   = link_to "Thumb Eml",            academy_course_path(@academy_course, thumb_eml: "true"), class: "link large blue"
+    //   = link_to "Thumb Eml",            academy_course_path(@academy_course, thumb_eml: "true"), class: "link large blue wide hover-underline"
     // .secondary-navigation-item
-    //   = link_to "Thumb Magestil",       academy_course_path(@academy_course, thumb_magestil: "true"), class: "link large blue"
+    //   = link_to "Thumb Magestil",       academy_course_path(@academy_course, thumb_magestil: "true"), class: "link large blue wide hover-underline"
     // .secondary-navigation-item
-    //   = link_to "Thumb Magensinus",     academy_course_path(@academy_course, thumb_magensinus: "true"), class: "link large blue"
+    //   = link_to "Thumb Magensinus",     academy_course_path(@academy_course, thumb_magensinus: "true"), class: "link large blue wide hover-underline"
     .secondary-navigation-item
-      = link_to "Cover",                academy_course_path(@academy_course, cover: "true"), class: "link large blue"
+      = link_to "Cover",                academy_course_path(@academy_course, cover: "true"), class: "link large blue wide hover-underline"
     // .secondary-navigation-item
-    //   = link_to "Cover Eml",            academy_course_path(@academy_course, cover_eml: "true"), class: "link large blue"
+    //   = link_to "Cover Eml",            academy_course_path(@academy_course, cover_eml: "true"), class: "link large blue wide hover-underline"
     // .secondary-navigation-item
-    //   = link_to "Cover Magestil",       academy_course_path(@academy_course, cover_magestil: "true"), class: "link large blue"
+    //   = link_to "Cover Magestil",       academy_course_path(@academy_course, cover_magestil: "true"), class: "link large blue wide hover-underline"
     // .secondary-navigation-item
-    //   = link_to "Cover Magensinus",     academy_course_path(@academy_course, cover_magensinus: "true"), class: "link large blue"
+    //   = link_to "Cover Magensinus",     academy_course_path(@academy_course, cover_magensinus: "true"), class: "link large blue wide hover-underline"
     .secondary-navigation-item
-      = link_to "Image",                academy_course_path(@academy_course, image: "true"), class: "link large blue"
+      = link_to "Image",                academy_course_path(@academy_course, image: "true"), class: "link large blue wide hover-underline"
     // .secondary-navigation-item
-    //   = link_to "Image Eml",            academy_course_path(@academy_course, image_eml: "true"), class: "link large blue"
+    //   = link_to "Image Eml",            academy_course_path(@academy_course, image_eml: "true"), class: "link large blue wide hover-underline"
     // .secondary-navigation-item
-    //   = link_to "Image Magestil",       academy_course_path(@academy_course, image_magestil: "true"), class: "link large blue"
+    //   = link_to "Image Magestil",       academy_course_path(@academy_course, image_magestil: "true"), class: "link large blue wide hover-underline"
     // .secondary-navigation-item
-    //   = link_to "Image Magensinus",     academy_course_path(@academy_course, image_magensinus: "true"), class: "link large blue"
+    //   = link_to "Image Magensinus",     academy_course_path(@academy_course, image_magensinus: "true"), class: "link large blue wide hover-underline"
     .secondary-navigation-item
-      = link_to "Documento",            academy_course_path(@academy_course, document: "true"), class: "link large blue"
+      = link_to "Documento",            academy_course_path(@academy_course, document: "true"), class: "link large blue wide hover-underline"
+    // .secondary-navigation-item
+    //   = link_to "Documento Magestil",            academy_course_path(@academy_course, document_magestil: "true"), class: "link large blue wide hover-underline"
+    // .secondary-navigation-item
+    //   = link_to "Documento Eml",        academy_course_path(@academy_course, document_eml: "true"), class: "link large blue wide hover-underline"
+    // .secondary-navigation-item
+    //   = link_to "Documento Magestil",   academy_course_path(@academy_course, document_magestil: "true"), class: "link large blue wide hover-underline"
+    // .secondary-navigation-item
+    //   = link_to "Documento Magensinus", academy_course_path(@academy_course, document_magensinus: "true"), class: "link large blue wide hover-underline"
     .secondary-navigation-item
-      = link_to "Documento Magestil",            academy_course_path(@academy_course, document_magestil: "true"), class: "link large blue"
-    // .secondary-navigation-item
-    //   = link_to "Documento Eml",        academy_course_path(@academy_course, document_eml: "true"), class: "link large blue"
-    // .secondary-navigation-item
-    //   = link_to "Documento Magestil",   academy_course_path(@academy_course, document_magestil: "true"), class: "link large blue"
-    // .secondary-navigation-item
-    //   = link_to "Documento Magensinus", academy_course_path(@academy_course, document_magensinus: "true"), class: "link large blue"
+      = link_to "Video",            academy_course_path(@academy_course, video: "true"), class: "link large blue wide hover-underline"
+    .separator.extra-small
     .secondary-navigation-item
-      = link_to "Video",            academy_course_path(@academy_course, video: "true"), class: "link large blue"
+      = link_to "Sections", academy_course_sections_path(@academy_course), class: "link large blue wide hover-underline"

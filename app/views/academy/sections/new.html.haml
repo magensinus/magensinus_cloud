@@ -4,7 +4,10 @@
   .breadcrumbs
     .breadcrumbs-box
       .breadcrumbs-item
-        = link_to "Back", academy_course_sections_path(@academy_course), class: "link small gray"
+        = link_to academy_course_sections_path(@academy_course), class: "link medium gray" do
+          .icon.left
+            = image_tag "chevron_left.png"
+          Back
 .container-middle.left
   .board-medium.altai-center
     = render partial: "form", locals: { parent: @academy_course, object: @academy_section }

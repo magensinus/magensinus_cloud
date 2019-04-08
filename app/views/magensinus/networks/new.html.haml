@@ -1,7 +1,15 @@
 // New
 
-= link_to "Back", magensinus_networks_path
+.container-top
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to magensinus_networks_path, class: "link medium gray" do
+          .icon.left
+            = image_tag "chevron_left.png"
+          Back
 
-%h1 New magensinus_network
-
-= render "form", object: @magensinus_network
+.container-middle.left
+  .board-medium.altai-center
+    = render "form", object: @magensinus_network
+.container-bottom.left

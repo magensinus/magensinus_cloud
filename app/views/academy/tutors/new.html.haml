@@ -1,7 +1,14 @@
 // New
 
-%h1 New academy_tutor
-
-= render "form", object: @academy_tutor
-
-= link_to "Back", academy_tutors_path
+.container-top
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to academy_tutors_path, class: "link medium gray" do
+          .icon.left
+            = image_tag "chevron_left.png"
+          Back
+.container-middle.left
+  .board-medium.altai-center
+    = render "form", object: @academy_tutor
+.container-bottom.left

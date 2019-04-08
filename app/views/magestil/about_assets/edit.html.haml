@@ -4,7 +4,10 @@
   .breadcrumbs
     .breadcrumbs-box
       .breadcrumbs-item
-        = link_to "Back", magestil_about_assets_path, class: "link small gray"
+        = link_to magestil_about_assets_path, class: "link medium gray" do
+          .icon.left
+            = image_tag "chevron_left.png"
+          Back
 .container-middle.left
   .board-medium.altai-center
     - if params_text

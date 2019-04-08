@@ -1,14 +1,24 @@
 // Form
 
 = form_with model: object, local: true do |f|
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :surname
-    = f.text_field :surname
-  .field
-    %trix-editor{ input: "biography" }
-    = f.hidden_field :biography, id: "biography"
-  .actions
-    = f.submit "Save"
+  %fieldset
+    = legend("Category")
+    = errors(object)
+    .form-row
+      .field.col-medium-2-1
+        = f.label :name
+        .input
+          = f.text_field :name
+      .field.col-medium-2-1
+        = f.label :surname
+        .input
+          = f.text_field :surname
+    .form-row
+      .field
+        .textarea
+          = f.hidden_field :biography, id: "biography"
+          %trix-editor{ input: "biography" }
+
+    .separator.small
+    .form-row
+      = submit_button_misc(f, "Save")

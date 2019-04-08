@@ -1,7 +1,17 @@
 // Index
 
-%h1 Listing magensinus_networks
-
-= render "all", objects: @magensinus_networks
-
-= link_to "New Magensinus network", new_magensinus_network_path
+.container-top
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to magensinus_dashboard_path, class: "link medium gray" do
+          .icon.left
+            = image_tag "chevron_left.png"
+          Back
+  = link_to "New Magensinus network", new_magensinus_network_path, class: "button green extra-large right"
+.container-middle.left
+  .board-medium.altai-center
+    %h1.lighter Magensinus Networks
+    .separator.small
+    = render "all", objects: @magensinus_networks
+.container-bottom.left

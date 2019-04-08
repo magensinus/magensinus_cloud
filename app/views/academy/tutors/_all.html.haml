@@ -7,12 +7,10 @@
       %th Surname
       %th
       %th
-      %th
   %tbody
     - objects.each do |object|
       %tr
         %td= object.name
         %td= object.surname
         %td= link_to "Show", academy_tutor_path(object)
-        %td= link_to "Edit", edit_academy_tutor_path(object)
         %td= link_to "Destroy", academy_tutor_path(object), method: :delete, data: { confirm: "Are you sure?" }

@@ -3,20 +3,16 @@
 %table
   %thead
     %tr
+      %th
       %th Title
-      %th Username
       %th Url
-      %th Position
       %th
       %th
-      %th
-  %tbody
+  %tbody.sortable{ "data-url" => sortable_magestil_networks_path }
     - objects.each do |object|
-      %tr
+      %tr{ id: "magestil_network_#{object.id}" }
+        %td= link_to "Sort Me", "#", class: "handle"
         %td= object.title
-        %td= object.username
         %td= object.url
         %td= object.position
         %td= link_to "Show", magestil_network_path(object)
-        %td= link_to "Edit", edit_magestil_network_path(object)
-        %td= link_to "Destroy", magestil_network_path(object), method: :delete, data: { confirm: "Are you sure?" }

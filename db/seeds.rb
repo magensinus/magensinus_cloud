@@ -166,7 +166,6 @@ Magestil::TermsAndConditions.create(
   meta_description: "",
   meta_url: ""
 )
-=end
 
 # Create Magensinus TermsAndConditions
 Magensinus::TermsAndConditions.create(
@@ -174,3 +173,4 @@ Magensinus::TermsAndConditions.create(
   meta_description: "",
   meta_url: ""
 )
+=end

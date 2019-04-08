@@ -4,7 +4,10 @@
   .breadcrumbs
     .breadcrumbs-box
       .breadcrumbs-item
-        = link_to "Back", journal_root_path, class: "link small gray"
+        = link_to journal_root_path, class: "link medium gray" do
+          .icon.left
+            = image_tag "chevron_left.png"
+          Back
   = link_to "New Academy course", new_journal_article_path, class: "button green extra-large right"
 .container-middle.left
   .board-medium.altai-center

@@ -1,0 +1,11 @@
+// Secondary navigation
+
+.secondary-navigation
+  .secondary-navigation-box
+    .secondary-navigation-item
+      = link_to "Main", magensinus_network_path(@magensinus_network), class: "link large blue wide hover-underline"
+    .secondary-navigation-item
+      = link_to "Thumb", magensinus_network_path(@magensinus_network, thumb: "true"), class: "link large blue wide hover-underline"
+    .separator.small
+    .secondary-navigation-item
+      = link_to "Destroy", magensinus_network_path(@magensinus_network), method: :delete, data: { confirm: "Are you sure?" }, class: "link large red wide hover-underline"

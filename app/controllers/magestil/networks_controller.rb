@@ -60,6 +60,13 @@ module Magestil
       redirect_to magestil_networks_path
     end
 
+    # Sortable
+    # --------
+    def sortable
+      Magestil::Network.sort_position(params[:magestil_network])
+      head :ok
+    end
+
     private
 
     # Magestil network

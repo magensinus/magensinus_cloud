@@ -1,28 +1,33 @@
 // Show
 
-= link_to "Back", academy_tutors_path
-
-%p
-  %b Slug:
-  = @academy_tutor.slug
-%p
-  %b Name:
-  = @academy_tutor.name
-%p
-  %b Surname:
-  = @academy_tutor.surname
-%p
-  %b Biography:
-  = @academy_tutor.biography
--#
-  %p
-    %b Image:
-    = @academy_tutor.image
-  %p
-    %b Image box:
-    = @academy_tutor.image_box
-  %p
-    %b Image caption:
-    = @academy_tutor.image_caption
-
-= link_to "Edit", edit_academy_tutor_path(@academy_tutor)
+.container-top
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to academy_tutors_path, class: "link medium gray" do
+          .icon.left
+            = image_tag "chevron_left.png"
+          Back
+.container-middle.left
+  .board-double-extra-small
+    = render partial: "secondary_navigation"
+  .board-medium
+    - if params_thumb
+      = render "thumb", object: @academy_tutor
+    - elsif params_thumb_eml
+      = render "thumb_eml", object: @academy_tutor
+    - elsif params_thumb_magestil
+      = render "thumb_magestil", object: @academy_tutor
+    - elsif params_thumb_magensinus
+      = render "thumb_magensinus", object: @academy_tutor
+    - elsif params_cover
+      = render "cover", object: @academy_tutor
+    - elsif params_cover_eml
+      = render "cover_eml", object: @academy_tutor
+    - elsif params_cover_magestil
+      = render "cover_magestil", object: @academy_tutor
+    - elsif params_cover_magensinus
+      = render "cover_magensinus", object: @academy_tutor
+    - else
+      = render "form", object: @academy_tutor
+.container-bottom.left

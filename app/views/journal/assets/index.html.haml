@@ -4,7 +4,10 @@
   .breadcrumbs
     .breadcrumbs-box
       .breadcrumbs-item
-        = link_to "Back", journal_article_path(@journal_article), class: "link small gray"
+        = link_to journal_article_path(@journal_article), class: "link medium gray" do
+          .icon.left
+            = image_tag "chevron_left.png"
+          Back
 .container-middle.left
   .board-double-extra-small
     = render partial: "secondary_navigation"

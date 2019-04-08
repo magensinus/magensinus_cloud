@@ -4,7 +4,10 @@
   .breadcrumbs
     .breadcrumbs-box
       .breadcrumbs-item
-        = link_to "Back", journal_articles_path, class: "link small gray"
+        = link_to journal_articles_path, class: "link medium gray" do
+          .icon.left
+            = image_tag "chevron_left.png"
+          Back
 .container-middle.left
   .board-medium.altai-center
     = render "form", object: @journal_article

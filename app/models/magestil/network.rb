@@ -13,6 +13,8 @@ module Magestil
     include Slug
     # Clean caption
     include CleanCaption
+    # Sortable position
+    include SortablePosition
 
     # Uploaders
     # ---------

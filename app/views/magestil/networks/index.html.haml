@@ -1,9 +1,18 @@
 // Index
 
-= link_to "Back", magestil_root_path
+.container-top
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to magestil_dashboard_path, class: "link medium gray" do
+          .icon.left
+            = image_tag "chevron_left.png"
+          Back
 
-%h1 Listing magestil_networks
-
-= render "all", objects: @magestil_networks
-
-= link_to "New Magensinus network", new_magestil_network_path
+  = link_to "New magestil network", new_magestil_network_path, class: "button green extra-large right"
+.container-middle.left
+  .board-medium.altai-center
+    %h1.lighter Magestil Networks
+    .separator.small
+    = render "all", objects: @magestil_networks
+.container-bottom.left

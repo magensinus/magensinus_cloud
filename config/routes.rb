@@ -23,7 +23,11 @@ Rails.application.routes.draw do
     resource :newsletter,           controller: :newsletter
     resource :terms_and_conditions, controller: :terms_and_conditions
     # Plugins
-    resources :networks,            controller: :networks
+    resources :networks,            controller: :networks do
+      collection do
+        patch :sortable
+      end
+    end
     resources :campus_assets,       controller: :campus_assets
     resources :equipment_assets,    controller: :equipment_assets
     resources :about_assets,        controller: :about_assets do
@@ -46,7 +50,11 @@ Rails.application.routes.draw do
     resource :newsletter,           controller: :newsletter
     resource :terms_and_conditions, controller: :terms_and_conditions
     # Plugins
-    resources :networks,      controller: :networks
+    resources :networks,      controller: :networks do
+      collection do
+        patch :sortable
+      end
+    end
     resources :about_assets,  controller: :about_assets do
       collection do
         patch :sortable

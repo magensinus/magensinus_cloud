@@ -4,7 +4,10 @@
   .breadcrumbs
     .breadcrumbs-box
       .breadcrumbs-item
-        = link_to "Back", academy_course_section_path(@academy_course, @academy_section), class: "link small gray"
+        = link_to academy_course_section_path(@academy_course, @academy_section), class: "link medium gray" do
+          .icon.left
+            = image_tag "chevron_left.png"
+          Back
 .container-middle.left
   .board-double-extra-small
     = render partial: "secondary_navigation"

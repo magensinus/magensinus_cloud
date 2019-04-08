@@ -1,9 +1,15 @@
 // Index
 
-= link_to "Back", academy_root_path
-
-%h1 Listing academy_tutors
-
-= render "all", objects: @academy_tutors
-
-= link_to "New Academy tutor", new_academy_tutor_path
+.container-top
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to academy_root_path, class: "link medium gray" do
+          .icon.left
+            = image_tag "chevron_left.png"
+          Back
+  = link_to "New Academy tutor", new_academy_tutor_path, class: "button green extra-large right"
+.container-middle.left
+  .board-medium.altai-center
+    = render "all", objects: @academy_tutors
+.container-bottom.left

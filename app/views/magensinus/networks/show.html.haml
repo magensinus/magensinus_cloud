@@ -1,24 +1,20 @@
-// Show
+// New
 
-= link_to "Back", magensinus_networks_path
+.container-top
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to magensinus_networks_path, class: "link medium gray" do
+          .icon.left
+            = image_tag "chevron_left.png"
+          Back
 
-%p
-  %b Title:
-  = @magensinus_network.title
-%p
-  %b Username:
-  = @magensinus_network.username
-%p
-  %b Url:
-  = @magensinus_network.url
-%p
-  %b Thumb:
-  = @magensinus_network.thumb
-%p
-  %b Thumb box:
-  = @magensinus_network.thumb_box
-%p
-  %b Thumb caption:
-  = @magensinus_network.thumb_caption
-
-= link_to "Edit", edit_magensinus_network_path(@magensinus_network)
+.container-middle.left
+  .board-double-extra-small
+    = render partial: "secondary_navigation"
+  .board-medium
+    - if params_thumb
+      = render partial: "thumb", locals: { object: @magensinus_network }
+    - else
+      = render "form", object: @magensinus_network
+.container-bottom.left

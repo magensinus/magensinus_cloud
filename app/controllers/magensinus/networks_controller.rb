@@ -10,7 +10,7 @@ module Magensinus
     # Index
     # -----
     def index
-      @magensinus_networks = Magensinus::Network.all
+      @magensinus_networks = Magensinus::Network.order(position: :asc)
     end
 
     # Show
@@ -32,7 +32,10 @@ module Magensinus
     # Create
     # ------
     def create
+      order = Magensinus::Network.pluck(:position).compact
       @magensinus_network = Magensinus::Network.new(magensinus_network_params)
+      order << 0
+      @magensinus_network.position = (order.min - 1)
       if @magensinus_network.save
         flash[:notice] = "Successfully created..."
         redirect_to magensinus_networks_path
@@ -58,6 +61,13 @@ module Magensinus
       @magensinus_network.destroy
       flash[:notice] = "Successfully destroyed..."
       redirect_to magensinus_networks_path
+    end
+
+    # Sortable
+    # --------
+    def sortable
+      Magensinus::Network.sort_position(params[:magensinus_network])
+      head :ok
     end
 
     private
