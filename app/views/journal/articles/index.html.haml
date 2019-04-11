@@ -8,11 +8,13 @@
           .icon.left
             = image_tag "icons/chevron_left.png"
           Back
-  = link_to "New Academy course", new_journal_article_path, class: "button green extra-large right"
+  = link_to "New Journal Article", new_journal_article_path, class: "button green extra-large right"
 .container-middle.left
   .board-medium.altai-center
-    %h1.lighter Journal Articles
-    .separator.small
+    .content
+      .content-box
+        .content-item
+          %h3.lighter Journal Articles
     = render "all",   objects: @published_journal_articles
     // = render "unpublished", objects: @unpublished_journal_articles
     // = render "scheduled",   objects: @scheduled_journal_articles

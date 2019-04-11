@@ -1,0 +1,145 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// File:    List
+// Project: Magensinus Cloud
+// -------------------------------------------------------------
+
+$class: "list";
+
+.#{$class} {
+  @include border-box;
+  float: left;
+  width: 100%;
+  .#{$class}-box {
+    @include border-box;
+    float: left;
+    width: 100%;
+    .#{$class}-item {
+      @include border-box;
+      float: left;
+      padding: 8px;
+      width: 100%;
+      .#{$class}-middle {
+        @include border-box;
+        background-color: $white;
+        float: left;
+        padding: 8px;
+        width: 100%;
+      }
+      .#{$class}-left {
+        @include border-box;
+        background-color: $gray-100;
+        float: left;
+        height: 48px;
+        width: 48px;
+        a {
+          .icon {
+            margin: 0;
+          }
+        }
+      }
+      .#{$class}-center {
+        @include border-box;
+        float: left;
+        min-height: 48px;
+        padding: 0 16px;
+        width: calc(100% - 96px);
+        &.no-side {
+          padding: 0 16px 0 8px;
+          width: calc(100% - 48px);
+        }
+        p {
+          line-height: 48px;
+        }
+      }
+      .#{$class}-right {
+        @include border-box;
+        background-color: $blue-100;
+        float: right;
+        height: 48px;
+        width: 48px;
+        a {
+          .icon {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Media Query 240px
+// -------------------------------------------------------------
+@media #{$double-extra-small} {
+  .#{$class} {
+    .#{$class}-box {
+      .#{$class}-item {
+      }
+    }
+  }
+}
+
+// Media Query 360px
+// ------------------------------------------------------------
+@media #{$extra-small} {
+  .#{$class} {
+    .#{$class}-box {
+      .#{$class}-item {
+      }
+    }
+  }
+}
+
+// Media Query 480px
+// -------------------------------------------------------------
+@media #{$small} {
+  .#{$class} {
+    .#{$class}-box {
+      .#{$class}-item {
+      }
+    }
+  }
+}
+
+// Media Query 720px
+// -------------------------------------------------------------
+@media #{$medium} {
+  .#{$class} {
+    .#{$class}-box {
+      .#{$class}-item {
+      }
+    }
+  }
+}
+
+// Media Query 960px
+// -------------------------------------------------------------
+@media #{$large} {
+  .#{$class} {
+    .#{$class}-box {
+      .#{$class}-item {
+      }
+    }
+  }
+}
+
+// Media Query 1440px
+// -------------------------------------------------------------
+@media #{$extra-large} {
+  .#{$class} {
+    .#{$class}-box {
+      .#{$class}-item {
+      }
+    }
+  }
+}
+
+// Media Query 1920px
+// -------------------------------------------------------------
+@media #{$double-extra-large} {
+  .#{$class} {
+    .#{$class}-box {
+      .#{$class}-item {
+      }
+    }
+  }
+}

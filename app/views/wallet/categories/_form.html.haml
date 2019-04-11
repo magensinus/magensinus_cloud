@@ -3,6 +3,8 @@
 = form_with model: object, local: true do |f|
   // = render "lib/components/errors", object: object
   %fieldset
+    = legend("Wallet Category")
+    = errors(object)
     .form-row
       .field
         = f.label :title

@@ -1,16 +1,17 @@
 // All
 
-%table
-  %thead
-    %tr
-      %th Title
-      %th Published
-      %th
-      %th
-  %tbody
+.list
+  .list-box.sortable{ "data-url": sortable_academy_courses_path }
     - objects.each do |object|
-      %tr
-        %td= object.title
-        %td= object.published
-        %td= link_to "Show", academy_course_section_path(parent, object)
-        %td= link_to "Destroy", academy_course_section_path(parent, object), method: :delete, data: { confirm: "Are you sure?" }
+      .list-item.col-medium-1-1{ id: "academy_course_#{object.id}" }
+        .list-middle
+          .list-left
+            = link_to "#", class: "link medium gray pg-12 handle" do
+              .icon.left
+                = image_tag "icons/swap_vert.png"
+          .list-center
+            %p= object.title
+          .list-right
+            = link_to academy_course_section_path(parent, object), class: "link medium gray pg-12" do
+              .icon.left
+                = image_tag "icons/arrow_forward.png"

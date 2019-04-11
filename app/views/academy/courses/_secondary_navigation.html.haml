@@ -60,3 +60,6 @@
     .separator.extra-small
     .secondary-navigation-item
       = link_to "Sections", academy_course_sections_path(@academy_course), class: "link large blue wide hover-underline"
+    .separator.extra-small
+    .secondary-navigation-item
+      = link_to "Destroy", academy_course_path(@academy_course), method: :delete, data: { confirm: "Are you sure?" }, class: "link large red wide hover-underline"

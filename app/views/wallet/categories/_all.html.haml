@@ -1,18 +1,13 @@
 // All
 
-%table
-  %thead
-    %tr
-      %th Title
-      %th Eml
-      %th Magestil
-      %th Magensinus
-      %th
-  %tbody
+.list
+  .list-box.sortable
     - objects.each do |object|
-      %tr
-        %td= object.title
-        %td= object.eml
-        %td= object.magestil
-        %td= object.magensinus
-        %td= link_to "Show", wallet_category_path(object)
+      .list-item.col-medium-1-1
+        .list-middle
+          .list-center.no-side
+            %p= object.title
+          .list-right
+            = link_to wallet_category_path(object), class: "link medium gray pg-12" do
+              .icon.left
+                = image_tag "icons/arrow_forward.png"

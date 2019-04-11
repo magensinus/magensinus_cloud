@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/iigethr/mies.git
-  revision: 7a1e31d3c9424c37fc3336c1db0cd95b4e23c1c9
+  revision: 3a8e63a49f6fd880e240b7946721be765c23dd64
   specs:
     mies (0.0.1.alpha)
       autoprefixer-rails (~> 9.0)
@@ -67,7 +67,7 @@ GEM
       coderay (>= 1.0.0)
       erubi (>= 1.0.0)
       rack (>= 0.9.0)
-    bindex (0.6.0)
+    bindex (0.7.0)
     binding_of_caller (0.8.0)
       debug_inspector (>= 0.0.1)
     builder (3.2.3)

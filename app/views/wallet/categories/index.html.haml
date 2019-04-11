@@ -11,8 +11,10 @@
   = link_to "New Wallet category", new_wallet_category_path, class: "button green extra-large right"
 .container-middle.left
   .board-medium.altai-center
-    %h1.lighter Wallet Categories
-    .separator.small
+    .content
+      .content-box
+        .content-item
+          %h3.lighter Wallet Categories
     = render "all", objects: @wallet_categories
     // = render "unpublished", objects: @unpublished_journal_articles
     // = render "scheduled",   objects: @scheduled_journal_articles

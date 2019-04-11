@@ -1,14 +1,17 @@
 // All
 
-%table
-  %thead
-    %tr
-      %th
-      %th Caption
-      %th
-  %tbody.sortable{ "data-url" => sortable_wallet_category_assets_path(parent) }
+.list
+  .list-box.sortable{ "data-url" => sortable_wallet_category_assets_path(parent) }
     - objects.each do |object|
-      %tr{ id: "wallet_asset_#{object.id}" }
-        %td= link_to "Sort Me", "#", class: "off link gray-light left handle"
-        %td= object.document_caption
-        %td= link_to "Show", wallet_category_asset_path(parent, object, document: true)
+      .list-item.col-medium-1-1{ id: "wallet_asset_#{object.id}" }
+        .list-middle
+          .list-left
+            = link_to "#", class: "link medium gray pg-12 handle" do
+              .icon.left
+                = image_tag "icons/swap_vert.png"
+          .list-center
+            %p= object.document_caption
+          .list-right
+            = link_to wallet_category_asset_path(parent, object, document: true), class: "link medium gray pg-12" do
+              .icon.left
+                = image_tag "icons/arrow_forward.png"

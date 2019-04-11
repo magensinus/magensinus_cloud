@@ -1,16 +1,15 @@
 // All
 
-%table
-  %thead
-    %tr
-      %th Name
-      %th Surname
-      %th
-      %th
-  %tbody
+.list
+  .list-box.sortable
     - objects.each do |object|
-      %tr
-        %td= object.name
-        %td= object.surname
-        %td= link_to "Show", academy_tutor_path(object)
-        %td= link_to "Destroy", academy_tutor_path(object), method: :delete, data: { confirm: "Are you sure?" }
+      .list-item.col-medium-2-1
+        .list-middle
+          .list-center.no-side
+            %p
+              = object.name
+              = object.surname
+          .list-right
+            = link_to academy_tutor_path(object), class: "link medium gray pg-12" do
+              .icon.left
+                = image_tag "icons/arrow_forward.png"

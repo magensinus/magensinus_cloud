@@ -33,9 +33,9 @@ module Academy
     def index
       @academy_courses =
                           if params[:category_id]
-                            @academy_category.courses.all_by_group.includes(:category)
+                            @academy_category.courses.all_by_group
                           else
-                            Academy::Course.all_by_group.includes(:category)
+                            Academy::Course.all_by_group
                           end
 
       @scheduled_academy_courses   = Academy::Course.scheduled.includes(:category)

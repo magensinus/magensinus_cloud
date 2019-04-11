@@ -1,18 +1,17 @@
 // All
 
-%table
-  %thead
-    %tr
-      %th
-      %th Title
-      %th Url
-      %th
-      %th
-  %tbody.sortable{ "data-url" => sortable_magensinus_networks_path }
+.list
+  .list-box.sortable{ "data-url": sortable_magensinus_networks_path }
     - objects.each do |object|
-      %tr{ id: "magensinus_network_#{object.id}" }
-        %td= link_to "Sort Me", "#", class: "handle"
-        %td= object.title
-        %td= object.url
-        %td= object.position
-        %td= link_to "Show", magensinus_network_path(object)
+      .list-item.col-medium-2-1{ id: "magensinus_network_#{object.id}" }
+        .list-middle
+          .list-left
+            = link_to "#", class: "link medium gray pg-12 handle" do
+              .icon.left
+                = image_tag "icons/swap_vert.png"
+          .list-center
+            %p= object.title
+          .list-right
+            = link_to magensinus_network_path(object), class: "link medium gray pg-12" do
+              .icon.left
+                = image_tag "icons/arrow_forward.png"

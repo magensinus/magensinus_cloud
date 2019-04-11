@@ -8,8 +8,14 @@
           .icon.left
             = image_tag "icons/chevron_left.png"
           Back
-  = link_to "New Wallet asset", new_wallet_category_asset_path(@wallet_category, document: true), class: "button green extra-large right"
+  = link_to "New Document", new_wallet_category_asset_path(@wallet_category, document: true), class: "button green extra-large right"
 .container-middle.left
   .board-medium.altai-center
+    .content
+      .content-box
+        .content-item
+          %h3.lighter
+            = @wallet_category.title
+            Documents
     = render "all", parent: @wallet_category, objects: @wallet_assets
 .container-bottom.left

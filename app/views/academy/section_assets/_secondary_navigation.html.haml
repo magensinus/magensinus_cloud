@@ -3,8 +3,6 @@
 .secondary-navigation
   .secondary-navigation-box
     .secondary-navigation-item
-      %h3 Media Assets
-    .secondary-navigation-item
       = link_to "Toggle Content", "#", class: "off link large blue wide toggle-trigger"
     .separator.extra-small
     .secondary-navigation-item
@@ -13,5 +11,5 @@
       = link_to "Image", new_academy_course_section_section_asset_path(@academy_course, @academy_section, image: "true"), class: "link large blue"
     .secondary-navigation-item
       = link_to "Video", new_academy_course_section_section_asset_path(@academy_course, @academy_section, video: "true"), class: "link large blue"
-    .secondary-navigation-item
-      = link_to "Document", new_academy_course_section_section_asset_path(@academy_course, @academy_section, document: "true"), class: "link large blue"
+    // .secondary-navigation-item
+    //   = link_to "Document", new_academy_course_section_section_asset_path(@academy_course, @academy_section, document: "true"), class: "link large blue"
