@@ -1,7 +1,6 @@
 // Form
 
 - if tutors.presence && params[:action] == "show" || params[:action] == "edit" || params[:action] == "update"
-
   = form_with model: object, local: true, html: { autocomplete: false } do |f|
     %fieldset
       = legend("Course Tutors")
@@ -14,7 +13,6 @@
               = check_box_tag "academy_course[tutor_ids][]", tutor.id, object.tutors.include?(tutor), id: "academy_course_tutor_ids_#{tutor.id}"
               = f.label :tutor, tutor.name
       = submit_button(f, "Save")
-
 - else
   .blankslate
     .blankslate-box

@@ -10,7 +10,10 @@
           Back
 .container-middle.left
   .board-double-extra-small
-    = render partial: "secondary_navigation"
+    = render "secondary_navigation", objects: @academy_section_assets
   .board-medium
-    = render "all", grandparent: @academy_course, parent: @academy_section, objects: @academy_section_assets
+    - if @academy_section_assets.presence
+      = render "all", grandparent: @academy_course, parent: @academy_section, objects: @academy_section_assets
+    - else
+      = blankslate
 .container-bottom.left

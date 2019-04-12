@@ -2,8 +2,8 @@
 
 .content
   .content-box.sortable{ "data-url" => sortable_magestil_about_assets_path }
-    .content-item
-      %h3.gray-700-cl.sans.lighter Magestil About Assets
+    // .content-item
+    //   %h3.gray-700-cl.sans.lighter Magestil About Assets
     - objects.each do |object|
       .content-item{ id: "magestil_about_asset_#{object.id}" }
         .content-top.white-bg

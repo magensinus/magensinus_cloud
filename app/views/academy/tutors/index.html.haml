@@ -15,5 +15,8 @@
       .content-box
         .content-item
           %h3.lighter Tutors
-    = render "all", objects: @academy_tutors
+    - if @academy_tutors.presence
+      = render "all", objects: @academy_tutors
+    - else
+      = blankslate
 .container-bottom.left

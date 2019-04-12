@@ -50,6 +50,10 @@ $class: "list";
         p {
           line-height: 48px;
         }
+        img {
+          margin: 0 4px 0 0;
+          max-height: 48px;
+        }
       }
       .#{$class}-right {
         @include border-box;

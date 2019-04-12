@@ -10,7 +10,7 @@
           Back
 .container-middle.left
   .board-double-extra-small
-    = render partial: "secondary_navigation"
+    = render partial: "secondary_navigation", locals: { objects: @journal_assets }
   .board-medium
     = render "all", parent: @journal_article, objects: @journal_assets
 .container-bottom.left

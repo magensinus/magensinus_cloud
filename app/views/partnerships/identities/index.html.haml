@@ -1,7 +1,22 @@
 // Index
 
-%h1 Listing partnerships_identities
-
-= render "all", objects: @partnerships_identities
-
-= link_to "New Identity", new_partnerships_identity_path
+.container-top
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to partnerships_root_path, class: "link medium gray" do
+          .icon.left
+            = image_tag "icons/chevron_left.png"
+          Back
+  = link_to "New Partner", new_partnerships_identity_path, class: "button green extra-large right"
+.container-middle.left
+  .board-medium.altai-center
+    .content
+      .content-box
+        .content-item
+          %h3.lighter Partners
+    = render "all", objects: @partnerships_identities
+    // = render "unpublished", objects: @unpublished_journal_articles
+    // = render "scheduled",   objects: @scheduled_journal_articles
+    // = render "published",   objects: @published_journal_articles
+.container-bottom.left

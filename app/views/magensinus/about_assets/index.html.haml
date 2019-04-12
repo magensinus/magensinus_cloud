@@ -8,10 +8,9 @@
           .icon.left
             = image_tag "icons/chevron_left.png"
           Back
-
 .container-middle.left
   .board-double-extra-small
-    = render partial: "secondary_navigation"
+    = render partial: "secondary_navigation", locals: { objects: @magensinus_about_assets }
   .board-medium
     = render "all", objects: @magensinus_about_assets
 .container-bottom.left

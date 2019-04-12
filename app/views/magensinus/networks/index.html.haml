@@ -11,7 +11,9 @@
   = link_to "New Magensinus network", new_magensinus_network_path, class: "button green extra-large right"
 .container-middle.left
   .board-medium.altai-center
-    %h1.lighter Magensinus Networks
-    .separator.small
+    .content
+      .content-box
+        .content-item
+          %h3.lighter Magensinus Networks
     = render "all", objects: @magensinus_networks
 .container-bottom.left

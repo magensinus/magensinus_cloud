@@ -12,7 +12,7 @@ module Academy
     # Index
     # -----
     def index
-      @academy_sections = @academy_course.sections.all
+      @academy_sections = @academy_course.sections.order(position: :asc)
     end
 
     # Show
@@ -53,13 +53,23 @@ module Academy
     # Create
     # ------
     def create
+      order =  @academy_course.sections.pluck(:position).compact
       @academy_section = @academy_course.sections.new(academy_section_params)
+      order << 0
+      @academy_section.position = (order.min - 1)
       if @academy_section.save
         flash[:notice] = "Successfully created..."
         redirect_to academy_course_section_path(@academy_course, @academy_section)
       else
         render :new
       end
+    end
+
+    # Sortable
+    # --------
+    def sortable
+      @academy_course.sections.sort_position(params[:academy_section])
+      head :ok
     end
 
     private

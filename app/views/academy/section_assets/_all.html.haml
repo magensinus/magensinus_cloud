@@ -2,8 +2,9 @@
 
 .content
   .content-box.sortable{ "data-url" => sortable_academy_course_section_section_assets_path(grandparent, parent) }
-    .content-item
-      %h3.gray-700-cl.sans.lighter= parent.title
+    // .content-item
+    //   %h3.gray-700-cl.sans.lighter= parent.title
+    //   .separator.extra-small
     - objects.each do |object|
       .content-item{ id: "academy_section_asset_#{object.id}" }
         .content-top.white-bg

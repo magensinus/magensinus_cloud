@@ -8,6 +8,7 @@
           .icon.left
             = image_tag "icons/chevron_left.png"
           Back
+  = link_to "Sections", academy_course_sections_path(@academy_course), class: "button blue extra-large right"
 .container-middle.left
   .board-double-extra-small
     = render partial: "secondary_navigation"
@@ -64,5 +65,4 @@
       = render "tutors",object: @academy_course, categories: @academy_categories, tutors: @academy_tutors
     - else
       = render "form", object: @academy_course, categories: @academy_categories, tutors: @academy_tutors
-
 .container-bottom.left

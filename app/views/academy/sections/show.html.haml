@@ -8,7 +8,7 @@
           .icon.left
             = image_tag "icons/chevron_left.png"
           Back
-  = link_to "Section Assets", academy_course_section_section_assets_path(@academy_course, @academy_section), class: "button green extra-large right"
+  = link_to "Section Assets", academy_course_section_section_assets_path(@academy_course, @academy_section), class: "button blue extra-large right"
 .container-middle.left
   .board-medium.altai-center
     = render partial: "form", locals: { parent: @academy_course, object: @academy_section }

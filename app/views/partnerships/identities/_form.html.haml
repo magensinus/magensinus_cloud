@@ -3,41 +3,40 @@
 = form_with model: object, local: true do |f|
   = render "lib/components/errors", object: object
   %fieldset
+    = legend("Partner")
+    = errors(object)
     .form-row
       .field
         = f.label :title
         .input
           = f.text_field :title
-    .form-row
-      .field
-        .textarea
-          = f.hidden_field :description, id: "description"
-          %trix-editor{ input: "description" }
+    // .form-row
+    //   .field
+    //     .textarea
+    //       = f.hidden_field :description, id: "description"
+    //       %trix-editor{ input: "description" }
     .form-row
       .field
         = f.label :url
         .input
           = f.text_field :url
     .form-row
-      .field
-        .checkbox
-          = f.check_box :published
-          = f.label :published
-    .form-row
-      .field
+      .field.col-medium-3-1
         .checkbox
           = f.check_box :eml
           = f.label :eml
-      .field
+      .field.col-medium-3-1
         .checkbox
           = f.check_box :magestil
           = f.label :magestil
-      .field
+      .field.col-medium-3-1
         .checkbox
           = f.check_box :magensinus
           = f.label :magensinus
     .separator.small
     .form-row
-      .field
-        .submit
-          = f.button "Save", type: :submit, data: { disable_with: "Please wait a moment..." }, class: "button double-extra-large green wide"
+      = submit_button_misc(f, "Save")
+      .field.col-medium-2-1
+        .checkbox
+          = f.check_box :published
+          = f.label :published

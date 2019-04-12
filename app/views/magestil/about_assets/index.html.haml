@@ -10,7 +10,10 @@
           Back
 .container-middle.left
   .board-double-extra-small
-    = render partial: "secondary_navigation"
+    = render "secondary_navigation", objects: @magestil_about_assets
   .board-medium
-    = render "all", objects: @magestil_about_assets
+    - if @magestil_about_assets.presence
+      = render "all", objects: @magestil_about_assets
+    - else
+      = blankslate
 .container-bottom.left

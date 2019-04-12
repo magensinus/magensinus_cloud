@@ -1,18 +1,18 @@
 // All
 
-%table
-  %thead
-    %tr
-      %th
-      %th Position
-      %th
-      %th
-  %tbody.sortable{ "data-url" => sortable_magestil_equipment_assets_path }
+.list
+  .list-box.sortable{ "data-url" => sortable_magestil_equipment_assets_path }
     - objects.each do |object|
-      %tr{ id: "magestil_equipment_asset_#{object.id}" }
-        %td= link_to "Sort Me", "#", class: "handle"
-        %td
-          = object.image_caption
-          = object.position
-        %td= link_to "Show", magestil_equipment_asset_path(object, image: true)
-        %td= link_to "Destroy", magestil_equipment_asset_path(object), method: :delete, data: { confirm: "Are you sure?" }
+      .list-item.col-medium-1-1{ id: "magestil_equipment_asset_#{object.id}" }
+        .list-middle
+          .list-left
+            = link_to "#", class: "link medium gray pg-12 handle" do
+              .icon.left
+                = image_tag "icons/swap_vert.png"
+          .list-center
+            = image_tag object.image_box_url
+            %p= object.image_caption
+          .list-right
+            = link_to magestil_equipment_asset_path(object, image: true), class: "link medium gray pg-12" do
+              .icon.left
+                = image_tag "icons/arrow_forward.png"

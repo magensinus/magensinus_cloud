@@ -3,14 +3,17 @@
 = form_with model: [parent, object], url: academy_section_form_url, local: true do |f|
   = hidden_field :academy_course_id, value: parent.id
   %fieldset
+    = legend("Section")
+    = errors(object)
     .form-row
       .field
         = f.label :title
         .input
           = f.text_field :title
+    .separator.small
     .form-row
-      .field
+      = submit_button_misc(f, "Save")
+      .field.col-medium-2-1
         .checkbox
           = f.check_box :published
           = f.label :published
-    = submit_button(f, "Save")

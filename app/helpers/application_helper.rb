@@ -112,4 +112,9 @@ module ApplicationHelper
       render partial: "#{path}/text", locals: { object: object }
     end
   end
+
+  # Blankslate
+  def blankslate
+    render "lib/components/blankslate"
+  end
 end

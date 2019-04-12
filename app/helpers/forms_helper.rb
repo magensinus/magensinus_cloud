@@ -35,4 +35,11 @@ module FormsHelper
       end
     end
   end
+
+  # Reference
+  def reference_size(label = "")
+    tag.p class: "reference" do
+      "Size: #{label}"
+    end
+  end
 end

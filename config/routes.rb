@@ -109,6 +109,9 @@ Rails.application.routes.draw do
         patch :sortable
       end
       resources :sections, controller: :sections do
+        collection do
+          patch :sortable
+        end
         resources :section_assets, controller: :section_assets do
           collection do
             patch :sortable

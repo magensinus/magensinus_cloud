@@ -1,9 +1,9 @@
 // All
 
 .list
-  .list-box.sortable{ "data-url": sortable_academy_courses_path }
+  .list-box.sortable{ "data-url": sortable_academy_course_sections_path(parent) }
     - objects.each do |object|
-      .list-item.col-medium-1-1{ id: "academy_course_#{object.id}" }
+      .list-item.col-medium-1-1{ id: "academy_section_#{object.id}" }
         .list-middle
           .list-left
             = link_to "#", class: "link medium gray pg-12 handle" do
