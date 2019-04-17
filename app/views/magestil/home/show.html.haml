@@ -1,19 +1,13 @@
 // Show
 
 .container-top
-  .breadcrumbs
-    .breadcrumbs-box
-      .breadcrumbs-item
-        = link_to magestil_dashboard_path, class: "link medium gray" do
-          .icon.left
-            = image_tag "icons/chevron_left.png"
-          Back
+  = render "lib/components/breadcrumbs", path: magestil_dashboard_path
 .container-middle.left
   .board-double-extra-small
     = render partial: "secondary_navigation"
   .board-medium
     - if params_image
-      = render partial: "image", locals: { object: @magestil_home }
+      = assets_form_renderer(@magestil_home, "2240 x 1080")
     - else
-      = render partial: "form", locals: { object: @magestil_home }
+      = render "form", object: @magestil_home
 .container-bottom.left

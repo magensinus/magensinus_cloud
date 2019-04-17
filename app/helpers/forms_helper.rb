@@ -15,6 +15,22 @@ module FormsHelper
     render "lib/components/errors", object: object if object.errors.any?
   end
 
+  # Assets form renderer
+  def assets_form_renderer(object = "", size = "", url = "")
+    path = "lib/components/assets/form"
+    if params_image
+      render "#{path}/image", object: object, size: size, url: url
+    elsif params_thumb
+      render "#{path}/thumb", object: object, size: size, url: url
+    elsif params_video
+      render "#{path}/video", object: object, url: url
+    elsif params_text
+      render "#{path}/text", object: object, url: url
+    else
+      "jhhfdh"
+    end
+  end
+
   # Submit button
   def submit_button(f = "", label = "")
     haml_tag :div, class: "separator small"
@@ -39,7 +55,7 @@ module FormsHelper
   # Reference
   def reference_size(label = "")
     tag.p class: "reference" do
-      "Size: #{label}"
+      ("<strong>Size:</strong> #{label}").html_safe
     end
   end
 end

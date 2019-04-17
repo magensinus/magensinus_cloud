@@ -2,7 +2,7 @@
 
 = form_with model: object, url: magestil_network_form_url, local: true do |f|
   %fieldset
-    = legend("Magestil Network")
+    = legend("#{controller_name.capitalize}")
     = errors(object)
     .form-row
       .field.col-medium-2-1

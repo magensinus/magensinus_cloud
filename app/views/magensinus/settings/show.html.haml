@@ -1,16 +1,10 @@
 // Show
 
 .container-top
-  .breadcrumbs
-    .breadcrumbs-box
-      .breadcrumbs-item
-        = link_to magensinus_dashboard_path, class: "link medium gray" do
-          .icon.left
-            = image_tag "icons/chevron_left.png"
-          Back
+  = render "lib/components/breadcrumbs", path: magensinus_dashboard_path
 .container-middle.left
   .board-double-extra-small
     = render partial: "secondary_navigation"
   .board-medium
-    = render partial: "form", locals: { object: @magensinus_settings }
+    = render "form", object: @magensinus_settings
 .container-bottom.left

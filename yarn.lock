@@ -24,6 +24,11 @@ altai_sortable@^1.0.5:
     jquery "^3.0"
     jquery-ui "^1.0"
 
+featherlight@^1.7.13:
+  version "1.7.13"
+  resolved "https://registry.yarnpkg.com/featherlight/-/featherlight-1.7.13.tgz#500f53204ba7b5bb4650370dd94ae5965c556e94"
+  integrity sha1-UA9TIEuntbtGUDcN2UrlllxVbpQ=
+
 jquery-ui@^1.0, jquery-ui@^1.0.0:
   version "1.12.1"
   resolved "https://registry.yarnpkg.com/jquery-ui/-/jquery-ui-1.12.1.tgz#bcb4045c8dd0539c134bc1488cdd3e768a7a9e51"

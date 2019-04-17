@@ -21,6 +21,8 @@
 //= require jquery-ui/ui/data
 //= require jquery-ui/ui/scroll-parent
 //= require jquery-ui/ui/widgets/sortable
+//= require featherlight/src/featherlight
+//= require featherlight/src/featherlight.gallery
 //= require altai_off/dist/altai_off
 //= require altai_sortable/dist/altai_sortable
 //= require altai_center/dist/altai_center

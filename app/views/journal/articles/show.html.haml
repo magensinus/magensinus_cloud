@@ -1,33 +1,13 @@
 // Show
 
 .container-top
-  .breadcrumbs
-    .breadcrumbs-box
-      .breadcrumbs-item
-        = link_to journal_articles_path, class: "link medium gray" do
-          .icon.left
-            = image_tag "icons/chevron_left.png"
-          Back
+  = render "lib/components/breadcrumbs", path: journal_articles_path
 .container-middle.left
   .board-double-extra-small
     = render partial: "secondary_navigation"
   .board-medium
     - if params_thumb
-      = render "thumb", object: @journal_article
-    - elsif params_thumb_eml
-      = render "thumb_eml", object: @journal_article
-    - elsif params_thumb_magestil
-      = render "thumb_magestil", object: @journal_article
-    - elsif params_thumb_magensinus
-      = render "thumb_magensinus", object: @journal_article
-    - elsif params_cover
-      = render "cover", object: @journal_article
-    - elsif params_cover_eml
-      = render "cover_eml", object: @journal_article
-    - elsif params_cover_magestil
-      = render "cover_magestil", object: @journal_article
-    - elsif params_cover_magensinus
-      = render "cover_magensinus", object: @journal_article
+      = assets_form_renderer(@journal_article, "2240 x 1080", nil)
     - else
       = render "form", object: @journal_article
 .container-bottom.left

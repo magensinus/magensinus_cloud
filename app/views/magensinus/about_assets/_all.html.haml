@@ -1,9 +1,9 @@
 // All
 
 .content
-  .content-box.sortable{ "data-url" => sortable_magensinus_about_assets_path }
+  .content-box.sortable{ "data-url": sortable_magensinus_about_assets_path }
     .content-item
-      %h3.gray-700-cl.sans.lighter Magensinus About Assets
+      %h3.gray-700-cl.sans.lighter About Assets
     - objects.each do |object|
       .content-item{ id: "magensinus_about_asset_#{object.id}" }
         .content-top.white-bg
@@ -15,4 +15,4 @@
           .content-middle.white-bg
             = assets_renderer(object)
           .content-bottom.white-bg
-            = render partial: "magensinus/about_assets/content_nav", locals: { object: object }
+            = render "magensinus/about_assets/content_nav", object: object

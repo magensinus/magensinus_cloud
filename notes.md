@@ -1,6 +1,3 @@
-Lorraine Thomas
-technicalbusinesssuport@hackney.gov.uk
-
 # Notes
 
 ### Precompile

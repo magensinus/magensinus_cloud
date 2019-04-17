@@ -1,16 +1,13 @@
 // Index
 
 .container-top
-  .breadcrumbs
-    .breadcrumbs-box
-      .breadcrumbs-item
-        = link_to magensinus_about_path, class: "link medium gray" do
-          .icon.left
-            = image_tag "icons/chevron_left.png"
-          Back
+  = render "lib/components/breadcrumbs", path: magensinus_about_path
 .container-middle.left
   .board-double-extra-small
-    = render partial: "secondary_navigation", locals: { objects: @magensinus_about_assets }
+    = render "secondary_navigation", objects: @magensinus_about_assets
   .board-medium
-    = render "all", objects: @magensinus_about_assets
+    - if @magensinus_about_assets.presence
+      = render "all", objects: @magensinus_about_assets
+    - else
+      = blankslate
 .container-bottom.left

@@ -1,19 +1,13 @@
 // New
 
 .container-top
-  .breadcrumbs
-    .breadcrumbs-box
-      .breadcrumbs-item
-        = link_to journal_article_assets_path(@journal_article), class: "link medium gray" do
-          .icon.left
-            = image_tag "icons/chevron_left.png"
-          Back
+  = render "lib/components/breadcrumbs", path: journal_article_assets_path(@journal_article)
 .container-middle.left
   .board-medium.altai-center
     - if params_text
-      = render "text", object: @journal_asset
+      = assets_form_renderer(@journal_asset, nil, journal_asset_form_url)
     - if params_image
-      = render "image", object: @journal_asset
+      = assets_form_renderer(@journal_asset, "change size", journal_asset_form_url)
     - if params_video
-      = render "video", object: @journal_asset
+      = assets_form_renderer(@journal_asset, nil, journal_asset_form_url)
 .container-bottom.left

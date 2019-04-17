@@ -1,0 +1,29 @@
+// Image
+
+= form_with model: object, url: url, local: true, html: { autocomplete: false } do |form|
+  = form.hidden_field :image, value: true
+  = form.hidden_field :image_box_cache
+  %fieldset
+    = legend("Image")
+    = errors(object)
+    - if object.image_box.presence
+      .form-row
+        .field.col-medium-2-1
+          = link_to "View Image", object.image_box_url, target: :blank, "data-featherlight": "#{object.image_box_url}", class: "button extra-large white wide"
+        .field.col-medium-2-1
+          .checkbox
+            = form.check_box :remove_image_box
+            = form.label :remove_image
+    .form-row
+      .field
+        = form.label :image
+        .file
+          = form.file_field :image_box, id: "image_box"
+          = form.label :upload_image, for: "image_box", class: "button extra-large blue wide"
+          = reference_size(size)
+    .form-row
+      .field
+        = form.label :image_caption
+        .input
+          = form.text_field :image_caption
+    = submit_button(form, "Save")

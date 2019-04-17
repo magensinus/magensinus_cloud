@@ -1,13 +1,7 @@
 // Index
 
 .container-top
-  .breadcrumbs
-    .breadcrumbs-box
-      .breadcrumbs-item
-        = link_to magestil_about_path, class: "link medium gray" do
-          .icon.left
-            = image_tag "icons/chevron_left.png"
-          Back
+  = render "lib/components/breadcrumbs", path: magestil_about_path
 .container-middle.left
   .board-double-extra-small
     = render "secondary_navigation", objects: @magestil_about_assets

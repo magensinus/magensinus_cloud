@@ -1,0 +1,23 @@
+// Video
+
+= form_with model: object, url: url, local: true, html: { autocomplete: false } do |form|
+  = form.hidden_field :video, value: true
+  %fieldset
+    = legend("Video")
+    = errors(object)
+    .form-row
+      - if params_new || params_create
+        .field.col-medium-2-1
+          = form.label :url
+          .input
+            = form.text_field :video_box
+        .field.col-medium-2-1
+          = form.label :service
+          .select
+            = form.select :video_service, %w[vimeo youtube], selected: "youtube"
+    .form-row
+      .field
+        = form.label :caption
+        .input
+          = form.text_field :video_caption
+    = submit_button(form, "Save")

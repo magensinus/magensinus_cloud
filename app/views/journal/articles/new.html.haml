@@ -1,14 +1,11 @@
-// New
+// Show
 
 .container-top
-  .breadcrumbs
-    .breadcrumbs-box
-      .breadcrumbs-item
-        = link_to journal_articles_path, class: "link medium gray" do
-          .icon.left
-            = image_tag "icons/chevron_left.png"
-          Back
+  = render "lib/components/breadcrumbs", path: journal_articles_path
 .container-middle.left
   .board-medium.altai-center
-    = render "form", object: @journal_article
+    - if params_thumb
+      = assets_form_renderer(@journal_article, "2240 x 1080", nil)
+    - else
+      = render "form", object: @journal_article
 .container-bottom.left

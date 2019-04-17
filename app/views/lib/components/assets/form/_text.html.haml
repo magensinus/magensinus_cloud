@@ -1,0 +1,13 @@
+// Text
+
+= form_with model: object, url: url, local: true, html: { autocomplete: false } do |form|
+  = form.hidden_field :text, value: true
+  %fieldset
+    = legend("Text")
+    = errors(object)
+    .form-row
+      .field
+        .textarea
+          = form.hidden_field :text_box, id: "text_box"
+          %trix-editor{ input: "text_box" }
+    = submit_button(form, "Save")

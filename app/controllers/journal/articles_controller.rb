@@ -12,6 +12,8 @@ module Journal
     include ImageParams
     # Document
     include DocumentParams
+    # Application Helper
+    include  ApplicationHelper
 
     # Callbacks
     # ---------
@@ -21,10 +23,12 @@ module Journal
     # Index
     # -----
     def index
-      @journal_articles             = Journal::Article.order(created_at: :asc)
-      @scheduled_journal_articles   = Journal::Article.scheduled
-      @published_journal_articles   = Journal::Article.published
-      @unpublished_journal_articles = Journal::Article.unpublished
+      @journal_articles =
+        if params_unpublished
+          Journal::Article.unpublished.order(created_at: :asc)
+        else
+          Journal::Article.published.order(created_at: :asc)
+        end
     end
 
     # Show

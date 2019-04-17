@@ -2,12 +2,15 @@
 
 .list
   .list-box
-    - @journal_articles.each do |journal_article|
-      .list-item.col-medium-1-1
-        .list-middle
-          .list-center.no-side
-            %p= journal_article.title
-          .list-right
-            = link_to journal_article_path(journal_article), class: "link medium gray pg-12" do
-              .icon.left
-                = image_tag "icons/arrow_forward.png"
+    - if @journal_articles.presence
+      - @journal_articles.each do |journal_article|
+        .list-item.col-medium-1-1
+          .list-middle
+            .list-center.no-side
+              %p= journal_article.title
+            .list-right
+              = link_to journal_article_path(journal_article), class: "link medium gray pg-12" do
+                .icon.left
+                  = image_tag "icons/arrow_forward.png"
+    - else
+      = blankslate

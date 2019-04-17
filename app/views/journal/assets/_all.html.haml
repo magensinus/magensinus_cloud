@@ -4,15 +4,18 @@
   .content-box.sortable{ "data-url": sortable_journal_article_assets_path(parent) }
     .content-item
       %h3.gray-700-cl.sans.lighter= parent.title
-    - objects.each do |object|
-      .content-item{ id: "journal_asset_#{object.id}" }
-        .content-top.white-bg
-          = link_to "Sort Me", "#", class: "off link gray-light left handle"
-          %p.small.right.auto.blue-300-cl
-            %strong Type:
-            = asset_type(object)
-        .toggle-box.wide.left
-          .content-middle.white-bg
-            = assets_renderer(object)
-          .content-bottom.white-bg
-            = render partial: "journal/assets/content_nav", locals: { parent: parent, object: object }
+    - if objects.presence
+      - objects.each do |object|
+        .content-item{ id: "journal_asset_#{object.id}" }
+          .content-top.white-bg
+            = link_to "Sort Me", "#", class: "off link gray-light left handle"
+            %p.small.right.auto.blue-300-cl
+              %strong Type:
+              = asset_type(object)
+          .toggle-box.wide.left
+            .content-middle.white-bg
+              = assets_renderer(object)
+            .content-bottom.white-bg
+              = render partial: "journal/assets/content_nav", locals: { parent: parent, object: object }
+    - else
+      = blankslate

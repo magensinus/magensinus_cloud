@@ -9,9 +9,16 @@
 // Load Mies
 @import "mies";
 
+// Vendor
+// ------------------------------------------------------------
+@import "featherlight/src/featherlight";
+@import "featherlight/src/featherlight.gallery";
+
 // Global
 // ------------------------------------------------------------
-@import "custom/global/**/*";
+@import "custom/global/base";
+@import "custom/global/universal";
+@import "custom/global/roles";
 
 // Components
 // ------------------------------------------------------------

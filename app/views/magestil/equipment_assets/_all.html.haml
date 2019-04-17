@@ -1,7 +1,9 @@
 // All
 
 .list
-  .list-box.sortable{ "data-url" => sortable_magestil_equipment_assets_path }
+  .list-box.sortable{ "data-url": sortable_magestil_equipment_assets_path }
+    .list-item
+      %h3.gray-700-cl.sans.lighter Equipment Gallery
     - objects.each do |object|
       .list-item.col-medium-1-1{ id: "magestil_equipment_asset_#{object.id}" }
         .list-middle

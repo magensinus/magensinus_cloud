@@ -1,21 +1,13 @@
 // Edit
 
 .container-top
-  .breadcrumbs
-    .breadcrumbs-box
-      .breadcrumbs-item
-        = link_to magestil_about_assets_path, class: "link medium gray" do
-          .icon.left
-            = image_tag "icons/chevron_left.png"
-          Back
+  = render "lib/components/breadcrumbs", path: magestil_about_assets_path
 .container-middle.left
   .board-medium.altai-center
     - if params_text
-      = render "text", object: @magestil_about_asset
+      = assets_form_renderer(@magestil_about_asset, nil, magestil_about_asset_form_url)
     - elsif params_image
-      = render "image", object: @magestil_about_asset
+      = assets_form_renderer(@magestil_about_asset, "2240 x 1080", magestil_about_asset_form_url)
     - elsif params_video
-      = render "video", object: @magestil_about_asset
-    - else
-      = render "text", object: @magestil_about_asset
+      = assets_form_renderer(@magestil_about_asset, nil, magestil_about_asset_form_url)
 .container-bottom.left

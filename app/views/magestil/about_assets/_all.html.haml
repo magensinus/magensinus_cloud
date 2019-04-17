@@ -1,9 +1,9 @@
 // All
 
 .content
-  .content-box.sortable{ "data-url" => sortable_magestil_about_assets_path }
-    // .content-item
-    //   %h3.gray-700-cl.sans.lighter Magestil About Assets
+  .content-box.sortable{ "data-url": sortable_magestil_about_assets_path }
+    .content-item
+      %h3.gray-700-cl.sans.lighter About Assets
     - objects.each do |object|
       .content-item{ id: "magestil_about_asset_#{object.id}" }
         .content-top.white-bg
@@ -15,4 +15,4 @@
           .content-middle.white-bg
             = assets_renderer(object)
           .content-bottom.white-bg
-            = render partial: "magestil/about_assets/content_nav", locals: { object: object }
+            = render "magestil/about_assets/content_nav", object: object

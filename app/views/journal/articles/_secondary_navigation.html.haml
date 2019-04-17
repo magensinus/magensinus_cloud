@@ -3,6 +3,9 @@
 .secondary-navigation
   .secondary-navigation-box
     .secondary-navigation-item
+      %h3 Journal
+    .separator.extra-small
+    .secondary-navigation-item
       = link_to "Main", journal_article_path(@journal_article), class: "link large blue"
     .secondary-navigation-item
       = link_to "Thumb", journal_article_path(@journal_article, thumb: "true"), class: "link large blue"

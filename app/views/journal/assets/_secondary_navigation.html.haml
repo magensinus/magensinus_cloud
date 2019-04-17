@@ -2,9 +2,12 @@
 
 .secondary-navigation
   .secondary-navigation-box
+    .secondary-navigation-item
+      %h3 Journal
+    .separator.extra-small
     - if objects.presence
       .secondary-navigation-item
-        = link_to "Toggle Content", "#", class: "off link large blue wide toggle-trigger"
+        = link_to "Toggle Content", "#", class: "off small link large blue wide toggle-trigger"
       .separator.extra-small
     .secondary-navigation-item
       = link_to "Text", new_journal_article_asset_path(@journal_article, text: "true"), class: "link large blue"

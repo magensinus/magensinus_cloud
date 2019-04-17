@@ -2,7 +2,7 @@
 
 = form_with model: object, local: true, html: { autocomplete: false } do |f|
   %fieldset
-    = legend("Magestil Terms and Conditions")
+    = legend("#{controller_name.capitalize}")
     = errors(object)
     .form-row
       .field

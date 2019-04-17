@@ -1,0 +1,130 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// File:    Universal
+// Project: Mies by IIGETHR
+// -------------------------------------------------------------
+
+$class: "universal";
+
+.#{$class} {
+  @include border-box;
+  float: left;
+  margin: 0 auto;
+  min-width: 240px;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+  .#{$class}-box {
+    @include border-box;
+    @include clearfix;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0;
+    width: 240px;
+    .#{$class}-item {
+      @include border-box;
+      float: left;
+      margin: 0 auto;
+      overflow: hidden;
+      padding: 0;
+      width: 100%;
+    }
+  }
+}
+
+// Media Query 240px
+// -------------------------------------------------------------
+@media #{$double-extra-small} {
+  .#{$class} {
+    min-width: 240px;
+    .#{$class}-box {
+      width: 240px;
+      .#{$class}-item {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// Media Query 360px
+// -------------------------------------------------------------
+@media #{$extra-small} {
+  .#{$class} {
+    min-width: 360px;
+    .#{$class}-box {
+      width: 360px;
+      .#{$class}-item {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// Media Query 480px
+// -------------------------------------------------------------
+@media #{$small} {
+  .#{$class} {
+    min-width: 480px;
+    .#{$class}-box {
+      width: 480px;
+      .#{$class}-item {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// Media Query 720px
+// -------------------------------------------------------------
+@media #{$medium} {
+  .#{$class} {
+    min-width: 720px;
+    .#{$class}-box {
+      width: 720px;
+      .#{$class}-item {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// Media Query 960px
+// -------------------------------------------------------------
+@media #{$large} {
+  .#{$class} {
+    min-width: 960px;
+    .#{$class}-box {
+      width: 960px;
+      .#{$class}-item {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// Media Query 1440px
+// -------------------------------------------------------------
+@media #{$extra-large} {
+  .#{$class} {
+    min-width: 960px;
+    .#{$class}-box {
+      width: 960px;
+      .#{$class}-item {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// Media Query 1920px
+// -------------------------------------------------------------
+@media #{$double-extra-large} {
+  .#{$class} {
+    min-width: 960px;
+    .#{$class}-box {
+      width: 960px;
+      .#{$class}-item {
+        width: 100%;
+      }
+    }
+  }
+}

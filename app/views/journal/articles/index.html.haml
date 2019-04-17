@@ -1,13 +1,7 @@
 // Index
 
 .container-top
-  .breadcrumbs
-    .breadcrumbs-box
-      .breadcrumbs-item
-        = link_to journal_root_path, class: "link medium gray" do
-          .icon.left
-            = image_tag "icons/chevron_left.png"
-          Back
+  = render "lib/components/breadcrumbs", path: journal_root_path
   = link_to "New Journal Article", new_journal_article_path, class: "button green extra-large right"
 .container-middle.left
   .board-medium.altai-center
@@ -15,8 +9,11 @@
       .content-box
         .content-item
           %h3.lighter Journal Articles
-    = render "all",   objects: @published_journal_articles
-    // = render "unpublished", objects: @unpublished_journal_articles
-    // = render "scheduled",   objects: @scheduled_journal_articles
-    // = render "published",   objects: @published_journal_articles
+    .content
+      .content-box
+        .content-item.auto
+          = link_to "Published", journal_articles_path, class: "link small purple"
+        .content-item.auto
+          = link_to "Unpublished", journal_articles_path(published: false), class: "link small purple"
+    = render "all", objects: @journal_articles
 .container-bottom.left

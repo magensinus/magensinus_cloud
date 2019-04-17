@@ -19,7 +19,8 @@ module ApplicationHelper
 
   # Params all
   def params_all
-    params[:all] == "true" || !params.key?(:all)
+    # params[:all] == "true" || !params.key?(:all)
+    params[:all] == "true"
   end
 
   # Params published
@@ -30,6 +31,11 @@ module ApplicationHelper
   # Params unpublished
   def params_unpublished
     params[:published] == "false"
+  end
+
+  # Params scheduled
+  def params_scheduled
+    params[:scheduled] == "true"
   end
 
   # Params body
@@ -57,11 +63,6 @@ module ApplicationHelper
   # Params video
   def params_video
     params[:video] == "true"
-  end
-
-  # Params scheduled
-  def params_scheduled
-    params[:scheduled] == "true"
   end
 
   # Params published
@@ -102,7 +103,7 @@ module ApplicationHelper
   end
 
   # Assets renderer
-  def assets_renderer(object = "")
+  def assets_renderer(object = "", size = "")
     path = "lib/components/assets"
     if object.image == true
       render partial: "#{path}/image", locals: { object: object }

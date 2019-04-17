@@ -1,14 +1,8 @@
 // Index
 
 .container-top
-  .breadcrumbs
-    .breadcrumbs-box
-      .breadcrumbs-item
-        = link_to magestil_campus_path, class: "link medium gray" do
-          .icon.left
-            = image_tag "icons/chevron_left.png"
-          Back
-  = link_to "New Magensinus campus_asset", new_magestil_campus_asset_path(image: true), class: "button green extra-large right"
+  = render "lib/components/breadcrumbs", path: magestil_campus_path
+  = link_to "New Campus Asset", new_magestil_campus_asset_path(image: true), class: "button green extra-large right"
 .container-middle.left
   .board-medium.altai-center
     = render "all", objects: @magestil_campus_assets

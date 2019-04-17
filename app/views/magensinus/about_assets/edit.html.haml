@@ -1,22 +1,13 @@
 // Edit
 
 .container-top
-  .breadcrumbs
-    .breadcrumbs-box
-      .breadcrumbs-item
-        = link_to magensinus_about_assets_path, class: "link medium gray" do
-          .icon.left
-            = image_tag "icons/chevron_left.png"
-          Back
-
+  = render "lib/components/breadcrumbs", path: magensinus_about_assets_path
 .container-middle.left
   .board-medium.altai-center
     - if params_text
-      = render "text", object: @magensinus_about_asset
+      = assets_form_renderer(@magensinus_about_asset, nil, magensinus_about_asset_form_url)
     - elsif params_image
-      = render "image", object: @magensinus_about_asset
+      = assets_form_renderer(@magensinus_about_asset, "2240 x 1080", magensinus_about_asset_form_url)
     - elsif params_video
-      = render "video", object: @magensinus_about_asset
-    - else
-      = render "text", object: @magensinus_about_asset
+      = assets_form_renderer(@magensinus_about_asset, nil, magensinus_about_asset_form_url)
 .container-bottom.left
