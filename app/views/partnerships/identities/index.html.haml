@@ -15,7 +15,11 @@
       .content-box
         .content-item
           %h3.lighter Partners
-    = render "all", objects: @partnerships_identities
+    - if @partnerships_identities.presence
+      = render "all", objects: @partnerships_identities
+    - else
+      = blankslate
+    // = render "all", objects: @partnerships_identities
     // = render "unpublished", objects: @unpublished_journal_articles
     // = render "scheduled",   objects: @scheduled_journal_articles
     // = render "published",   objects: @published_journal_articles

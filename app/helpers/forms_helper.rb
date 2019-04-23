@@ -18,7 +18,9 @@ module FormsHelper
   # Assets form renderer
   def assets_form_renderer(object = "", size = "", url = "")
     path = "lib/components/assets/form"
-    if params_image
+    if params_icon
+      render "#{path}/icon", object: object, size: size, url: url
+    elsif params_image
       render "#{path}/image", object: object, size: size, url: url
     elsif params_thumb
       render "#{path}/thumb", object: object, size: size, url: url
@@ -43,7 +45,7 @@ module FormsHelper
     end
   end
 
-  # Submit button
+  # Submit button misc
   def submit_button_misc(f = "", label = "")
     tag.div class: "field col-medium-2-1" do
       tag.div class: "submit" do

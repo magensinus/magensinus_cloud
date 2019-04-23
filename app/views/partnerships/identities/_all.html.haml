@@ -6,6 +6,7 @@
       .list-item.col-medium-1-1
         .list-middle
           .list-center.no-side
+            = image_tag object.thumb_box_url
             %p= object.title
           .list-right
             = link_to partnerships_identity_path(object), class: "link medium gray pg-12" do

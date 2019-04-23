@@ -13,7 +13,8 @@
     = render partial: "secondary_navigation"
   .board-medium
     - if params_thumb
-      = render "thumb", object: @partnerships_identity
+      // = render "thumb", object: @partnerships_identity
+      = assets_form_renderer(@partnerships_identity, "Width: 512px | Height: 512px")
     - else
       = render "form", object: @partnerships_identity
 .container-bottom.left

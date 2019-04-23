@@ -7,7 +7,7 @@
     = render partial: "secondary_navigation"
   .board-medium
     - if params_image
-      = assets_form_renderer(@magestil_home, "2240 x 1080")
+      = assets_form_renderer(@magestil_home, "Width: 2880px | Height: 1080px", magestil_home_path)
     - else
       = render "form", object: @magestil_home
 .container-bottom.left

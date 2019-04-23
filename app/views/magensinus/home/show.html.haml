@@ -7,7 +7,7 @@
     = render partial: "secondary_navigation"
   .board-medium
     - if params_image
-      = render "image", object: @magensinus_home
+      = assets_form_renderer(@magensinus_home, "Width: 2880px | Height: 1080px", magensinus_home_path)
     - else
       = render "form", object: @magensinus_home
 .container-bottom.left

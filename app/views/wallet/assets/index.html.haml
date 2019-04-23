@@ -17,5 +17,9 @@
           %h3.lighter
             = @wallet_category.title
             Documents
-    = render "all", parent: @wallet_category, objects: @wallet_assets
+    - if @wallet_assets.presence
+      = render "all", parent: @wallet_category, objects: @wallet_assets
+    - else
+      = blankslate
+    // = render "all", parent: @wallet_category, objects: @wallet_assets
 .container-bottom.left

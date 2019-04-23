@@ -7,7 +7,7 @@
     = render partial: "secondary_navigation"
   .board-medium
     - if params_thumb
-      = assets_form_renderer(@journal_article, "2240 x 1080", nil)
+      = assets_form_renderer(@journal_article, "Width: 512px | Height: 512px", nil)
     - else
       = render "form", object: @journal_article
 .container-bottom.left

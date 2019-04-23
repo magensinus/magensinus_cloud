@@ -32,6 +32,7 @@ module Partnerships
     # Edit
     # ----
     def edit
+      redirect_to partnerships_identity_path(@partnerships_identity)
     end
 
     # Update

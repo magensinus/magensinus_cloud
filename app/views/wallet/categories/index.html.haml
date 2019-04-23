@@ -15,7 +15,11 @@
       .content-box
         .content-item
           %h3.lighter Wallet Categories
-    = render "all", objects: @wallet_categories
+    - if @wallet_categories.presence
+      = render "all", objects: @wallet_categories
+    - else
+      = blankslate
+    // = render "all", objects: @wallet_categories
     // = render "unpublished", objects: @unpublished_journal_articles
     // = render "scheduled",   objects: @scheduled_journal_articles
     // = render "published",   objects: @published_journal_articles

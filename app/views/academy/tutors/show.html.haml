@@ -12,22 +12,8 @@
   .board-double-extra-small
     = render partial: "secondary_navigation"
   .board-medium
-    - if params_thumb
-      = render "thumb", object: @academy_tutor
-    - elsif params_thumb_eml
-      = render "thumb_eml", object: @academy_tutor
-    - elsif params_thumb_magestil
-      = render "thumb_magestil", object: @academy_tutor
-    - elsif params_thumb_magensinus
-      = render "thumb_magensinus", object: @academy_tutor
-    - elsif params_cover
-      = render "cover", object: @academy_tutor
-    - elsif params_cover_eml
-      = render "cover_eml", object: @academy_tutor
-    - elsif params_cover_magestil
-      = render "cover_magestil", object: @academy_tutor
-    - elsif params_cover_magensinus
-      = render "cover_magensinus", object: @academy_tutor
+    - if params_image
+      = render "image", object: @academy_tutor
     - else
       = render "form", object: @academy_tutor
 .container-bottom.left

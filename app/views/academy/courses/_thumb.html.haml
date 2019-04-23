@@ -20,6 +20,9 @@
         .file
           = f.file_field :thumb_box, placeholder: "Upload File", id: "thumb_box"
           = f.label :upload_file, for: "thumb_box", class: "button extra-large blue wide"
+          %p.reference
+            %strong Size:
+            Width: 768px | Height: 544px
     .form-row
       .field
         = f.label :thumb_caption

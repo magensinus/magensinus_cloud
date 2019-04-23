@@ -1,0 +1,29 @@
+// Icon
+
+= form_with model: object, url: url, local: true, html: { autocomplete: false } do |form|
+  = form.hidden_field :icon, value: true
+  = form.hidden_field :icon_box_cache
+  %fieldset
+    = legend("Icon")
+    = errors(object)
+    - if object.icon_box.presence
+      .form-row
+        .field.col-medium-2-1
+          = link_to "View Icon", object.icon_box_url, target: :blank, "data-featherlight": "#{object.icon_box_url}", class: "button extra-large white wide"
+        .field.col-medium-2-1
+          .checkbox
+            = form.check_box :remove_icon_box
+            = form.label :remove_icon
+    .form-row
+      .field
+        = form.label :icon
+        .file
+          = form.file_field :icon_box, id: "icon_box"
+          = form.label :upload_icon, for: "icon_box", class: "button extra-large blue wide"
+          = reference_size(size)
+    .form-row
+      .field
+        = form.label :icon_caption
+        .input
+          = form.text_field :icon_caption
+    = submit_button(form, "Save")

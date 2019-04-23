@@ -7,7 +7,7 @@
     - if params_text
       = assets_form_renderer(@journal_asset, nil, journal_asset_form_url)
     - if params_image
-      = assets_form_renderer(@journal_asset, "change size", journal_asset_form_url)
+      = assets_form_renderer(@journal_asset, "Max Width: 960px | Max Height: 960px", journal_asset_form_url)
     - if params_video
       = assets_form_renderer(@journal_asset, nil, journal_asset_form_url)
 .container-bottom.left

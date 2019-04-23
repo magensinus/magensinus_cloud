@@ -21,6 +21,9 @@
           .file
             = f.file_field :image_box, placeholder: "Upload File", id: "image_box"
             = f.label :upload_file, for: "image_box", class: "button extra-large blue wide"
+            %p.reference
+              %strong Size:
+              Max Width: 960px | Max Height: 960px
     .form-row
       .field
         = f.label :image_caption

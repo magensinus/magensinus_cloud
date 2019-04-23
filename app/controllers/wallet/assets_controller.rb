@@ -23,6 +23,7 @@ module Wallet
     # Edit
     # ----
     def edit
+      redirect_to wallet_category_assets_path(@wallet_category)
     end
 
     # Update
