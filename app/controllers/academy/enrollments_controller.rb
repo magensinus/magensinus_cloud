@@ -16,9 +16,9 @@ module Academy
     def index
       @academy_enrollments =
         if params[:category_id]
-          @academy_category.enrollments.includes(:category).order(created_at: :asc)
+          @academy_category.enrollments.includes(:category).order(created_at: :desc)
         else
-          Academy::Enrollment.includes(:category).order(created_at: :asc)
+          Academy::Enrollment.includes(:category).order(created_at: :desc)
         end
     end
 
