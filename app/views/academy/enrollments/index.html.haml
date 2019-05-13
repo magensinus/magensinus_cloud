@@ -1,13 +1,18 @@
 // Index
 
-- if params[:category_id]
-  = link_to "Back", academy_category_path(@academy_category)
-- else
-  = link_to "Back", academy_dashboard_path
-
-%h1 Listing academy_enrollments
-
-= render "all", parent: @academy_category, objects: @academy_enrollments
-
-- if params[:category_id]
-  = link_to "New Academy enrollment", new_academy_category_enrollment_path(@academy_category)
+.container-top
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to academy_root_path, class: "link medium gray" do
+          .icon.left
+            = image_tag "icons/chevron_left.png"
+          Back
+.container-middle.left
+  .board-medium.altai-center
+    .content
+      .content-box
+        .content-item
+          %h3.lighter Academy Enrollments
+    = render "all", parent: @academy_category, objects: @academy_enrollments
+.container-bottom.left

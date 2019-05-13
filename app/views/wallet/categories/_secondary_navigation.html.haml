@@ -3,9 +3,9 @@
 .secondary-navigation
   .secondary-navigation-box
     .secondary-navigation-item
-      = link_to "Main", wallet_category_path(@wallet_category), class: "link large blue"
+      = link_to "Main", wallet_category_path(@wallet_category), class: "link medium blue wide hover-underline"
     .secondary-navigation-item
-      = link_to "Documents", wallet_category_assets_path(@wallet_category), class: "link large blue"
+      = link_to "Documents", wallet_category_assets_path(@wallet_category), class: "link medium blue wide hover-underline"
     .separator.small
     .secondary-navigation-item
-      = link_to "Destroy", wallet_category_path(@wallet_category), method: :delete, data: { confirm: "Are you sure?" }, class: "link large red wide hover-underline"
+      = link_to "Destroy", wallet_category_path(@wallet_category), method: :delete, data: { confirm: "Are you sure?" }, class: "link medium red wide hover-underline"

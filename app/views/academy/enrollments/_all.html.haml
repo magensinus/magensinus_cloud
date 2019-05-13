@@ -1,20 +1,14 @@
 // All
 
-%table
-  %thead
-    %tr
-      %th Academy category
-      %th Email
-      - if params[:category_id]
-        %th
-        %th
-        %th
-  %tbody
+.list
+  .list-box.sortable
     - objects.each do |object|
-      %tr
-        %td= object.category.id
-        %td= object.email
-        - if params[:category_id]
-          %td= link_to "Show", academy_category_enrollment_path(parent, object)
-          %td= link_to "Edit", edit_academy_category_enrollment_path(parent, object)
-          %td= link_to "Destroy", academy_category_enrollment_path(parent, object), method: :delete, data: { confirm: "Are you sure?" }
+      .list-item.col-medium-1-1
+        .list-middle
+          .list-center
+            %p
+              %strong= object.created_at.strftime("%d/%m/%Y")
+              \|
+              = object.category.title
+              \|
+              = object.email

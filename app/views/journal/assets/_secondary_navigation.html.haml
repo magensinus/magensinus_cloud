@@ -7,11 +7,11 @@
     .separator.extra-small
     - if objects.presence
       .secondary-navigation-item
-        = link_to "Toggle Content", "#", class: "off small link large blue wide toggle-trigger"
+        = link_to "Toggle Content", "#", class: "off link medium blue wide hover-underline toggle-trigger"
       .separator.extra-small
     .secondary-navigation-item
-      = link_to "Text", new_journal_article_asset_path(@journal_article, text: "true"), class: "link large blue"
+      = link_to "Text", new_journal_article_asset_path(@journal_article, text: "true"), class: "link medium blue wide hover-underline"
     .secondary-navigation-item
-      = link_to "Image", new_journal_article_asset_path(@journal_article, image: "true"), class: "link large blue"
+      = link_to "Image", new_journal_article_asset_path(@journal_article, image: "true"), class: "link medium blue wide hover-underline"
     .secondary-navigation-item
-      = link_to "Video", new_journal_article_asset_path(@journal_article, video: "true"), class: "link large blue"
+      = link_to "Video", new_journal_article_asset_path(@journal_article, video: "true"), class: "link medium blue wide hover-underline"
