@@ -1,13 +1,7 @@
 // New
 
 .container-top
-  .breadcrumbs
-    .breadcrumbs-box
-      .breadcrumbs-item
-        = link_to wallet_categories_path, class: "link medium gray" do
-          .icon.left
-            = image_tag "icons/chevron_left.png"
-          Back
+  = render "lib/components/breadcrumbs", path: wallet_categories_path
 .container-middle.left
   .board-medium.altai-center
     = render "form", object: @wallet_category

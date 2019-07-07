@@ -1,13 +1,7 @@
 // Index
 
 .container-top
-  .breadcrumbs
-    .breadcrumbs-box
-      .breadcrumbs-item
-        = link_to wallet_category_path(@wallet_category), class: "link medium gray" do
-          .icon.left
-            = image_tag "icons/chevron_left.png"
-          Back
+  = render "lib/components/breadcrumbs", path: wallet_category_path(@wallet_category)
   = link_to "New Document", new_wallet_category_asset_path(@wallet_category, document: true), class: "button green extra-large right"
 .container-middle.left
   .board-medium.altai-center
