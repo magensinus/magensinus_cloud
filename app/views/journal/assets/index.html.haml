@@ -1,13 +1,7 @@
 // Index
 
 .container-top
-  .breadcrumbs
-    .breadcrumbs-box
-      .breadcrumbs-item
-        = link_to journal_article_path(@journal_article), class: "link medium gray" do
-          .icon.left
-            = image_tag "icons/chevron_left.png"
-          Back
+  = render "lib/components/breadcrumbs", path: journal_article_path(@journal_article)
 .container-middle.left
   .board-double-extra-small
     = render partial: "secondary_navigation", locals: { objects: @journal_assets }
