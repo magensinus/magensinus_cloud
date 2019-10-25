@@ -8,6 +8,6 @@ class DocumentUploader < ::ApplicationUploader
 
   # Extension whitelist
   def extension_whitelist
-    %w[pdf]
+    %w[pdf png jpg jpeg]
   end
 end
