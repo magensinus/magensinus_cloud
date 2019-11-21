@@ -1,12 +1,15 @@
 // Edit
 
-%h1 Editing legal_asset
-
-- if params_text
-  = render "text", object: @legal_asset
-- if params_image
-  = render "image", object: @legal_asset
-- if params_video
-  = render "video", object: @legal_asset
-
-= link_to "Back", legal_article_assets_path(@legal_article)
+.container-top
+  = render "lib/components/breadcrumbs", path: legal_article_assets_path(@legal_article)
+.container-middle.left
+  .board-medium.altai-center
+    - if params_text
+      = assets_form_renderer(@legal_asset, nil, legal_asset_form_url)
+    - if params_image
+      = assets_form_renderer(@legal_asset, "Max Width: 960px | Max Height: 960px", legal_asset_form_url)
+    - if params_video
+      = assets_form_renderer(@legal_asset, nil, legal_asset_form_url)
+    - if params_document
+      = render "document", object: @legal_asset
+.container-bottom.left

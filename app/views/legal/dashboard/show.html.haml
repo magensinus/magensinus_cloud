@@ -1,9 +1,11 @@
 // Show
 
-%h1 Legal Dashboard
-
-%nav
-  %div
-    = link_to "Dashboard", root_path
-  %div
-    = link_to "Articles", legal_articles_path
+.container-top
+  = render "lib/components/breadcrumbs", path: root_path
+.container-middle.left
+  .board-medium.altai-center
+    .launchpad
+      .launchpad-box
+        .launchpad-item.col-large-4-1
+          = link_to "Articles", legal_articles_path, class: "button wide text-center extra-large"
+.container-bottom.left

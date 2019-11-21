@@ -29,7 +29,7 @@ module FormsHelper
     elsif params_text
       render "#{path}/text", object: object, url: url
     else
-      "jhhfdh"
+      "nothing to render - check forms helper"
     end
   end
 

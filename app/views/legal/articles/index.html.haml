@@ -1,10 +1,19 @@
 // Index
 
-%h1 Listing legal_articles
-
-= render "unpublished", objects: @unpublished_legal_articles
-= render "scheduled",   objects: @scheduled_legal_articles
-= render "published",   objects: @published_legal_articles
-
-= link_to "New Legal article", new_legal_article_path
-= link_to "Legal Dashboard", legal_root_path
+.container-top
+  = render "lib/components/breadcrumbs", path: legal_root_path
+  = link_to "New Legal Article", new_legal_article_path, class: "button green extra-large right"
+.container-middle.left
+  .board-medium.altai-center
+    .content
+      .content-box
+        .content-item
+          %h3.lighter Legal Articles
+    .content
+      .content-box
+        .content-item.auto
+          = link_to "Published", legal_articles_path, class: "link small purple"
+        .content-item.auto
+          = link_to "Unpublished", legal_articles_path(published: false), class: "link small purple"
+    = render "all", objects: @legal_articles
+.container-bottom.left

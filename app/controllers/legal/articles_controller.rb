@@ -12,6 +12,8 @@ module Legal
     include ImageParams
     # Document
     include DocumentParams
+    # Application Helper
+    include  ApplicationHelper
 
     # Callbacks
     # ---------
@@ -21,9 +23,12 @@ module Legal
     # Index
     # -----
     def index
-      @scheduled_legal_articles   = Legal::Article.scheduled
-      @published_legal_articles   = Legal::Article.published
-      @unpublished_legal_articles = Legal::Article.unpublished
+      @legal_articles =
+        if params_unpublished
+          Legal::Article.unpublished.order(created_at: :asc)
+        else
+          Legal::Article.published.order(created_at: :asc)
+        end
     end
 
     # Show

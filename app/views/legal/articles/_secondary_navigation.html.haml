@@ -1,0 +1,16 @@
+// Secondary navigation
+
+.secondary-navigation
+  .secondary-navigation-box
+    .secondary-navigation-item
+      %h3 Legal
+    .separator.extra-small
+    .secondary-navigation-item
+      = link_to "Main", legal_article_path(@legal_article), class: "link medium blue wide hover-underline"
+    // .secondary-navigation-item
+    //   = link_to "Thumb", legal_article_path(@legal_article, thumb: "true"), class: "link medium blue wide hover-underline"
+    .secondary-navigation-item
+      = link_to "Media Assets", legal_article_assets_path(@legal_article), class: "link medium blue wide hover-underline"
+    .separator.small
+    .secondary-navigation-item
+      = link_to "Destroy", legal_article_path(@legal_article), method: :delete, data: { confirm: "Are you sure?" }, class: "link medium red wide hover-underline"

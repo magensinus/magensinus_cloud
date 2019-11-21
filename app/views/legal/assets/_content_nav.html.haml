@@ -1,0 +1,15 @@
+/* Content Nav */
+
+.content-nav.right
+  .content-nav-box
+    .content-nav-item
+      = link_to "Destroy", legal_article_asset_path(parent, object), method: :delete, data: { confirm: "Are you sure?" }, class: "link gray-light left"
+    .content-nav-item.pg-0-0-0-16
+      - if object.image == true
+        = link_to "Edit", edit_legal_article_asset_path(parent, object, image: true), class: "button yellow left"
+      - if object.video == true
+        = link_to "Edit", edit_legal_article_asset_path(parent, object, video: true), class: "button yellow left"
+      - if object.text == true
+        = link_to "Edit", edit_legal_article_asset_path(parent, object, text: true), class: "button yellow left"
+      - if object.document == true
+        = link_to "Edit", edit_legal_article_asset_path(parent, object, document: true), class: "button yellow left"

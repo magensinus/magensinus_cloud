@@ -1,0 +1,35 @@
+// Document
+
+= form_with model: object, url: legal_asset_form_url, local: true do |f|
+  = f.hidden_field :document, value: true
+  = f.hidden_field :document_box_cache
+  %fieldset
+    = legend("Document")
+    = errors(object)
+    - if params[:action] == "new" || params[:action] == "create"
+      - if object.document_box.presence
+        .form-row
+          .field.col-medium-2-1
+            = link_to "View File", object.document_box_url, target: :blank, class: "button extra-large white wide"
+          .field.col-medium-2-1
+            .submit
+              // = f.check_box :remove_document_box
+              // = f.label :remove_file
+              = link_to "Destroy Document", legal_article_asset_path(@legal_article, object), method: :delete, data: { confirm: "Are you sure?" }, class: "button extra-large red wide hover-underline center left text-center"
+      .form-row
+        .field
+          = f.label :document
+          .file
+            = f.file_field :document_box, placeholder: "Upload File", id: "document_box"
+            = f.label :upload_file, for: "document_box", class: "button extra-large blue wide"
+    .form-row
+      .form-row
+        .field
+          = f.label :document_caption
+          .input
+            = f.text_field :document_caption
+    .separator.small
+    .form-row
+      .field
+        .submit
+          = f.button "Save", type: :submit, data: { disable_with: "Please wait a moment..." }, class: "button double-extra-large green wide"

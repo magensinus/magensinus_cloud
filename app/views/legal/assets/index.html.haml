@@ -1,11 +1,10 @@
 // Index
 
-= link_to "Back", legal_article_path(@legal_article)
-
-%h1 Listing legal_assets
-
-= render "all", parent: @legal_article, objects: @legal_assets
-
-= link_to "Text", new_legal_article_asset_path(@legal_article, text: "true")
-= link_to "Image", new_legal_article_asset_path(@legal_article, image: "true")
-= link_to "Video", new_legal_article_asset_path(@legal_article, video: "true")
+.container-top
+  = render "lib/components/breadcrumbs", path: legal_article_path(@legal_article)
+.container-middle.left
+  .board-double-extra-small
+    = render partial: "secondary_navigation", locals: { objects: @legal_assets }
+  .board-medium
+    = render "all", parent: @legal_article, objects: @legal_assets
+.container-bottom.left

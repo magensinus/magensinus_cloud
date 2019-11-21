@@ -1,0 +1,16 @@
+// All
+
+.list
+  .list-box
+    - if @legal_articles.presence
+      - @legal_articles.each do |legal_article|
+        .list-item.col-medium-1-1
+          .list-middle
+            .list-center.no-side
+              %p= legal_article.title
+            .list-right
+              = link_to legal_article_path(legal_article), class: "link medium gray pg-12" do
+                .icon.left
+                  // = image_tag "icons/arrow_forward.png"
+    - else
+      = blankslate

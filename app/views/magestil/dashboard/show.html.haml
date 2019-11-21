@@ -1,13 +1,7 @@
 // Show
 
 .container-top
-  .breadcrumbs
-    .breadcrumbs-box
-      .breadcrumbs-item
-        = link_to root_path, class: "link small gray" do
-          .icon.left
-            = image_tag "icons/chevron_left.png"
-          Back
+  = render "lib/components/breadcrumbs", path: root_path
 .container-middle.left
   .board-large
     .launchpad

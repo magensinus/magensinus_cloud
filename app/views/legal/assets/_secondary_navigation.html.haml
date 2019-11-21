@@ -1,0 +1,17 @@
+// Secondary navigation
+
+.secondary-navigation
+  .secondary-navigation-box
+    .secondary-navigation-item
+      %h3 Legal
+    .separator.extra-small
+    - if objects.presence
+      .secondary-navigation-item
+        = link_to "Toggle Content", "#", class: "off link medium blue wide hover-underline toggle-trigger"
+      .separator.extra-small
+    .secondary-navigation-item
+      = link_to "Text", new_legal_article_asset_path(@legal_article, text: "true"), class: "link medium blue wide hover-underline"
+    .secondary-navigation-item
+      = link_to "Document", new_legal_article_asset_path(@legal_article, document: "true"), class: "link medium blue wide hover-underline"
+    // .secondary-navigation-item
+    //   = link_to "Video", new_legal_article_asset_path(@legal_article, video: "true"), class: "link medium blue wide hover-underline"

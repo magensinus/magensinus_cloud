@@ -1,0 +1,5 @@
+// Document
+
+.trix.document
+  = link_to object.document_box_url.to_s, class: "left", target: "_blank" do
+    = object.document_caption.presence || "Documento"
