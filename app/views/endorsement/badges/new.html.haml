@@ -1,7 +1,8 @@
 // New
 
-%h1 New endorsement_badge
-
-= render "form", object: @endorsement_badge
-
-= link_to "Back", endorsement_badges_path
+.container-top
+  = render "lib/components/breadcrumbs", path: endorsement_badges_path
+.container-middle.left
+  .board-medium.altai-center
+    = render "form", object: @endorsement_badge
+.container-bottom.left

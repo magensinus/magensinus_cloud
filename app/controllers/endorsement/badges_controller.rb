@@ -16,7 +16,7 @@ module Endorsement
     # Callbacks
     # ---------
     # Endorsement badge
-    before_action :endorsement_badge, only: [:edit, :update, :destroy]
+    before_action :endorsement_badge, only: [:show, :update, :destroy]
 
     # Index
     # -----
@@ -24,9 +24,9 @@ module Endorsement
       @endorsement_badges = Endorsement::Badge.all
     end
 
-    # Edit
+    # Show
     # ----
-    def edit
+    def show
     end
 
     # Update
@@ -34,7 +34,7 @@ module Endorsement
     def update
       if @endorsement_badge.update(endorsement_badge_params)
         flash[:notice] = "Successfully updated..."
-        redirect_to endorsement_badges_path
+        redirect_to endorsement_badge_path(@endorsement_badge)
       else
         render :edit
       end
@@ -62,7 +62,7 @@ module Endorsement
       @endorsement_badge.position = (order.min - 1)
       if @endorsement_badge.save
         flash[:notice] = "Successfully created..."
-        redirect_to endorsement_badges_path
+        redirect_to endorsement_badge_path(@endorsement_badge)
       else
         render :new
       end

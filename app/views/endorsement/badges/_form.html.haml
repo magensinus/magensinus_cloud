@@ -2,26 +2,41 @@
 
 = form_with model: object, local: true do |f|
   = render "lib/components/errors", object: object
-  .field
-    = f.label :title
-    = f.text_field :title
-  .field
-    %trix-editor{ input: "description" }
-    = f.hidden_field :description, id: "description"
-  .field
-    = f.label :url
-    = f.text_field :url
-  .field
-    = f.label :published
-    = f.check_box :published
-  .field
-    = f.label :eml
-    = f.check_box :eml
-  .field
-    = f.label :magestil
-    = f.check_box :magestil
-  .field
-    = f.label :magensinus
-    = f.check_box :magensinus
-  .actions
-    = f.submit "Save"
+  %fieldset
+    = legend("Badge")
+    = errors(object)
+    .form-row
+      .field
+        = f.label :title
+        .input
+          = f.text_field :title
+    // .form-row
+    //   .field
+    //     .textarea
+    //       = f.hidden_field :description, id: "description"
+    //       %trix-editor{ input: "description" }
+    .form-row
+      .field
+        = f.label :url
+        .input
+          = f.text_field :url
+    .form-row
+      .field.col-medium-3-1
+        .checkbox
+          = f.check_box :eml
+          = f.label :eml
+      .field.col-medium-3-1
+        .checkbox
+          = f.check_box :magestil
+          = f.label :magestil
+      .field.col-medium-3-1
+        .checkbox
+          = f.check_box :magensinus
+          = f.label :magensinus
+    .separator.small
+    .form-row
+      = submit_button_misc(f, "Save")
+      .field.col-medium-2-1
+        .checkbox
+          = f.check_box :published
+          = f.label :published

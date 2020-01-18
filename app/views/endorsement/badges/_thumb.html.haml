@@ -1,18 +1,28 @@
 // Thumb
 
-= form_with model: object, local: true do |f|
-  = render "lib/components/errors", object: object
+= form_with model: object, local: true, html: { autocomplete: false } do |f|
   = f.hidden_field :thumb, value: true
   = f.hidden_field :thumb_box_cache
-  .field
-    = f.label :thumb_box
-    = f.file_field :thumb_box unless object.thumb_box.presence
-  - if object.thumb_box.presence
-    .field
-      = f.label :remove_thumb_box
-      = f.check_box :remove_thumb_box
-  .field
-    = f.label :thumb_caption
-    = f.text_field :thumb_caption
-  .actions
-    = f.submit "Save"
+  %fieldset
+    = legend("Partner Thumb")
+    = errors(object)
+    - if object.thumb_box.presence
+      .form-row
+        .field.col-medium-2-1
+          = link_to "View File", object.thumb_box_url, target: :blank, class: "button extra-large white wide"
+        .field.col-medium-2-1
+          .checkbox
+            = f.check_box :remove_thumb_box
+            = f.label :remove_file
+    .form-row
+      .field
+        = f.label :thumb
+        .file
+          = f.file_field :thumb_box, placeholder: "Upload File", id: "thumb_box"
+          = f.label :upload_file, for: "thumb_box", class: "button extra-large blue wide"
+    .form-row
+      .field
+        = f.label :thumb_caption
+        .input
+          = f.text_field :thumb_caption, autocomplete: false
+    = submit_button(f, "Save")

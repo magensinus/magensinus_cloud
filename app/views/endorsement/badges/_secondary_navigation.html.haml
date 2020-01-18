@@ -1,0 +1,11 @@
+// Secondary navigation
+
+.secondary-navigation
+  .secondary-navigation-box
+    .secondary-navigation-item
+      = link_to "Main", endorsement_badge_path(@endorsement_badge), class: "link medium blue wide hover-underline"
+    .secondary-navigation-item
+      = link_to "Thumb", endorsement_badge_path(@endorsement_badge, thumb: "true"), class: "link medium blue wide hover-underline"
+    .separator.extra-small
+    .secondary-navigation-item
+      = link_to "Destroy", endorsement_badge_path(@endorsement_badge), method: :delete, data: { confirm: "Are you sure?" }, class: "link medium red wide hover-underline"

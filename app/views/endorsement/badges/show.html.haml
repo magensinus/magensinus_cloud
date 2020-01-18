@@ -1,0 +1,13 @@
+// Edit
+
+.container-top
+  = render "lib/components/breadcrumbs", path: endorsement_badges_path
+.container-middle.left
+  .board-double-extra-small
+    = render partial: "secondary_navigation"
+  .board-medium
+    - if params_thumb
+      = render "thumb", object: @endorsement_badge
+    - else
+      = render "form", object: @endorsement_badge
+.container-bottom.left
