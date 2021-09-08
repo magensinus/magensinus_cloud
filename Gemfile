@@ -89,7 +89,7 @@ group :development do
   # gem "quiet_assets", "~> 1.1"
 
   # Provides a better error page for Rails and other Rack apps
-  gem "better_errors", "~> 2.4"
+  gem "better_errors", "~> 2.8"
 
   # Retrieve the binding of a method's caller
   gem "binding_of_caller", "~> 0.8"
