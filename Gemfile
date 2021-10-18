@@ -46,7 +46,7 @@ gem "uglifier", "~> 4.1"
 gem "haml-rails", "~> 1.0"
 
 # Upload files in your Ruby applications, map them to a range of ORMs, store them on different backends.
-gem "carrierwave", "~> 1.2"
+gem "carrierwave", "~> 1.3"
 
 # Manipulate images with minimal use of memory via ImageMagick / GraphicsMagick
 gem "mini_magick", "~> 4.8"
