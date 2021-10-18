@@ -27,3 +27,10 @@ config/figaro
 config/figaro/*
 config/figaro/**/*
 config/application.yml
+
+
+SETUP.md
+
+Gemfile-backup-latest.lock
+Gemfile-backup.lock
+Gemfile-letest.lock

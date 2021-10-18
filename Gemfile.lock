@@ -8,6 +8,13 @@ GIT
       sassc-rails
       sprockets
 
+GIT
+  remote: https://github.com/mimemagicrb/mimemagic.git
+  revision: 01f92d86d15d85cfd0f20dabd025dcbd36a8a60f
+  ref: 01f92d86d15d85cfd0f20dabd025dcbd36a8a60f
+  specs:
+    mimemagic (0.3.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -327,7 +334,6 @@ GEM
     mime-types (3.3)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2019.1009)
-    mimemagic (0.3.3)
     mini_magick (4.9.5)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
@@ -502,6 +508,7 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   listen (~> 3.1)
   mies (= 0.0.1.alpha)!
+  mimemagic!
   mini_magick (~> 4.8)
   mini_racer
   pg (~> 1.0)

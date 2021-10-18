@@ -5,8 +5,6 @@
     .breadcrumbs-box
       .breadcrumbs-item
         = link_to academy_course_sections_path(@academy_course), class: "link medium gray" do
-          .icon.left
-            = image_tag "icons/chevron_left.png"
           Back
   = link_to "Section Assets", academy_course_section_section_assets_path(@academy_course, @academy_section), class: "button blue extra-large right"
 .container-middle.left
