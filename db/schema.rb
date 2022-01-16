@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_24_083647) do
+ActiveRecord::Schema.define(version: 2021_10_18_163027) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -213,6 +213,8 @@ ActiveRecord::Schema.define(version: 2019_03_24_083647) do
     t.boolean "accept_terms", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "education"
+    t.string "employment_status"
     t.index ["academy_category_id"], name: "index_academy_enrollments_on_academy_category_id"
     t.index ["slug"], name: "index_academy_enrollments_on_slug"
   end

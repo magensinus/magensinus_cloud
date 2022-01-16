@@ -125,6 +125,8 @@ module Academy
         :secondary_email,
         :secondary_phone,
         :accept_terms,
+        :education,
+        :employment_status,
         # Collections
         course_ids: []
       )
