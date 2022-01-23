@@ -67,6 +67,25 @@ $class: "list";
           }
         }
       }
+
+      .#{$class}-top {
+        @include border-box;
+        background-color: $white;
+        float: left;
+        padding: 16px 16px 8px;
+        width: 100%;
+      }
+      .#{$class}-bottom {
+        @include border-box;
+        background-color: $white;
+        float: left;
+        padding: 8px 16px 16px;
+        width: 100%;
+        ul {
+          margin: 0;
+          padding: 0;
+        }
+      }
     }
   }
 }

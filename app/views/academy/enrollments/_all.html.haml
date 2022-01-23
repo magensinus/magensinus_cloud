@@ -4,11 +4,18 @@
   .list-box.sortable
     - objects.each do |object|
       .list-item.col-medium-1-1
-        .list-middle
-          .list-center
-            %p
-              %strong= object.created_at.strftime("%d/%m/%Y")
-              \|
-              = object.category.title
-              \|
-              = object.email
+
+        .list-top
+          %strong= object.category.title
+          %strong.right= object.created_at.strftime("%d/%m/%Y")
+          %p
+            = object.name
+            = object.surname
+            \::
+            = object.phone
+            \::
+            = object.email
+        .list-bottom
+          %ul
+            - object.enrollment_courses.each do |enrollment|
+              %li= enrollment.course.title

@@ -23,5 +23,24 @@ module Academy
     # Academy courses
     has_many :courses, through: :enrollment_courses
     accepts_nested_attributes_for :courses
+
+    # CSV
+    # def self.to_csv
+    #   CSV.generate(headers: false) do |csv|
+    #     csv << column_names
+    #     all.each do |product|
+    #       csv << product.attributes.values_at(*column_names)
+    #     end
+    #   end
+    # end
+
+    def self.to_csv
+      CSV.generate(headers: true) do |csv|
+        csv << ["Date", "Name", "Surname", "Phone", "Email", "Category", "Courses"]
+        all.each do |object|
+          csv << [object.created_at.strftime("%d/%m/%Y"), object.name, object.surname, object.phone, object.email, object.category.title, object.enrollment_courses.map { |p| p.course.title }.join.html_safe]
+        end
+      end
+    end
   end
 end

@@ -1,0 +1,17 @@
+// Disable tooltips
+// "editor.hover.enabled": false
+
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+  "settings": {
+    "editor.autoClosingQuotes": "always",
+    "files.insertFinalNewline": true,
+    "emmet.includeLanguages": {
+      "erb": "html"
+    }
+  }
+}

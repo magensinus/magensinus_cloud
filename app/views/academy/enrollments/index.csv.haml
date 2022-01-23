@@ -1,0 +1,2 @@
+- @academy_enrollments.each do |object|
+  = CSV.generate_line([object.created_at.strftime("%d/%m/%Y"), object.category.title, object.name, object.surname, object.phone, object.email, object.enrollment_courses.map { |p| p.course.title }.join.html_safe])

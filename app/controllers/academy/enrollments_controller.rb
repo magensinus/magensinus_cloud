@@ -16,10 +16,15 @@ module Academy
     def index
       @academy_enrollments =
         if params[:category_id]
-          @academy_category.enrollments.includes(:category).order(created_at: :desc)
+          @academy_category.enrollments.includes(:category).includes(:enrollment_courses).order(created_at: :desc)
         else
-          Academy::Enrollment.includes(:category).order(created_at: :desc)
+          Academy::Enrollment.includes(:category).includes(:enrollment_courses).order(created_at: :desc)
         end
+      respond_to do |format|
+        format.html
+        # format.csv { render text: @academy_enrollments.to_csv }
+        format.csv { send_data @academy_enrollments.to_csv, filename: "enrollments-#{Date.today}.csv" }
+      end
     end
 
     # Show
