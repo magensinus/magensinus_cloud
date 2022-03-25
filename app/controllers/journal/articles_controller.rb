@@ -106,7 +106,8 @@ module Journal
         :eml,
         :magestil,
         :magensinus,
-        :featured
+        :featured,
+        :erasmus
       )
     end
   end

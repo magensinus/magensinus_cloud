@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_18_163027) do
+ActiveRecord::Schema.define(version: 2022_03_16_093020) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -463,6 +463,7 @@ ActiveRecord::Schema.define(version: 2021_10_18_163027) do
     t.datetime "updated_at", null: false
     t.integer "position"
     t.boolean "featured", default: false
+    t.boolean "erasmus", default: false
     t.index ["slug"], name: "index_journal_articles_on_slug"
   end
 
