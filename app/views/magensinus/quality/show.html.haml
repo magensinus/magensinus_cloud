@@ -6,5 +6,8 @@
   .board-double-extra-small
     = render partial: "secondary_navigation"
   .board-medium
-    = render "form", object: @magensinus_quality
+    - if params_image
+      = assets_form_renderer(@magensinus_quality, "Width: 1920px | Height: 540px", magensinus_quality_path)
+    - else
+      = render "form", object: @magensinus_quality
 .container-bottom.left
